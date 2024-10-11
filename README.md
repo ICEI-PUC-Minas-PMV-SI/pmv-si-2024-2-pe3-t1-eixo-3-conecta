@@ -1,4 +1,6 @@
-# Título do Projeto
+# Conecta
+
+![banner-conecta](https://github.com/user-attachments/assets/81b451fe-1e18-48d5-a161-060699d42db3)
 
 `CURSO: Sistemas de Informação`
 
@@ -6,7 +8,7 @@
 
 `SEMESTRE: 3º`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+O projeto Conecta tem como objetivo facilitar a interação entre Organizações Não Governamentais (ONGs) e voluntários de tecnologia da informação (TI), criando uma plataforma em que ONGs possam solicitar suporte técnico especializado e voluntários possam oferecer suas habilidades para atender essas demandas. A plataforma busca otimizar a comunicação, o acompanhamento de projetos e o compartilhamento de feedbacks, promovendo um impacto positivo na transformação digital das ONGs.
 
 ## Integrantes
 
