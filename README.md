@@ -1,6 +1,6 @@
 # Conecta
 
-![banner-conecta](https://github.com/user-attachments/assets/81b451fe-1e18-48d5-a161-060699d42db3)
+![Captura de tela_13-10-2024_131333_create piktochart com](https://github.com/user-attachments/assets/8a9b1de3-7e0a-44cb-8d93-4b94065d628d)
 
 `CURSO: Sistemas de Informação`
 
