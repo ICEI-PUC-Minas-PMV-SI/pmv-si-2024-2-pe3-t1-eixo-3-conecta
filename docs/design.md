@@ -14,7 +14,7 @@
 
 ### Mapa de Empatia 1: Maria Silva
 
-![Mapa de Empatia 1](assets/design/mapa-de-empatia_maria-silva.png)
+![Mapa de Empatia 1](assets/design/mapa-de-empatia-maria-silva.png)
 
 ### Mapa de Empatia 3: Bianca Guedes
 
