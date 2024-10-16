@@ -8,7 +8,7 @@
 
 ### Persona 2: Daniel Souza
 
-![Persona 2](assets/design/persona_daniel_souza.png)
+![Persona 2](assets/design/persona_daniel-souza.jpg)
 
 ### Persona 3: Bianca Guedes
 
@@ -26,7 +26,7 @@
 
 ### Mapa de Empatia 3: Bianca Guedes
 
-![Mapa de Empatia 3](assets/design/mapa-de-empatia-bianca-guedes.png)
+![Mapa de Empatia 3](assets/design/mapa-de-empatia_bianca-guedes.png)
 
 ## 4.3 Protótipos das Interfaces
 
