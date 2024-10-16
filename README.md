@@ -1,7 +1,6 @@
 # Conecta
 
-![conecta-banner](https://github.com/user-attachments/assets/02138a9f-4eee-45f0-8005-d5663339cb62)
-
+![new-banner-conecta](https://github.com/user-attachments/assets/f39f7101-05f1-424e-b9dd-36d134b7243f)
 
 `CURSO: Sistemas de Informação`
 
