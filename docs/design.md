@@ -22,7 +22,7 @@
 
 ### Mapa de Empatia 2: Daniel Souza
 
-![Mapa de Empatia 2](assets/design//mapa-de-empatia_daniel-souza.png)
+![Mapa de Empatia 2](assets/design/mapa-de-empatia_daniel-souza.png)
 
 ### Mapa de Empatia 3: Bianca Guedes
 
