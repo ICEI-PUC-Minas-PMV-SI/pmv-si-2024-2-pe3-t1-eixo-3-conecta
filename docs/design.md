@@ -8,9 +8,9 @@
 
 ## 4.2 Mapa de Empatia
 
-![Persona 1](assets/design//mapa-de-empatia-daniel-souza.png)
-
 ### Mapa de Empatia 2: Daniel Souza
+
+![Persona 1](assets/design//mapa-de-empatia-daniel-souza.png)
 
 ## 4.3 Protótipos das Interfaces
 
