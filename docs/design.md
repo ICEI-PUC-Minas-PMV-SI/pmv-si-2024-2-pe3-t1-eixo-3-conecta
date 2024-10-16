@@ -4,11 +4,11 @@
 
 ### Persona 2: Daniel Souza
 
-![Persona 1](assets/design/persona_daniel_souza.png)
+![Persona 1](assets/design/persona-daniel-souza.jpg)
 
 ## 4.2 Mapa de Empatia
 
-![Persona 1](assets/design/mapa_daniel_souza.png)
+![Persona 1](assets/design//mapa-de-empatia-daniel-souza.png)
 
 ### Mapa de Empatia 2: Daniel Souza
 
