@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./pages/landing-page/landing-page.css">
+    <link rel="shortcut icon" href="./assets/icons/favicon.ico" type="image/x-icon">
+    <script type="module" src="./components/header/header.js"></script>
+    <script type="module" src="./components/footer/footer.js"></script>
+    <script type="module" src="./components/vertical-task-card/vertical-task-card.js"></script>
+    <script type="module" src="./components/horizontal-task-card/horizontal-task-card.js"></script>
+    <script type="module" src="./js/landing-page.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div id="page-overlay"></div>
+
+        <header>
+            <header-component action="toggleOverlay" variant="home"></header-component>
+        </header>
+
+        <div class="content">
+            <div class="home-content">
+
+                <div class="slideshow-container web">
+                    <div class="mySlides fade">
+                        <div class="numbertext"></div>
+                        <img class="image" src="./assets/images/home-image-one.jpg">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext"></div>
+                        <img class="image" src="./assets/images/home-image-two.jpg">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext"></div>
+                        <img class="image" src="./assets/images/home-image-three.jpg">
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+
+                <div class="slideshow-container mobile">
+                    <div class="mySlides-mobile fade">
+                        <div class="numbertext"></div>
+                        <img class="image" src="./assets/images/home-image-one-mobile.jpg">
+                    </div>
+
+                    <div class="mySlides-mobile fade">
+                        <div class="numbertext"></div>
+                        <img class="image" src="./assets/images/home-image-two-mobile.jpg">
+                    </div>
+
+                    <div class="mySlides-mobile fade">
+                        <div class="numbertext"></div>
+                        <img class="image" src="./assets/images/home-image-three-mobile.jpg">
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br>
+
+                <div class="dots-wrapper">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+
+                <div class="text-wrapper">
+                    <h1 class="subtitle">
+                        Conheça as últimas oportunidades de voluntariado
+                    </h1>
+                    <div class="description">
+                       Clique em ver mais para conhecer a lista de oportunidades das ONGs e se voluntariar.
+                    </div>
+                </div>
+
+                <div class="tasks section">
+                    <div class="tasks-wrapper" id="task-wrapper">
+                </div>
+                    
+                </div>
+
+                <div class="see-more-button">
+                    <div class="more-button-wrapper">
+                        <a href="./pages/pagina-de-demandas/pagina-de-demandas.html" class="more-button">VER MAIS</a> 
+                    </div>
+                </div>
+                
+                <div class="bottomContent">
+                    <div class="bottom-wrapper">
+                        <div>
+                            <h2 class="bottomTitle">
+                                Saiba como se voluntariar
+                            </h2>
+                        </div>
+                        <div>
+                            <p class="bottomText">
+                                Descubra diversas formas de fazer a diferença em sua comunidade. No nosso site Conecta você
+                                tem a chance de participar de projetos significativos, do seu interesse. Transforme vidas,
+                                desenvolva suas habilidades e crie laços duradouros. Junte-se a nós e contribua para um
+                                mundo mais unido e solidário. Inspire-se, atue e transforme.
+                            </p>
+                        </div>
+                        <div class="start-button">
+                            <div class="buttonBottom">
+                                <a href="./pages/como-comecar/como-comecar.html" class="bottom-button-text">COMO COMEÇAR</a>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div>
+                        <img class="imageBottom" src="./assets/images/team-working.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="myModal" class="modal">
+            <div class="modal-wrapper">
+                    <div class="modal-text">
+                            <div class="modal-header">
+                                    <img class="image-modal" src="./assets/icons/NGO.png" alt="Ajuda">
+                                    <p class="modal-title">VAGA DE VOLUNTARIADO</p>
+                                    <div class="close">&times;</div>
+                            </div>
+                            <div class="job-title"></div>
+                            <div class="NGO"></div>
+                            <div class="modal-content">
+                                    <div>
+                                            <h1 class="text-tiltle">Descrição</h1>
+                                            <div class="text"></div>
+                                    </div>
+                                    <div>
+                                            <h1 class="text-tiltle">Localização</h1>
+                                            <div class="city"></div>
+                                            <p class="address"></p>
+                                    </div>
+                            </div>
+                    </div>
+            </div>
+        </div>
+
+        <footer-component></footer-component>
+    </div>
+    
+    <script src="./js/modal.js"></script>
+    <script src="./js/slide.js"></script>
+</body>
+
+</html>
