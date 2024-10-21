@@ -10,6 +10,10 @@
 
 ![Persona 3](assets/design/persona-bianca-guedes.jpg)
 
+### Persona 4: Ricardo Almeida
+
+![Persona 4](assets/design/persona-ricardo-almeida.jpg)
+
 ## 4.2 Mapa de Empatia
 
 ### Mapa de Empatia 1: Maria Silva
