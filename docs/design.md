@@ -8,11 +8,11 @@
 
 ### Persona 3: Bianca Guedes
 
-![Persona 3](assets/design/persona-bianca-guedes.jpg)
+![Persona 3](assets/design/persona_bianca-guedes.jpg)
 
 ### Persona 4: Ricardo Almeida
 
-![Persona 4](assets/design/persona-ricardo-almeida.jpg)
+![Persona 4](assets/design/persona_ricardo-almeida.jpg)
 
 ## 4.2 Mapa de Empatia
 
