@@ -72,7 +72,7 @@ Objetivo
 
 ### Por que ser voluntário
 
-![Por que ser voluntário](assets/design/web/sobre-o-voluntariado.png)
+![Por que ser voluntário](assets/design/web//por-que-ser-voluntario.png)
 
 #### Objetivo:
 
