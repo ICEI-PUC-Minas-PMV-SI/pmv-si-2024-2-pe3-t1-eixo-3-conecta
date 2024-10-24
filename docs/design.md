@@ -6,19 +6,27 @@
 
 ![Persona 1](assets/design/persona_maria-silva.jpg)
 
+### Persona 2: Daniel Souza
+
+![Persona 2](assets/design/persona_daniel-souza.jpg)
+
 ### Persona 3: Bianca Guedes
 
-![Persona 3](assets/design/persona-bianca-guedes.jpg)
+![Persona 3](assets/design/persona_bianca-guedes.jpg)
 
 ## 4.2 Mapa de Empatia
 
 ### Mapa de Empatia 1: Maria Silva
 
-![Mapa de Empatia 1](assets/design/mapa-de-empatia-maria-silva.png)
+![Mapa de Empatia 1](assets/design/mapa-de-empatia_maria-silva.png)
+
+### Mapa de Empatia 2: Daniel Souza
+
+![Mapa de Empatia 2](assets/design/mapa-de-empatia_daniel-souza.png)
 
 ### Mapa de Empatia 3: Bianca Guedes
 
-![Mapa de Empatia 3](assets/design/mapa-de-empatia-bianca-guedes.png)
+![Mapa de Empatia 3](assets/design/mapa-de-empatia_bianca-guedes.png)
 
 ## 4.3 Protótipos das Interfaces
 
