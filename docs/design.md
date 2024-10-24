@@ -150,7 +150,7 @@ A página de cadastramento das ONGs tem o objetivo de permitir que as ONGs reali
 
 #### Objetivo:
 
-O objetivo da página de login é possibilitar que os usuários (ONGs e voluntários) acessem o sistema. 
+O objetivo da página de login é possibilitar que os usuários (ONGs e voluntários) acessem o sistema.
 
 #### Leis de Gestalt aplicadas:
 
