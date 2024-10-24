@@ -34,80 +34,109 @@ A Landing Page foi projetada para reunir todas as funcionalidades do projeto, ap
 
 #### Leis de Gestalt aplicadas:
 
-- Lei da Semelhança: utilizada na seção de cards, onde os elementos compartilham cores, formas e fontes semelhantes;
+- Lei da Semelhança: Aplicada na seção de cards, onde os elementos compartilham cores, formas e fontes semelhantes;
 
-- Lei da Proximidade: presente tanto na seção de cards quanto na seção de imagens. Os elementos relacionados são agrupados de forma a criar uma conexão visual;
+- Lei da Proximidade: Presente tanto na seção de cards quanto na seção de imagens. Os elementos relacionados são agrupados de forma a criar uma conexão visual;
 
-- Lei da Continuidade: a página apresenta um fluxo vertical claro, guiando o olhar do usuário de uma seção para outra;
+- Lei da Continuidade: A página apresenta um fluxo vertical claro, guiando o olhar do usuário de uma seção para outra;
 
-- Lei da Unidade: todos os elementos da tela, como cabeçalho, seções e rodapé, seguem uma mesma estilização, proporcionando uma aparência coesa;
+- Lei da Unidade: Todos os elementos da tela, como cabeçalho, seções e rodapé, seguem uma estilização semelhante, proporcionando uma aparência coesa;
 
-- Lei da Unificação: o design geral da página transmite uma sensação de harmonia, onde cada elemento visual se complementa e colabora para uma mensagem clara.
+- Lei da Unificação: O design geral da página transmite uma sensação de harmonia, onde cada elemento visual se complementa e colabora para uma mensagem clara.
 
-### Como começar?
+- Lei da Segregação: Embora as seções compartilhem estilizações semelhantes, o design garante que cada seção seja visualmente distinta, permitindo ao usuário diferenciar claramente entre os blocos de conteúdo.
+
+### Página de "Como começar?"
 
 ![Como Começar](assets/design/web/como-comecar.png)
 
 #### Objetivo:
 
-Objetivo
+A página "Como Começar?" foi projetada para orientar os usuários do sistema de maneira clara e objetiva, oferecendo um guia passo a passo para iniciar suas atividades. O conteúdo é segmentado em duas visões distintas: a do Voluntário e a do Representante da ONG, garantindo que cada perfil de usuário receba informações específicas e adequadas às suas necessidades para uma navegação mais intuitiva e eficiente no sistema.
 
 #### Leis de Gestalt aplicadas:
 
-- ...
-- ...
+- Lei de Semelhança: Aplicada na seção de guia, onde mesmo sendo dois tipos de usuários, os elementos compartilham fontes e cores;
 
-### Sobre o Voluntariado
+- Lei da Proximidade: Presente tanto na seção de títulos quanto na seção de guias. Os elementos relacionados são agrupados de forma a criar uma conexão visual;
+
+- Lei da Continuidade: A página segue um fluxo vertical intuitivo, guiando o olhar do usuário de uma seção para a outra de maneira suave e natural, sem interrupções visuais, garantindo uma experiência de leitura agradável.
+
+- Lei da Unidade: Todos os elementos da tela, como cabeçalho, seções e rodapé, seguem uma estilização semelhante, proporcionando uma aparência coesa;
+
+- Lei da Unificação: O design geral da página transmite uma sensação de harmonia, onde cada elemento visual se complementa e colabora para uma mensagem clara.
+
+### Página "Sobre o Voluntariado"
 
 ![Sobre o Voluntariado](assets/design/web/sobre-o-voluntariado.png)
 
 #### Objetivo:
 
-Objetivo
+A página "Sobre o Voluntariado" foi desenvolvida para fornecer aos voluntários uma compreensão clara e objetiva sobre o papel e a importância de suas ações. Ela destaca o impacto positivo que o voluntariado pode gerar tanto na comunidade quanto na vida pessoal de quem se envolve, inspirando o voluntário a reconhecer o valor de sua contribuição e os benefícios transformadores que pode vivenciar ao participar do programa.
 
 #### Leis de Gestalt aplicadas:
 
-- ...
-- ...
+- Lei da Continuidade: A página segue um fluxo vertical intuitivo, guiando o olhar do usuário de uma seção para a outra de maneira suave e natural, sem interrupções visuais, garantindo uma experiência de leitura agradável.
 
-### Por que ser voluntário
+- Lei da Unidade: Todos os elementos da tela, como cabeçalho, seções e rodapé, seguem uma estilização semelhante, proporcionando uma aparência coesa;
+
+- Lei da Unificação: O design geral da página transmite uma sensação de harmonia, onde cada elemento visual se complementa e colabora para uma mensagem clara.
+
+### Página "Por que ser voluntário?"
 
 ![Por que ser voluntário](assets/design/web//por-que-ser-voluntario.png)
 
 #### Objetivo:
 
-Objetivo
+A página "Por que ser voluntário?" foi criada para oferecer aos voluntários uma visão clara e objetiva sobre como suas habilidades podem ser aplicadas para gerar impacto positivo na sociedade. Além disso, ela destaca os benefícios que o voluntariado traz para a vida profissional e pessoal, mostrando como essa prática pode desenvolver competências, ampliar redes de contato e promover o crescimento pessoal e profissional dos voluntários.
 
 #### Leis de Gestalt aplicadas:
 
-- ...
-- ...
+- Lei da Continuidade: A página segue um fluxo vertical intuitivo, guiando o olhar do usuário de uma seção para a outra de maneira suave e natural, sem interrupções visuais, garantindo uma experiência de leitura agradável.
 
-### Perguntas Frequentes
+- Lei da Unidade: Todos os elementos da tela, como cabeçalho, seções e rodapé, seguem uma estilização semelhante, proporcionando uma aparência coesa;
+
+- Lei da Unificação: O design geral da página transmite uma sensação de harmonia, onde cada elemento visual se complementa e colabora para uma mensagem clara.
+
+### Página de "Perguntas Frequentes"
 
 ![Perguntas Frequentes](assets/design/web/perguntas-frequentes.png)
 
 #### Objetivo:
 
-Objetivo
+A página "Perguntas Frequentes" foi desenvolvida para fornecer aos usuários um conjunto de informações essenciais de forma clara e direta, facilitando o acesso às respostas para as dúvidas mais comuns relacionadas ao projeto. Seu objetivo é otimizar a experiência do usuário, permitindo que ele encontre rapidamente soluções para suas questões sem precisar de suporte adicional.
 
 #### Leis de Gestalt aplicadas:
 
-- ...
-- ...
+- Lei da Semelhança: Aplicada na seção de perguntas, onde os elementos compartilham uma aparência consistente, indicando que todas as perguntas podem ser expandidas para revelar as respostas, facilitando a identificação e interação;
 
-### Histórias de Sucesso
+- Lei da Proximidade: Utilizada para agrupar perguntas relacionadas, posicionando-as próximas umas das outras de forma a criar uma conexão visual;
+
+- Lei da Continuidade: A página segue um fluxo vertical intuitivo, guiando o olhar do usuário de uma seção para a outra de maneira suave e natural, sem interrupções visuais, garantindo uma experiência de leitura agradável.
+
+- Lei da Unidade: Todos os elementos da tela, como cabeçalho, seções e rodapé, seguem uma estilização semelhante, proporcionando uma aparência coesa;
+
+- Lei da Unificação: O design geral da página transmite uma sensação de harmonia, onde cada elemento visual se complementa e colabora para uma mensagem clara.
+
+### Página de "Histórias de Sucesso"
 
 ![Histórias de Sucesso](assets/design/web/historias-de-sucesso.png)
 
 #### Objetivo:
 
-Objetivo
+A página "Histórias de Sucesso" foi criada para inspirar e motivar os usuários, apresentando histórias reais de voluntários e ONGs que utilizaram a aplicação com sucesso. O objetivo é incentivar voluntários a disponibilizarem suas habilidades para ONGs, enquanto também encoraja as ONGs a se abrirem para novos voluntários, especialmente no campo da tecnologia, promovendo colaboração e impacto social.
 
 #### Leis de Gestalt aplicadas:
 
-- ...
-- ...
+- Lei da Semelhança: Aplicada na seção de histórias, onde os elementos compartilham uma aparência consistente, facilitando a leitura e compreensão;
+
+- Lei da Proximidade: Utilizada para agrupar as imagens e as respectivas histórias de cada voluntário ou representante de ONG;
+
+- Lei da Continuidade: A página segue um fluxo vertical intuitivo, guiando o olhar do usuário de uma seção para a outra de maneira suave e natural, sem interrupções visuais, garantindo uma experiência de leitura agradável.
+
+- Lei da Unidade: Todos os elementos da tela, como cabeçalho, seções e rodapé, seguem uma estilização semelhante, proporcionando uma aparência coesa;
+
+- Lei da Unificação: O design geral da página transmite uma sensação de harmonia, onde cada elemento visual se complementa e colabora para uma mensagem clara.
 
 ### Página de oportunidades
 
