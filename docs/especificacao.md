@@ -90,8 +90,7 @@ Como observado no diagrama de casos de uso da Figura 1, o representante da ONG p
 
 #### Figura 1: Diagrama de Casos de Uso do Sistema.
 
-![dcu](./assets//diagrama-de-casos-de-uso-conecta.png)
- 
+![dcu](./assets/design/diagramas/diagrama-de-casos-de-uso-conecta.png)
 ### 3.4.2 Descrições de Casos de Uso
 
 #### Gerenciar o acesso das ONGs (CSU01)
@@ -606,7 +605,7 @@ A classe Demanda contém atributos que descrevem o nome, a descrição, o status
 
 #### Figura 2: Diagrama de Classes do Sistema.
 
-![dcu](assets/diagrama-de-classe-conecta.png)
+![dcu](assets/design/diagramas/diagrama-de-classe-conecta.png)
 
 ### 3.4.4 Descrições das Classes 
 
