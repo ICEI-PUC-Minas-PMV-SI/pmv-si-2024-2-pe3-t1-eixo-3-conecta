@@ -14,6 +14,10 @@
 
 ![Persona 3](assets/design/persona_bianca-guedes.jpg)
 
+### Persona 4: Ricardo Almeida
+
+![Persona 4](assets/design/persona_ricardo-almeida.jpg)
+
 ## 4.2 Mapa de Empatia
 
 ### Mapa de Empatia 1: Maria Silva
@@ -27,6 +31,10 @@
 ### Mapa de Empatia 3: Bianca Guedes
 
 ![Mapa de Empatia 3](assets/design/mapa-de-empatia_bianca-guedes.png)
+
+### Mapa de Empatia 4: Ricardo Almeida
+
+![Mapa de Empatia 4](assets/design/mapa-de-empatia-ricardo-almeida.png)
 
 ## 4.3 Protótipos das Interfaces
 
