@@ -2,39 +2,39 @@
 
 ## 4.1 Personas
 
-### Persona 1: Maria Silva
+### Persona 1: Daniel Souza
 
-![Persona 1](assets/personas/persona_maria-silva.jpg)
+![Persona 1](assets/personas/persona_daniel-souza.jpg)
 
-### Persona 2: Daniel Souza
+### Persona 2: Bianca Guedes
 
-![Persona 2](assets/personas/persona_daniel-souza.jpg)
+![Persona 2](assets/personas/persona_bianca-guedes.jpg)
 
-### Persona 3: Bianca Guedes
+### Persona 3: Maria Silva
 
-![Persona 3](assets/personas/persona_bianca-guedes.jpg)
+![Persona 3](assets/personas/persona_maria-silva.jpg)
 
 ### Persona 4: Ricardo Almeida
 
-![Persona 4](assets/design/persona_ricardo-almeida.jpg)
+![Persona 4](assets/personas/persona_ricardo-almeida.jpg)
 
 ## 4.2 Mapa de Empatia
 
-### Mapa de Empatia 1: Maria Silva
+### Mapa de Empatia 1: Daniel Souza
 
-![Mapa de Empatia 1](assets/mapas-de-empatia/mapa-de-empatia_maria-silva.png)
+![Mapa de Empatia 1](assets/mapas-de-empatia/mapa-de-empatia_daniel-souza.png)
 
-### Mapa de Empatia 2: Daniel Souza
+### Mapa de Empatia 2: Bianca Guedes
 
-![Mapa de Empatia 2](assets/mapas-de-empatia/mapa-de-empatia_daniel-souza.png)
+![Mapa de Empatia 2](assets/mapas-de-empatia/mapa-de-empatia_bianca-guedes.png)
 
-### Mapa de Empatia 3: Bianca Guedes
+### Mapa de Empatia 3: Maria Silva
 
-![Mapa de Empatia 3](assets/mapas-de-empatia/mapa-de-empatia_bianca-guedes.png)
+![Mapa de Empatia 3](assets/mapas-de-empatia/mapa-de-empatia_maria-silva.png)
 
 ### Mapa de Empatia 4: Ricardo Almeida
 
-![Mapa de Empatia 4](assets/design/mapa-de-empatia-ricardo-almeida.png)
+![Mapa de Empatia 4](assets/mapas-de-empatia/mapa-de-empatia_ricardo-almeida.png)
 
 ## 4.3 Protótipos das Interfaces
 
