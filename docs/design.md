@@ -46,6 +46,20 @@ A Landing Page foi projetada para reunir todas as funcionalidades do projeto, ap
 
 - Lei da Segregação: Embora as seções compartilhem estilizações semelhantes, o design garante que cada seção seja visualmente distinta, permitindo ao usuário diferenciar claramente entre os blocos de conteúdo.
 
+#### Leis de Ouro aplicadas:
+
+- Perseguir a Consistência: O design mantém uma estilização consistente ao longo de toda a página, seguindo uma estrutura visual unificada que facilita a identificação e navegação entre os elementos.
+
+- Fornecer Atalhos: Na seção de cards, o usuário encontra uma forma rápida de explorar as oportunidades de voluntariado, podendo acessar diretamente as informações detalhadas ou ser redirecionado para outras páginas.
+
+- Marcar o Final dos Diálogos: A página apresenta um fluxo vertical que guia o usuário de seção em seção até o rodapé, onde o conteúdo é encerrado de forma clara e concisa.
+
+- Fornecer Prevenção de Erros e Forma Simples de Corrigi-los: A organização cuidadosa e o design de cada seção evitam interpretações ambíguas, reduzindo a probabilidade de erros de navegação ou compreensão.
+
+- Fornecer Controle de Iniciativa do Usuário: A disposição dos conteúdos e a aplicação da Lei da Proximidade permitem que o usuário escolha seu próprio percurso dentro da página.
+
+- Reduzir a Carga de Memória de Trabalho: A estruturação visual e a aplicação das Leis de Gestalt ajudam o usuário a reduzir a carga cognitiva, uma vez que o design segue padrões e agrupamentos familiares. A Lei da Semelhança e a Lei da Continuidade permitem que o usuário reconheça facilmente onde está e retome a navegação de forma intuitiva, sem precisar memorizar a estrutura da página.
+
 ### Página de "Como começar?"
 
 ![Como Começar](assets/design/web/como-comecar.png)
@@ -148,13 +162,13 @@ O objetivo da página de oportunidades é apresentar para os usuários todos os 
 
 #### Leis de Gestalt aplicadas:
 
-- Lei da Proximidade: os cartões com as oportunidades estão próximos uns dos outros, o que indica que eles pertencem ao mesmo grupo de informações. A proximidade faz com que os elementos sejam percebidos como relacionados;
+- Lei da Proximidade: Os cartões com as oportunidades estão próximos uns dos outros, o que indica que eles pertencem ao mesmo grupo de informações. A proximidade faz com que os elementos sejam percebidos como relacionados;
 
-- Lei da Semelhança: todos os cartões têm o mesmo formato, cor de fundo e estrutura. Criando um sentido de unidade e facilitando o reconhecimento de que todas essas caixas representam diferentes oportunidades;
+- Lei da Semelhança: Todos os cartões têm o mesmo formato, cor de fundo e estrutura. Criando um sentido de unidade e facilitando o reconhecimento de que todas essas caixas representam diferentes oportunidades;
 
-- Lei da Continuidade: o layout segue uma organização em grade, permitindo que os olhos sigam naturalmente a sequência de informações de cima para baixo e da esquerda para a direita, o que facilita a leitura e a navegação;
+- Lei da Continuidade: O layout segue uma organização em grade, permitindo que os olhos sigam naturalmente a sequência de informações de cima para baixo e da esquerda para a direita, o que facilita a leitura e a navegação;
 
-- Lei do Fechamento: a identidade visual do site, com ícones e formas simples, sugere formas completas, mesmo que algumas estejam apenas parcialmente representadas, como o logotipo ou ícones das ONGs.
+- Lei do Fechamento: A identidade visual do site, com ícones e formas simples, sugere formas completas, mesmo que algumas estejam apenas parcialmente representadas, como o logotipo ou ícones das ONGs.
 
 ### Cadastrar ONG
 
@@ -183,13 +197,13 @@ O objetivo da página de login é possibilitar que os usuários (ONGs e voluntá
 
 #### Leis de Gestalt aplicadas:
 
-- Lei da Proximidade: os campos de e-mail e senha estão próximos um do outro, indicando que são relacionados e parte do mesmo processo de login;
+- Lei da Proximidade: Os campos de e-mail e senha estão próximos um do outro, indicando que são relacionados e parte do mesmo processo de login;
 
-- Lei da Similaridade: os links no topo e no rodapé da página têm um estilo visual semelhante, o que ajuda a agrupá-los como elementos de navegação;
+- Lei da Similaridade: Os links no topo e no rodapé da página têm um estilo visual semelhante, o que ajuda a agrupá-los como elementos de navegação;
 
-- Lei do Fechamento: mesmo que os campos de entrada não tenham bordas completas, nossa mente os percebe como caixas completas devido à disposição dos elementos;
+- Lei do Fechamento: Mesmo que os campos de entrada não tenham bordas completas, nossa mente os percebe como caixas completas devido à disposição dos elementos;
 
-- Lei da Continuidade: a disposição linear dos campos de entrada e botões segue uma linha contínua, facilitando a navegação visual.
+- Lei da Continuidade: A disposição linear dos campos de entrada e botões segue uma linha contínua, facilitando a navegação visual.
 
 ### Página da ONG
 
@@ -201,13 +215,13 @@ Objetivo
 
 #### Leis de Gestalt aplicadas:
 
-- Lei da Proximidade: os elementos que estão próximos uns dos outros, como os textos e seus respectivos títulos, são percebidos como grupos relacionados;
+- Lei da Proximidade: Os elementos que estão próximos uns dos outros, como os textos e seus respectivos títulos, são percebidos como grupos relacionados;
 
-- Lei da Similaridade: os textos e títulos que compartilham o mesmo estilo e formatação são vistos como parte de um mesmo grupo ou categoria;
+- Lei da Similaridade: Os textos e títulos que compartilham o mesmo estilo e formatação são vistos como parte de um mesmo grupo ou categoria;
 
-- Lei da Continuidade: a disposição linear dos textos e títulos cria uma sensação de continuidade, guiando o olhar do usuário de forma fluida pela página;
+- Lei da Continuidade: A disposição linear dos textos e títulos cria uma sensação de continuidade, guiando o olhar do usuário de forma fluida pela página;
 
-- Lei do Fechamento: mesmo que alguns elementos não estejam completamente delineados, nossa mente tende a completar as formas, percebendo-os como unidades completas.
+- Lei do Fechamento: Mesmo que alguns elementos não estejam completamente delineados, nossa mente tende a completar as formas, percebendo-os como unidades completas.
 
 ### Cadastrar Demanda
 
