@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cadastrar demanda</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="cadastrar-demanda.css">
+    <link rel="shortcut icon" href="../../assets/icons/favicon.ico" type="image/x-icon">
+    <script type="module" src="../../components/header/header.js"></script>
+    <script type="module" src="../../components/footer/footer.js"></script>
+    <script type="module" src="../../js/constants.js"></script>
+    <script type="module" src="cadastrar-demanda.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="page-overlay"></div>
+        <header>
+            <header-component action="toggleOverlay"></header-component>
+        </header>
+
+        <main class="content">
+
+            <h1 class="title" id="cadastrar-demanda">cadastrar demanda</h1>
+
+            <div class="section-wrapper">
+            <form id="form" method="post">
+
+                <div class="row">
+                    <div class="col-25">
+                        <label for="nome">Nome da demanda</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="nome" name="nome-demanda"  maxlength="30">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label>Tipo da demanda</label>
+                    </div>
+                    <div class="custom-radio">
+                        <input type="radio" id="presencial" name="tipo-demanda" value="presencial" checked>
+                        <label for="presencial">Presencial</label>
+
+                        <input type="radio" id="remoto" name="tipo-demanda" value="remoto">
+                        <label for="remoto">Remoto</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="descricao">Descreva sua necessidade</label>
+                    </div>
+                    <div class="col-75">
+                        <textarea id="descricao" name="descricao" maxlength="600" oninput="validateTextarea()"></textarea>
+                    </div>
+                </div>
+                <div class="row-button">
+                    <div><input id="cadastrar" type="submit" name="cadastrar" value="Cadastrar"></div>
+                    <div><input id="cancelar" type="submit" name="cancelar" value="Cancelar" onclick="if(confirm('Deseja cancelar o cadastro?')) window.history.go(-1); return false;"></div>
+                </div>
+            </form>
+             </div>
+        </main>
+        <footer-component></footer-component>   
+    </div>
+    <script src="../../js/index.js"></script>
+</body>
+
+</html>
