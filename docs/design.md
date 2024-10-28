@@ -42,15 +42,15 @@ A Landing Page foi projetada para reunir todas as funcionalidades do projeto, ap
 
 #### Leis de Gestalt aplicadas:
 
-- Lei da Semelhança: aplicada na seção de cards, em que os elementos compartilham cores, formas e fontes semelhantes;
+- Lei da Semelhança: Aplicada na seção de cards, em que os elementos compartilham cores, formas e fontes semelhantes;
 
-- Lei da Proximidade: presente tanto na seção de cards quanto na seção de imagens. Os elementos relacionados são agrupados de forma a criar uma conexão visual;
+- Lei da Proximidade: Presente tanto na seção de cards quanto na seção de imagens. Os elementos relacionados são agrupados de forma a criar uma conexão visual;
 
-- Lei da Continuidade: a página apresenta um fluxo vertical claro, guiando o olhar do usuário de uma seção para outra;
+- Lei da Continuidade: A página apresenta um fluxo vertical claro, guiando o olhar do usuário de uma seção para outra;
 
-- Lei da Unidade: todos os elementos da tela, como cabeçalho, seções e rodapé, seguem uma estilização semelhante, proporcionando uma aparência coesa;
+- Lei da Unidade: Todos os elementos da tela, como cabeçalho, seções e rodapé, seguem uma estilização semelhante, proporcionando uma aparência coesa;
 
-- Lei da Unificação: o design geral da página transmite uma sensação de harmonia, em que cada elemento visual se complementa e colabora para uma mensagem clara.
+- Lei da Unificação: O design geral da página transmite uma sensação de harmonia, em que cada elemento visual se complementa e colabora para uma mensagem clara.
 
 - Lei da Segregação: Embora as seções compartilhem estilizações semelhantes, o design garante que cada seção seja visualmente distinta, permitindo ao usuário diferenciar claramente entre os blocos de conteúdo.
 
@@ -78,15 +78,15 @@ A página "Como Começar?" foi projetada para orientar os usuários do sistema d
 
 #### Leis de Gestalt aplicadas:
 
-- Lei de Semelhança: aplicada na seção de guia, em que mesmo sendo dois tipos de usuários, os elementos compartilham fontes e cores;
+- Lei de Semelhança: Aplicada na seção de guia, em que mesmo sendo dois tipos de usuários, os elementos compartilham fontes e cores;
 
-- Lei da Proximidade: presente tanto na seção de títulos quanto na seção de guias. Os elementos relacionados são agrupados de forma a criar uma conexão visual;
+- Lei da Proximidade: Presente tanto na seção de títulos quanto na seção de guias. Os elementos relacionados são agrupados de forma a criar uma conexão visual;
 
-- Lei da Continuidade: a página segue um fluxo vertical intuitivo, guiando o olhar do usuário de uma seção para a outra de maneira suave e natural, sem interrupções visuais, garantindo uma experiência de leitura agradável.
+- Lei da Continuidade: A página segue um fluxo vertical intuitivo, guiando o olhar do usuário de uma seção para a outra de maneira suave e natural, sem interrupções visuais, garantindo uma experiência de leitura agradável.
 
-- Lei da Unidade: todos os elementos da tela, como cabeçalho, seções e rodapé, seguem uma estilização semelhante, proporcionando uma aparência coesa;
+- Lei da Unidade: Todos os elementos da tela, como cabeçalho, seções e rodapé, seguem uma estilização semelhante, proporcionando uma aparência coesa;
 
-- Lei da Unificação: o design geral da página transmite uma sensação de harmonia, em que cada elemento visual se complementa e colabora para uma mensagem clara.
+- Lei da Unificação: O design geral da página transmite uma sensação de harmonia, em que cada elemento visual se complementa e colabora para uma mensagem clara.
 
 ### Página "Sobre o Voluntariado"
 
@@ -98,11 +98,11 @@ A página "Sobre o Voluntariado" foi desenvolvida para fornecer aos voluntários
 
 #### Leis de Gestalt aplicadas:
 
-- Lei da Continuidade: a página segue um fluxo vertical intuitivo, guiando o olhar do usuário de uma seção para a outra de maneira suave e natural, sem interrupções visuais, garantindo uma experiência de leitura agradável;
+- Lei da Continuidade: A página segue um fluxo vertical intuitivo, guiando o olhar do usuário de uma seção para a outra de maneira suave e natural, sem interrupções visuais, garantindo uma experiência de leitura agradável;
 
-- Lei da Unidade: todos os elementos da tela, como cabeçalho, seções e rodapé, seguem uma estilização semelhante, proporcionando uma aparência coesa;
+- Lei da Unidade: Todos os elementos da tela, como cabeçalho, seções e rodapé, seguem uma estilização semelhante, proporcionando uma aparência coesa;
 
-- Lei da Unificação: o design geral da página transmite uma sensação de harmonia, em que cada elemento visual se complementa e colabora para uma mensagem clara.
+- Lei da Unificação: O design geral da página transmite uma sensação de harmonia, em que cada elemento visual se complementa e colabora para uma mensagem clara.
 
 ### Página "Porque ser voluntário?"
 
@@ -114,11 +114,11 @@ A página "Porque ser voluntário?" foi criada para oferecer aos voluntários um
 
 #### Leis de Gestalt aplicadas:
 
-- Lei da Continuidade: a página segue um fluxo vertical intuitivo, guiando o olhar do usuário de uma seção para a outra de maneira suave e natural, sem interrupções visuais, garantindo uma experiência de leitura agradável;
+- Lei da Continuidade: A página segue um fluxo vertical intuitivo, guiando o olhar do usuário de uma seção para a outra de maneira suave e natural, sem interrupções visuais, garantindo uma experiência de leitura agradável;
 
-- Lei da Unidade: todos os elementos da tela, como cabeçalho, seções e rodapé, seguem uma estilização semelhante, proporcionando uma aparência coesa;
+- Lei da Unidade: Todos os elementos da tela, como cabeçalho, seções e rodapé, seguem uma estilização semelhante, proporcionando uma aparência coesa;
 
-- Lei da Unificação: o design geral da página transmite uma sensação de harmonia, em que cada elemento visual se complementa e colabora para uma mensagem clara.
+- Lei da Unificação: O design geral da página transmite uma sensação de harmonia, em que cada elemento visual se complementa e colabora para uma mensagem clara.
 
 ### Página de "Perguntas Frequentes"
 
@@ -130,15 +130,15 @@ A página "Perguntas Frequentes" foi desenvolvida para fornecer aos usuários um
 
 #### Leis de Gestalt aplicadas:
 
-- Lei da Semelhança: aplicada na seção de perguntas, em que os elementos compartilham uma aparência consistente, indicando que todas as perguntas podem ser expandidas para revelar as respostas, facilitando a identificação e interação;
+- Lei da Semelhança: Aplicada na seção de perguntas, em que os elementos compartilham uma aparência consistente, indicando que todas as perguntas podem ser expandidas para revelar as respostas, facilitando a identificação e interação;
 
-- Lei da Proximidade: utilizada para agrupar perguntas relacionadas, posicionando-as próximas umas das outras de forma a criar uma conexão visual;
+- Lei da Proximidade: Utilizada para agrupar perguntas relacionadas, posicionando-as próximas umas das outras de forma a criar uma conexão visual;
 
-- Lei da Continuidade: a página segue um fluxo vertical intuitivo, guiando o olhar do usuário de uma seção para a outra de maneira suave e natural, sem interrupções visuais, garantindo uma experiência de leitura agradável;
+- Lei da Continuidade: A página segue um fluxo vertical intuitivo, guiando o olhar do usuário de uma seção para a outra de maneira suave e natural, sem interrupções visuais, garantindo uma experiência de leitura agradável;
 
-- Lei da Unidade: todos os elementos da tela, como cabeçalho, seções e rodapé, seguem uma estilização semelhante, proporcionando uma aparência coesa;
+- Lei da Unidade: Todos os elementos da tela, como cabeçalho, seções e rodapé, seguem uma estilização semelhante, proporcionando uma aparência coesa;
 
-- Lei da Unificação: o design geral da página transmite uma sensação de harmonia, em que cada elemento visual se complementa e colabora para uma mensagem clara.
+- Lei da Unificação: O design geral da página transmite uma sensação de harmonia, em que cada elemento visual se complementa e colabora para uma mensagem clara.
 
 ### Página de "Histórias de Sucesso"
 
@@ -150,15 +150,15 @@ A página "Histórias de Sucesso" foi criada para inspirar e motivar os usuário
 
 #### Leis de Gestalt aplicadas:
 
-- Lei da Semelhança: aplicada na seção de histórias, em que os elementos compartilham uma aparência consistente, facilitando a leitura e compreensão;
+- Lei da Semelhança: Aplicada na seção de histórias, em que os elementos compartilham uma aparência consistente, facilitando a leitura e compreensão;
 
-- Lei da Proximidade: utilizada para agrupar as imagens e as respectivas histórias de cada voluntário ou representante de ONG;
+- Lei da Proximidade: Utilizada para agrupar as imagens e as respectivas histórias de cada voluntário ou representante de ONG;
 
-- Lei da Continuidade: a página segue um fluxo vertical intuitivo, guiando o olhar do usuário de uma seção para a outra de maneira suave e natural, sem interrupções visuais, garantindo uma experiência de leitura agradável;
+- Lei da Continuidade: A página segue um fluxo vertical intuitivo, guiando o olhar do usuário de uma seção para a outra de maneira suave e natural, sem interrupções visuais, garantindo uma experiência de leitura agradável;
 
-- Lei da Unidade: todos os elementos da tela, como cabeçalho, seções e rodapé, seguem uma estilização semelhante, proporcionando uma aparência coesa;
+- Lei da Unidade: Todos os elementos da tela, como cabeçalho, seções e rodapé, seguem uma estilização semelhante, proporcionando uma aparência coesa;
 
-- Lei da Unificação: o design geral da página transmite uma sensação de harmonia, em que cada elemento visual se complementa e colabora para uma mensagem clara.
+- Lei da Unificação: O design geral da página transmite uma sensação de harmonia, em que cada elemento visual se complementa e colabora para uma mensagem clara.
 
 ### Página de oportunidades
 
@@ -189,11 +189,11 @@ A página de cadastramento das ONGs tem o objetivo de permitir que as ONGs reali
 
 #### Leis de Gestalt aplicadas:
 
-- Lei da Proximidade: os campos de entrada relacionados como nome, e-mail, telefone estão organizados próximos uns dos outros, formando grupos lógicos. Isso ajuda a agrupar mentalmente informações correlatas, facilitando o preenchimento do formulário;
+- Lei da Proximidade: Os campos de entrada relacionados como nome, e-mail, telefone estão organizados próximos uns dos outros, formando grupos lógicos. Isso ajuda a agrupar mentalmente informações correlatas, facilitando o preenchimento do formulário;
 
-- Lei da Similaridade: todos os campos seguem um mesmo padrão visual, com linhas e rótulos semelhantes, o que reforça a ideia de que fazem parte de um mesmo conjunto de ações;
+- Lei da Similaridade: Todos os campos seguem um mesmo padrão visual, com linhas e rótulos semelhantes, o que reforça a ideia de que fazem parte de um mesmo conjunto de ações;
 
-- Lei da Continuidade: a disposição vertical dos campos segue uma linha contínua, guiando naturalmente o olhar de cima para baixo, o que facilita a navegação por formulários longos e o processo de preenchimento.
+- Lei da Continuidade: A disposição vertical dos campos segue uma linha contínua, guiando naturalmente o olhar de cima para baixo, o que facilita a navegação por formulários longos e o processo de preenchimento.
 
 ### Login
 
@@ -241,11 +241,11 @@ A página de cadastrar demanda permite que as ONGs cadastrem os trabalhos de vol
 
 #### Leis de Gestalt aplicadas:
 
-- Lei da Proximidade: os campos de entrada e seus rótulos estão próximos uns dos outros, indicando que são relacionados e parte do mesmo formulário;
+- Lei da Proximidade: Os campos de entrada e seus rótulos estão próximos uns dos outros, indicando que são relacionados e parte do mesmo formulário;
 
-- Lei da Similaridade: os botões “Presencial” e “Remoto” têm um estilo visual semelhante, sugerindo que são opções dentro da mesma categoria;
+- Lei da Similaridade: Os botões “Presencial” e “Remoto” têm um estilo visual semelhante, sugerindo que são opções dentro da mesma categoria;
 
-- Lei da Continuidade: a disposição linear dos campos de entrada e botões cria uma sensação de continuidade, guiando o olhar do usuário de forma fluida pela página.
+- Lei da Continuidade: A disposição linear dos campos de entrada e botões cria uma sensação de continuidade, guiando o olhar do usuário de forma fluida pela página.
 
 ### Administrar Demandas
 
@@ -257,8 +257,8 @@ O objetivo da página de administrar demandas é permitir que as ONGs editem as 
 
 #### Leis de Gestalt aplicadas:
 
-- Lei da Proximidade: os elementos que estão próximos uns dos outros, como os cartões e seus respectivos botões, são percebidos como grupos relacionados;
+- Lei da Proximidade: Os elementos que estão próximos uns dos outros, como os cartões e seus respectivos botões, são percebidos como grupos relacionados;
 
-- Lei da Similaridade: os cartões têm um design semelhante, com ícones, títulos e botões que compartilham o mesmo estilo visual, agrupando-os visualmente;
+- Lei da Similaridade: Os cartões têm um design semelhante, com ícones, títulos e botões que compartilham o mesmo estilo visual, agrupando-os visualmente;
 
-- Lei da Figura-Fundo: os cartões se destacam como figuras contra o fundo branco, tornando claro quais elementos são interativos.
+- Lei da Figura-Fundo: Os cartões se destacam como figuras contra o fundo branco, tornando claro quais elementos são interativos.
