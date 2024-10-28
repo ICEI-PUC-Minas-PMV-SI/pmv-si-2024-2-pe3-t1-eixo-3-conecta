@@ -54,7 +54,7 @@ A Landing Page foi projetada para reunir todas as funcionalidades do projeto, ap
 
 - Lei da Segregação: Embora as seções compartilhem estilizações semelhantes, o design garante que cada seção seja visualmente distinta, permitindo ao usuário diferenciar claramente entre os blocos de conteúdo.
 
-#### Leis de Ouro aplicadas:
+#### Regras de Ouro aplicadas:
 
 - Perseguir a Consistência: O design mantém uma estilização consistente ao longo de toda a página, seguindo uma estrutura visual unificada que facilita a identificação e navegação entre os elementos.
 
@@ -88,6 +88,18 @@ A página "Como Começar?" foi projetada para orientar os usuários do sistema d
 
 - Lei da Unificação: O design geral da página transmite uma sensação de harmonia, em que cada elemento visual se complementa e colabora para uma mensagem clara.
 
+#### Regras de Ouro aplicadas:
+
+- Perseguir a Consistência: A página mantém um design consistente em termos de estilização. Independentemente do perfil do usuário (voluntário ou representante de ONG), todos os elementos visuais seguem uma padronização, o que facilita a familiarização e reduz o tempo de adaptação ao conteúdo.
+
+- Fornecer Atalhos: A organização do guia, com seções específicas para cada tipo de usuário, permite que o voluntário ou representante da ONG encontre rapidamente as informações mais relevantes para seu perfil.
+
+- Marcar o Final dos Diálogos: A página apresenta um fluxo vertical que guia o usuário de seção em seção até o rodapé, onde o conteúdo é encerrado de forma clara e concisa.
+
+- Fornecer Controle de Iniciativa do Usuário: A segmentação por perfil permite que o usuário escolha o conteúdo que deseja acessar de acordo com suas necessidades. Essa divisão reforça a liberdade de navegação, possibilitando que o usuário decida onde focar seu tempo e atenção.
+
+- Reduzir a Carga de Memória de Trabalho: A estruturação da página em guias distintos para voluntários e representantes de ONGs reduz a carga cognitiva, pois os usuários precisam memorizar apenas as etapas específicas ao seu perfil.
+
 ### Página "Sobre o Voluntariado"
 
 ![Sobre o Voluntariado](assets/paginas-do-sistema/sobre-o-voluntariado.png)
@@ -104,6 +116,18 @@ A página "Sobre o Voluntariado" foi desenvolvida para fornecer aos voluntários
 
 - Lei da Unificação: O design geral da página transmite uma sensação de harmonia, em que cada elemento visual se complementa e colabora para uma mensagem clara.
 
+#### Regras de Ouro aplicadas:
+
+- Perseguir a Consistência: O design mantém uma estilização consistente ao longo de toda a página, seguindo uma estrutura visual unificada que facilita a identificação e navegação entre os elementos.
+
+- Fornecer Atalhos: A organização do guia, com seções específicas para cada tipo de usuário, permite que o voluntário ou representante da ONG encontre rapidamente as informações mais relevantes para seu perfil.
+
+- Marcar o Final dos Diálogos: A página apresenta um fluxo vertical que guia o usuário de seção em seção até o rodapé, onde o conteúdo é encerrado de forma clara e concisa.
+
+- Fornecer Controle de Iniciativa do Usuário: A segmentação por perfil permite que o usuário escolha o conteúdo que deseja acessar de acordo com suas necessidades. Essa divisão reforça a liberdade de navegação, possibilitando que o usuário decida onde focar seu tempo e atenção.
+
+- Reduzir a Carga de Memória de Trabalho: A estruturação da página em guias distintos para voluntários e representantes de ONGs reduz a carga cognitiva, pois os usuários precisam memorizar apenas as etapas específicas ao seu perfil.
+
 ### Página "Porque ser voluntário?"
 
 ![Porque ser voluntário](assets/paginas-do-sistema/por-que-ser-voluntario.png)
@@ -119,6 +143,18 @@ A página "Porque ser voluntário?" foi criada para oferecer aos voluntários um
 - Lei da Unidade: Todos os elementos da tela, como cabeçalho, seções e rodapé, seguem uma estilização semelhante, proporcionando uma aparência coesa;
 
 - Lei da Unificação: O design geral da página transmite uma sensação de harmonia, em que cada elemento visual se complementa e colabora para uma mensagem clara.
+
+#### Regras de Ouro aplicadas:
+
+- Perseguir a Consistência: O design mantém uma estilização consistente ao longo de toda a página, seguindo uma estrutura visual unificada que facilita a identificação e navegação entre os elementos.
+
+- Fornecer Atalhos: A organização do guia, com seções específicas para cada tipo de usuário, permite que o voluntário ou representante da ONG encontre rapidamente as informações mais relevantes para seu perfil.
+
+- Marcar o Final dos Diálogos: A página apresenta um fluxo vertical que guia o usuário de seção em seção até o rodapé, onde o conteúdo é encerrado de forma clara e concisa.
+
+- Fornecer Controle de Iniciativa do Usuário: A segmentação por perfil permite que o usuário escolha o conteúdo que deseja acessar de acordo com suas necessidades. Essa divisão reforça a liberdade de navegação, possibilitando que o usuário decida onde focar seu tempo e atenção.
+
+- Reduzir a Carga de Memória de Trabalho: A estruturação da página em guias distintos para voluntários e representantes de ONGs reduz a carga cognitiva, pois os usuários precisam memorizar apenas as etapas específicas ao seu perfil.
 
 ### Página de "Perguntas Frequentes"
 
@@ -140,6 +176,20 @@ A página "Perguntas Frequentes" foi desenvolvida para fornecer aos usuários um
 
 - Lei da Unificação: O design geral da página transmite uma sensação de harmonia, em que cada elemento visual se complementa e colabora para uma mensagem clara.
 
+#### Regras de Ouro aplicadas:
+
+- Perseguir a Consistência: A página utiliza um layout consistente para as perguntas e respostas, mantendo a mesma estilização.
+
+- Fornecer Atalhos: A seção de perguntas é organizada de forma a funcionar como um índice de dúvidas. Cada pergunta atua como um atalho para a resposta correspondente, oferecendo uma maneira rápida de acessar informações sem necessidade de navegação extra ou busca extensiva.
+
+- Marcar o Final dos Diálogos: A página apresenta um fluxo vertical que guia o usuário de seção em seção até o rodapé, onde o conteúdo é encerrado de forma clara e concisa.
+
+- Permitir a Reversão de Ações: Cada pergunta expandida pode ser recolhida novamente com um clique, permitindo que o usuário reverta a ação e minimize a resposta, caso queira focar em outra questão ou evitar a sobrecarga visual.
+
+- Fornecer Controle de Iniciativa do Usuário: O design da página permite que o usuário escolha as perguntas de interesse, expandindo apenas as necessárias, o que oferece controle total sobre o conteúdo visualizado.
+
+- Reduzir a Carga de Memória de Trabalho: A organização das perguntas e respostas em uma estrutura de lista expandível ajuda o usuário a visualizar cada conteúdo separadamente, sem precisar reter informações de várias perguntas ao mesmo tempo.
+
 ### Página de "Histórias de Sucesso"
 
 ![Histórias de Sucesso](assets/paginas-do-sistema/historias-de-sucesso.png)
@@ -160,6 +210,18 @@ A página "Histórias de Sucesso" foi criada para inspirar e motivar os usuário
 
 - Lei da Unificação: O design geral da página transmite uma sensação de harmonia, em que cada elemento visual se complementa e colabora para uma mensagem clara.
 
+#### Regras de Ouro aplicadas:
+
+- Perseguir a Consistência: A página utiliza um layout consistente para as perguntas e respostas, mantendo a mesma estilização.
+
+- Marcar o Final dos Diálogos: A página apresenta um fluxo vertical que guia o usuário de seção em seção até o rodapé, onde o conteúdo é encerrado de forma clara e concisa.
+
+- Permitir a Reversão de Ações: Cada pergunta expandida pode ser recolhida novamente com um clique, permitindo que o usuário reverta a ação e minimize a resposta, caso queira focar em outra questão ou evitar a sobrecarga visual.
+
+- Fornecer Controle de Iniciativa do Usuário: A disposição das histórias permite que o usuário escolha quais histórias ler e em qual ordem, proporcionando uma experiência flexível e personalizada que respeita as preferências do usuário.
+
+- Reduzir a Carga de Memória de Trabalho: A página organiza as histórias de forma segmentada, permitindo que o usuário visualize uma história por vez e, assim, processar as informações de maneira mais fácil.
+
 ### Página de oportunidades
 
 ![Página de oportunidades](assets/paginas-do-sistema/pagina-de-oportunidades.png)
@@ -178,6 +240,19 @@ O objetivo da página de oportunidades é apresentar para os usuários todos os 
 
 - Lei do Fechamento: A identidade visual do site, com ícones e formas simples, sugere formas completas, mesmo que algumas estejam apenas parcialmente representadas, como o logotipo ou ícones das ONGs.
 
+#### Regras de Ouro aplicadas:
+
+Regras a serem consideradas:
+
+- Perseguir a Consistência;
+- Fornecer Atalhos;
+- Fornecer Feedbacks Informativos;
+- Marcar o Final dos Diálogos;
+- Fornecer Prevenção de Erros e Forma Simples de Corrigi-los;
+- Permitir a Reversão de Ações;
+- Fornecer Controle de Iniciativa do Usuário
+- Reduzir a Carga de Memória de Trabalho.
+
 ### Cadastrar ONG
 
 ![Cadastrar ONG](assets/paginas-do-sistema/cadastrar-ong.png)
@@ -194,6 +269,19 @@ A página de cadastramento das ONGs tem o objetivo de permitir que as ONGs reali
 - Lei da Similaridade: Todos os campos seguem um mesmo padrão visual, com linhas e rótulos semelhantes, o que reforça a ideia de que fazem parte de um mesmo conjunto de ações;
 
 - Lei da Continuidade: A disposição vertical dos campos segue uma linha contínua, guiando naturalmente o olhar de cima para baixo, o que facilita a navegação por formulários longos e o processo de preenchimento.
+
+#### Regras de Ouro aplicadas:
+
+Regras a serem consideradas:
+
+- Perseguir a Consistência;
+- Fornecer Atalhos;
+- Fornecer Feedbacks Informativos;
+- Marcar o Final dos Diálogos;
+- Fornecer Prevenção de Erros e Forma Simples de Corrigi-los;
+- Permitir a Reversão de Ações;
+- Fornecer Controle de Iniciativa do Usuário
+- Reduzir a Carga de Memória de Trabalho.
 
 ### Login
 
@@ -213,6 +301,19 @@ O objetivo da página de login é possibilitar que os usuários (ONGs e voluntá
 
 - Lei da Continuidade: A disposição linear dos campos de entrada e botões segue uma linha contínua, facilitando a navegação visual.
 
+#### Regras de Ouro aplicadas:
+
+Regras a serem consideradas:
+
+- Perseguir a Consistência;
+- Fornecer Atalhos;
+- Fornecer Feedbacks Informativos;
+- Marcar o Final dos Diálogos;
+- Fornecer Prevenção de Erros e Forma Simples de Corrigi-los;
+- Permitir a Reversão de Ações;
+- Fornecer Controle de Iniciativa do Usuário
+- Reduzir a Carga de Memória de Trabalho.
+
 ### Página da ONG
 
 ![Página da ONG](assets/paginas-do-sistema/pagina-da-ong.png)
@@ -231,6 +332,19 @@ Objetivo
 
 - Lei do Fechamento: Mesmo que alguns elementos não estejam completamente delineados, nossa mente tende a completar as formas, percebendo-os como unidades completas.
 
+#### Regras de Ouro aplicadas:
+
+Regras a serem consideradas:
+
+- Perseguir a Consistência;
+- Fornecer Atalhos;
+- Fornecer Feedbacks Informativos;
+- Marcar o Final dos Diálogos;
+- Fornecer Prevenção de Erros e Forma Simples de Corrigi-los;
+- Permitir a Reversão de Ações;
+- Fornecer Controle de Iniciativa do Usuário
+- Reduzir a Carga de Memória de Trabalho.
+
 ### Cadastrar Demanda
 
 ![Cadastrar Demanda](assets/paginas-do-sistema/cadastrar-demanda.png)
@@ -247,6 +361,19 @@ A página de cadastrar demanda permite que as ONGs cadastrem os trabalhos de vol
 
 - Lei da Continuidade: A disposição linear dos campos de entrada e botões cria uma sensação de continuidade, guiando o olhar do usuário de forma fluida pela página.
 
+#### Regras de Ouro aplicadas:
+
+Regras a serem consideradas:
+
+- Perseguir a Consistência;
+- Fornecer Atalhos;
+- Fornecer Feedbacks Informativos;
+- Marcar o Final dos Diálogos;
+- Fornecer Prevenção de Erros e Forma Simples de Corrigi-los;
+- Permitir a Reversão de Ações;
+- Fornecer Controle de Iniciativa do Usuário
+- Reduzir a Carga de Memória de Trabalho.
+
 ### Administrar Demandas
 
 ![Administrar Demandas](assets/paginas-do-sistema/administrar-demandas.png)
@@ -262,3 +389,16 @@ O objetivo da página de administrar demandas é permitir que as ONGs editem as 
 - Lei da Similaridade: Os cartões têm um design semelhante, com ícones, títulos e botões que compartilham o mesmo estilo visual, agrupando-os visualmente;
 
 - Lei da Figura-Fundo: Os cartões se destacam como figuras contra o fundo branco, tornando claro quais elementos são interativos.
+
+#### Regras de Ouro aplicadas:
+
+Regras a serem consideradas:
+
+- Perseguir a Consistência;
+- Fornecer Atalhos;
+- Fornecer Feedbacks Informativos;
+- Marcar o Final dos Diálogos;
+- Fornecer Prevenção de Erros e Forma Simples de Corrigi-los;
+- Permitir a Reversão de Ações;
+- Fornecer Controle de Iniciativa do Usuário
+- Reduzir a Carga de Memória de Trabalho.
