@@ -5,8 +5,9 @@ import {
     LOCATION_REF_PAGINA_DEMANDAS
 } from "../../js/constants.js";
 import { findById as findOngById } from "../../js/models/organization.js";
-import { findById as findTaskById } from "../../js/models/task.js";
+import { findById as findTaskById, Task } from "../../js/models/task.js";
 import { Candidate } from "../../js/models/candidate.js";
+import { getSession, Session } from "../../js/models/session.js";
 
 const dataAtual = new Date();
 
@@ -96,17 +97,24 @@ async function handleSend(event) {
 
     // enviar candidatura
     try {
-        const candidate = new Candidate();
-        candidate.name = candidatura.nome;
-        candidate.email = candidatura.email;
-        candidate.cpf = candidatura.cpf;
-        candidate.phone = candidatura.phone;
-        candidate.profile = candidatura.como;
-        candidate.taskId = taskID;
-        candidate.status = "pendente";
-        candidate.timestamp = dataAtual;
 
-        await candidate.create();
+        const token = window.localStorage.getItem("token");
+        if (!token) {
+            alert("Você precisa estar logado para se candidatar a uma demanda.");
+            return;
+        }
+
+        const session = await getSession(token);
+        const candidateId = session[0].userId;
+
+        let candidateEntity = new Candidate();
+        const candidate = await candidateEntity.findById(candidateId);
+
+        const task = new Task();
+        const taskData = await task.findById(taskID);
+        const candidates = taskData.candidates;
+        candidates.push(candidate.id)
+        await task.updateCandidatesById(taskID, candidates);
 
         alert(SUCESSO_ENVIAR_CANDIDATURA);
         window.location.href = LOCATION_REF_PAGINA_DEMANDAS;

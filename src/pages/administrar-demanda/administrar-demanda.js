@@ -159,8 +159,8 @@ const populateCandidates = async (taskStatus) => {
         if(!isTaskFinished && !isCandidateApproved) {
             acceptLink.style.display = 'block';
             rejectLink.style.display = 'block';
-        } 
-        
+        }
+
         if(isTaskFinished) {
             messageLink.style.display = 'block';
         }
@@ -334,7 +334,7 @@ const handleButtons = (taskStatus) => {
 window.addEventListener("load", async () => {
     const token = window.localStorage.getItem("token")
     const session = await getSession(token);
-    
+
     const taskName = document.getElementById('nomeDemanda');
     taskName.innerText = await getTaskData().then(task => task.name);
 
@@ -344,7 +344,7 @@ window.addEventListener("load", async () => {
     }
 
     const taskData = await getTaskData();
-    if(taskData.organizationId !== session[0].ongId) {
+    if(taskData.organizationId !== session[0].userId) {
         alert("Você não tem permissão para acessar a página dessa demanda!");
         window.location.href = "../administrar-demandas/administrar-demandas.html";
     }
