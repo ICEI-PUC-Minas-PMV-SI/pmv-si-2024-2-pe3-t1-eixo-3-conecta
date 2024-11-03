@@ -477,14 +477,10 @@ async function logout() {
     const session = await makeRequest(getURL(`sessions?token=${token}`), 'GET');
     if (session) {
         await makeRequest(getURL(`sessions/${session[0].id}`), 'DELETE');
-        window.localStorage.removeItem("token");
-        window.localStorage.removeItem("userType");
-        window.location.href = "../../index.html";
-    } else {
-        window.localStorage.removeItem("token");
-        window.localStorage.removeItem("userType");
-        window.location.href = getPagePath("index");
     }
+    window.localStorage.removeItem("token");
+    window.localStorage.removeItem("userType");
+    window.location.href = getPagePath("index");
 }
 
 class HeaderComponent extends HTMLElement {
@@ -537,7 +533,7 @@ class HeaderComponent extends HTMLElement {
         this.root.querySelector('#area-da-voluntario').addEventListener('click', async () => {
             const token = window.localStorage.getItem("token");
             if (token) {
-                window.location.href = getPagePath("pagina-da-ong");
+                window.location.href = getPagePath("pagina-do-voluntario");
             } else {
                 alert("Você precisa estar logado para acessar esse recurso.")
                 window.location.href = getPagePath("login");
