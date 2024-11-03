@@ -33,7 +33,8 @@ export class Task {
     }
 
     async findByCandidateId(candidateId) {
-        return await makeRequest(getURL(`tasks?candidateId=${candidateId}`), 'GET');
+        const tasks = await makeRequest(getURL(`tasks`), 'GET');
+        return tasks.filter(task => task.candidates.includes(candidateId));
     }
 
     async findAll() {
