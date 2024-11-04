@@ -18,6 +18,10 @@
 
 ![Persona 4](assets/personas/persona_ricardo-almeida.jpg)
 
+### Persona 5: Mariano Ribeiro
+
+![Persona 5](assets/personas/persona_mariano-ribeiro.jpg)
+
 ## 4.2 Mapa de Empatia
 
 ### Mapa de Empatia 1: Daniel Souza
@@ -35,6 +39,10 @@
 ### Mapa de Empatia 4: Ricardo Almeida
 
 ![Mapa de Empatia 4](assets/mapas-de-empatia/mapa-de-empatia_ricardo-almeida.png)
+
+### Mapa de Empatia 5: Mariano Ribeiro
+
+![Mapa de Empatia 5](assets/mapas-de-empatia/mapa-de-empatia_mariano-ribeiro.png)
 
 ## 4.3 Protótipos das Interfaces
 
