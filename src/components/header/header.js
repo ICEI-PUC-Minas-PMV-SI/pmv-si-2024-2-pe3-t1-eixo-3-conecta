@@ -1,66 +1,98 @@
 import { Organization } from "../../js/models/organization.js";
-import { getSession } from '../../js/models/session.js';
+import { getSession } from "../../js/models/session.js";
 import { getURL, makeRequest } from "../../js/http.js";
 
 const getOrganizationData = async (organizationId) => {
-    const ong = new Organization();
-    return await ong.findById(organizationId);
-}
-
+  const ong = new Organization();
+  return await ong.findById(organizationId);
+};
 
 const getPagePath = (pageName) => {
-    const currentPath = window.location.pathname;
+  const currentPath = window.location.pathname;
 
-    if (pageName === 'index') {
-        if (currentPath.includes(`index.html`) || currentPath.endsWith("pmv-si-2023-2-pe1-t2-conecta/") ) return `./index.html`
-        return `../../index.html`
-    }
+  if (pageName === "index") {
+    if (
+      currentPath.includes(`index.html`) ||
+      currentPath.endsWith("pmv-si-2023-2-pe1-t2-conecta/")
+    )
+      return `./index.html`;
+    return `../../index.html`;
+  }
 
-    if (pageName === 'cadastrar-ong') {
-        if (currentPath.includes(`cadastrar-ong.html`)) return `./cadastrar-ong-1.html`
-        if (currentPath.includes("/pages")) return `../cadastrar-ong/cadastrar-ong-1.html`
-        return `./pages/cadastrar-ong/cadastrar-ong-1.html`
-    }
+  if (pageName === "cadastrar-ong") {
+    if (currentPath.includes(`cadastrar-ong.html`))
+      return `./cadastrar-ong-1.html`;
+    if (currentPath.includes("/pages"))
+      return `../cadastrar-ong/cadastrar-ong-1.html`;
+    return `./pages/cadastrar-ong/cadastrar-ong-1.html`;
+  }
 
-    if (currentPath.includes(`${pageName}.html`)) {
-        return `./${pageName}.html`
-    }
+  if (currentPath.includes(`${pageName}.html`)) {
+    return `./${pageName}.html`;
+  }
 
-    if (currentPath.includes('/pages')) {
-        return `../${pageName}/${pageName}.html`;
-    }
+  if (currentPath.includes("/pages")) {
+    return `../${pageName}/${pageName}.html`;
+  }
 
-    return `./pages/${pageName}/${pageName}.html`;
-}
+  return `./pages/${pageName}/${pageName}.html`;
+};
 
 const makeTemplate = (variant) => {
-    const rootPath = variant === 'home' ? './' : '../../';
-    const pathName = window.location.pathname;
-    const token = window.localStorage.getItem("token");
-    const userType = window.localStorage.getItem("userType");
+  const rootPath = variant === "home" ? "./" : "../../";
+  const pathName = window.location.pathname;
+  const token = window.localStorage.getItem("token");
+  const userType = window.localStorage.getItem("userType");
 
-    const template = document.createElement('template');
-    template.innerHTML = `
+  const template = document.createElement("template");
+  template.innerHTML = `
         <div class="root">
         
         <div id="page-overlay"></div>
         
         <header class="header-desktop">
             <div class="home-logo-wrapper">
-            <a href=${getPagePath("index")}><img src="${rootPath}/assets/images/logo-conecta.png" alt="Logo Conecta"></div></a>
+            <a href=${getPagePath(
+              "index"
+            )}><img src="${rootPath}/assets/images/logo-conecta.png" alt="Logo Conecta"></div></a>
             <div class="buttons-header-wrapper">
-                <a href=${getPagePath("pagina-de-demandas")} class="header-button oportunidades-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">OPORTUNIDADES</a>
-                <a id="area-da-ong" style="${pathName.includes('pagina-do-voluntario.html') || userType === "candidate" || userType === undefined ? "display: none": ""}" href="#"  class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">ÁREA DA ONG</a>
-                <a id="area-da-voluntario" style="${pathName.includes('pagina-do-voluntario.html') || userType === "organization" ? "display: none": ""}" href="#"  class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">ÁREA DO VOLUNTÁRIO</a>
-                <a id="adm-demandas" style="${token == null | userType === 'candidate' ? "display: none" : ""}" id="logout-click" href=${getPagePath("administrar-demandas")}  class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">ADMINISTRAR DEMANDAS</a>
+                <a href=${getPagePath(
+                  "pagina-de-demandas"
+                )} class="header-button oportunidades-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">OPORTUNIDADES</a>
+                <a id="area-da-ong" style="${
+                  pathName.includes("pagina-do-voluntario.html") ||
+                  userType === "candidate" ||
+                  userType === undefined
+                    ? "display: none"
+                    : ""
+                }" href="#"  class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">ÁREA DA ONG</a>
+                <a id="area-da-voluntario" style="${
+                  pathName.includes("pagina-do-voluntario.html") ||
+                  userType === "organization"
+                    ? "display: none"
+                    : ""
+                }" href="#"  class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">ÁREA DO VOLUNTÁRIO</a>
+                <a id="adm-demandas" style="${
+                  (token == null) | (userType === "candidate")
+                    ? "display: none"
+                    : ""
+                }" id="logout-click" href=${getPagePath(
+    "administrar-demandas"
+  )}  class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">ADMINISTRAR DEMANDAS</a>
                 <a 
                   id="editar-perfil" 
                   style="${token ? "" : "display: none"}" 
-                  href="${userType === 'candidate' ? getPagePath('cadastrar-voluntario') : getPagePath('cadastrar-ong')}" 
+                  href="${
+                    userType === "candidate"
+                      ? getPagePath("cadastrar-voluntario")
+                      : getPagePath("cadastrar-ong")
+                  }" 
                   class="header-button area-da-ong-button">
                   <img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">EDITAR PERFIL
                 </a>            
-                <a id="logout-click" style="${token == null ? "display: none" : ""}" id="logout-click" href="#" class="header-button area-da-ong-button"><img class="log-out" src="${rootPath}/assets/icons/log-out.png">SAIR</a>
+                <a id="logout-click" style="${
+                  token == null ? "display: none" : ""
+                }" id="logout-click" href="#" class="header-button area-da-ong-button"><img class="log-out" src="${rootPath}/assets/icons/log-out.png">SAIR</a>
             </div>
     
         </header>
@@ -74,33 +106,57 @@ const makeTemplate = (variant) => {
         </div>
     
         <div class="mobile-menu-content">
-            <div class="authentication-area" style="${token == null ? "" : "display: none"}">
+            <div class="authentication-area" style="${
+              token == null ? "" : "display: none"
+            }">
                 <p class="text">entrar</p>
-                <a class="authentication-button" href=${getPagePath("cadastrar-ong")} >CADASTRE-SE</a>
-                <a class="authentication-button" href=${getPagePath("login")}>LOGIN</a>
+                <a class="authentication-button" href=${getPagePath(
+                  "cadastrar-ong"
+                )} >CADASTRE-SE</a>
+                <a class="authentication-button" href=${getPagePath(
+                  "login"
+                )}>LOGIN</a>
             </div>
     
-            <div id="authenticated-menu" style="${token == null ? "display: none" : ""}" class="authentication-area">
+            <div id="authenticated-menu" style="${
+              token == null ? "display: none" : ""
+            }" class="authentication-area">
                 <p class="text">entrar</p>
                 <a class="image-org">
                     <div class="profile-image-card-container">
                         <img src="" alt="Profile image">
                     </div>
                 </a>
-                <a class="authentication-button" href=${getPagePath("cadastrar-ong")} ><img class="edit" src="${rootPath}/assets/icons/edit.png"> EDITAR PERFIL</a>
-                <a class="authentication-button" href=${getPagePath("administrar-demandas")}><img class="setting" src="${rootPath}/assets/icons/setting.png">DEMANDAS</a>
+                <a class="authentication-button" href=${getPagePath(
+                  "cadastrar-ong"
+                )} ><img class="edit" src="${rootPath}/assets/icons/edit.png"> EDITAR PERFIL</a>
+                <a class="authentication-button" href=${getPagePath(
+                  "administrar-demandas"
+                )}><img class="setting" src="${rootPath}/assets/icons/setting.png">DEMANDAS</a>
                 <a id="logout-mobile-click" class="authentication-button" href="#"><img class="setting" src="${rootPath}/assets/icons/log-out.png">SAIR</a>
             </div>
     
             <div class="divider-line"></div>
     
-            <a class="navigation-button" href=${getPagePath("pagina-de-demandas")} >OPORTUNIDADES</a>
+            <a class="navigation-button" href=${getPagePath(
+              "pagina-de-demandas"
+            )} >OPORTUNIDADES</a>
             <ul>
-                <li><a class="navigation-button" href=${getPagePath("sobre-o-voluntariado")} >sobre o voluntariado</a></li>
-                <li><a class="navigation-button" href=${getPagePath("como-comecar")} >como começar?</a></li>
-                <li><a class="navigation-button" href=${getPagePath("por-que-ser-voluntario")} >por que ser voluntário?</a></li>
-                <li><a class="navigation-button" href=${getPagePath("historias-sucesso")} >histórias de sucesso</a></li>
-                <li><a class="navigation-button" href=${getPagePath("perguntas-frequentes")} >perguntas frequentes</a></li>
+                <li><a class="navigation-button" href=${getPagePath(
+                  "sobre-o-voluntariado"
+                )} >sobre o voluntariado</a></li>
+                <li><a class="navigation-button" href=${getPagePath(
+                  "como-comecar"
+                )} >como começar?</a></li>
+                <li><a class="navigation-button" href=${getPagePath(
+                  "por-que-ser-voluntario"
+                )} >por que ser voluntário?</a></li>
+                <li><a class="navigation-button" href=${getPagePath(
+                  "historias-sucesso"
+                )} >histórias de sucesso</a></li>
+                <li><a class="navigation-button" href=${getPagePath(
+                  "perguntas-frequentes"
+                )} >perguntas frequentes</a></li>
             </ul>
         </div>
         </nav>
@@ -108,14 +164,14 @@ const makeTemplate = (variant) => {
         </div>
     `;
 
-    return template;
-}
+  return template;
+};
 
 const makeDefaultHeaderDesktopTemplate = (variant) => {
-    const rootPath = variant === 'home' ? './' : '../../';
+  const rootPath = variant === "home" ? "./" : "../../";
 
-    const defaultHeaderMobileTemplate = document.createElement('template');
-    defaultHeaderMobileTemplate.innerHTML = `
+  const defaultHeaderMobileTemplate = document.createElement("template");
+  defaultHeaderMobileTemplate.innerHTML = `
     <header class="header-mobile">
         <div class="menu-toggle open-menu" id="">
             <img src="${rootPath}/assets/components/menu-mobile-button.png" alt="Menu">
@@ -126,29 +182,33 @@ const makeDefaultHeaderDesktopTemplate = (variant) => {
         </div>
 
         <div class="close-button">
-            <a href=${getPagePath("index")}><img src="${rootPath}/assets/components/close-button.png" alt="Menu"></a>
+            <a href=${getPagePath(
+              "index"
+            )}><img src="${rootPath}/assets/components/close-button.png" alt="Menu"></a>
         </div>
     </header>
-`
-    return defaultHeaderMobileTemplate;
-}
+`;
+  return defaultHeaderMobileTemplate;
+};
 const makeVariantHeaderMobileTemplate = (variant) => {
-    const rootPath = variant === 'home' ? './' : '../../';
+  const rootPath = variant === "home" ? "./" : "../../";
 
-    const variantHeaderMobileTemplate = document.createElement('template');
-    variantHeaderMobileTemplate.innerHTML = `
+  const variantHeaderMobileTemplate = document.createElement("template");
+  variantHeaderMobileTemplate.innerHTML = `
     <header class="header-mobile">
         <div class="menu-toggle open-menu" id="">
             <img src="${rootPath}/assets/components/menu-mobile-button.png" alt="Menu">
         </div>
 
         <div class="header-mobile-logo">
-            <a href=${getPagePath("index")}><img src="${rootPath}/assets/images/logo-conecta.png" alt="Logo Conecta"></a>
+            <a href=${getPagePath(
+              "index"
+            )}><img src="${rootPath}/assets/images/logo-conecta.png" alt="Logo Conecta"></a>
         </div>
     </header>
-`
-    return variantHeaderMobileTemplate;
-}
+`;
+  return variantHeaderMobileTemplate;
+};
 
 const cssStyle = `
     @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
@@ -446,7 +506,7 @@ const cssStyle = `
     }
     
 
-`
+`;
 const homeVariantCssStyle = `
 .header-mobile {
     display: none;
@@ -470,143 +530,158 @@ const homeVariantCssStyle = `
         height: auto;
     }
 }
-`
+`;
 
 async function logout() {
-    const token = window.localStorage.getItem("token");
+  const token = window.localStorage.getItem("token");
 
-    const options = {
-        method: 'GET',
-        headers: {'Content-Type': 'application/json'}
-    };
+  const options = {
+    method: "GET",
+    headers: { "Content-Type": "application/json" },
+  };
 
-    const session = await makeRequest(getURL(`sessions?token=${token}`), 'GET');
-    if (session) {
-        await makeRequest(getURL(`sessions/${session[0].id}`), 'DELETE');
-    }
-    window.localStorage.removeItem("token");
-    window.localStorage.removeItem("userType");
-    window.location.href = getPagePath("index");
+  const session = await makeRequest(getURL(`sessions?token=${token}`), "GET");
+  if (session) {
+    await makeRequest(getURL(`sessions/${session[0].id}`), "DELETE");
+  }
+  window.localStorage.removeItem("token");
+  window.localStorage.removeItem("userType");
+  window.location.href = getPagePath("index");
 }
 
 class HeaderComponent extends HTMLElement {
-    constructor() {
-        super();
-        this.root = this.attachShadow({mode: 'closed'});
+  constructor() {
+    super();
+    this.root = this.attachShadow({ mode: "closed" });
 
-        const stylesheet = new CSSStyleSheet();
-        stylesheet.replaceSync(cssStyle);
-        this.root.adoptedStyleSheets = [stylesheet];
+    const stylesheet = new CSSStyleSheet();
+    stylesheet.replaceSync(cssStyle);
+    this.root.adoptedStyleSheets = [stylesheet];
 
-        const template = makeTemplate(this.variant);
+    const template = makeTemplate(this.variant);
 
-        const clone = template.content.cloneNode(true);
+    const clone = template.content.cloneNode(true);
 
-        this.root.append(clone);
+    this.root.append(clone);
 
-        if (this.variant === 'home') {
-            const defaultVariant = this.root.querySelector('.header-mobile');
-            const variantHeaderMobileTemplate = makeVariantHeaderMobileTemplate(this.variant);
-            defaultVariant.replaceWith(variantHeaderMobileTemplate.content.cloneNode(true));
+    if (this.variant === "home") {
+      const defaultVariant = this.root.querySelector(".header-mobile");
+      const variantHeaderMobileTemplate = makeVariantHeaderMobileTemplate(
+        this.variant
+      );
+      defaultVariant.replaceWith(
+        variantHeaderMobileTemplate.content.cloneNode(true)
+      );
 
-            const homeVariantStylesheet = new CSSStyleSheet();
-            homeVariantStylesheet.replaceSync(homeVariantCssStyle);
-            this.root.adoptedStyleSheets = [stylesheet, homeVariantStylesheet]
+      const homeVariantStylesheet = new CSSStyleSheet();
+      homeVariantStylesheet.replaceSync(homeVariantCssStyle);
+      this.root.adoptedStyleSheets = [stylesheet, homeVariantStylesheet];
+    } else {
+      const defaultVariant = this.root.querySelector(".header-mobile");
+      const defaultHeaderMobileTemplate = makeDefaultHeaderDesktopTemplate(
+        this.variant
+      );
+      defaultVariant.replaceWith(
+        defaultHeaderMobileTemplate.content.cloneNode(true)
+      );
+      this.root.adoptedStyleSheets = [stylesheet];
+    }
+
+    let menuToggleButtons = this.root.querySelectorAll(".menu-toggle");
+    menuToggleButtons.forEach((button) => {
+      button.addEventListener("click", (event) => {
+        this.toggleMobileMenu(event);
+      });
+    });
+
+    this.root
+      .querySelector("#area-da-ong")
+      .addEventListener("click", async () => {
+        const token = window.localStorage.getItem("token");
+        if (token) {
+          window.location.href = getPagePath("pagina-da-ong");
         } else {
-            const defaultVariant = this.root.querySelector('.header-mobile');
-            const defaultHeaderMobileTemplate = makeDefaultHeaderDesktopTemplate(this.variant);
-            defaultVariant.replaceWith(defaultHeaderMobileTemplate.content.cloneNode(true));
-            this.root.adoptedStyleSheets = [stylesheet]
+          alert("Você precisa estar logado para acessar esse recurso.");
+          window.location.href = getPagePath("login");
         }
+      });
 
-        let menuToggleButtons = this.root.querySelectorAll('.menu-toggle');
-        menuToggleButtons.forEach((button) => {
-            button.addEventListener('click', (event) => {
-                this.toggleMobileMenu(event);
-            });
-        });
-
-        this.root.querySelector('#area-da-ong').addEventListener('click', async () => {
-            const token = window.localStorage.getItem("token");
-            if (token) {
-                window.location.href = getPagePath("pagina-da-ong");
-            } else {
-                alert("Você precisa estar logado para acessar esse recurso.")
-                window.location.href = getPagePath("login");
-            }
-        });
-
-        this.root.querySelector('#area-da-voluntario').addEventListener('click', async () => {
-            const token = window.localStorage.getItem("token");
-            if (token) {
-                window.location.href = getPagePath("pagina-do-voluntario");
-            } else {
-                alert("Você precisa estar logado para acessar esse recurso.")
-                window.location.href = getPagePath("login");
-            }
-        });
-
-        let logoutButton = this.root.querySelector('#logout-click');
-        if (logoutButton) {
-            logoutButton.addEventListener('click', async () => {
-                await logout();
-            });
-        }
-
-        let logoutMobileButton = this.root.querySelector('#logout-mobile-click');
-        if (logoutMobileButton) {
-            logoutMobileButton.addEventListener('click', async () => {
-                await logout();
-            });
-        }
-    }
-
-    async toggleMobileMenu() {
-        if (this.action && typeof window[this.action] === 'function') window[this.action]();
-
-        const mobileMenu = this.root.querySelector('#mobile-menu');
-        if (mobileMenu.style.left === '-768px' || mobileMenu.style.left === '') {
-            mobileMenu.style.left = '0';
+    this.root
+      .querySelector("#area-da-voluntario")
+      .addEventListener("click", async () => {
+        const token = window.localStorage.getItem("token");
+        if (token) {
+          window.location.href = getPagePath("pagina-do-voluntario");
         } else {
-            mobileMenu.style.left = '-768px';
+          alert("Você precisa estar logado para acessar esse recurso.");
+          window.location.href = getPagePath("login");
         }
+      });
 
-        const pageOverlay = this.root.getElementById('page-overlay');
-        if (pageOverlay.style.display === 'none' || pageOverlay.style.display === '') {
-            pageOverlay.style.display = 'block';
-        } else {
-            pageOverlay.style.display = 'none';
-        }
-        let token = window.localStorage.getItem("token");
-        const session = await getSession(token);
-
-        const organizationData = await getOrganizationData(session[0].userId);
-        const organizationId = this.root.querySelector('.image-org img');
-        const urlImg = this.root.querySelector('.image-org');
-        urlImg.href = getPagePath("pagina-da-ong");
-        organizationId.src = organizationData.image;
-
+    let logoutButton = this.root.querySelector("#logout-click");
+    if (logoutButton) {
+      logoutButton.addEventListener("click", async () => {
+        await logout();
+      });
     }
 
-    static get observedAttributes() {
-        return ['action', 'variant'];
+    let logoutMobileButton = this.root.querySelector("#logout-mobile-click");
+    if (logoutMobileButton) {
+      logoutMobileButton.addEventListener("click", async () => {
+        await logout();
+      });
+    }
+  }
+
+  async toggleMobileMenu() {
+    if (this.action && typeof window[this.action] === "function")
+      window[this.action]();
+
+    const mobileMenu = this.root.querySelector("#mobile-menu");
+    if (mobileMenu.style.left === "-768px" || mobileMenu.style.left === "") {
+      mobileMenu.style.left = "0";
+    } else {
+      mobileMenu.style.left = "-768px";
     }
 
-    get action() {
-        return this.getAttribute('action');
+    const pageOverlay = this.root.getElementById("page-overlay");
+    if (
+      pageOverlay.style.display === "none" ||
+      pageOverlay.style.display === ""
+    ) {
+      pageOverlay.style.display = "block";
+    } else {
+      pageOverlay.style.display = "none";
     }
+    let token = window.localStorage.getItem("token");
+    const session = await getSession(token);
 
-    set action(value) {
-        this.setAttribute('action', value);
-    }
+    const organizationData = await getOrganizationData(session[0].userId);
+    const organizationId = this.root.querySelector(".image-org img");
+    const urlImg = this.root.querySelector(".image-org");
+    urlImg.href = getPagePath("pagina-da-ong");
+    organizationId.src = organizationData.image;
+  }
 
-    get variant() {
-        return this.getAttribute('variant');
-    }
+  static get observedAttributes() {
+    return ["action", "variant"];
+  }
 
-    set variant(value) {
-        this.setAttribute('variant', value);
-    }
+  get action() {
+    return this.getAttribute("action");
+  }
+
+  set action(value) {
+    this.setAttribute("action", value);
+  }
+
+  get variant() {
+    return this.getAttribute("variant");
+  }
+
+  set variant(value) {
+    this.setAttribute("variant", value);
+  }
 }
 
-customElements.define('header-component', HeaderComponent);
+customElements.define("header-component", HeaderComponent);
