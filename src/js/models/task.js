@@ -7,6 +7,7 @@ export class Task {
     createdAt;
     status;
     type;
+    candidates;
 
     async create() {
         const data = {
@@ -17,6 +18,7 @@ export class Task {
             status: 'aberta',
             type: this.type,
             searchData: this.name + ' ' + this.description,
+            candidates: []
         }
 
         return await makeRequest(getURL('tasks'), 'POST', data);
@@ -30,12 +32,16 @@ export class Task {
         return await makeRequest(getURL(`tasks?organizationId=${organizationId}`), 'GET');
     }
 
+    async findByCandidateId(candidateId) {
+        const tasks = await makeRequest(getURL(`tasks`), 'GET');
+        return tasks.filter(task => task.candidates.includes(candidateId));
+    }
+
     async findAll() {
         return await makeRequest(getURL('tasks'), 'GET');
     }
 
     async findAllFilteredByOpenStatus(filterBy) {
-        console.log('filterBy', filterBy);
         if(filterBy === 'remote') {
             return await makeRequest(getURL('tasks?status=aberta&type=remoto'), 'GET');
         }
@@ -74,6 +80,7 @@ export class Task {
             status: this.status,
             type: this.type,
             searchData: this.name + ' ' + this.description,
+            candidates: this.candidates
         }
 
         return await makeRequest(getURL(`tasks/${id}`), 'PUT', data);
@@ -82,6 +89,15 @@ export class Task {
     async updateStatusById(id, newStatus) {
         const data = {
             status: newStatus
+        }
+
+        return await makeRequest(getURL(`tasks/${id}`), 'PATCH', data);
+    }
+
+
+    async updateCandidatesById(id, candidates) {
+        const data = {
+            candidates
         }
 
         return await makeRequest(getURL(`tasks/${id}`), 'PATCH', data);

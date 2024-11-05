@@ -37,7 +37,7 @@ const getTasks = async (filterTipo = 'all', filterStatus = 'all') => {
     const tasksWrapper = document.querySelector('.tasks-wrapper');
     const urlParams = new URLSearchParams(window.location.search);
     const taskIdDelete =  urlParams.get('delete');
-    
+
     if (taskIdDelete) {
         await deleteTask(taskIdDelete).then().catch((error) => {console.log(error);});
     }
@@ -48,9 +48,9 @@ const getTasks = async (filterTipo = 'all', filterStatus = 'all') => {
     const verticalTaskCard = new VerticalTaskCard();
 
     for await (const task of tasks) {
-        if(session[0].ongId == task.organizationId && (filterStatus == 'all' || filterStatus == task.status)) {
+        if(session[0].userId === task.organizationId && (filterStatus === 'all' || filterStatus === task.status)) {
             let taskStatus = task.status;
-            const organizationData = await getOrganizationData(session[0].ongId);
+            const organizationData = await getOrganizationData(session[0].userId);
             let statusTask = 'red-dot.png';
             if (task.status.toLowerCase() === 'aberta') {
                 statusTask = 'green-dot.png';
@@ -60,7 +60,7 @@ const getTasks = async (filterTipo = 'all', filterStatus = 'all') => {
             if (task.type.toLowerCase() === "remoto") {
                 endereco = "Remoto"
             }
-            let html = 
+            let html =
                 `<div class="vertical-task-card" onclick="modal($(this), event);">`+
                 `    <div class="card-section-wrapper">`+
                 `        <div class="card-header" onclick="fotoClick(event)">`+
@@ -92,12 +92,12 @@ const getTasks = async (filterTipo = 'all', filterStatus = 'all') => {
                 `            </div> `+
                 `            <div class="location-button-wrapper">`+
                 `                <img class="image-location" src="../../assets/icons/location-black.png" alt="Location">`+
-                `                <div class="location-tag">`+endereco+ 
+                `                <div class="location-tag">`+endereco+
                 `                </div>`+
                 `            </div>`+
                 `            `+
                 `            <div style="display:none">`+
-                `                <div class="address">`+organizationData.street+', '+organizationData.number+ 
+                `                <div class="address">`+organizationData.street+', '+organizationData.number+
                 `                </div>`+
                 `            </div>`+
                 `        </div>`+
@@ -142,7 +142,7 @@ const getTasks = async (filterTipo = 'all', filterStatus = 'all') => {
                 `        </div>`+
                 `    </div>`+
                 `    <div style="display:none">`+
-                `        <div class="address">`+organizationData.street+', '+organizationData.number+ 
+                `        <div class="address">`+organizationData.street+', '+organizationData.number+
                 `        </div>`+
                 `     </div>`+
                 `</div>`;

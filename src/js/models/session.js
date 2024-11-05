@@ -2,25 +2,28 @@ import {getURL, makeRequest} from "../http.js";
 
 export class Session {
     id;
-    ongId;
+    userId;
     token;
     expirationDate;
     active;
+    userType;
 
-    constructor(ongId) {
-        this.ongId = ongId;
+    constructor(userId, userType) {
+        this.userId = userId;
         this.token = crypto.randomUUID();
         // para fins acadêmicos, o token expira em 2 horas
         this.expirationDate = new Date(Date.now() + 7200000);
         this.active = true;
+        this.userType = userType;
     }
 
     async create() {
         const data = {
-            ongId: this.ongId,
+            userId: this.userId,
             token: this.token,
             expirationDate: this.expirationDate,
-            active: this.active
+            active: this.active,
+            userType: this.userType
         }
         await makeRequest(getURL('sessions'), 'POST', data);
         return makeRequest(getURL(`sessions?token=${this.token}`), 'GET');

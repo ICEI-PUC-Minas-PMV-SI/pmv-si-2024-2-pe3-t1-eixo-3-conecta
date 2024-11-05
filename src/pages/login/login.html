@@ -52,9 +52,21 @@
                         <input type="password" id="senha" name="senha" value="">
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-15">
+                        <label>Entrar como:</label>
+                    </div>
+                    <div class="col-85">
+                        <input type="radio" id="candidate" name="user_type" value="candidate">
+                        <label for="candidate">Voluntário</label>
+                        <input type="radio" id="organization" name="user_type" value="organization">
+                        <label for="organization">Organização</label>
+                    </div>
+                </div>
                 <div style="font-size: smaller;">
                     <div class="col">
-                        <input type="checkbox" id="lembrar" name="lembrar"><label for="lembrar">Lembre-se de mim.</label>
+                        <input type="checkbox" id="lembrar" name="lembrar"><label for="lembrar">Lembre-se de
+                        mim.</label>
                     </div>
                     <div class="col" style="float: right;">
                         <a id="esqueceu-senha" href="#">Esqueceu a senha?</a>
@@ -64,7 +76,9 @@
                     <input id="entrar" type="submit" name="entrar" value="Entrar">
                 </div>
                 <div>
-                    <label>Não tem uma conta?</label><a href="../cadastrar-ong/cadastrar-ong-1.html">Cadastrar</a>
+                    <label>Não tem uma conta?</label><br>
+                    <a href="../cadastrar-ong/cadastrar-ong-1.html">Cadastrar ONG</a><br>
+                    <a href="../cadastrar-voluntario/cadastrar-voluntario.html">Cadastrar voluntário</a>
                 </div>
             </form>
 

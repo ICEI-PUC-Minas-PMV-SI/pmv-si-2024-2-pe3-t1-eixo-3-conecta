@@ -54,7 +54,7 @@ async function handleEdit(event) {
     const token = window.localStorage.getItem("token")
     const session = await getSession(token).then(session => session[0]);
     const task = new Task();
-    task.organizationId = session.ongId;
+    task.organizationId = session.userId;
     task.name = demanda.nome;
     task.description = demanda.descricao;
     task.type = demanda.tipo;
@@ -96,7 +96,7 @@ async function handleSave(event) {
     const token = window.localStorage.getItem("token")
     const session = await getSession(token).then(session => session[0]);
     const task = new Task();
-    task.organizationId = session.ongId;
+    task.organizationId = session.userId;
     task.name = demanda.nome;
     task.description = demanda.descricao;
     task.type = demanda.tipo;

@@ -38,7 +38,7 @@ export async function makeRequest(url, method, data) {
 }
 
 export function getURL(route) {
-    return `${PRODUCTION_JSON_SERVER_URL}/${route}`;
+    return `${LOCAL_JSON_SERVER_URL}/${route}`;
 }
 
 export async function getLocationData(cep) {
