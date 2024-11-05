@@ -71,8 +71,8 @@ input[name="estado"] {
 /* Botões de Cancelar e Voltar */
 input[type="button"][name="cancelar"],
 input[type="button"][name="voltar"] {
-  color: #274c77;
-  background-color: #ffffff;
+  color: var(--cor-titulo);
+  background-color: var(--cor-fundo);
 
   font-weight: 600;
 }
@@ -80,8 +80,8 @@ input[type="button"][name="voltar"] {
 /* Botões de Próximo e Cadastrar */
 input[type="button"][name="proximo"],
 input[type="button"][name="cadastrar"] {
-  color: #ffffff;
-  background-color: #274c77;
+  color: var(--cor-fundo);
+  background-color: var(--cor-titulo);
 
   font-weight: 600;
 }
@@ -107,21 +107,19 @@ textarea {
   padding: 12px;
   resize: vertical;
   outline: none;
-  background-color: white;
+  background-color: var(--cor-fundo);
   border-radius: 15px;
   font-size: large;
-  color: #716f6f;
-  border: 2px solid #716f6f;
+  color: var(--cor-borda);
+  border: 2px solid var(--cor-borda);
 }
 
 /* Estilo do Input de Arquivo */
 input[type="file"] {
-  padding-top: 8px;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
-  float: left;
-  color: #716f6f;
+
+  color: var(--cor-borda);
   height: 50px;
   font-size: large;
 }
