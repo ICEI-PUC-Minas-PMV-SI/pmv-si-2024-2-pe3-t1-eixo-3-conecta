@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat+Mono&display=swap");
 
 :root {
   --cor-fundo: #fff;
@@ -14,6 +13,7 @@
 * {
   margin: 0;
   border: 0;
+  padding: 0;
 
   box-sizing: border-box;
 }
@@ -71,7 +71,7 @@ header {
   padding: 20px;
   background-color: var(--cor-fundo);
   width: 100%;
-  border-bottom: 1px solid var(--cor-texto);
+  border-top: 2px solid var(--cor-borda);
 }
 
 .home-logo-wrapper {
@@ -142,10 +142,9 @@ header {
 }
 
 .home-content {
-  border-top: 1px solid var(--cor-texto);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background: var(--cor-fundo-conteudo);
+  background: var(--cor-fundo);
   margin: 0;
   padding: 0;
   height: auto;
@@ -190,7 +189,7 @@ header {
   }
 
   .home-content {
-    background: var(--cor-fundo-conteudo);
+    background: var(--cor-fundo);
     width: 100vw;
     height: 100%;
     display: flex;
