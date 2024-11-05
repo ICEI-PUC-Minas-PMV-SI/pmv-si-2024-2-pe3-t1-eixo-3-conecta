@@ -12,16 +12,19 @@ window.addEventListener("load", async () => {
 
     if(session) isLogged = true;
 
-    // await findById(session.userId).then(user => {
-    //     userId = user.id;
-    //     document.getElementById("title").innerText = "perfil da ONG";
-    //
-    //     document.getElementById("sobre").value = ong.about;
-    //     document.getElementById("facebook").value = ong.facebook;
-    //     document.getElementById("instagram").value = ong.instagram;
-    //     document.getElementById("twitter").value = ong.twitter;
-    //     document.getElementById("submit-button").value = "Editar";
-    // });
+    const candidate = new Candidate();
+
+    await candidate.findById(session.userId).then(user => {
+        document.getElementById("title").innerText = "editar perfil";
+
+        document.getElementById("cpf").value = user.cpf;
+        document.getElementById("sobre").value = user.about;
+        document.getElementById("nome").value = user.name;
+        document.getElementById("email").value = user.email;
+        document.getElementById("phone").value = user.phone;
+
+        document.getElementById("submit-button").value = "Editar";
+    });
 });
 
 

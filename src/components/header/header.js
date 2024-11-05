@@ -481,7 +481,7 @@ async function logout() {
     };
 
     const session = await makeRequest(getURL(`sessions?token=${token}`), 'GET');
-    if (session) {
+    if (session.length > 0) {
         await makeRequest(getURL(`sessions/${session[0].id}`), 'DELETE');
     }
     window.localStorage.removeItem("token");
