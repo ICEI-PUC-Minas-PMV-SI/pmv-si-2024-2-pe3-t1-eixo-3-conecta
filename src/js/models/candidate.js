@@ -1,5 +1,6 @@
-import { makeRequest, getURL } from '../http.js';
+import { getURL, makeRequest } from '../http.js';
 import { hashPassword } from "../utils.js";
+import { Task } from "./task.js";
 
 export class Candidate {
     name;
@@ -43,7 +44,13 @@ export class Candidate {
         return await makeRequest(getURL(`candidates?status=${status}`), 'GET');
     }
     async findByTaskId(taskId) {
-        return await makeRequest(getURL(`candidates?taskId=${taskId}`), 'GET');
+        const task = new Task();
+        const taskData = await task.findById(taskId);
+        if(!taskData) return []
+        const candidates = taskData.candidates.map(async candidateId => {
+            return await this.findById(candidateId);
+        })
+        return candidates;
     }
     async findAll() {
         return await makeRequest(getURL('candidates'), 'GET');

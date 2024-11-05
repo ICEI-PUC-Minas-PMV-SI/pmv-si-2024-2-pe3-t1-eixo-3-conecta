@@ -349,7 +349,6 @@ window.addEventListener("load", async () => {
         window.location.href = "../administrar-demandas/administrar-demandas.html";
     }
 
-    await getCandidates();
     await populateCandidates(taskData.status);
 
     handleButtons(taskData.status);
