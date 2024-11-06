@@ -13,8 +13,9 @@ window.addEventListener("load", async () => {
     if(session) isLogged = true;
 
     const candidate = new Candidate();
+    userId = session.userId;
 
-    await candidate.findById(session.userId).then(user => {
+    await candidate.findById(userId).then(user => {
         document.getElementById("title").innerText = "editar perfil";
 
         document.getElementById("cpf").value = user.cpf;
@@ -196,8 +197,6 @@ async function handleCreateCandidateForm(event) {
     candidate.name = data.name;
     candidate.email = data.email;
     candidate.phone = data.phone;
-    candidate.profile = data.profile;
-    candidate.status = data.status;
     candidate.about = data.about;
     candidate.password = data.password;
 

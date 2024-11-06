@@ -58,14 +58,12 @@ export class Candidate {
 
     async updateById(id) {
         const data = {
-            taskId: this.taskId,
+            cpf: this.cpf,
             name: this.name,
             email: this.email,
-            cpf: this.cpf,
             phone: this.phone,
-            profile: this.profile,
-            status: this.status,
-            timestamp: this.timestamp,
+            about: this.about,
+            password: await hashPassword(this.password),
         }
 
         return await makeRequest(getURL(`candidates/${id}`), 'PUT', data);
