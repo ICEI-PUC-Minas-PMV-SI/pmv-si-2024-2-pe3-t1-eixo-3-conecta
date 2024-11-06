@@ -1,146 +1,185 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
     <title>Explore as Oportunidades</title>
-    <link rel="stylesheet" href="../../css/index.css">
-    <link rel="stylesheet" href="pagina-de-demandas.css">
-    <link rel="shortcut icon" href="../../assets/icons/favicon.ico" type="image/x-icon">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../../css/index.css" />
+    <link rel="stylesheet" href="pagina-de-demandas.css" />
+
+    <link
+      rel="shortcut icon"
+      href="../../assets/icons/favicon.ico"
+      type="image/x-icon"
+    />
+
     <script type="module" src="../../components/header/header.js"></script>
     <script type="module" src="../../components/footer/footer.js"></script>
-    <script type="module" src="../../components/vertical-task-card/vertical-task-card.js"></script>
-    <script type="module" src="../../components/horizontal-task-card/horizontal-task-card.js"></script>
-    <script type="module" src="../../js/models/task.js"></script>
-    <script type="module" src="../../js/models/organization.js"></script>
+
+    <script
+      type="module"
+      src="../../components/vertical-task-card/vertical-task-card.js"
+    ></script>
+    <script
+      type="module"
+      src="../../components/horizontal-task-card/horizontal-task-card.js"
+    ></script>
+
     <script type="module" src="pagina-de-demandas.js"></script>
+    <script type="module" src="../../js/models/task.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head>
+    <script type="module" src="../../js/models/organization.js"></script>
+  </head>
 
-<body>
-
+  <body>
     <div class="container">
+      <div id="page-overlay"></div>
 
-        <div id="page-overlay"></div>
+      <header>
+        <header-component action="toggleOverlay"></header-component>
+      </header>
 
-        <header>
-            <header-component action="toggleOverlay"></header-component>
-        </header>
+      <div class="content">
+        <div class="loading-background">*</div>
 
-        <div class="content">
-            <div class="loading-background">*</div>
-            <div class="headline">
-                <h1 class="title">
-                    explore as oportunidades
-                </h1>
-            </div>
-            <div class="filter">
-                <label id="filtroSelect">
-                    <img class="icon_white" src="../../assets/icons/filter.png" alt="">
-                    <img class="icon_black" src="../../assets/icons/filter-filled.png" alt="">
-                </label>
-                <div class="filter-wrapper">
-                    <select class="filterButton" style="display: none;">
-                        <option value="all">Todos</option>
-                        <option value="remote">Remoto</option>
-                        <option value="on-site">Presencial</option>
-                    </select>
-                    <select onchange="buscaCidade(this.options[this.selectedIndex].value)" class="filterButton state" style="display: none;">
-                        <option value="todos">Estado</option>
-                    </select>
+        <h1 class="title">Explore as oportunidades</h1>
 
-                    <select class="filterButton cidade" style="display: none; max-width: 310px;">
-                        <option value="todos">Cidade</option>
-                    </select>
-                </div>
-            </div>
+        <div class="filter">
+          <label id="filtroSelect">
+            <img
+              class="icon_white"
+              src="../../assets/icons/filter.png"
+              alt=""
+            />
+            <img
+              class="icon_black"
+              src="../../assets/icons/filter-filled.png"
+              alt=""
+            />
+          </label>
 
-            <div id="loader"></div>
+          <div class="filter-wrapper">
+            <select class="filterButton" style="display: none">
+              <option value="all">Todos</option>
 
-            <div class="tasks-wrapper">
-            </div>
-            <div class="tasks-empty">
-                Nenhuma Demanda Encontrada
-            </div>
+              <option value="remote">Remoto</option>
+
+              <option value="on-site">Presencial</option>
+            </select>
+
+            <select
+              onchange="buscaCidade(this.options[this.selectedIndex].value)"
+              class="filterButton state"
+              style="display: none"
+            >
+              <option value="todos">Estado</option>
+            </select>
+
+            <select class="filterButton cidade" style="display: none">
+              <option value="todos">Cidade</option>
+            </select>
+          </div>
         </div>
 
-        <div id="myModal" class="modal">
-                <div class="modal-wrapper">
-                        <div class="modal-text">
-                                <div class="modal-header">
-                                        <img class="image-modal" src="../../assets/icons/NGO.png" alt="Ajuda">
-                                        <p class="modal-title">VAGA DE VOLUNTARIADO</p>
-                                        <div class="close">&times;</div>
-                                </div>
-                                <div class="job-title"></div>
-                                <div class="NGO"></div>
-                                <div class="modal-content">
-                                        <div>
-                                                <h1 class="text-tiltle">Descrição</h1>
-                                                <div class="text"></div>
-                                        </div>
-                                        <div>
-                                                <h1 class="text-tiltle">Localização</h1>
-                                                <div class="city"></div>
-                                                <p class="address"></p>
-                                        </div>
-                                </div>
-                        </div>
-                </div>
+        <div id="loader"></div>
+
+        <div class="tasks-wrapper"></div>
+        <div class="tasks-empty">Nenhuma Demanda Encontrada</div>
+      </div>
+
+      <div id="myModal" class="modal">
+        <div class="modal-wrapper">
+          <div class="modal-text">
+            <div class="modal-header">
+              <img
+                class="image-modal"
+                src="../../assets/icons/NGO.png"
+                alt="Ajuda"
+              />
+              <p class="modal-title">VAGA DE VOLUNTARIADO</p>
+              <div class="close">&times;</div>
+            </div>
+
+            <div class="job-title"></div>
+
+            <div class="NGO"></div>
+
+            <div class="modal-content">
+              <h1 class="text-title">Descrição</h1>
+              <div class="text"></div>
+
+              <h1 class="text-title">Localização</h1>
+              <div class="city"></div>
+              <p class="address">Address</p>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <footer-component></footer-component>
-
+      <footer-component></footer-component>
     </div>
 
     <script src="../../js/modal.js"></script>
     <script src="../../js/index.js"></script>
-        <script>
-            $("#filtroSelect").click(function(){
-                if ($('.filterButton').hasClass('visible')) {
-                    $('.filterButton').addClass('invisible')
-                    $('.filterButton').removeClass('visible')
-                    $('.filterButton').css('display', 'none')
-                    $('.icon_black').css('display', 'none')
-                    $('.icon_white').css('display', 'block')
-                } else {
-                    $('.filterButton').addClass('visible')
-                    $('.filterButton').removeClass('invisible')
-                    $('.filterButton').css('display', 'block')
-                    $('.icon_black').css('display', 'block')
-                    $('.icon_white').css('display', 'none')
-                }
-            });
-            function buscaCidade(element) {
-                $('.cidades_selecionadas').remove();
-                $.ajax({
-                    url: "https://servicodados.ibge.gov.br/api/v1/localidades/estados/"+element+"/municipios?orderBy=nome",
-                    context: {}
-                }).done(function(data) {
-                    for (var uf in data) {
-                        let html = "<option class='cidades_selecionadas' value='"+data[uf].nome+"'>"+data[uf].nome+"</option>";
-                        $('.cidade').append(html);
-                    }
-                });
-            }
-        </script>
+    <script>
+      $("#filtroSelect").click(function () {
+        const filterButtons = $(".filterButton, .filterButton.status");
+        const iconBlack = $(".icon_black");
+        const iconWhite = $(".icon_white");
 
-        <script src="../../js/index.js"></script>
-        <script>
-            function myFunction() {
-            myVar = setTimeout(showPage, 6000);
-            }
+        if (filterButtons.hasClass("visible")) {
+          filterButtons
+            .removeClass("visible")
+            .addClass("invisible")
+            .css("display", "none");
+          iconBlack.css("display", "none");
+          iconWhite.css("display", "flex");
+        } else {
+          filterButtons
+            .removeClass("invisible")
+            .addClass("visible")
+            .css("display", "flex");
+          iconBlack.css("display", "flex");
+          iconWhite.css("display", "none");
+        }
+      });
 
-            document.onreadystatechange = function () {
-                if (document.readyState !== "complete") {
-                    document.querySelector(
-                        "#loader").style.visibility = "visible";
-                        $('.loading-background ').css('display', 'block');
-                }
-            };
-        </script>
-            
-</body>
+      function buscaCidade(element) {
+        $(".cidades_selecionadas").remove();
+        $.ajax({
+          url:
+            "https://servicodados.ibge.gov.br/api/v1/localidades/estados/" +
+            element +
+            "/municipios?orderBy=nome",
+          context: {},
+        }).done(function (data) {
+          for (var uf in data) {
+            let html =
+              "<option class='cidades_selecionadas' value='" +
+              data[uf].nome +
+              "'>" +
+              data[uf].nome +
+              "</option>";
+            $(".cidade").append(html);
+          }
+        });
+      }
+    </script>
 
+    <script src="../../js/index.js"></script>
+    <script>
+      function myFunction() {
+        myVar = setTimeout(showPage, 6000);
+      }
+
+      document.onreadystatechange = function () {
+        if (document.readyState !== "complete") {
+          document.querySelector("#loader").style.visibility = "visible";
+          $(".loading-background ").css("display", "block");
+        }
+      };
+    </script>
+  </body>
 </html>
