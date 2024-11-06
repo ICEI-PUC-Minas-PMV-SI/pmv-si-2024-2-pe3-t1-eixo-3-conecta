@@ -272,7 +272,8 @@ vertical-task-card-component {
   border: 2px solid var(--cor-borda);
 
   width: 80%;
-  max-width: 660px;
+  min-height: 540px;
+  max-width: 640px;
 
   margin: 6% auto;
   border-radius: 16px;
@@ -281,7 +282,7 @@ vertical-task-card-component {
 .modal-header {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
 
   border-bottom: 2px solid var(--cor-borda);
 }
@@ -432,15 +433,17 @@ vertical-task-card-component {
   }
 
   .modal-wrapper {
-    background-color: #fefefe;
     padding: 20px;
-    border: 1px solid #888;
+
+    background-color: var(--cor-fundo);
+    border: 2px solid var(--cor-borda);
+
     width: 80%;
-    max-height: 880px;
-    height: auto;
-    margin: 5% auto;
-    max-width: 660px;
-    border-radius: 15px;
+    min-height: 640px;
+    max-width: 540px;
+
+    margin: 6% auto;
+    border-radius: 16px;
   }
 
   .text {
@@ -454,18 +457,6 @@ vertical-task-card-component {
 }
 
 @media screen and (max-width: 535px) {
-  .modal-wrapper {
-    background-color: #fefefe;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-height: 880px;
-    height: auto;
-    margin: 5% auto;
-    max-width: 660px;
-    border-radius: 15px;
-  }
-
   .text {
     margin: 24px;
     font-size: 15px;
@@ -491,29 +482,6 @@ vertical-task-card-component {
 @media screen and (max-width: 425px) {
   .text-wrapper {
     margin: 20px;
-  }
-
-  .modal-wrapper {
-    background-color: #fefefe;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-height: 2000px;
-    height: auto;
-    margin: 5% auto;
-    max-width: 660px;
-    border-radius: 15px;
-  }
-
-  .modal-header {
-    display: flex;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: center;
-    align-items: center;
-    position: relative;
-    padding: 0px;
-    border-bottom: 1px solid rgb(230, 234, 246);
   }
 
   .text {

@@ -1,78 +1,123 @@
-import { makeRequest, getURL } from '../http.js';
+// Importação de funções auxiliares
+import { makeRequest, getURL } from "../http.js";
 import { hashPassword } from "../utils.js";
 
+// Definição da classe Candidate
 export class Candidate {
-    name;
-    about;
-    email;
-    cpf;
-    phone;
-    password;
+  name; // Nome do candidato
 
-    async create() {
-        const data = {
-            name: this.name,
-            email: this.email,
-            about: this.about,
-            cpf: this.cpf,
-            phone: this.phone,
-            password: await hashPassword(this.password),
-        }
+  about; // Descrição sobre o candidato
 
-        const searchCPF = await makeRequest(getURL(`candidates?cpf=${this.cpf}`), 'GET');
-        if(searchCPF.length > 0) throw new Error("CPF já cadastrado")
+  email; // Email do candidato
 
-        const searchEmail = await makeRequest(getURL(`candidates?email=${this.email}`), 'GET');
-        if(searchEmail.length > 0) throw new Error("Email já cadastrado")
+  cpf; // CPF do candidato
 
-        return await makeRequest(getURL('candidates'), 'POST', data);
-    }
+  phone; // Telefone do candidato
 
-    async findById(id) {
-        return await makeRequest(getURL(`candidates/${id}`), 'GET');
-    }
+  password; // Senha do candidato
 
-    async findByEmail(email) {
-        return await makeRequest(getURL(`candidates?email=${email}`), 'GET');
-    }
+  // Método para criar um novo candidato
+  async create() {
+    // Criação do objeto de dados do candidato
+    const data = {
+      name: this.name,
 
-    async findByCpf(cpf) {
-        return await makeRequest(getURL(`candidates?cpf=${cpf}`), 'GET');
-    }
-    async findByStatus(status) {
-        return await makeRequest(getURL(`candidates?status=${status}`), 'GET');
-    }
-    async findByTaskId(taskId) {
-        return await makeRequest(getURL(`candidates?taskId=${taskId}`), 'GET');
-    }
-    async findAll() {
-        return await makeRequest(getURL('candidates'), 'GET');
-    }
+      email: this.email,
 
-    async updateById(id) {
-        const data = {
-            taskId: this.taskId,
-            name: this.name,
-            email: this.email,
-            cpf: this.cpf,
-            phone: this.phone,
-            profile: this.profile,
-            status: this.status,
-            timestamp: this.timestamp,
-        }
+      about: this.about,
 
-        return await makeRequest(getURL(`candidates/${id}`), 'PUT', data);
-    }
+      cpf: this.cpf,
 
-    async updateStatusById(id, newStatus) {
-        const data = {
-            status: newStatus
-        }
+      phone: this.phone,
 
-        return await makeRequest(getURL(`candidates/${id}`), 'PATCH', data);
-    }
+      password: await hashPassword(this.password),
+    };
 
-    async deleteById(id) {
-        return await makeRequest(getURL(`candidates/${id}`), 'DELETE');
-    }
+    // Verifica se o CPF já está cadastrado
+    const searchCPF = await makeRequest(
+      getURL(`candidates?cpf=${this.cpf}`),
+      "GET"
+    );
+    if (searchCPF.length > 0) throw new Error("CPF já cadastrado");
+
+    // Verifica se o email já está cadastrado
+    const searchEmail = await makeRequest(
+      getURL(`candidates?email=${this.email}`),
+      "GET"
+    );
+    if (searchEmail.length > 0) throw new Error("Email já cadastrado");
+
+    // Cria o candidato no banco de dados
+    return await makeRequest(getURL("candidates"), "POST", data);
+  }
+
+  // Método para buscar um candidato por ID
+  async findById(id) {
+    return await makeRequest(getURL(`candidates/${id}`), "GET");
+  }
+
+  // Método para buscar um candidato por email
+  async findByEmail(email) {
+    return await makeRequest(getURL(`candidates?email=${email}`), "GET");
+  }
+
+  // Método para buscar um candidato por CPF
+  async findByCpf(cpf) {
+    return await makeRequest(getURL(`candidates?cpf=${cpf}`), "GET");
+  }
+
+  // Método para buscar candidatos por status
+  async findByStatus(status) {
+    return await makeRequest(getURL(`candidates?status=${status}`), "GET");
+  }
+
+  // Método para buscar candidatos por ID da tarefa
+  async findByTaskId(taskId) {
+    return await makeRequest(getURL(`candidates?taskId=${taskId}`), "GET");
+  }
+
+  // Método para buscar todos os candidatos
+  async findAll() {
+    return await makeRequest(getURL("candidates"), "GET");
+  }
+
+  // Método para atualizar os dados de um candidato pelo ID
+  async updateById(id) {
+    // Preparação dos dados para atualização
+    const data = {
+      taskId: this.taskId,
+
+      name: this.name,
+
+      email: this.email,
+
+      cpf: this.cpf,
+
+      phone: this.phone,
+
+      profile: this.profile,
+
+      status: this.status,
+
+      timestamp: this.timestamp,
+    };
+
+    // Atualiza os dados do candidato
+    return await makeRequest(getURL(`candidates/${id}`), "PUT", data);
+  }
+
+  // Método para atualizar o status de um candidato pelo ID
+  async updateStatusById(id, newStatus) {
+    const data = {
+      status: newStatus, // Novo status a ser atribuído
+    };
+
+    // Atualiza o status do candidato
+    return await makeRequest(getURL(`candidates/${id}`), "PATCH", data);
+  }
+
+  // Método para excluir um candidato pelo ID
+  async deleteById(id) {
+    return await makeRequest(getURL(`candidates/${id}`), "DELETE");
+  }
 }
