@@ -1,179 +1,138 @@
-* {
-    box-sizing: border-box;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-}
-
 .content {
-    background-color: #E8ECEF;
-    border-radius: 0;
-}
-.content > * {
-    padding: 16px 24px 0 24px;
-    max-width: 940px;
-}
-
-.title {
-    position: relative;
-    color: #274c77;
-    font-size: 40px;
-    padding: 16px 24px 0 24px;
-    text-align: center;
+  background-color: var(--cor-fundo-conteudo);
 }
 
 .section-wrapper {
-    width: 400px;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin-bottom: 40px;
+}
+
+.title {
+  margin-top: 20px;
+  font-size: 40px;
+  text-align: center;
+  color: var(--cor-titulo);
+}
+
+.row {
+  margin: 24px 0;
+}
+
+/* Estilo do input do tipo Texto */
+input[type="text"],
+input[type="text"]:focus {
+  width: 100%;
+
+  border: 0;
+  border-bottom: 2px solid var(--cor-borda);
+
+  background-color: transparent;
+
+  font-size: 20px;
+  color: var(--cor-borda);
+
+  outline: none;
+}
+
+label[for="demand-info"] {
+  font-size: 20px;
+  font-weight: 500;
+  display: inline-block;
+  color: var(--cor-texto);
+  margin-bottom: 32px;
+}
+
+.options-div {
+  display: flex;
+  justify-content: space-around;
+
+  gap: 32px;
+  margin-top: 8px;
+}
+
+/* Estilo do Textarea */
+textarea {
+  width: 100%;
+  height: 200px;
+
+  padding: 12px;
+  border-radius: 16px;
+  border: 2px solid var(--cor-borda);
+
+  outline: none;
+
+  background-color: var(--cor-fundo);
+
+  font-size: 20px;
+  color: var(--cor-borda);
+}
+
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+
+  border: none;
+  border-radius: 4px;
+
+  appearance: none;
+
+  background-color: var(--cor-fundo);
+  cursor: pointer;
+}
+
+input[type="radio"]:checked {
+  background-color: var(--cor-titulo);
+}
+
+.radio-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 8px;
+}
+
+/* Botões de Cancelar e Voltar */
+input[type="button"][name="cancelar"] {
+  color: var(--cor-titulo);
+  background-color: var(--cor-fundo);
+
+  font-weight: 600;
+}
+
+/* Botões de Próximo e Cadastrar */
+input[type="button"][name="cadastrar"] {
+  color: var(--cor-fundo);
+  background-color: var(--cor-titulo);
+
+  font-weight: 600;
+}
+
+/* Estilo dos Botões de Submit */
+input[type="button"] {
+  width: 100%;
+  height: 54px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
+  font-size: 1.2em;
+}
+
+@media screen and (max-width: 600px) {
+  .section-wrapper {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    width: 75%;
     padding: 20px;
-}
-label {
-    display: inline-block;
-    color: #716F6F;
-    margin-bottom: 0px;
-    padding: 12px 12px 12px 0;
-    font-size: 20px;
-    white-space: nowrap;
-}
-
-input[type=text], input[type="text"]:focus {
-    width: 100%;
-    padding: 12px;
-    border-bottom: 2px solid #716F6F;
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
-    background-color: #E8ECEF;
-    font-size: large;
-    color: #716F6F;
-    outline: none;
-}
-
-/* estilo para os botões radio*/
-.custom-radio > input[type="radio"] {
-    display: none;
-}
-
-.custom-radio > input[type="radio"] + label::before {
-    content: '';
-    height: 10px;
-    width: 10px;
-    margin-right: 5px;
-    margin-bottom: 1px;
-    border-radius: 10px;
-    display: inline-block;
-    background-color: white;
-    border: 1px solid #716F6F;
-    vertical-align: middle;
-}
-
-.custom-radio > input[type="radio"]:checked + label::before {
-    background-color: rgba(0, 0, 0, 1);
-    box-shadow: 0px 5px 5px rgba(100, 100, 100, 0.60);
-}
-
-.custom-radio > input[type="radio"]:checked + label {
-    color: #4d4848;
-}
-
-/* estilo do textarea */
-textarea {
-    width: 100%;
-    height: 200px;
-    padding: 12px;
-    border-radius: 15px;
-    border: 2px solid #716F6F;
-    font-size: large;
-    outline: none;
-}
-
-/* estilo para o botão cancelar*/
-input[type=submit][name=cancelar] {
-    background-color: #FFFFFF;
-    color: #274C77;
-    margin-bottom: 30px;
-    width: 150px;
-    height: 50px;
-}
-
-/* estilo para o botão cadastrar*/
-input[type=submit][name=cadastrar] {
-    background-color: #274C77;
-    color: #FFFFFF;
-    width: 150px;
-    height: 50px;
-}
-
-/* estilo para o botão tipo submit*/
-input[type=submit] {
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    float: right;
-    width: 150px;
-    height: 50px;
-    font-size: 1.2em;
-}
-.row-button {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-}
-
-.row-button > div {
-    margin-left: 24px;
-    margin-right: 24px;
-    padding-top: 40px;
-}
-
-
-@media screen and (max-width: 600px ) {
-    .title {
-        margin-bottom: 20px;
-        margin-left: 40px;
-        margin-right: 40px;
-        text-align: center;
-        white-space: normal;
-    }
-    .section-wrapper{
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        width: 80%;
-        padding: 20px;
-        max-width: 400px;
-    }
-    
-    .col-25, .col-75{
-        margin: 0;
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 400px) {
-
-    .row-button > div {
-    margin-left: 10px;
-    margin-right: 10px;
-    padding-top: 40px;
-    }
-
-    .title {
-        position: relative;
-        color: #274c77;
-        font-size: 30px;
-        padding: 16px 24px 0 24px;
-        text-align: center;
-       
-    }
-
-    label {
-        white-space: normal;
-    }
-
+    max-width: 400px;
+  }
+  .options-div {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
 }

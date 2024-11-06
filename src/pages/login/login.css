@@ -54,6 +54,9 @@ input[type="submit"] {
 .options-div {
   display: flex;
   justify-content: space-around;
+
+  gap: 32px;
+  margin-top: 8px;
 }
 
 .options-div a {
