@@ -246,7 +246,7 @@ O objetivo da página de oportunidades é apresentar para os usuários todos os 
 
 - Fornecer atalhos: o botão "Quero Ajudar" presente em cada card facilita o acesso rápido ao que o usuário precisa fazer para se engajar com uma oportunidade;
 
-- Fornecer controle de iniciativa do usuário: O botão "Quero Ajudar" permite que o usuário tome uma ação direta e controle o processo de envolvimento com uma oportunidade específica, oferecendo autonomia para decidir com qual ONG quer colaborar;
+- Fornecer controle de iniciativa do usuário: o botão "Quero Ajudar" permite que o usuário tome uma ação direta e controle o processo de envolvimento com uma oportunidade específica, oferecendo autonomia para decidir com qual ONG quer colaborar;
 
 - Reduzir a carga de memória de trabalho: a interface reduz a carga de memória ao apresentar informações essenciais sobre cada oportunidade diretamente nos cards, evitando que o usuário tenha que memorizar detalhes de cada uma. As informações principais estão todas visíveis de forma clara e compacta, facilitando a navegação.
 
