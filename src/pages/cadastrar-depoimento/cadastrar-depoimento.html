@@ -1,75 +1,110 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
     <title>Cadastrar Depoimento</title>
-    <link rel="stylesheet" href="../../css/index.css">
-    <link rel="stylesheet" href="cadastrar-depoimento.css">
-    <link rel="shortcut icon" href="../../assets/icons/favicon.ico" type="image/x-icon">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../../css/index.css" />
+    <link rel="stylesheet" href="cadastrar-depoimento.css" />
+
+    <link
+      rel="shortcut icon"
+      href="../../assets/icons/favicon.ico"
+      type="image/x-icon"
+    />
+
     <script type="module" src="../../components/header/header.js"></script>
     <script type="module" src="../../components/footer/footer.js"></script>
+
     <script type="module" src="cadastrar-depoimento.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
+    <div class="container">
+      <div id="page-overlay"></div>
 
-<div class="container">
-
-    <div id="page-overlay"></div>
-
-    <header>
+      <header>
         <header-component action="toggleOverlay"></header-component>
-    </header>
+      </header>
 
-    <div class="content">
-
+      <div class="content">
         <div class="headline">
-            <h1 id="title" class="title">Carregando...</h1>
+          <h1 id="title" class="title">Carregando...</h1>
         </div>
 
         <div class="section-wrapper">
-
-            <div class="row">
-                <div class="col-22">
-                    <label for="demanda">Nome da Demanda</label>
-                </div>
-                <div class="col-78">
-                    <input type="text" value="Carregando..." id="demanda" name="demanda" disabled>
-                </div>
+          <div class="row">
+            <div class="col-22">
+              <label for="demanda">Nome da Demanda</label>
             </div>
-            <div class="row">
-                <div class="col-22">
-                    <label>Tipo da Demanda</label>
-                </div>
-                <div class="col-78">
-                    <input type="radio" id="presencial" name="tipo" value="presencial" disabled>
-                    <label for="presencial">Presencial</label>
-                    <input type="radio" id="remoto" name="tipo" value="remoto" disabled>
-                    <label for="remoto">Remoto</label>
-                </div>
+            <div class="col-78">
+              <input
+                type="text"
+                value="Carregando..."
+                id="demanda"
+                name="demanda"
+                disabled
+              />
             </div>
-            <div class="row">
-                <div class="col-22">
-                    <label for="experiencia">Descreva sua experiência</label>
-                </div>
-                <div class="col-78">
-                    <textarea id="experiencia" name="experiencia"></textarea>
-                </div>
+          </div>
+          <div class="row">
+            <div class="col-22">
+              <label>Tipo da Demanda</label>
             </div>
-            <div class="row-button">
-                <div><input id="send-review" type="submit" name="enviar" value="Enviar"></div>
-                <div><input id="cancel-review" type="submit" name="cancelar" value="Cancelar"></div>
+            <div class="col-78">
+              <input
+                type="radio"
+                id="presencial"
+                name="tipo"
+                value="presencial"
+                disabled
+              />
+              <label for="presencial">Presencial</label>
+              <input
+                type="radio"
+                id="remoto"
+                name="tipo"
+                value="remoto"
+                disabled
+              />
+              <label for="remoto">Remoto</label>
             </div>
+          </div>
+          <div class="row">
+            <div class="col-22">
+              <label for="experiencia">Descreva sua experiência</label>
+            </div>
+            <div class="col-78">
+              <textarea id="experiencia" name="experiencia"></textarea>
+            </div>
+          </div>
+          <div class="row-button">
+            <div>
+              <input
+                id="send-review"
+                type="submit"
+                name="enviar"
+                value="Enviar"
+              />
+            </div>
+            <div>
+              <input
+                id="cancel-review"
+                type="submit"
+                name="cancelar"
+                value="Cancelar"
+              />
+            </div>
+          </div>
         </div>
+      </div>
+
+      <footer-component></footer-component>
     </div>
 
-    <footer-component></footer-component>
-</div>
-
-<script src="../../js/index.js"></script>
-</body>
-
+    <script src="../../js/index.js"></script>
+  </body>
 </html>

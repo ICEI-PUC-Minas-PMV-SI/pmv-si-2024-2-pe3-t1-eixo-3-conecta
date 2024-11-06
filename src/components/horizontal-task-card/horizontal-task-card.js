@@ -1,22 +1,26 @@
 const getPagePath = (pageName) => {
-    const currentPath = window.location.pathname;
+  const currentPath = window.location.pathname;
 
-    if(currentPath.includes(`${pageName}.html`)) {
-        return `./${pageName}.html`
-    }
+  if (currentPath.includes(`${pageName}.html`)) {
+    return `./${pageName}.html`;
+  }
 
-    if(currentPath.includes('/pages')) {
-        return `../${pageName}/${pageName}.html`;
-    }
+  if (currentPath.includes("/pages")) {
+    return `../${pageName}/${pageName}.html`;
+  }
 
-    return `./pages/${pageName}/${pageName}.html`;
-}
+  return `./pages/${pageName}/${pageName}.html`;
+};
 
 const makeTemplate = () => {
-    const pathName = window.location.pathname;
-    const rootPath = pathName.includes('index.html') || pathName.endsWith("pmv-si-2023-2-pe1-t2-conecta/") ? "./" : "../../";
-    const template = document.createElement('template');
-    template.innerHTML = `
+  const pathName = window.location.pathname;
+  const rootPath =
+    pathName.includes("index.html") ||
+    pathName.endsWith("pmv-si-2023-2-pe1-t2-conecta/")
+      ? "./"
+      : "../../";
+  const template = document.createElement("template");
+  template.innerHTML = `
     <div class="root">
     <div class="horizontal-task-card" onclick="modal($(this))">
     <div class="left-side">
@@ -54,20 +58,14 @@ const makeTemplate = () => {
 </div>
 `;
 
-    return template;
-}
+  return template;
+};
 
 const cssStyle = `
     @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Montserrat+Mono&display=swap');
     
-    :root {
-        --cor-background: #E7ECEF;
-        --cor-titulo: #274C77;
-        --cor-link1: #6086BA;
-        --cor-link2: #A3CEF1;
-        --cor-texto: #8B8C89;
-    }
+    
 
     * {
         z-index: 2;
@@ -227,20 +225,22 @@ const cssStyle = `
             height: inherit;
         }
     
-        .horizontal-task-card > .left-side > .task-description > .task-description-text {
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 3;
+        .task-description-text {
+            display: block;
+
+            font-size: 16px;
+            font-weight: 400;
+
             overflow: hidden;
+            line-height: 24px;
             text-overflow: ellipsis;
+
+            max-height: 96px;
             cursor: pointer;
             word-break: break-word;
         }
     
-        .task-info {
-            max-width: 100%;
-        }
-    
+       
         .horizontal-task-card > .right-side {
             display: flex;
             flex-direction: column;
@@ -300,127 +300,136 @@ const cssStyle = `
          }
      }
 
-`
+`;
 
 export class HorizontalTaskCard extends HTMLElement {
-    constructor() {
-        super();
-        this.root = this.attachShadow({ mode: 'closed' });
+  constructor() {
+    super();
+    this.root = this.attachShadow({ mode: "closed" });
 
-        const stylesheet = new CSSStyleSheet();
-        stylesheet.replaceSync(cssStyle);
-        this.root.adoptedStyleSheets = [stylesheet];
+    const stylesheet = new CSSStyleSheet();
+    stylesheet.replaceSync(cssStyle);
+    this.root.adoptedStyleSheets = [stylesheet];
 
+    const template = makeTemplate(this.variant);
 
-        const template = makeTemplate(this.variant);
+    const clone = template.content.cloneNode(true);
 
-        const clone = template.content.cloneNode(true);
+    this.root.append(clone);
+  }
 
-        this.root.append(clone);
+  connectedCallback() {
+    if (this.name) {
+      const name = this.root.querySelector(".task-name");
+      name.innerText = this.name;
     }
 
-    connectedCallback() {
-        if(this.name) {
-            const name = this.root.querySelector('.task-name');
-            name.innerText = this.name;
-        }
-
-        if(this.organizationId) {
-            const organizationId = this.root.querySelector('.image-org');
-            organizationId.href = getPagePath("pagina-da-ong") +'?id='+ this.organizationId;
-        }
-
-        if(this.owner) {
-            const owner = this.root.querySelector('.task-owner');
-            owner.innerText = this.owner;
-        }
-
-        if(this.description) {
-            const description = this.root.querySelector('.task-description-text');
-            description.innerText = this.description;
-        }
-
-        if(this.type) {
-            const type = this.root.querySelector('.location-tag');
-            type.innerText = this.type;
-        }
-
-        if(this.image) {
-            const image = this.root.querySelector('.profile-image-card-container > img');
-            image.src = this.image;
-        }
-
-        if(this.destination) {
-            const helpButton = this.root.querySelector('.help-button');
-            helpButton.href = this.destination;
-        }
-
-        if (this.address) {
-            const address = this.root.querySelector('.address');
-            address.innerText = this.address;
-        }
-
+    if (this.organizationId) {
+      const organizationId = this.root.querySelector(".image-org");
+      organizationId.href =
+        getPagePath("pagina-da-ong") + "?id=" + this.organizationId;
     }
 
-    static get observedAttributes() {
-        return ['name', 'owner', 'description', 'type', 'image', 'destination', 'address'];
+    if (this.owner) {
+      const owner = this.root.querySelector(".task-owner");
+      owner.innerText = this.owner;
     }
 
-    get name() {
-        return this.getAttribute('name');
+    if (this.description) {
+      const description = this.root.querySelector(".task-description-text");
+      description.innerText = this.description;
     }
 
-    set name(value) {
-        this.setAttribute('name', value);
+    if (this.type) {
+      const type = this.root.querySelector(".location-tag");
+      type.innerText = this.type;
     }
 
-    get owner() {
-        return this.getAttribute('owner');
+    if (this.image) {
+      const image = this.root.querySelector(
+        ".profile-image-card-container > img"
+      );
+      image.src = this.image;
     }
 
-    set owner(value) {
-        this.setAttribute('owner', value);
+    if (this.destination) {
+      const helpButton = this.root.querySelector(".help-button");
+      helpButton.href = this.destination;
     }
 
-    get description() {
-        return this.getAttribute('description');
+    if (this.address) {
+      const address = this.root.querySelector(".address");
+      address.innerText = this.address;
     }
+  }
 
-    set description(value) {
-        this.setAttribute('description', value);
-    }
+  static get observedAttributes() {
+    return [
+      "name",
+      "owner",
+      "description",
+      "type",
+      "image",
+      "destination",
+      "address",
+    ];
+  }
 
-    get type() {
-        return this.getAttribute('type');
-    }
+  get name() {
+    return this.getAttribute("name");
+  }
 
-    set type(value) {
-        this.setAttribute('type', value);
-    }
+  set name(value) {
+    this.setAttribute("name", value);
+  }
 
-    get image() {
-        return this.getAttribute('image');
-    }
+  get owner() {
+    return this.getAttribute("owner");
+  }
 
-    set image(value) {
-        this.setAttribute('image', value);
-    }
+  set owner(value) {
+    this.setAttribute("owner", value);
+  }
 
-    get destination() {
-        return this.getAttribute('destination');
-    }
+  get description() {
+    return this.getAttribute("description");
+  }
 
-    set destination(value) {
-        this.setAttribute('destination', value);
-    }
+  set description(value) {
+    this.setAttribute("description", value);
+  }
 
-    get address() {
-        return this.getAttribute('address');
-    }
+  get type() {
+    return this.getAttribute("type");
+  }
 
-    set address(value) {
-        this.setAttribute('address', value);
-    }
+  set type(value) {
+    this.setAttribute("type", value);
+  }
+
+  get image() {
+    return this.getAttribute("image");
+  }
+
+  set image(value) {
+    this.setAttribute("image", value);
+  }
+
+  get destination() {
+    return this.getAttribute("destination");
+  }
+
+  set destination(value) {
+    this.setAttribute("destination", value);
+  }
+
+  get address() {
+    return this.getAttribute("address");
+  }
+
+  set address(value) {
+    this.setAttribute("address", value);
+  }
 }
 
-customElements.define('horizontal-task-card-component', HorizontalTaskCard);
+customElements.define("horizontal-task-card-component", HorizontalTaskCard);

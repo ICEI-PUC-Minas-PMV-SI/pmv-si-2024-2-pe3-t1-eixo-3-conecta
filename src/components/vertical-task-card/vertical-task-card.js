@@ -42,7 +42,6 @@ const makeTemplate = () => {
                 <div class="task-description">
                     <p class="task-description-text">
                     </p>
-                    <p class="show-more">saber mais</p>
                 </div>
                     <div class="help-button-wrapper">
                         <div>

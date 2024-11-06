@@ -77,21 +77,27 @@
 
 #loader {
   position: absolute;
+
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
   left: 50%;
   top: 50%;
-  z-index: 1;
+
+  z-index: 99;
+
   width: 80px;
   height: 80px;
+
   margin: -76px 0 0 -76px;
+
   border: 16px solid var(--cor-fundo);
   border-radius: 50%;
   border-top: 16px solid var(--cor-titulo);
+
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
-  z-index: 99;
 }
 
 @keyframes spin {
@@ -217,22 +223,6 @@
     display: none;
   }
 
-  horizontal-task-card-component {
-    padding-bottom: 20px;
-  }
-
-  .modal-wrapper {
-    background-color: #fefefe;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-height: 880px;
-    height: auto;
-    margin: 5% auto;
-    max-width: 660px;
-    border-radius: 15px;
-  }
-
   #loader {
     width: 50px;
     height: 50px;
@@ -250,18 +240,6 @@
 }
 
 @media screen and (max-width: 425px) {
-  .modal-wrapper {
-    background-color: #fefefe;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-height: 2000px;
-    height: auto;
-    margin: 5% auto;
-    max-width: 660px;
-    border-radius: 15px;
-  }
-
   .modal-header {
     display: flex;
     -webkit-box-pack: justify;
