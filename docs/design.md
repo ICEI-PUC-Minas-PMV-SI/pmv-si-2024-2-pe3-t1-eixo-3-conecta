@@ -273,6 +273,8 @@ A página de cadastramento das ONGs tem o objetivo de permitir que as ONGs reali
 
 - Marcar o final dos diálogos: o processo de cadastro está dividido em etapas, o que ajuda o usuário a entender que se trata de um processo com começo, meio e fim. O botão “Próximo” no final da segunda tela também indica que há uma progressão, permitindo que o usuário saiba onde está no processo;
 
+- Fornecer prevenção de erros e forma simples de corrigi-los: a página valida em tempo real as informações inseridas pelos usuários, informando se precisa ser ajustadas;
+
 - Permitir a reversão de ações: o botão "Cancelar" na segunda tela possibilita ao usuário interromper a ação, funcionando como uma opção para desfazer o cadastro, caso ele mude de ideia;
 
 - Fornecer controle de iniciativa do usuário: a presença dos botões “Cancelar” e “Próximo” dá controle ao usuário sobre o processo. O botão “Cancelar” permite que o usuário desista da ação, caso deseje, enquanto o botão “Próximo” permite que ele avance no cadastro;
@@ -300,6 +302,8 @@ O objetivo da página de login é possibilitar que os usuários (ONGs e voluntá
 #### Regras de Ouro aplicadas:
 
 - Perseguir a consistência: a interface mantém o mesmo padrão visual das outras páginas do sistema, com a mesma tipografia, cores, e posicionamento do logotipo e do menu de navegação, reforçando a consistência visual;
+
+- Fornecer prevenção de erros e forma simples de corrigi-los: a interface apresenta campos de entrada simples e claros para o e-mail e senha. Uma validação em tempo real, que indica se o e-mail inserido tem o formato correto e se a senha é válida, é apresentada ao usuário;
 
 - Reduzir a carga de memória de trabalho: a opção “Lembre-se de mim” permite que o sistema memorize o login do usuário, o que reduz a necessidade de inseri-lo repetidamente. Além disso, o link “Esqueceu a senha?” ajuda o usuário a recuperar o acesso sem precisar memorizar informações.
 
@@ -350,6 +354,8 @@ A página de cadastrar demanda permite que as ONGs cadastrem os trabalhos de vol
 - Perseguir a consistência: os campos são organizados de forma linear, apresentando apenas as informações essenciais para o cadastro de uma demanda. Isso reduz a carga cognitiva e facilita o preenchimento;
 
 - Fornecer feedbacks informativos: o botão "CADASTRAR" está bem destacado, indicando a ação principal da página;
+
+- Fornecer prevenção de erros e forma simples de corrigi-los: a página informa se algum dado inserido está incorreto, permitindo que o usuário faça as alterações necessárias;
 
 - Fornecer controle de iniciativa do usuário: a presença de um botão "CANCELAR" ao lado do botão "CADASTRAR" dá ao usuário a flexibilidade de desistir do cadastro a qualquer momento, caso perceba que alguma informação está incorreta ou queira fazer uma revisão antes de confirmar.
 
