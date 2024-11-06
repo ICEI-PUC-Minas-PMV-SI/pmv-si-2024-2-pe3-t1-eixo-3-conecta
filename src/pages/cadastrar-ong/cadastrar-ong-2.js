@@ -32,7 +32,7 @@ window.addEventListener("load", async () => {
             document.getElementById("facebook").value = ong.facebook;
             document.getElementById("instagram").value = ong.instagram;
             document.getElementById("twitter").value = ong.twitter;
-            document.getElementById("submit-button").value = "Editar";
+            document.getElementById("submit-button").value = "Salvar";
         });
     }
 });

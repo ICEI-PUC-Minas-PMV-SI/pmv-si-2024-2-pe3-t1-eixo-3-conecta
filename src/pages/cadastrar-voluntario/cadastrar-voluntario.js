@@ -23,7 +23,7 @@ window.addEventListener("load", async () => {
         document.getElementById("email").value = user.email;
         document.getElementById("phone").value = user.phone;
 
-        document.getElementById("submit-button").value = "Editar";
+        document.getElementById("submit-button").value = "Salvar";
     });
 });
 
