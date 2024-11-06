@@ -7,7 +7,16 @@
   flex-direction: column;
 
   width: 30%;
+
+  gap: 32px;
+
   margin-bottom: 40px;
+}
+
+.row {
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
 }
 
 .title {
@@ -16,10 +25,6 @@
   font-size: 40px;
   text-align: center;
   color: var(--cor-titulo);
-}
-
-.row {
-  margin: 24px 0;
 }
 
 input[type="text"],
@@ -43,8 +48,11 @@ input[type="text"]:focus {
 input[type="submit"] {
   width: 100%;
   height: 56px;
+
   cursor: pointer;
+
   border-radius: 8px;
+
   font-size: 20px;
   font-weight: 700;
   color: var(--cor-fundo-conteudo);
@@ -56,15 +64,16 @@ input[type="submit"] {
   justify-content: space-around;
 
   gap: 32px;
-  margin-top: 8px;
 }
 
 .options-div a {
   text-decoration: none;
 
   color: var(--cor-link1);
+
   font-size: 20px;
   font-weight: 600;
+  text-align: center;
 }
 
 .remember-div {
@@ -87,9 +96,10 @@ label[for="login-info"],
 label[for="tipo-usuario"] {
   font-size: 20px;
   font-weight: 500;
+
   display: inline-block;
+
   color: var(--cor-texto);
-  margin-bottom: 32px;
 }
 
 label[for="tipo-usuario"] {

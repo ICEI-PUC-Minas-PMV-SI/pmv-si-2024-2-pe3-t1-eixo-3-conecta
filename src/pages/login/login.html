@@ -38,69 +38,63 @@
         <div class="section-wrapper">
           <h1 class="title">Entrar</h1>
 
-          <form
-            id="login-form"
-            method="post"
-            action="../administrar-demandas/administrar-demandas.html"
-          >
-            <div class="row">
-              <label for="login-info">E-mail</label>
+          <div class="row">
+            <label for="login-info">E-mail</label>
 
-              <input type="text" id="email" name="email" value="" />
-            </div>
+            <input type="text" id="email" name="email" value="" />
+          </div>
 
-            <div class="row">
-              <label for="login-info">Senha</label>
+          <div class="row">
+            <label for="login-info">Senha</label>
 
-              <input type="password" id="senha" name="senha" value="" />
-            </div>
+            <input type="password" id="senha" name="senha" value="" />
+          </div>
 
-            <div class="row">
-              <label for="login-info">Entrar como:</label>
+          <div class="row">
+            <label for="login-info">Entrar como:</label>
 
-              <div class="options-div">
-                <div class="radio-container">
-                  <input
-                    type="radio"
-                    id="candidate"
-                    name="user_type"
-                    value="candidate"
-                  />
-                  <label for="tipo-usuario">Voluntário</label>
-                </div>
-                <div class="radio-container">
-                  <input
-                    type="radio"
-                    id="organization"
-                    name="user_type"
-                    value="organization"
-                  />
-                  <label for="tipo-usuario">Organização</label>
-                </div>
+            <div class="options-div">
+              <div class="radio-container">
+                <input
+                  type="radio"
+                  id="candidate"
+                  name="user_type"
+                  value="candidate"
+                />
+                <label for="tipo-usuario">Voluntário</label>
+              </div>
+              <div class="radio-container">
+                <input
+                  type="radio"
+                  id="organization"
+                  name="user_type"
+                  value="organization"
+                />
+                <label for="tipo-usuario">Organização</label>
               </div>
             </div>
+          </div>
 
-            <input id="entrar" type="submit" name="entrar" value="Entrar" />
+          <input id="entrar" type="submit" name="entrar" value="Entrar" />
 
-            <div class="row">
-              <div class="remember-div">
-                <input type="checkbox" id="lembrar" name="lembrar" />
-                <label for="tipo-usuario"> Lembre-se de mim. </label>
-              </div>
+          <div class="row">
+            <div class="remember-div">
+              <input type="checkbox" id="lembrar" name="lembrar" />
+              <label for="tipo-usuario"> Lembre-se de mim. </label>
             </div>
+          </div>
 
-            <div class="row">
-              <label for="login-info">Não tem uma conta?</label>
-              <div class="options-div">
-                <a href="../cadastrar-ong/cadastrar-ong-1.html">
-                  Cadastrar ONG
-                </a>
-                <a href="../cadastrar-voluntario/cadastrar-voluntario.html">
-                  Cadastrar voluntário
-                </a>
-              </div>
+          <div class="row">
+            <label for="login-info">Não tem uma conta?</label>
+            <div class="options-div">
+              <a href="../cadastrar-ong/cadastrar-ong-1.html">
+                Cadastrar ONG
+              </a>
+              <a href="../cadastrar-voluntario/cadastrar-voluntario.html">
+                Cadastrar voluntário
+              </a>
             </div>
-          </form>
+          </div>
         </div>
       </div>
 
