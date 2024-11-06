@@ -38,6 +38,17 @@
             <form method="post" id="login-form" action="../administrar-demandas/administrar-demandas.html">
                 <div class="row">
                     <div class="col-15">
+                        <label>Entrar como:</label>
+                    </div>
+                    <div class="col-85">
+                        <input type="radio" id="candidate" name="user_type" value="candidate">
+                        <label for="candidate">Voluntário</label>
+                        <input type="radio" id="organization" name="user_type" value="organization">
+                        <label for="organization">Organização</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-15">
                         <label for="email">E-mail</label>
                     </div>
                     <div class="col-85">
@@ -50,17 +61,6 @@
                     </div>
                     <div class="col-85">
                         <input type="password" id="senha" name="senha" value="">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-15">
-                        <label>Entrar como:</label>
-                    </div>
-                    <div class="col-85">
-                        <input type="radio" id="candidate" name="user_type" value="candidate">
-                        <label for="candidate">Voluntário</label>
-                        <input type="radio" id="organization" name="user_type" value="organization">
-                        <label for="organization">Organização</label>
                     </div>
                 </div>
                 <div style="font-size: smaller;">
