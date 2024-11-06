@@ -170,6 +170,7 @@ const cssStyle = `
         font-size: 12px;
         font-weight: 700;
         text-align: center;
+        text-decoration: none;
         color: var(--cor-fundo);
     }
     

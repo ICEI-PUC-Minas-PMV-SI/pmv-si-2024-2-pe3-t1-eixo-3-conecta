@@ -51,18 +51,17 @@ input[type="email"]:focus {
 }
 
 input[type="button"][name="cancelar"] {
-  background-color: #ffffff;
-  color: #274c77;
+  color: var(--cor-titulo);
+  background-color: var(--cor-fundo);
 
-  width: 150px;
-  height: 50px;
+  font-weight: 600;
 }
 
 input[type="button"][name="cadastrar"] {
-  background-color: #274c77;
-  color: #ffffff;
-  width: 150px;
-  height: 50px;
+  color: var(--cor-fundo);
+  background-color: var(--cor-titulo);
+
+  font-weight: 600;
 }
 
 input[type="button"] {
