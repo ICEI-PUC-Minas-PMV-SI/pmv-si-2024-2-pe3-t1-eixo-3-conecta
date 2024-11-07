@@ -3,10 +3,13 @@
 :root {
   --cor-fundo: #fff;
   --cor-fundo-conteudo: #e8ecef;
+
   --cor-titulo: #274c77;
+  --cor-texto: #152028;
+
   --cor-link1: #6086ba;
   --cor-link2: #a3cef1;
-  --cor-texto: #000;
+
   --cor-borda: #8b8c89;
   --cor-card: #6096ba;
 }
@@ -17,6 +20,10 @@
   padding: 0;
 
   box-sizing: border-box;
+
+  font-family: "Open Sans", sans-serif;
+
+  color: var(--cor-texto);
 }
 
 html,
@@ -25,35 +32,34 @@ body {
   height: 100%;
 }
 
-body {
-  font-family: "Open Sans", sans-serif;
-  margin: 0;
-  padding: 0;
-  background: var(--cor-fundo);
-}
-
 header {
   width: 100%;
+
   z-index: 3;
 }
 
 #page-overlay {
   display: none;
-  position: fixed;
+
   top: 0;
   left: 0;
+  z-index: 3;
+  position: fixed;
+
   width: 100%;
   height: 100%;
+
   background: rgba(0, 0, 0, 0.5);
-  z-index: 3;
 }
 
 .container {
-  justify-items: center;
   align-items: center;
+  justify-items: center;
+
+  margin: 0 auto;
+
   width: 100%;
   height: 100%;
-  margin: 0 auto;
 }
 
 .header-mobile {
@@ -67,19 +73,23 @@ header {
 .header-desktop {
   display: flex;
   flex-shrink: 1;
-  justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background-color: var(--cor-fundo);
+  justify-content: space-between;
+
   width: 100%;
+
+  padding: 20px;
+
+  background-color: var(--cor-fundo);
   border-top: 2px solid var(--cor-borda);
 }
 
 .home-logo-wrapper {
-  display: flex;
-  justify-content: start;
   flex: 1;
+  display: flex;
   flex-shrink: 0;
+  justify-content: start;
+
   height: 100%;
   max-width: 60%;
 }
@@ -87,69 +97,30 @@ header {
 .home-logo-wrapper img {
   min-width: 300px;
   min-height: 70px;
+
   max-width: 50%;
+
   margin-left: 15px;
-}
-
-.buttons-header-wrapper {
-  display: flex;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  margin-right: 20px;
-  /*gap: 20px;*/
-}
-
-.header-button {
-  padding: 12px 20px;
-  margin-left: 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  color: var(--cor-fundo);
-  font-family: Open Sans, sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.area-da-ong-button {
-  background-color: var(--cor-texto);
-  color: var(--cor-fundo);
-  font-size: 15px;
-}
-
-.oportunidades-button {
-  background-color: var(--cor-titulo);
-  color: var(--cor-fundo);
-  margin-right: 20px;
-  font-size: 15px;
 }
 
 .container {
   display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-items: center;
   align-items: center;
+  justify-items: center;
+  flex-direction: column;
+
+  height: 100%;
 }
 
 .content {
   display: flex;
-  flex-direction: column;
+
+  flex-grow: 1;
   align-items: center;
   justify-items: center;
-  flex-grow: 1;
-  margin: 0;
-  width: 100%;
-}
+  flex-direction: column;
 
-.home-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background: var(--cor-fundo);
-  margin: 0;
-  padding: 0;
-  height: auto;
-  max-width: 1280px;
+  width: 100%;
 }
 
 .home-image img {

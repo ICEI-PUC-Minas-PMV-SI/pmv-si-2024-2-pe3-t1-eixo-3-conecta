@@ -35,5 +35,4 @@ build/
 ### Mac OS ###
 .DS_Store
 
-
-*.json
+db.json

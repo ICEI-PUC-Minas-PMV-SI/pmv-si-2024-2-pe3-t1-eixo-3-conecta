@@ -4,15 +4,15 @@ import { hashPassword } from "../utils.js";
 
 // Classe Address - Representa o endereço de uma organização
 export class Address {
-  cep; // CEP do endereço
+  cep;
 
-  street; // Nome da rua
+  street;
 
-  buildingNumber; // Número do prédio
+  buildingNumber;
 
-  city; // Cidade
+  city;
 
-  state; // Estado
+  state;
 
   // Construtor para inicializar o endereço
   constructor(cep, street, buildingNumber, city, state) {

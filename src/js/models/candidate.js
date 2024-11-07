@@ -4,17 +4,17 @@ import { hashPassword } from "../utils.js";
 
 // Definição da classe Candidate
 export class Candidate {
-  name; // Nome do candidato
+  name;
 
-  about; // Descrição sobre o candidato
+  about;
 
-  email; // Email do candidato
+  email;
 
-  cpf; // CPF do candidato
+  cpf;
 
-  phone; // Telefone do candidato
+  phone;
 
-  password; // Senha do candidato
+  password;
 
   // Método para criar um novo candidato
   async create() {

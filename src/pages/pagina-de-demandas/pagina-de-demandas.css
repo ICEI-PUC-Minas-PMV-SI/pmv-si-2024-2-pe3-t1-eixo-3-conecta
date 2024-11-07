@@ -18,10 +18,6 @@
   align-items: center;
   flex-direction: column;
 
-  width: 100%;
-
-  background: transparent;
-
   margin: 20px;
 }
 
@@ -124,7 +120,8 @@
   border: 2px solid var(--cor-borda);
 
   width: 80%;
-  max-width: 660px;
+  min-height: 540px;
+  max-width: 460px;
 
   margin: 6% auto;
   border-radius: 16px;
@@ -192,18 +189,21 @@
 }
 
 .modal-content {
+  gap: 16px;
   height: 100%;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 16px;
 }
 
 .loading-background {
   width: 2000px;
   height: 2000px;
+
   position: fixed;
   background-color: #00000036;
+
   z-index: 999;
   display: none;
   color: transparent;
@@ -227,6 +227,19 @@
     width: 50px;
     height: 50px;
     margin-left: -50px;
+  }
+
+  .modal-wrapper {
+    padding: 20px;
+
+    background-color: var(--cor-fundo);
+    border: 2px solid var(--cor-borda);
+
+    min-height: 640px;
+    max-width: 540px;
+
+    margin: 2% auto;
+    border-radius: 16px;
   }
 
   .text {

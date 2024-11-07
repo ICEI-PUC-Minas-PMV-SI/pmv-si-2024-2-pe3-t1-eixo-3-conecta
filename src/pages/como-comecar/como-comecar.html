@@ -1,70 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
     <title>Como começar?</title>
-    <link rel="stylesheet" href="../../css/index.css">
-    <link rel="stylesheet" href="como-comecar.css">
-    <link rel="shortcut icon" href="../../assets/icons/favicon.ico" type="image/x-icon">
-    <script type="module" src="../../components/header/header.js" ></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="shortcut icon"
+      href="../../assets/icons/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <link rel="stylesheet" href="como-comecar.css" />
+    <link rel="stylesheet" href="../../css/index.css" />
+
+    <script type="module" src="../../components/header/header.js"></script>
     <script type="module" src="../../components/footer/footer.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
+    <div class="container">
+      <div id="page-overlay"></div>
 
-<div class="container">
-
-    <div id="page-overlay"></div>
-
-    <header>
+      <header>
         <header-component action="toggleOverlay"></header-component>
-    </header>
+      </header>
 
-    <div class="content">
-        <h1 class="title">
-            como começar?
-        </h1>
-        <div class="subtitle">
-            Nessa página iremos te guiar em como dar seus primeiros passos rumo ao voluntariado.
+      <div class="content">
+        <div class="title_wrapper">
+          <h1 class="title">Como começar?</h1>
+
+          <h2 class="subtitle">
+            Nessa página iremos te guiar em como dar seus primeiros passos rumo
+            ao voluntariado.
+          </h2>
         </div>
+
         <div class="image-wrapper">
-            <img class="image" src="../../assets/images/hands.jpeg" alt="mãos e céu em preto em branco">
+          <img
+            class="image"
+            src="../../assets/images/hands.jpeg"
+            alt="mãos e céu em preto em branco"
+          />
         </div>
-        <div class="instructions-wrapper">
-            <div class="instructions-list">
-                <div class="list-title">sou voluntário</div>
-                <div class="list-content">
-                    <ol>
-                        <li><a href="../pagina-de-demandas/pagina-de-demandas.html">Escolha</a> uma das demandas criadas pelas ONGs.
-                        </li>
-                        <li>Se voluntarie por meio do botão "quero ajudar".</li>
-                        <li>Preencha o formulário com seus dados de contato.</li>
-                        <li>Fique atento ao seu e-mail para atualizações.</li>
-                    </ol>
-                </div>
-            </div>
 
-            <div class="instructions-list">
-                <div class="list-title">sou ONG</div>
-                <div class="list-content">
-                    <ol>
-                        <li><a href="..\cadastrar-ong\cadastrar-ong-1.html">Cadastre sua ONG.</a></li>
-                        <li>Crie demandas e compartilhe com voluntários interessados.</li>
-                        <li>Avalie as candidaturas para demandas abertas.</li>
-                        <li>Solicite depoimentos dos participantes ao final da demanda.</li>
-                    </ol>
-                </div>
+        <div class="instructions-wrapper">
+          <div class="instructions-list">
+            <div class="list-title">Sou voluntário</div>
+            <div class="list-content">
+              <ol>
+                <li>
+                  <a href="../login/login.html">Se registre no site.</a>
+                </li>
+                <li>
+                  Entre na página para visualizar
+                  <a href="../pagina-de-demandas/pagina-de-demandas.html"
+                    >demandas</a
+                  >.
+                </li>
+                <li>Clique em "Quero Ajudar" da demanda escolhida.</li>
+                <li>Preencha o formulário de candidatura.</li>
+                <li>Fique atento ao seu e-mail para atualizações.</li>
+              </ol>
             </div>
+          </div>
+
+          <div class="instructions-list">
+            <div class="list-title">Sou ONG</div>
+            <div class="list-content">
+              <ol>
+                <li>
+                  <a href="..\cadastrar-ong\cadastrar-ong-1.html"
+                    >Cadastre sua ONG.</a
+                  >
+                </li>
+                <li>
+                  Crie demandas e compartilhe com voluntários interessados.
+                </li>
+                <li>Avalie as candidaturas para demandas abertas.</li>
+                <li>
+                  Solicite depoimentos dos participantes ao final da demanda.
+                </li>
+              </ol>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <footer-component></footer-component>
     </div>
 
-    <footer-component></footer-component>
-</div>
-
-<script src="../../js/index.js"></script>
-</body>
-
+    <script src="../../js/index.js"></script>
+  </body>
 </html>

@@ -59,19 +59,7 @@ const makeTemplate = () => {
 
 const cssStyle = `
     * {
-        z-index: 2;
         margin: 0;
-    }
-    
-    html, .root {
-        overflow-x:hidden;
-        height: 100%;
-    }
-    
-    .root {
-        font-family: 'Open Sans', sans-serif;
-        margin: 0;
-        padding: 0;
     }
     
     .vertical-task-card {
@@ -106,20 +94,19 @@ const cssStyle = `
         white-space: nowrap;
         text-overflow: ellipsis;
     }
-    
-    .task-description-text {
-        display: block;
 
+    .task-description-text {
         font-size: 16px;
         font-weight: 400;
-
-        overflow: hidden;
         line-height: 24px;
-        text-overflow: ellipsis;
-
-        max-height: 200px;
-        cursor: pointer;
         word-break: break-word;
+        text-overflow: ellipsis;
+        
+        overflow: hidden;
+
+        max-height: 80%;
+
+        cursor: pointer;
 }
     
     .task-info {
@@ -135,15 +122,6 @@ const cssStyle = `
         font-weight: 700;
     }
     
-    .task-description {
-        color: #1E1E1E;
-        font-size: 15px;
-        font-weight: 400;
-        font-style: normal;
-        line-height: normal;
-
-        padding-right: 8px;
-    }
     
     .help-button-wrapper {
         display: flex;

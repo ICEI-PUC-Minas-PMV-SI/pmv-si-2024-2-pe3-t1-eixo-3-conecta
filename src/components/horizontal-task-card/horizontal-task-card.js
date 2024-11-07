@@ -62,27 +62,12 @@ const makeTemplate = () => {
 };
 
 const cssStyle = `
-    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat+Mono&display=swap');
-    
-    
-
+   
     * {
         z-index: 2;
         margin: 0;
     }
-    
-    html, .root {
-        overflow-x:hidden;
-        height: 100%;
-    }
-    
-    .root {
-        font-family: 'Open Sans', sans-serif;
-        margin: 0;
-        padding: 0;
-    }
-    
+
     .horizontal-task-card {
         display: none;
     }
@@ -103,18 +88,17 @@ const cssStyle = `
     }
     
     .task-info > .task-owner {
-        font-size: 12px;
+        font-size: 16px;
         font-weight: 700;
         padding-top: 5px;
     }
     
     .task-description {
-        color: #1E1E1E;
-        font-size: 15px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        padding-right: 8px;
+      color: #1E1E1E;
+      font-weight: 400;
+      font-size: 15px;
+      font-style: normal;
+      line-height: normal;
     }
     
     .task-description > .show-more {

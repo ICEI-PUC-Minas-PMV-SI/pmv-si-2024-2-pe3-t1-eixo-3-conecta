@@ -241,12 +241,15 @@ const cssStyle = `
     header {
         display: flex;
         flex-shrink: 1;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-between;
+        
         padding: 20px;
+        
         background-color: white;
         width: 100%;
-        border-bottom: 1px solid var(--cor-texto);
+        
+        border-bottom: 2px solid var(--cor-texto);
     }
     
     header .home-logo-wrapper {
