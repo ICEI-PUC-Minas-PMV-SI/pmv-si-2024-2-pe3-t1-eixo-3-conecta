@@ -10,22 +10,24 @@ window.addEventListener("load", async () => {
     const token = window.localStorage.getItem("token")
     const session = await getSession(token).then(session => session[0]);
 
-    if(session) isLogged = true;
+    if(session) {
+        isLogged = true;
 
-    const candidate = new Candidate();
-    userId = session.userId;
+        const candidate = new Candidate();
+        userId = session.userId;
 
-    await candidate.findById(userId).then(user => {
-        document.getElementById("title").innerText = "editar perfil";
+        await candidate.findById(userId).then(user => {
+            document.getElementById("title").innerText = "editar perfil";
 
-        document.getElementById("cpf").value = user.cpf;
-        document.getElementById("sobre").value = user.about;
-        document.getElementById("nome").value = user.name;
-        document.getElementById("email").value = user.email;
-        document.getElementById("phone").value = user.phone;
+            document.getElementById("cpf").value = user.cpf;
+            document.getElementById("sobre").value = user.about;
+            document.getElementById("nome").value = user.name;
+            document.getElementById("email").value = user.email;
+            document.getElementById("phone").value = user.phone;
 
-        document.getElementById("submit-button").value = "Salvar";
-    });
+            document.getElementById("submit-button").value = "Salvar";
+        });
+    }
 });
 
 
@@ -203,12 +205,12 @@ async function handleCreateCandidateForm(event) {
     try {
         if(isLogged) {
             await candidate.updateById(userId);
-            alert("Perfil editado com sucesso!");
             window.location.href = "../pagina-do-voluntario/pagina-do-voluntario.html";
+            alert("Perfil editado com sucesso!");
         } else {
             await candidate.create();
-            alert("Cadastro realizado com sucesso!");
             window.location.href = "../login/login.html";
+            alert("Cadastro realizado com sucesso!");
         }
     } catch (error) {
         alert(error.message);

@@ -92,12 +92,12 @@ async function handleCreateOrganizationSecondForm(event) {
     try {
         if(isLogged) {
             await organization.updateById(ongId);
-            alert("Perfil editado com sucesso!");
             window.location.href = "../administrar-demandas/administrar-demandas.html";
+            alert("Perfil editado com sucesso!");
         } else {
             await organization.create();
-            alert("Cadastro realizado com sucesso!");
             window.location.href = "../login/login.html";
+            alert("Cadastro realizado com sucesso!");
         }
     } catch (error) {
         alert(error.message);
