@@ -98,8 +98,6 @@ async function handleGetIn(event) {
         window.localStorage.setItem("token", session[0].token);
         window.localStorage.setItem("userType", session[0].userType);
 
-        alert("Login realizado com sucesso.")
-
         if(userType === "organization") {
             window.location.href = "../administrar-demandas/administrar-demandas.html";
         }
@@ -107,6 +105,7 @@ async function handleGetIn(event) {
         if(userType === "candidate") {
             window.location.href = "../pagina-do-voluntario/pagina-do-voluntario.html";
         }
+        alert("Login realizado com sucesso.")
     } else {
         alert("Email ou senha incorretos.");
         window.location.href = "login.html";

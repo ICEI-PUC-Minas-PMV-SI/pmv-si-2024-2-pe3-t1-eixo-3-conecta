@@ -102,8 +102,8 @@ async function handleSave(event) {
     task.type = demanda.tipo;
 
     await task.create().then(() => {
-        alert(SUCESSO_CADASTRO_DEMANDA);
         window.location.href = LOCATION_REF_ADMINISTRAR_DEMANDAS;
+        alert(SUCESSO_CADASTRO_DEMANDA);
     }).catch(err => {
         console.error(err);
         alert("Erro ao cadastrar demanda");
