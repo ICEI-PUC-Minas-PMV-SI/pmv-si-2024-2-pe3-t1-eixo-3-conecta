@@ -4,7 +4,7 @@ Nesta seção será apresentada a documentação de requisitos da aplicação Co
 
 ## 3.1 Objetivos deste documento
 
-O objetivo desse documento é descrever e especificar as necessidades para o desenvolvimento do sistema web que facilitará a conexão entre ONGs, voluntários de tecnologia e patrocinadores que querem apoiar causas sociais relevantes.
+O objetivo desse documento é descrever e especificar as necessidades para o desenvolvimento do sistema web que facilitará a conexão entre ONGs e voluntários de tecnologia que querem apoiar causas sociais relevantes.
 
 ## 3.2 Escopo do produto
 
@@ -15,12 +15,11 @@ A aplicação web que será desenvolvida para esse projeto será o Conecta, e se
 * Módulo de cadastro de ONGs: permite o registro de organizações não governamentais, incluindo dados como área de atuação, localização, e tipo de atividades que necessitam de voluntários;
 * Módulo de gerenciamento de demandas: permite que as ONGs publiquem oportunidades de voluntariado, e voluntários possam se inscrever em atividades específicas;
 * Módulo de cadastro de voluntários: permite que profissionais se registrem, informando suas habilidades, interesses e disponibilidade para atividades de voluntariado;
-* Módulo de cadastro de patrocinadores: permite que patrocinadores interessados em ajudar as ONGs, cadastrem seu perfil e ofereçam patrocínio;
-* Módulo de correspondência: responsável por conectar ONGs, voluntários e patrocinadores com base nas necessidades das ONGs e nas habilidades dos voluntários.
+* Módulo de correspondência: responsável por conectar ONGs e voluntários com base nas necessidades das ONGs e nas habilidades dos voluntários.
 
 ### 3.2.2 Missão do produto
 
-A missão do Conecta é facilitar a conexão entre ONGs e voluntários de tecnologia, fornecendo uma plataforma de fácil utilização, que centraliza as necessidades das ONGs e as habilidades dos voluntários, promovendo o impacto social positivo por meio do voluntariado. Além disso, a plataforma também irá facilitar para que patrocinadores possam ajudar nas causas sociais.
+A missão do Conecta é facilitar a conexão entre ONGs e voluntários de tecnologia, fornecendo uma plataforma de fácil utilização, que centraliza as necessidades das ONGs e as habilidades dos voluntários, promovendo o impacto social positivo por meio do voluntariado.
 
 ### 3.2.3 Limites do produto
 
@@ -31,13 +30,12 @@ O Conecta não gerencia compensações financeiras para os voluntários, nem o p
 | # 	| Benefício 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 | Valor para o Cliente |
 |----|---------------------------------------------------|----------------------|
 | 1 | Facilidade no cadastro e gerenciamento de demandas tecnológicas. | Essencial |
-| 2 | Facilidade na comunicação entre ONGs, voluntários e patrocinadores. | Essencial |
+| 2 | Facilidade na comunicação entre ONGs e voluntários. | Essencial |
 | 3 | Facilidade em consultar demandas disponíveis. | Essencial |
 | 4 | Facilidade ao se candidatar a demandas. | Essencial |
 | 5 | Segurança no acesso e compartilhamento de dados. | Essencial |
 | 6 | Interface intuitiva e responsiva para dispositivos móveis e desktop. 	| Essencial |
 | 7 | Notificações automáticas sobre novas oportunidades. | Recomendável |
-| 8 | Acesso rápido a histórico de colaborações. | Recomendável |
 
 ## 3.3 Descrição geral do produto
 
@@ -45,21 +43,18 @@ O Conecta não gerencia compensações financeiras para os voluntários, nem o p
 
 | Código | Requisito Funcional (Funcionalidade) 	 	 	 	| Descrição 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	|
 |--------|---------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| RF1 | Gerenciar o acesso das ONGs. | A aplicação deve permitir que as ONGs criem usuário e senha para acessar o sistema. Podendo editar ou excluir as informações de acesso. 	|
-| RF2 | Gerenciar acesso do voluntário. | A aplicação deve permitir que os voluntários criem usuário e senha para acessar o sistema. Podendo editar ou excluir as informações de acesso. Além disso, é possível selecionar uma ou mais categorias favoritas para receber notificação caso uma nova demanda seja criada dentro dessas categorias. |
-| RF3 | Gerenciar acesso do patrocinador. | A aplicação deve permitir que os patrocinadores criem usuário e senha para acessar o sistema. Podendo editar ou excluir as informações de acesso. |
-| RF4 | Gerenciar perfil das ONGs. | A aplicação deve permitir que as ONGs criem, visualizem, editem e excluem informações do perfil. |
-| RF5 | Gerenciar perfil do voluntário. | A aplicação deve permitir que os voluntários criem, visualizem, editem e excluem informações do perfil. |
-| RF6 | Gerenciar perfil do patrocinador. | A aplicação deve permitir que os patrocinadores criem, visualizem, editem e excluem informações do perfil. |
-| RF7 | Gerenciar as demandas. | A aplicação deve permitir que as ONGs criem, visualizem, editem ou excluem informações sobre as demandas. |
-| RF8 | Gerenciar feedback. | A aplicação deve permitir que as ONGs criem solicitações de feedback aos voluntários e visualizem os depoimentos em seus perfis. |
-| RF9 | Gerenciar trabalhos voluntários. | O sistema deve permitir que o voluntário visualize a lista de oportunidades de trabalho voluntário que se candidatou, incluindo a descrição da vaga e localização. Também sendo possível desistir de uma demanda candidatada. |
-| RF10 | Gerenciar patrocínios. | A aplicação deve permitir que as ONGs gerenciem os patrocínios recebidos e que os patrocinadores possam se conectar com as ONGs. |
-| RF11 | Gerenciar conteúdo de páginas informativas. | A aplicação deve consumir o conteúdo das páginas informativas através de uma requisição HTTP ao banco de dados. |
-| RF12 | Enviar notificação do trabalho voluntário. 	| A aplicação deve enviar uma notificação quando uma ONG expressa interesse em seu perfil. |
-| RF13 | Enviar recomendação de demanda. | A aplicação deve enviar uma notificação ao voluntário caso uma demanda com categoria favoritada por ele seja criada. |
-| RF14 | Entrar no sistema. | A aplicação deve permitir que os usuários façam login no sistema. |
-| RF15 | Sair do sistema. | A aplicação deve permitir que os usuários saiam do sistema. |
+| RF1 | Criar o acesso das ONGs. | A aplicação deve permitir que as ONGs criem usuário e senha para acessar o sistema. Podendo editar ou excluir as informações de acesso. 	|
+| RF2 | Criar acesso do voluntário. | A aplicação deve permitir que os voluntários criem usuário e senha para acessar o sistema. Podendo editar ou excluir as informações de acesso. Além disso, é possível selecionar uma ou mais categorias favoritas para receber notificação caso uma nova demanda seja criada dentro dessas categorias. |
+| RF3 | Criar perfil das ONGs. | A aplicação deve permitir que as ONGs criem, visualizem, editem e excluem informações do perfil. |
+| RF4 | Criar perfil do voluntário. | A aplicação deve permitir que os voluntários criem, visualizem, editem e excluem informações do perfil. |
+| RF5 | Gerenciar as demandas. | A aplicação deve permitir que as ONGs criem, visualizem, editem ou excluem informações sobre as demandas. |
+| RF6 | Enviar feedback. | A aplicação deve permitir que as ONGs criem solicitações de feedback aos voluntários e visualizem os depoimentos em seus perfis. |
+| RF7 | Gerenciar trabalhos voluntários. | O sistema deve permitir que o voluntário visualize a lista de oportunidades de trabalho voluntário que se candidatou, incluindo a descrição da vaga e localização. Também sendo possível desistir de uma demanda candidatada. |
+| RF8 | Administrar conteúdo de páginas informativas. | A aplicação deve consumir o conteúdo das páginas informativas através de uma requisição HTTP ao banco de dados. |
+| RF9 | Enviar notificação do trabalho voluntário. 	| A aplicação deve enviar uma notificação quando uma ONG expressa interesse em seu perfil. |
+| RF10 | Enviar recomendação de demanda. | A aplicação deve enviar uma notificação ao voluntário caso uma demanda com categoria favoritada por ele seja criada. |
+| RF11 | Entrar no sistema. | A aplicação deve permitir que os usuários façam login no sistema. |
+| RF12 | Sair do sistema. | A aplicação deve permitir que os usuários saiam do sistema. |
 
 ### 3.3.2 Requisitos Não Funcionais
 
@@ -79,23 +74,22 @@ O Conecta não gerencia compensações financeiras para os voluntários, nem o p
 |--------------------|------------------------------------|
 | Representante da ONG |	Usuário que representa uma ONG e busca suporte técnico ou colaboração em projetos tecnológicos. É responsável por criar e gerenciar solicitações de suporte, acompanhar o progresso dos projetos e assegurar que as necessidades tecnológicas da ONG sejam atendidas. |
 | Voluntário de TI |	Usuário que oferece suas habilidades e conhecimentos em tecnologia para apoiar as ONGs. Pode se inscrever em projetos, fornecer suporte técnico, desenvolver soluções para desafios específicos das ONGs, e compartilhar feedback sobre sua experiência por meio de depoimentos. |
-| Patrocinador | Usuário que pode ser uma entidade ou indivíduo que fornece recursos financeiros ou apoio material para as ONGs e seus projetos. Ele pode ser uma empresa, uma fundação ou um investidor social interessado em promover causas sociais e comunitárias. |
 | Administrador | Usuário gerente do sistema. Possui acesso geral do sistema garante a segurança e integridade dos dados. |
 
 ## 3.4 Modelagem do Sistema
 
 ### 3.4.1 Diagrama de Casos de Uso
 
-Como observado no diagrama de casos de uso da Figura 1, o representante da ONG poderá gerenciar o acesso à plataforma, gerenciar seu perfil, gerenciar as demandas, gerenciar os feedbacks dos voluntários e gerenciar os patrocínios recebidos. O voluntário poderá gerenciar o acesso ao sistema, gerenciar seu perfil e gerenciar os trabalhos voluntários aos quais se candidatou. O patrocinador poderá gerenciar o acesso à aplicação, gerenciar seu perfil e gerenciar os patrocínios. Por fim, o administrador terá acesso geral à plataforma, além de poder enviar recomendações de demandas, gerenciar os conteúdos das páginas informativas e notificar o voluntário sobre trabalhos voluntários.
+Como observado no diagrama de casos de uso da Figura 1, o representante da ONG poderá criar o acesso à plataforma, criar seu perfil, gerenciar as demandas e enviar os feedbacks dos voluntários. O voluntário poderá criar o acesso ao sistema, criar seu perfil e gerenciar os trabalhos voluntários aos quais se candidatou. Por fim, o administrador terá acesso geral à plataforma, além de poder enviar recomendações de demandas, administrar os conteúdos das páginas informativas e notificar o voluntário sobre trabalhos voluntários.
 
-#### Figura 1: Diagrama de Casos de Uso do Sistema.
+#### Figura 1: Diagrama de Casos de Uso do Sistema
 
-![dcu](./assets/design/diagramas/diagrama-de-casos-de-uso-conecta.png)
+![dcu](./assets/diagramas/diagrama-de-casos-de-uso-conecta.jpg)
 ### 3.4.2 Descrições de Casos de Uso
 
-#### Gerenciar o acesso das ONGs (CSU01)
+#### Criar o acesso das ONGs (CSU01)
 
-**Sumário**: Este caso de uso permite que o representante da ONG gerencie seu acesso na plataforma, incluindo a criação, modificação e exclusão de acesso. O objetivo principal é garantir que o representante da ONG tenha controle sobre suas informações dentro do sistema.
+**Sumário**: Este caso de uso permite que o representante da ONG administre seu acesso na plataforma, incluindo a criação, modificação e exclusão de acesso. O objetivo principal é garantir que o representante da ONG tenha controle sobre suas informações dentro do sistema.
 
 **Ator Primário**: Representante da ONG.
 
@@ -127,9 +121,9 @@ d)	Conta do representante da ONG é excluída. <br>
 
 **Pós-condições**: Conta do representante da ONG deve existir ou ser excluída.
 
-#### Gerenciar acesso do voluntário (CSU02)
+#### Criar o acesso do voluntário (CSU02)
 
-**Sumário**: Este caso de uso permite que o voluntário gerencie seu acesso ao sistema, incluindo a criação, modificação e exclusão de acesso. O objetivo principal é garantir que o voluntário tenha controle sobre suas informações dentro da plataforma.
+**Sumário**: Este caso de uso permite que o voluntário administre seu acesso ao sistema, incluindo a criação, modificação e exclusão de acesso. O objetivo principal é garantir que o voluntário tenha controle sobre suas informações dentro da plataforma.
 
 **Ator Primário**: Voluntário de TI.
 
@@ -160,43 +154,9 @@ d)	Conta do voluntário é excluída do sistema. <br>
 
 **Pós-condições**: Conta do voluntário deve existir ou ser excluída.
 
-#### Gerenciar acesso do patrocinador (CSU03)
+#### Criar perfil das ONGs (CSU03)
 
-**Sumário**: Este caso de uso permite que o patrocinador gerencie seu acesso na plataforma, incluindo a criação, modificação e exclusão de sua conta. O objetivo é garantir que o patrocinador tenha controle total sobre suas informações dentro do sistema.
-
-**Ator Primário**: Patrocinador.
-
-**Ator Secundário**: Administrador.
-
-**Pré-condições**: Não existem.
-
-**Fluxo Principal**: Cadastro do patrocinador.
-
-1) 	O patrocinador acessa a página de cadastro.
-2) 	O patrocinador insere seus dados pessoais e de contato.
-3) 	O sistema valida as informações fornecidas.
-4) 	A conta do patrocinador é criada.
-5) 	O patrocinador acessa o sistema utilizando as credenciais cadastradas.
-
-**Fluxo Alternativo**: Alteração de senha.
-
-a)	O patrocinador acessa a página de editar perfil. <br>
-b)	Seleciona a opção de alterar senha. <br>
-c)	Insere a senha atual e a nova senha. <br>
-d)	A senha do patrocinador é alterada. <br>
-
-**Fluxo Alternativo**: Exclusão de acesso.
-
-a)	O patrocinador acessa a página de editar perfil. <br>
-b)	Seleciona a opção de excluir conta. <br>
-c)	Confirma a exclusão. <br>
-d)	A conta do patrocinador é excluída do sistema. <br>
-
-**Pós-condições**: A conta do patrocinador deve existir ou ser excluída, conforme as ações realizadas.
-
-#### Gerenciar perfil das ONGs (CSU04)
-
-**Sumário**: Este caso de uso permite que o representante da ONG gerencie as informações do seu perfil no sistema. O objetivo principal é garantir que o representante da ONG possa atualizar seus dados de contato, criar demandas para recrutar voluntários e acompanhar suas demandas e possíveis voluntários.
+**Sumário**: Este caso de uso permite que o representante da ONG administre as informações do seu perfil no sistema. O objetivo principal é garantir que o representante da ONG possa atualizar seus dados de contato, criar demandas para recrutar voluntários e acompanhar suas demandas e possíveis voluntários.
 
 **Ator Primário**: Representante da ONG.
 
@@ -228,9 +188,9 @@ d)  A conta da ONG é excluída do sistema. <br>
 
 **Pós-condições**: O perfil da ONG é criado, atualizado ou excluído, conforme as ações realizadas.
 
-#### Gerenciar perfil do voluntário (CSU05)
+#### Criar perfil do voluntário (CSU04)
 
-**Sumário**: Este caso de uso permite que o voluntário gerencie as informações do seu perfil no sistema. O objetivo principal é garantir que o voluntário possa atualizar seus dados de contato, habilidades, e acompanhar seu envolvimento em demandas de suporte às ONGs.
+**Sumário**: Este caso de uso permite que o voluntário administre as informações do seu perfil no sistema. O objetivo principal é garantir que o voluntário possa atualizar seus dados de contato, habilidades, e acompanhar seu envolvimento em demandas de suporte às ONGs.
 
 **Ator Primário**: Voluntário de TI.
 
@@ -262,42 +222,7 @@ d) 	A conta do voluntário é excluída do sistema. <br>
 
 **Pós-condições**: O perfil do voluntário é criado, atualizado ou excluído, conforme as ações realizadas.
 
-#### Gerenciar perfil do patrocinador (CSU06)
-
-**Sumário**: Este caso de uso permite que o patrocinador gerencie as informações do seu perfil no sistema. O objetivo principal é garantir que o patrocinador possa atualizar seus dados de contato, informações da empresa, e acompanhar seu envolvimento em projetos de suporte a ONGs.
-
-**Ator Primário**: Patrocinador.
-
-**Ator Secundário**: Administrador.
-
-**Pré-condições**: O patrocinador deve estar cadastrado no sistema com um login e senha válidos.
-
-**Fluxo Principal**: Criar perfil do patrocinador.
-
-1) 	O patrocinador faz login e acessa a área de perfil.
-2) 	O sistema exibe as informações atuais do perfil do patrocinador.
-3) 	O patrocinador pode editar as informações de contato, como endereço de e-mail, número de telefone e dados da empresa.
-4) 	O patrocinador confirma as alterações clicando em "Salvar".
-5) 	O sistema valida as informações e salva as alterações.
-
-**Fluxo Alternativo**: Editar perfil do patrocinador.
-
-a) 	O patrocinador faz login e acessa a área de perfil. <br>
-b) 	O sistema exibe as informações atuais do perfil do patrocinador. <br>
-c) 	O patrocinador pode editar as informações do perfil. <br>
-d) 	O patrocinador confirma as alterações clicando em "Salvar". <br>
-e)  O sistema valida as informações e salva as alterações. <br>
-
-**Fluxo Alternativo**: Exclusão de perfil.
-
-a) 	O patrocinador acessa a página de perfil. <br>
-b) 	Seleciona a opção de excluir conta. <br>
-c) 	Confirma a exclusão. <br>
-d) 	A conta do patrocinador é excluída do sistema. <br>
-
-**Pós-condições**: O perfil do patrocinador é criado, atualizado ou excluído, conforme as ações realizadas.
-
-#### Gerenciar as demandas (CSU07)
+#### Gerenciar as demandas (CSU05)
 
 **Sumário**: O representante da ONG realiza a gestão (criação, consulta, alteração e exclusão) dos dados sobre as demandas. O objetivo principal é garantir que o representante da ONG tenha controle sobre suas demandas.
 
@@ -343,7 +268,7 @@ c) A demanda existente é removida. <br/>
 
 **Pós-condições**: Uma demanda foi criada, consultada, atualizada ou excluída com sucesso, de acordo com a operação escolhida pelo representante da ONG. <br/>
 
-#### Gerenciar feedback (CSU08)
+#### Enviar feedback (CSU06)
 
 **Sumário**: Este caso de uso permite que o voluntário envie, visualize e exclua feedbacks relacionados às demandas que participou. O objetivo principal é coletar experiências dos voluntários para incentivar outros voluntários.
 
@@ -369,7 +294,7 @@ d) 	O feedback é removido da página. <br/>
 
 **Pós-condições**: Feedback deve ser enviado, visualizado ou excluído.
 
-#### Gerenciar trabalhos voluntários (CSU09)
+#### Gerenciar trabalhos voluntários (CSU07)
 
 **Sumário**: O voluntário realiza a gestão (criação, consulta, alteração e exclusão) dos dados sobre os trabalhos candidatados. O objetivo principal é garantir que o voluntário tenha controle sobre suas candidaturas dentro do sistema.
 
@@ -415,46 +340,9 @@ c)  A demanda existente é removida do sistema. <br/>
 
 **Pós-condições**: 	Uma candidatura foi consultada, atualizada ou excluída com sucesso, de acordo com a operação escolhida pelo voluntário.
 
-#### Gerenciar patrocínios (CSU010)
+#### Administrar conteúdo de páginas informativas (CSU08)
 
-**Sumário**: Este caso de uso permite que as ONGs gerenciem os patrocínios recebidos e que os patrocinadores possam se conectar com as ONGs. O objetivo é facilitar a interação entre ONGs e patrocinadores, garantindo que os patrocínios sejam registrados e acompanhados de maneira eficaz.
-
-**Ator Primário**: Patrocinador.
-
-**Ator Secundário**: Representante da ONG.
-
-**Pré-condições**: As ONGs e patrocinadores devem estar cadastrados no sistema e ter acesso ao mesmo.
-
-**Fluxo Principal**: Criar patrocínio.
-
-1) 	O patrocinador faz login no sistema e acessa a área de patrocínios.
-2) 	O patrocinador acessa a lista de ONGs disponíveis.
-3) 	O patrocinador seleciona a ONG que deseja patrocinar.
-4) 	O sistema exibe as informações da ONG selecionada e solicita os detalhes do patrocínio.
-5) 	O patrocinador insere as informações e confirma a criação do patrocínio.
-6) 	O sistema valida as informações e registra o novo patrocínio na conta da ONG.
-
-**Fluxo Alternativo**: Editar patrocínio.
-
-a) 	O patrocinador acessa a lista de seus patrocínios registrados. <br>
-b) 	O patrocinador seleciona o patrocínio que deseja editar. <br>
-c) 	O sistema exibe as informações atuais do patrocínio. <br>
-c) 	O patrocinador faz as alterações necessárias e confirma as mudanças. <br>
-d) 	O sistema valida as informações e atualiza o patrocínio. <br>
-
-**Fluxo Alternativo**: Excluir patrocínio.
-
-a) 	O patrocinador acessa a lista de seus patrocínios registrados. <br>
-b) 	O patrocinador seleciona o patrocínio que deseja excluir. <br>
-c) 	O sistema solicita a confirmação da exclusão. <br>
-d) 	O patrocinador confirma a exclusão do patrocínio. <br>
-c) 	O sistema remove o patrocínio da lista. <br>
-
-**Pós-condições**: O patrocínio é registrado, atualizado ou excluído no sistema conforme as ações realizadas, mantendo a lista de patrocínios da ONG organizada e atualizada.
-
-#### Gerenciar conteúdo de páginas informativas (CSU11)
-
-**Sumário**: O administrador pode gerenciar (criar, editar, excluir) o conteúdo de páginas informativas do sistema. O objetivo principal é garantir que as informações exibidas nas páginas estejam atualizadas e sejam relevantes para os usuários.
+**Sumário**: O administrador pode regular (criar, editar, excluir) o conteúdo de páginas informativas do sistema. O objetivo principal é garantir que as informações exibidas nas páginas estejam atualizadas e sejam relevantes para os usuários.
 
 **Ator Primário**: Administrador.
 
@@ -483,7 +371,7 @@ b)  O administrador é redirecionado a tela inicial para escolher uma página v�
 
 **Pós-condições**: O conteúdo da página informativa é atualizado, criado ou excluído, e as informações corretas são exibidas para os usuários finais.
 
-#### Enviar notificação do trabalho voluntário (CSU12)
+#### Enviar notificação do trabalho voluntário (CSU09)
 
 **Sumário**: Descreve o processo de envio de notificações para os voluntários de TI que estão inscritos em um projeto de uma ONG. O objetivo é garantir que os voluntários recebam atualizações sobre o andamento do projeto, novas tarefas e comunicados importantes.
 
@@ -518,7 +406,7 @@ c) O sistema não permite o envio da notificação e solicita que o representant
 
 **Pós-condições**: O voluntário é informado sobre as atualizações ou novas tarefas do projeto.
 
-#### Enviar recomendação de demanda (CSU13)
+#### Enviar recomendação de demanda (CSU10)
 
 **Sumário**: O sistema envia recomendações de demandas voluntárias para o voluntário, com base no perfil e nas candidaturas anteriores registradas no sistema. O objetivo é facilitar o acesso a novas oportunidades de trabalho voluntário.
 
@@ -547,7 +435,7 @@ b) 	O voluntário pode acessar as recomendações quando desejar. <br/>
 
 **Pós-condições**: O voluntário recebe as recomendações de novas demandas, podendo consultar as oportunidades que melhor correspondem ao seu perfil. Caso não haja demandas disponíveis, o Voluntário é notificado da ausência de recomendações no momento.
 
-#### Entrar do sistema (CSU14)
+#### Entrar do sistema (CSU11)
 
 **Sumário**: Este caso de uso permite que o usuário faça login no sistema de forma segura. O objetivo principal é garantir que as sessões de usuário sejam iniciadas adequadamente.
 
@@ -561,7 +449,7 @@ b) 	O voluntário pode acessar as recomendações quando desejar. <br/>
 
 1) 	O usuário clica no botão "Login" disponível no menu do sistema.
 2) 	O usuário insere o e-mail e senha.
-3) 	O usuário seleciona a opção entre "voluntário", "ONG" ou "patrocinador".
+3) 	O usuário seleciona a opção entre "voluntário" ou "ONG".
 4) 	O usuário submete o formulário.
 
 **Fluxo Alternativo**: Cancelar login.
@@ -571,7 +459,7 @@ b) 	O sistema retorna para a página inicial. <br>
 
 **Pós-condições**: A sessão do usuário é iniciada.
 
-#### Sair do sistema (CSU15)
+#### Sair do sistema (CSU12)
 
 **Sumário**: Este caso de uso permite que o usuário saia do sistema de forma segura. O objetivo principal é garantir que as sessões de usuário sejam encerradas adequadamente.
 
@@ -599,23 +487,22 @@ c) 	O usuário continua a interagir com o sistema normalmente. <br>
 
 ### 3.4.3 Diagrama de Classes 
 
-A Figura 2 mostra o diagrama de classes do sistema, possui diversas entidades como usuários, organizações, patrocinadores, voluntários, demandas e feedbacks. A classe principal é Usuário, que contém atributos como nome, e-mail, senha, e métodos para operações CRUD (criação, leitura, atualização, exclusão) e alteração de senha. Dela, derivam três classes: Patrocinador, ONG e Voluntário. A classe Patrocinador tem atributos como CNPJ, CPF e telefone, além de métodos para patrocinar ou remover o patrocínio de uma ONG. A classe ONG inclui informações como CNPJ, telefone, redes sociais e está associada a um Endereço. Ela é responsável por gerar demandas no sistema, e pode ter várias demandas associadas. Já a classe Voluntário possui CPF e telefone, e métodos que permitem ao voluntário candidatar-se a demandas e enviar feedbacks sobre as demandas em que participou. <br>
+A Figura 2 mostra o diagrama de classes do sistema, possui diversas entidades como usuários, organizações, voluntários, demandas e feedbacks. A classe principal é Usuário, que contém atributos como nome, e-mail, senha, e métodos para operações CRUD (criação, leitura, atualização, exclusão) e alteração de senha. Dela, derivam duas classes: ONG e Voluntário. A classe ONG inclui informações como CNPJ, telefone, redes sociais e está associada a um Endereço. Ela é responsável por gerar demandas no sistema, e pode ter várias demandas associadas. Já a classe Voluntário possui CPF e telefone, e métodos que permitem ao voluntário candidatar-se a demandas e enviar feedbacks sobre as demandas em que participou. <br>
 
-A classe Demanda contém atributos que descrevem o nome, a descrição, o status e o tipo da demanda, além de métodos para gerenciar (criar, consultar, atualizar, excluir) essas demandas. Cada demanda também pode ter vários feedbacks associados. A classe Feedback, por sua vez, armazena o ID do voluntário que o forneceu e o comentário em si, com métodos para gerenciar o feedback. No que diz respeito às associações, os patrocinadores podem estar vinculados a diversas ONGs, e uma ONG pode ter várias demandas. Voluntários podem se candidatar a várias demandas, e cada demanda pode ter múltiplos voluntários associados. Além disso, uma demanda pode gerar múltiplos feedbacks, fornecendo um ciclo completo de interação entre os atores do sistema. <br>
+A classe Demanda contém atributos que descrevem o nome, a descrição, o status e o tipo da demanda, além de métodos para gerenciar (criar, consultar, atualizar, excluir) essas demandas. Cada demanda também pode ter vários feedbacks associados. A classe Feedback, por sua vez, armazena o ID do voluntário que o forneceu e o comentário em si, com métodos para enviar o feedback. Voluntários podem se candidatar a várias demandas, e cada demanda pode ter múltiplos voluntários associados. Além disso, uma demanda pode gerar múltiplos feedbacks, fornecendo um ciclo completo de interação entre os atores do sistema. <br>
 
-#### Figura 2: Diagrama de Classes do Sistema.
+#### Figura 2: Diagrama de Classes do Sistema
 
-![dcu](assets/design/diagramas/diagrama-de-classe-conecta.png)
+![dcu](assets/diagramas/diagrama-de-classe-conecta.jpg)
 
 ### 3.4.4 Descrições das Classes 
 
 | # | Nome         | Descrição                                                                                                                                                                                |
 |---|--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 1 | Usuário      | Representa um usuário genérico no sistema, contendo informações como nome, e-mail, imagem e senha. A classe inclui métodos para criar, consultar, atualizar e deletar usuários.          |
-| 2 | ONG          | Herda de Usuário. Representa uma organização sem fins lucrativos (ONG). Armazena informações como CNPJ, telefone, endereço, e redes sociais. Está associada a demandas e patrocinadores. |
+| 2 | ONG          | Herda de Usuário. Representa uma organização sem fins lucrativos (ONG). Armazena informações como CNPJ, telefone, endereço, e redes sociais. Está associada a demandas. |
 | 3 | Voluntário   | Herda de Usuário. Representa uma pessoa que atua como voluntária, com atributos como CPF e telefone. Pode se candidatar a demandas e fornecer feedbacks.                                 |
-| 4 | Patrocinador | Herda de Usuário. Representa uma entidade ou pessoa que patrocina ONGs. Possui atributos como CNPJ, CPF, e telefone, e métodos para criar patrocinar e remover patrocínios.              |
-| 5 | Demanda      | Representa uma necessidade ou tarefa aberta por uma ONG, com informações como nome, descrição, status, tipo, e data de criação. Está vinculada a voluntários e feedbacks.                |
-| 6 | Feedback     | Representa comentário feito por um voluntário em uma demanda. Contém atributos como o ID do voluntário e o comentário. Tem métodos para criar, atualizar e deletar.                      |
-| 7 | Endereço     | Representa o endereço de uma ONG, com atributos como CEP, rua, número, cidade e estado. Faz parte da classe ONG.                                                                        |
+| 4 | Demanda      | Representa uma necessidade ou tarefa aberta por uma ONG, com informações como nome, descrição, status, tipo, e data de criação. Está vinculada a voluntários e feedbacks.                |
+| 5 | Feedback     | Representa comentário feito por um voluntário em uma demanda. Contém atributos como o ID do voluntário e o comentário. Tem métodos para criar, atualizar e deletar.                      |
+| 6 | Endereço     | Representa o endereço de uma ONG, com atributos como CEP, rua, número, cidade e estado. Faz parte da classe ONG.                                                                        |
 
