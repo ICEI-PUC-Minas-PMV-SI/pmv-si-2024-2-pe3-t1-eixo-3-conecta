@@ -60,7 +60,7 @@ A Landing Page foi projetada para reunir todas as funcionalidades do projeto, ap
 
 - Lei da Semelhança: aplicada na seção de cards, em que os elementos compartilham cores, formas e fontes semelhantes;
 
-- Lei da Proximidade: presente tanto na seção de cards quanto na seção de imagens. Os elementos relacionados são agrupados de forma a criar uma conexão visual;
+- Lei da Proximidade: presente tanto na seção de cards quanto na seção de imagens. Os elementos relacionados são agrupados para criar uma conexão visual;
 
 - Lei da Continuidade: a página apresenta um fluxo vertical claro, guiando o olhar do usuário de uma seção para outra;
 
@@ -96,7 +96,7 @@ A página "Como Começar?" foi projetada para orientar os usuários do sistema d
 
 - Lei de Semelhança: aplicada na seção de guia, em que mesmo sendo dois tipos de usuários, os elementos compartilham fontes e cores;
 
-- Lei da Proximidade: presente tanto na seção de títulos quanto na seção de guias. Os elementos relacionados são agrupados de forma a criar uma conexão visual;
+- Lei da Proximidade: presente tanto na seção de títulos quanto na seção de guias. Os elementos relacionados são agrupados para criar uma conexão visual;
 
 - Lei da Continuidade: a página segue um fluxo vertical intuitivo, guiando o olhar do usuário de uma seção para a outra de maneira suave e natural, sem interrupções visuais, garantindo uma experiência de leitura agradável.
 
@@ -144,13 +144,13 @@ A página "Sobre o Voluntariado" foi desenvolvida para fornecer aos voluntários
 
 - Reduzir a carga de memória de trabalho: a estruturação da página em guias distintos para voluntários e representantes de ONGs reduz a carga cognitiva, pois os usuários precisam memorizar apenas as etapas específicas ao seu perfil.
 
-### Página "Porque ser voluntário?"
+### Página "Por que ser voluntário?"
 
 ![Porque ser voluntário](assets/paginas-do-sistema/por-que-ser-voluntario.png)
 
 #### Objetivo:
 
-A página "Porque ser voluntário?" foi criada para oferecer aos voluntários uma visão clara e objetiva sobre como suas habilidades podem ser aplicadas para gerar impacto positivo na sociedade. Além disso, ela destaca os benefícios que o voluntariado traz para a vida profissional e pessoal, mostrando como essa prática pode desenvolver competências, ampliar redes de contato e promover o crescimento pessoal e profissional dos voluntários.
+A página "Por que ser voluntário?" foi criada para oferecer aos voluntários uma visão clara e objetiva sobre como suas habilidades podem ser aplicadas para gerar impacto positivo na sociedade. Além disso, ela destaca os benefícios que o voluntariado traz para a vida profissional e pessoal, mostrando como essa prática pode desenvolver competências, ampliar redes de contato e promover o crescimento pessoal e profissional dos voluntários.
 
 #### Leis de Gestalt aplicadas:
 
@@ -184,7 +184,7 @@ A página "Perguntas Frequentes" foi desenvolvida para fornecer aos usuários um
 
 - Lei da Semelhança: aplicada na seção de perguntas, em que os elementos compartilham uma aparência consistente, indicando que todas as perguntas podem ser expandidas para revelar as respostas, facilitando a identificação e interação;
 
-- Lei da Proximidade: utilizada para agrupar perguntas relacionadas, posicionando-as próximas umas das outras de forma a criar uma conexão visual;
+- Lei da Proximidade: utilizada para agrupar perguntas relacionadas, posicionando-as próximas umas das outras para criar uma conexão visual;
 
 - Lei da Continuidade: a página segue um fluxo vertical intuitivo, guiando o olhar do usuário de uma seção para a outra de maneira suave e natural, sem interrupções visuais, garantindo uma experiência de leitura agradável;
 
@@ -311,7 +311,7 @@ O objetivo da página de login é possibilitar que os usuários (ONGs e voluntá
 
 - Lei da Similaridade: os links no topo e no rodapé da página têm um estilo visual semelhante, o que ajuda a agrupá-los como elementos de navegação;
 
-- Lei do Fechamento: mesmo que os campos de entrada não tenham bordas completas, nossa mente os percebe como caixas completas devido à disposição dos elementos;
+- Lei do Fechamento: mesmo que os campos de entrada não tenham bordas completas, nossa mente os percebem como caixas completas devido à disposição dos elementos;
 
 - Lei da Continuidade: a disposição linear dos campos de entrada e botões segue uma linha contínua, facilitando a navegação visual.
 

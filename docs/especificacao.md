@@ -23,7 +23,7 @@ A missão do Conecta é facilitar a conexão entre ONGs e voluntários de tecnol
 
 ### 3.2.3 Limites do produto
 
-O Conecta não gerencia compensações financeiras para os voluntários, nem o pagamento de atividades remuneradas. Ele também não abrange o gerenciamento completo de projetos ou tarefas internas das ONGs. Além disso, o produto não oferece suporte a ONGs ou voluntários fora do país ou de regiões não cobertas pelo serviço.
+O Conecta não gerencia compensações financeiras para os voluntários, nem o pagamento de atividades remuneradas. Ele também não abrange o gerenciamento completo de projetos ou tarefas internas das ONGs. Além disso, o produto não oferece suporte a ONGs ou voluntários fora do país, ou de regiões não cobertas pelo serviço.
 
 ### 3.2.4 Benefícios do produto
 
@@ -433,7 +433,7 @@ b) 	O sistema retorna ao início do fluxo principal e permanece aguardando novas
 a) 	O sistema mantém as recomendações no histórico de notificações para consulta posterior. <br/>
 b) 	O voluntário pode acessar as recomendações quando desejar. <br/>
 
-**Pós-condições**: O voluntário recebe as recomendações de novas demandas, podendo consultar as oportunidades que melhor correspondem ao seu perfil. Caso não haja demandas disponíveis, o Voluntário é notificado da ausência de recomendações no momento.
+**Pós-condições**: O voluntário recebe as recomendações de novas demandas, podendo consultar as oportunidades que melhor correspondem ao seu perfil. Caso não haja demandas disponíveis, o voluntário é notificado da ausência de recomendações no momento.
 
 #### Entrar do sistema (CSU11)
 
