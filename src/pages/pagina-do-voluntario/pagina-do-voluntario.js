@@ -1,4 +1,3 @@
-import {Organization} from "../../js/models/organization.js";
 import {Task} from "../../js/models/task.js";
 import {Review} from "../../js/models/review.js";
 import {Candidate} from "../../js/models/candidate.js";
@@ -17,7 +16,7 @@ descriptions.forEach(description => {
     }
 });
 
-const getOrganizationId = async () => {
+const getCandidateId = async () => {
     const urlParams = new URLSearchParams(window.location.search);
     const ongId =  urlParams.get('id');
     if (ongId) return ongId;
@@ -27,10 +26,10 @@ const getOrganizationId = async () => {
     return await session[0].userId;
 }
 
-const getOrganizationData = async () => {
-    const id = await getOrganizationId();
-    const ong = new Organization();
-    return await ong.findById(id);
+const getCandidateData = async () => {
+    const id = await getCandidateId();
+    const candidate = new Candidate();
+    return await candidate.findById(id);
 }
 
 function addFeedbackItem(name, date, text) {
@@ -65,29 +64,29 @@ function addFeedbackItem(name, date, text) {
     feedbackWrapper.appendChild(feedbackItem);
 }
 
-const populateOrganizationData = async () => {
-    const organizationData = await getOrganizationData();
-    const name = document.getElementById('organization-name');
+const populateCandidateData = async () => {
+    const candidateData = await getCandidateData();
+    const name = document.getElementById('candidate-name');
     const facebookLink = document.getElementById('facebook-link');
     const instagramLink = document.getElementById('instagram-link');
     const twitterLink = document.getElementById('twitter-link');
     const about = document.getElementById('about-text');
     const tasksWrapper = document.getElementById('task-wrapper');
 
-    if(!organizationData.facebook) facebookLink.style.display = 'none';
-    if(!organizationData.instagram) instagramLink.style.display = 'none';
-    if(!organizationData.twitter) twitterLink.style.display = 'none';
+    if(!candidateData.facebook) facebookLink.style.display = 'none';
+    if(!candidateData.instagram) instagramLink.style.display = 'none';
+    if(!candidateData.twitter) twitterLink.style.display = 'none';
 
-    name.innerHTML = organizationData.name;
-    facebookLink.href = organizationData.facebook;
-    instagramLink.href = organizationData.instagram;
-    twitterLink.href = organizationData.twitter;
-    about.innerHTML = organizationData.about;
+    name.innerHTML = candidateData.name;
+    facebookLink.href = candidateData.facebook;
+    instagramLink.href = candidateData.instagram;
+    twitterLink.href = candidateData.twitter;
+    about.innerHTML = candidateData.about;
 
     const candidate = new Candidate();
 
     const review = new Review();
-    const reviews = await review.findAllAnsweredByOrganizationId(organizationData.id);
+    const reviews = await review.findAllAnsweredByCandidateId(candidateData.id);
 
     for await (const review of reviews) {
         const candidateData = await candidate.findById(review.candidateId);
@@ -95,7 +94,7 @@ const populateOrganizationData = async () => {
     }
 
     const task = new Task();
-    const tasks = await task.findByOrganizationId(organizationData.id);
+    const tasks = await task.findByCandidateId(candidateData.id);
 
     tasks.forEach(task => {
         const verticalTaskCard = new VerticalTaskCard();
@@ -103,16 +102,16 @@ const populateOrganizationData = async () => {
         verticalTaskCard.name = task.name;
         verticalTaskCard.description = task.description;
         if(task.type.toLowerCase() === 'presencial') {
-                verticalTaskCard.type = organizationData.city+', '+organizationData.state;
+                verticalTaskCard.type = candidateData.city+', '+candidateData.state;
         } else {
                 verticalTaskCard.type = task.type;
                 let upperCaseType = verticalTaskCard.type;
                 verticalTaskCard.type = upperCaseType.charAt(0).toUpperCase() + upperCaseType.slice(1)
         }
         verticalTaskCard.destination = `../candidatar-a-demanda/candidatar-a-demanda.html?id=${task.id}`;
-        verticalTaskCard.owner = organizationData.name
-        verticalTaskCard.image = organizationData.image;
-        verticalTaskCard.addres = organizationData.street+', '+organizationData.number
+        verticalTaskCard.owner = candidateData.name
+        verticalTaskCard.image = candidateData.image;
+        verticalTaskCard.addres = candidateData.street+', '+candidateData.number
 
         tasksWrapper.appendChild(verticalTaskCard);
     });
@@ -123,16 +122,16 @@ const populateOrganizationData = async () => {
         horizontalTaskCard.name = task.name;
         horizontalTaskCard.description = task.description;
         if(task.type.toLowerCase() === 'presencial') {
-                horizontalTaskCard.type = organizationData.city+', '+organizationData.state;
+                horizontalTaskCard.type = candidateData.city+', '+candidateData.state;
         } else {
             horizontalTaskCard.type = task.type;
             let upperCaseType = horizontalTaskCard.type;
             horizontalTaskCard.type = upperCaseType.charAt(0).toUpperCase() + upperCaseType.slice(1)
         }
         horizontalTaskCard.destination = `../candidatar-a-demanda/candidatar-a-demanda.html?id=${task.id}`;
-        horizontalTaskCard.owner = organizationData.name
-        horizontalTaskCard.image = organizationData.image;
-        horizontalTaskCard.addres = organizationData.street+', '+organizationData.number
+        horizontalTaskCard.owner = candidateData.name
+        horizontalTaskCard.image = candidateData.image;
+        horizontalTaskCard.addres = candidateData.street+', '+candidateData.number
 
 
         tasksWrapper.appendChild(horizontalTaskCard);
@@ -140,4 +139,4 @@ const populateOrganizationData = async () => {
     });
 }
 
-populateOrganizationData().then().catch(err => console.log(err));
+populateCandidateData().then().catch(err => console.log(err));

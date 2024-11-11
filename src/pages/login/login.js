@@ -1,9 +1,8 @@
 import { VALIDATE_PASSWORD_RESET_WORD, PROJECT_URL } from "../../js/constants.js";
 import { Organization } from "../../js/models/organization.js";
 import { sendEmail } from "../../js/envio-email.js";
-
+import { Candidate } from "../../js/models/candidate.js";
 import {hashPassword} from "../../js/utils.js";
-import {findByEmail} from "../../js/models/organization.js";
 import {Session} from "../../js/models/session.js";
 
 document.getElementById("entrar").addEventListener("click", handleGetIn);
@@ -77,33 +76,52 @@ async function handleGetIn(event) {
         return;
     }
 
-    await authenticate(email, password).then(async isAuthenticated => {
-        if (isAuthenticated) {
-            const ong = await findByEmail(email);
-            const domain = new Session(ong[0].id);
-            const session = await domain.create();
+    const userType = document.querySelector('input[name="user_type"]:checked')?.value
+    if(!userType) {
+        alert("Selecione o tipo de usuário.");
+        return;
+    }
 
-            window.localStorage.setItem("token", session[0].token);
+    let userEntity;
+    if(userType === "organization") {
+        userEntity = new Organization();
+    } else if(userType === "candidate") {
+        userEntity = new Candidate();
+    }
 
-            alert("Login realizado com sucesso.")
+    const isAuthenticated = await authenticate(userEntity, email, password)
+    if(isAuthenticated) {
+        const user = await userEntity.findByEmail(email);
+        const domain = new Session(user[0].id, userType);
+        const session = await domain.create();
+
+        window.localStorage.setItem("token", session[0].token);
+        window.localStorage.setItem("userType", session[0].userType);
+
+        if(userType === "organization") {
             window.location.href = "../administrar-demandas/administrar-demandas.html";
-        } else {
-            alert("Email ou senha incorretos.");
-            window.location.href = "login.html";
         }
-    });
 
+        if(userType === "candidate") {
+            window.location.href = "../pagina-do-voluntario/pagina-do-voluntario.html";
+        }
+        alert("Login realizado com sucesso.")
+    } else {
+        alert("Email ou senha incorretos.");
+        window.location.href = "login.html";
+    }
 }
 
-async function authenticate(email, password) {
-    return await findByEmail(email).then(ong => ong)
-        .then(async ong => {
-            if (ong.length <= 0) {
-                return false;
-            } else {
-                const hashedProvidedPassword = await hashPassword(password);
-                return ong[0].password === hashedProvidedPassword;
-            }
-        })
-        .catch(error => error.message);
+async function authenticate(userEntity, email, password) {
+    try {
+    const user = await userEntity.findByEmail(email);
+    if (!user || user.length === 0) {
+        return false;
+    }
+    const hash = await hashPassword(password);
+    return user[0].password === hash;
+    } catch (error) {
+        console.error("Erro ao autenticar usuário", error);
+        return false;
+    }
 }

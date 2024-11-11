@@ -22,18 +22,19 @@ window.addEventListener("load", async () => {
     const token = window.localStorage.getItem("token")
     const session = await getSession(token).then(session => session[0]);
 
-    if(session) isLogged = true;
+    if(session) {
+        isLogged = true;
 
-    await findById(session.ongId).then(ong => {
-        ongId = ong.id;
-        document.getElementById("title").innerText = "perfil da ONG";
-
-        document.getElementById("sobre").value = ong.about;
-        document.getElementById("facebook").value = ong.facebook;
-        document.getElementById("instagram").value = ong.instagram;
-        document.getElementById("twitter").value = ong.twitter;
-        document.getElementById("submit-button").value = "Editar";
-    });
+        await findById(session.userId).then(ong => {
+            ongId = ong.id;
+            document.getElementById("title").innerText = "perfil da ONG";
+            document.getElementById("sobre").value = ong.about;
+            document.getElementById("facebook").value = ong.facebook;
+            document.getElementById("instagram").value = ong.instagram;
+            document.getElementById("twitter").value = ong.twitter;
+            document.getElementById("submit-button").value = "Salvar";
+        });
+    }
 });
 
 async function handleCreateOrganizationSecondForm(event) {
@@ -89,16 +90,14 @@ async function handleCreateOrganizationSecondForm(event) {
     organization.twitter = data.twitter;
 
     try {
-        console.log({ organization })
         if(isLogged) {
-            
             await organization.updateById(ongId);
-            alert("Perfil editado com sucesso!");
             window.location.href = "../administrar-demandas/administrar-demandas.html";
+            alert("Perfil editado com sucesso!");
         } else {
             await organization.create();
-            alert("Cadastro realizado com sucesso!");
             window.location.href = "../login/login.html";
+            alert("Cadastro realizado com sucesso!");
         }
     } catch (error) {
         alert(error.message);

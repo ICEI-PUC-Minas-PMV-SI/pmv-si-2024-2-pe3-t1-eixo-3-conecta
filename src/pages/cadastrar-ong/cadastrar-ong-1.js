@@ -8,20 +8,20 @@ document.getElementById("cep").addEventListener("blur", handleZipCodeInput);
 window.addEventListener("load", async () => {
     const token = window.localStorage.getItem("token")
     const session = await getSession(token).then(session => session[0]);
-
-    await findById(session.ongId).then(ong => {
-        document.getElementById("title").innerText = "perfil da ONG";
-
-        document.getElementById("cnpj").value = ong.cnpj;
-        document.getElementById("nome").value = ong.name;
-        document.getElementById("email").value = ong.email;
-        document.getElementById("phone").value = ong.phone;
-        document.getElementById("logradouro").value = ong.street;
-        document.getElementById("numero").value = ong.number;
-        document.getElementById("cidade").value = ong.city;
-        document.getElementById("estado").value = ong.state;
-        document.getElementById("cep").value = ong.cep;
-    });
+    if(session) {
+        await findById(session.userId).then(ong => {
+            document.getElementById("title").innerText = "perfil da ONG";
+            document.getElementById("cnpj").value = ong.cnpj;
+            document.getElementById("nome").value = ong.name;
+            document.getElementById("email").value = ong.email;
+            document.getElementById("phone").value = ong.phone;
+            document.getElementById("logradouro").value = ong.street;
+            document.getElementById("numero").value = ong.number;
+            document.getElementById("cidade").value = ong.city;
+            document.getElementById("estado").value = ong.state;
+            document.getElementById("cep").value = ong.cep;
+        });
+    }
 });
 
 function formatInput(input, format) {

@@ -1,5 +1,6 @@
 import { Organization } from "../../js/models/organization.js";
 import { getSession } from '../../js/models/session.js';
+import { getURL, makeRequest } from "../../js/http.js";
 
 const getOrganizationData = async (organizationId) => {
     const ong = new Organization();
@@ -36,6 +37,7 @@ const makeTemplate = (variant) => {
     const rootPath = variant === 'home' ? './' : '../../';
     const pathName = window.location.pathname;
     const token = window.localStorage.getItem("token");
+    const userType = window.localStorage.getItem("userType");
 
     const template = document.createElement('template');
     template.innerHTML = `
@@ -48,9 +50,16 @@ const makeTemplate = (variant) => {
             <a href=${getPagePath("index")}><img src="${rootPath}/assets/images/logo-conecta.png" alt="Logo Conecta"></div></a>
             <div class="buttons-header-wrapper">
                 <a href=${getPagePath("pagina-de-demandas")} class="header-button oportunidades-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">OPORTUNIDADES</a>
-                <a id="area-da-ong" style="${pathName.includes('pagina-da-ong.html') ? "display: none": ""}" href="#"  class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">ÁREA DA ONG</a>
-                <a id="adm-demandas" style="${token == null ? "display: none" : ""}" id="logout-click" href=${getPagePath("administrar-demandas")}  class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">ADMINISTRAR DEMANDAS</a>
-                <a id="perfil-da-ong" style="${pathName.includes('pagina-da-ong.html') ? "": "display: none"}" href=${getPagePath("cadastrar-ong")}  class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">PERFIL</a>
+                <a id="area-da-ong" style="${pathName.includes('pagina-do-voluntario.html') || userType === "candidate" || userType === undefined ? "display: none": ""}" href="#"  class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">ÁREA DA ONG</a>
+                <a id="area-da-voluntario" style="${pathName.includes('pagina-do-voluntario.html') || userType === "organization" ? "display: none": ""}" href="#"  class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">ÁREA DO VOLUNTÁRIO</a>
+                <a id="adm-demandas" style="${token == null | userType === 'candidate' ? "display: none" : ""}" id="logout-click" href=${getPagePath("administrar-demandas")}  class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">ADMINISTRAR DEMANDAS</a>
+                <a 
+                  id="editar-perfil" 
+                  style="${token ? "" : "display: none"}" 
+                  href="${userType === 'candidate' ? getPagePath('cadastrar-voluntario') : getPagePath('cadastrar-ong')}" 
+                  class="header-button area-da-ong-button">
+                  <img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">EDITAR PERFIL
+                </a>            
                 <a id="logout-click" style="${token == null ? "display: none" : ""}" id="logout-click" href="#" class="header-button area-da-ong-button"><img class="log-out" src="${rootPath}/assets/icons/log-out.png">SAIR</a>
             </div>
     
@@ -66,13 +75,13 @@ const makeTemplate = (variant) => {
     
         <div class="mobile-menu-content">
             <div class="authentication-area" style="${token == null ? "" : "display: none"}">
-                <p class="text">área da ong</p>
+                <p class="text">entrar</p>
                 <a class="authentication-button" href=${getPagePath("cadastrar-ong")} >CADASTRE-SE</a>
                 <a class="authentication-button" href=${getPagePath("login")}>LOGIN</a>
             </div>
     
             <div id="authenticated-menu" style="${token == null ? "display: none" : ""}" class="authentication-area">
-                <p class="text">área da ong</p>
+                <p class="text">entrar</p>
                 <a class="image-org">
                     <div class="profile-image-card-container">
                         <img src="" alt="Profile image">
@@ -471,26 +480,13 @@ async function logout() {
         headers: {'Content-Type': 'application/json'}
     };
 
-    try {
-        await fetch(`https://orca-app-fbvzt.ondigitalocean.app/sessions?token=${token}`, options)
-            .then(async response => {
-                const session = await response.json().then(data => data[0])
-                if (session) {
-                    await fetch(`https://orca-app-fbvzt.ondigitalocean.app/sessions/${session.id}`, {method: 'DELETE'})
-                        .then(response => {
-                            if (response.status === 200) {
-                                window.localStorage.removeItem("token");
-                                window.location.href = "../../index.html";
-                            }
-                        });
-                } else {
-                    window.localStorage.removeItem("token");
-                    window.location.href = getPagePath("index");
-                }
-            });
-    } catch (err) {
-        console.error(err);
+    const session = await makeRequest(getURL(`sessions?token=${token}`), 'GET');
+    if (session.length > 0) {
+        await makeRequest(getURL(`sessions/${session[0].id}`), 'DELETE');
     }
+    window.localStorage.removeItem("token");
+    window.localStorage.removeItem("userType");
+    window.location.href = getPagePath("index");
 }
 
 class HeaderComponent extends HTMLElement {
@@ -535,7 +531,17 @@ class HeaderComponent extends HTMLElement {
             if (token) {
                 window.location.href = getPagePath("pagina-da-ong");
             } else {
-                alert("Você precisa estar logado para acessar a área da ONG.")
+                alert("Você precisa estar logado para acessar esse recurso.")
+                window.location.href = getPagePath("login");
+            }
+        });
+
+        this.root.querySelector('#area-da-voluntario').addEventListener('click', async () => {
+            const token = window.localStorage.getItem("token");
+            if (token) {
+                window.location.href = getPagePath("pagina-do-voluntario");
+            } else {
+                alert("Você precisa estar logado para acessar esse recurso.")
                 window.location.href = getPagePath("login");
             }
         });
@@ -574,12 +580,12 @@ class HeaderComponent extends HTMLElement {
         let token = window.localStorage.getItem("token");
         const session = await getSession(token);
 
-        const organizationData = await getOrganizationData(session[0].ongId);
+        const organizationData = await getOrganizationData(session[0].userId);
         const organizationId = this.root.querySelector('.image-org img');
         const urlImg = this.root.querySelector('.image-org');
         urlImg.href = getPagePath("pagina-da-ong");
         organizationId.src = organizationData.image;
-        
+
     }
 
     static get observedAttributes() {
