@@ -34,7 +34,7 @@
 
       <div class="content">
         <div class="section-wrapper">
-          <h1 class="title">Cadastrar ONG</h1>
+          <h1 class="title" id="title">Cadastrar ONG</h1>
 
           <div class="row">
             <label for="login-info">Foto do perfil</label>
@@ -77,7 +77,12 @@
             />
           </div>
           <div class="options-div">
-            <input type="button" name="voltar" value="Voltar" />
+            <input
+              type="button"
+              name="voltar"
+              value="Voltar"
+              onclick="history.go(-1)"
+            />
 
             <input
               id="submit-button"
