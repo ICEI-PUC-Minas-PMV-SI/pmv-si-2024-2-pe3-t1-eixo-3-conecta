@@ -33,7 +33,7 @@ window.addEventListener("load", async () => {
 
     await findById(session.userId).then((ong) => {
       ongId = ong.id;
-      document.getElementById("title").innerText = "Perfil da ONG";
+      document.getElementById("title").innerText = "pPerfil da ONG";
       document.getElementById("sobre").value = ong.about;
       document.getElementById("facebook").value = ong.facebook;
       document.getElementById("instagram").value = ong.instagram;
