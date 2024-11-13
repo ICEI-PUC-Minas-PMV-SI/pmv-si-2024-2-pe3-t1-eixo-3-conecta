@@ -19,7 +19,7 @@ window.addEventListener("load", async () => {
     userId = session.userId;
 
     await candidate.findById(userId).then((user) => {
-      document.getElementById("title").innerText = "editar perfil";
+      document.getElementById("title").innerText = "Editar perfil";
 
       document.getElementById("cpf").value = user.cpf;
       document.getElementById("sobre").value = user.about;
