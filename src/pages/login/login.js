@@ -88,7 +88,7 @@ async function handleGetIn(event) {
     }
 
     const userType = document.querySelector('input[name="user_type"]:checked')?.value
-//lembrar de testar os switch
+
     let userEntity;
     switch(userType) {
         case "organization":
@@ -123,9 +123,9 @@ async function handleGetIn(event) {
         }
 
         if(userType === "admin") {
-            window.location.href = "../admin/admin.html";
+            window.location.href = "../pagina-do-admin/pagina-do-admin.html";
         }
-        
+
         alert("Login realizado com sucesso.")
     } else {
         alert("Email ou senha incorretos.");
