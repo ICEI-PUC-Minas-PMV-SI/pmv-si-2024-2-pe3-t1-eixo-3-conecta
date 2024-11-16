@@ -12,6 +12,7 @@
     <script type="module" src="../../components/header/header.js"></script>
     <script type="module" src="../../components/footer/footer.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="module" src="sobre-o-voluntariado.js" defer></script>
     <script type="module" src="../../js/edit-modal.js"></script>
 </head>
 
@@ -33,7 +34,7 @@
 
         <div class="conteudo">
             <div class="title-content">
-                <h2 class="title">
+                <h2 class="title" id="title">
                     sobre o voluntariado
                 </h2>
                 <button class="admin-edit-button" id="edit-button" hidden>
@@ -42,22 +43,7 @@
                 </button>
             </div>
             
-            <p class="first-paragraph">
-                O voluntariado é uma expressão poderosa de solidariedade e empatia que
-                desempenha um papel fundamental em muitas comunidades ao redor do mundo. É a prática de oferecer
-                tempo, habilidades e recursos de forma voluntária e não remunerada para causas e organizações
-                que buscam melhorar a vida das pessoas e o bem-estar do planeta.
-                O voluntariado é um ato de altruísmo que tem o potencial de transformar não apenas as vidas
-                daqueles que são ajudados, mas também a daqueles que escolhem se envolver.
-            </p>
-
-            <p class="second-paragraph">
-                Ser um voluntário no Conecta proporciona aos profissionais de tecnologia uma valiosa oportunidade de
-                aplicar os seus conhecimentos num contexto de impacto social, contribuir para causas importantes e
-                potencializar o seu desenvolvimento pessoal e profissional. Você pode escolher a área que tem mais
-                habilidade e interesse para ajudar, a forma de atuação, seja remota ou presencial, enquanto
-                contribui para que diversas organizações possam ajudar um âmbito muito maior de pessoas!
-            </p>
+            <p class="first-paragraph" id="page-content"></p>
 
         </div>
 
@@ -70,16 +56,19 @@
                     <button class="close" id="close-modal">&times;</button>
                 </div>
                 <div class="title-modal">
-                    <h2 class="modal-title">Sobre o voluntariado</h2>
+                    <h2 class="modal-title" id="modal-title"></h2>
                 </div>
             </div>
             <div class="modal-content">
-                <label for="dinamic-text">Texto:</label>
-                <textarea id="dinamic-text" name="dinamic-text" rows="10" cols="50"></textarea>    
+                <label for="content">Texto:</label>
+                <input type="text" data-id="" name="id" hidden readonly>
+                <input type="text" data-page="" name="page" hidden readonly>
+                <input type="text" data-title="" name="title" hidden readonly>
+                <textarea id="content" name="content" rows="10" cols="50"></textarea>    
             </div>
             <div class="modal-footer">
-                <button type="button" class="cancel-button" id="cancel-button">Cancelar</button>
-                <button type="submit" class="save-button">Salvar</button>
+                <button class="cancel-button" id="cancel-button">Cancelar</button>
+                <button class="save-button">Salvar</button>
             </div>
         </form>
     </dialog>
