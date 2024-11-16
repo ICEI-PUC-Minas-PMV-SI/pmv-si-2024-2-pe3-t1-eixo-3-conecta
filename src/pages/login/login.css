@@ -32,6 +32,9 @@
 form{
     width: 100%;
 }
+.hidden {
+    display: none;
+}
 input[type=password], input[type=text] {
     width: 100%;
     padding: 8px 12px 0 12px;
