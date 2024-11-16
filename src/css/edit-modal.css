@@ -1,0 +1,131 @@
+.title-content {
+    display: flex;
+}
+.admin-edit-button {
+    background-color: transparent;
+    margin-top: 5%;
+    cursor: pointer;
+    border: none;
+}
+.admin-edit-icon {
+    width: 30px;
+}
+
+.modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    padding-left: 25%;
+    padding-top: 10%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.form-modal {
+    box-sizing:content-box;
+    background-color: #E8ECEF;
+    width: 50%;
+    max-width: 670px;
+    padding: 0px;
+}
+.header-modal {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    background-color: #274C77;
+}
+.title-modal {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #FFF;
+}
+.close {
+    margin-right: 5px;
+    background-color: transparent;
+    color: #FFF;
+    border: none;
+    font-size: 35px;
+    cursor: pointer;
+}
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+.modal-content > label {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.modal-content > textarea {
+    width: 80%;
+    padding: 5px;    
+    outline: none;
+    background-color: #E8ECEF;
+    font-size: large;
+    color: #716F6F;
+    border: 2px solid #716F6F;
+    border-radius: 15px;
+}
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    height: 30%;
+    margin-top: 20px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+}
+.modal-footer > button {
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.cancel-button {
+    color: #274C77;
+    background-color: #fff;
+}
+.save-button {
+    color: #FFF;
+    background-color: #274C77;
+}
+
+@media screen and (max-width: 720px) {
+    .modal {
+        padding-left: 0;
+        padding-top: 0;
+    }
+    .form-modal {
+        width: 80%;
+        position: relative;
+        left: 12%;
+        margin-top:10px;
+        min-height: auto;
+    }
+    .modal-content {
+        margin-left: 10px;
+    }
+    .modal-content > textarea {
+        width: 90%;
+    }
+    .modal-footer {
+        padding-right: 10px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .form-modal {
+        width: 90%;
+        position: relative;
+        left: 5%;
+    }
+    .modal-footer {
+        padding-right: 5px;
+    }
+}

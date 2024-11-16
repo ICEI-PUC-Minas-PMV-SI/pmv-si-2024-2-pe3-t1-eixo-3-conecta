@@ -7,10 +7,12 @@
     <title>Sobre o Voluntariado</title>
     <link rel="stylesheet" href="../../css/index.css">
     <link rel="stylesheet" href="sobre-o-voluntariado.css">
+    <link rel="stylesheet" href="../../css/edit-modal.css">
     <link rel="shortcut icon" href="../../assets/icons/favicon.ico" type="image/x-icon">
     <script type="module" src="../../components/header/header.js"></script>
     <script type="module" src="../../components/footer/footer.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="module" src="../../js/edit-modal.js"></script>
 </head>
 
 <body>
@@ -30,11 +32,16 @@
         </div>
 
         <div class="conteudo">
-
-            <h2 class="title">
-                sobre o voluntariado
-            </h2>
-
+            <div class="title-content">
+                <h2 class="title">
+                    sobre o voluntariado
+                </h2>
+                <button class="admin-edit-button" id="edit-button" hidden>
+                    <p>editar </p>
+                    <img class="admin-edit-icon" src="../../assets/icons/edit.png" alt="edit">
+                </button>
+            </div>
+            
             <p class="first-paragraph">
                 O voluntariado é uma expressão poderosa de solidariedade e empatia que
                 desempenha um papel fundamental em muitas comunidades ao redor do mundo. É a prática de oferecer
@@ -55,6 +62,27 @@
         </div>
 
     </div>
+
+    <dialog id="edit-modal" class="modal">
+        <form class="form-modal" id="form-modal">
+            <div class="header-modal">
+                <div class="button-close-modal">
+                    <button class="close" id="close-modal">&times;</button>
+                </div>
+                <div class="title-modal">
+                    <h2 class="modal-title">Sobre o voluntariado</h2>
+                </div>
+            </div>
+            <div class="modal-content">
+                <label for="dinamic-text">Texto:</label>
+                <textarea id="dinamic-text" name="dinamic-text" rows="10" cols="50"></textarea>    
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="cancel-button" id="cancel-button">Cancelar</button>
+                <button type="submit" class="save-button">Salvar</button>
+            </div>
+        </form>
+    </dialog>
 
     <footer-component></footer-component>
 
