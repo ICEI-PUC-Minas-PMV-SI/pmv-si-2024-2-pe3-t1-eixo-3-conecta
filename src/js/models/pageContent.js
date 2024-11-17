@@ -4,6 +4,8 @@ export class PageContent {
     id;
     page;
     title;
+    subtitle;
+    image;
     content;
 
     async findById(id) {

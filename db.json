@@ -11,31 +11,73 @@
       "id": 1,
       "page": "sobre-o-voluntariado.html",
       "title": "sobre o voluntariado",
-      "content": "O voluntariado é uma expressão poderosa de solidariedade e empatia que desempenha um papel fundamental em muitas comunidades ao redor do mundo. É a prática de oferecer tempo, habilidades e recursos de forma voluntária e não remunerada para causas e organizações que buscam melhorar a vida das pessoas e o bem-estar do planeta. O voluntariado é um ato de altruísmo que tem o potencial de transformar não apenas as vidas daqueles que são ajudados, mas também a daqueles que escolhem se envolver.</br></br>Ser um voluntário no Conecta proporciona aos profissionais de tecnologia uma valiosa oportunidade de aplicar os seus conhecimentos num contexto de impacto social, contribuir para causas importantes e potencializar o seu desenvolvimento pessoal e profissional. Você pode escolher a área que tem mais habilidade e interesse para ajudar, a forma de atuação, seja remota ou presencial, enquanto contribui para que diversas organizações possam ajudar um âmbito muito maior de pessoas!"
+      "subtitle": "",
+      "image": "",
+      "content": "O voluntariado é uma expressão poderosa de solidariedade e empatia que desempenha um papel fundamental em muitas comunidades ao redor do mundo. É a prática de oferecer tempo, habilidades e recursos de forma voluntária e não remunerada para causas e organizações que buscam melhorar a vida das pessoas e o bem-estar do planeta. O voluntariado é um ato de altruísmo que tem o potencial de transformar não apenas as vidas daqueles que são ajudados, mas também a daqueles que escolhem se envolver.</br></br>Ser um voluntário no Conecta proporciona aos profissionais de tecnologia uma valiosa oportunidade de aplicar os seus conhecimentos num contexto de impacto social, contribuir para causas importantes e potencializar o seu desenvolvimento pessoal e profissional. Você pode escolher a área que tem mais habilidade e interesse para ajudar, a forma de atuação, seja remota ou presencial, enquanto contribui para que diversas organizações possam ajudar um âmbito muito maior de pessoas!",
     },
     {
       "id": 2,
       "page": "por-que-ser-voluntario.html",
       "title": "por que ser voluntário?",
+      "subtitle": "",
+      "image": "",
       "content": "No mundo digital atual, suas habilidades em tecnologia têm o poder de gerar mudanças significativas. Ao se voluntariar, você não apenas aprimora seus conhecimentos, mas também contribui para soluções que beneficiam ONGs e comunidades. A questão é: você está pronto para usar suas habilidades e fazer a diferença? </br> </br> Colocando o que já sabe em prática para ajudar outra pessoa, você também cresce usando a linguagem que os profissionais de TI conhecem melhor: a tecnologia."
     },
     {
       "id": 3,
       "page": "como-comecar.html",
       "title": "como começar?",
+      "subtitle": "",
+      "image": "",
       "content": "Nessa página iremos te guiar em como dar seus primeiros passos rumo ao voluntariado."
     },
     {
       "id": 4,
       "page": "como-comecar.html",
       "title": "sou voluntário",
+      "subtitle": "",
+      "image": "",
       "content": "1. Se voluntarie por meio do botão 'quero ajudar'. </br> 2. Preencha o formulário com seus dados de contato. </br> 3. Fique atento ao seu e-mail para atualizações."
     },
     {
       "id": 5,
       "page": "como-comecar.html",
       "title": "sou ONG",
+      "subtitle": "",
+      "image": "",
       "content": "1. Cadastre sua ONG. </br> 2. Crie demandas e compartilhe com voluntários interessados. <br> 3. Avalie as candidaturas para demandas abertas. <br> 4. Solicite depoimentos dos participantes ao final da demanda."
+    },
+    {
+      "id": 6,
+      "page": "historias-sucesso.html",
+      "title": "Compartilhar minha paixão pela tecnologia é gratificante.",
+      "subtitle": "",
+      "image": "",
+      "content": "Marcelo de 28 anos, se dedica a ajudar pessoas e organizações a navegar no mundo digital. Com o horário de trabalho flexível ele consegue ministrar cursos para jovens e adultos, e acompanhá-los durante o processo de aprendizagem. Ele acredita que a tecnologia é uma ferramenta poderosa para a inclusão. Compartilhar sua experiência como programador com ONGs da sua cidade, que se dedicam a diversas causas, se tornou parte da sua rotina."
+    },
+    {
+      "id": 7,
+      "page": "historias-sucesso.html",
+      "title": "Adoro ver os olhos das crianças brilharem quando elas descobrem o mundo da tecnologia.",
+      "subtitle": "",
+      "image": "",
+      "content": "Elisa de 35 anos tem sua primeira formação como pedagoga, está na área da tecnologia há mais ou menos cinco anos. Ela conseguiu unir suas duas paixões: crianças e computação. Elisa ajuda ONGs que apoiam crianças e adolescentes carentes, levando seu conhecimento e possibilitando que eles possam ter uma formação e um futuro diferente, já que a tecnologia abre tantas portas."
+    },
+    {
+      "id": 8,
+      "page": "historias-sucesso.html",
+      "title": "Estou orgulhoso de contribuir com meu conhecimento e experiência.",
+      "subtitle": "",
+      "image": "",
+      "content": "Com anos de experiência em tecnologia da informação, Renato de 57 anos agora se dedica a ajudar aqueles que mais precisam de conhecimento. Mesmo à distância, Renato contribui com diversas ONGs espalhadas pelo país, inclusive pessoas de sua própria faixa etária que estão iniciando agora no mundo da tecnologia, causando um grande impacto positivo na vida dessas pessoas."
+    },
+    {
+      "id": 9,
+      "page": "historias-sucesso.html",
+      "title": "Ser voluntária me oferece a oportunidade de aplicar o que aprendo na aula para resolver problemas reais.",
+      "subtitle": "",
+      "image": "",
+      "content": "Estudante do segundo ano de Sistemas de Informação, Patrícia de 22 anos ajuda como pode compartilhando o que aprende na sala de aula com ONGs de diversos lugares do país, adaptar a rotina de estudante e voluntária é um desafio que ela se propôs a fazer pensando no impacto social que esse ato causa. Segundo ela não há barreiras quando se pensa numa causa maior, além disso, ela mobiliza colegas e professores que estão dispostos a ajudar."
     }
   ],
   "organizations": [],
