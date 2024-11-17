@@ -9,22 +9,6 @@
     border-radius: 0;
 }
 
-.content > .title {
-    color: #FFFFFF;
-    padding: 16px 24px 0 24px;
-    font-size: 40px;
-}
-
-.content > .subtitle {
-    padding: 8px 24px 0 24px;
-    color: #FFFFFF;
-    font-size: 20px;
-    align-self: center;
-    max-width: 500px;
-    text-align: center;
-    margin-bottom: 5px;
-}
-
 .content > .image-wrapper {
     padding: 16px 16px 16px 16px;
     display: flex;
@@ -36,6 +20,21 @@
     flex-shrink: 1;
     border-radius: 40px;
     max-width: 60%;
+}
+
+.paragrafo {
+    color: #fff;
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 5%;
+}
+.title {    
+    color:#fff;
+    font-size: 40px;
+}
+.conteudo {
+    display: grid;
+    justify-items: start;
 }
 
 .content > .instructions-wrapper {

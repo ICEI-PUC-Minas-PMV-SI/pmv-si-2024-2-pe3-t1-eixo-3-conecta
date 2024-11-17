@@ -32,25 +32,19 @@
 }
 
 .title {
+    margin-left: 12%;
     font-size: 40px;
     color: #fff;
-    margin: 10% 0% 0% 10%;
-    padding: 0px 10px 10px 0px;
 }
 
-.first-paragraph {
+.paragrafo {
     color: #fff;
     font-size: 20px;
     line-height: 30px;
-    margin: 5% 10% 5% 10%;
+    margin-top: 5%;
+    margin-left: 15%;
 }
 
-.second-paragraph {
-    color: #fff;
-    font-size: 20px;
-    line-height: 30px;
-    margin: 0% 10% 0% 10%;
-}
 
 .sobre-o-vountariado-footer {
     cursor: pointer;
@@ -86,7 +80,9 @@
 }
 
 @media screen and (max-width: 1200px) {
-    
+    .title {
+        margin-left: 5%;
+    }
     .content {
         border-radius: 0px;
         align-items: start;
@@ -109,6 +105,10 @@
 }
 
 @media screen and (max-width: 768px) {
+
+    .title {
+        margin-left: 8%;
+    }
     
     .content {
         border-radius: 0px;

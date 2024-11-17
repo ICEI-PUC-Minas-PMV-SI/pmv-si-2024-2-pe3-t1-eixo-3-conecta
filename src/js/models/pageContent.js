@@ -14,6 +14,15 @@ export class PageContent {
             console.error('Erro ao buscar conteúdo:', error);
         }
     }
+
+    async findByPage(page) {
+        try {
+            const response = await makeRequest(getURL(`pageContent?page=${page}`), 'GET');
+            return response;
+        } catch (error) {
+            console.error('Erro ao buscar conteúdo:', error);
+        }
+    }
     
     async findByTitle(title) {
         try {

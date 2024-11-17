@@ -18,6 +18,24 @@
       "page": "por-que-ser-voluntario.html",
       "title": "por que ser voluntário?",
       "content": "No mundo digital atual, suas habilidades em tecnologia têm o poder de gerar mudanças significativas. Ao se voluntariar, você não apenas aprimora seus conhecimentos, mas também contribui para soluções que beneficiam ONGs e comunidades. A questão é: você está pronto para usar suas habilidades e fazer a diferença? </br> </br> Colocando o que já sabe em prática para ajudar outra pessoa, você também cresce usando a linguagem que os profissionais de TI conhecem melhor: a tecnologia."
+    },
+    {
+      "id": 3,
+      "page": "como-comecar.html",
+      "title": "como começar?",
+      "content": "Nessa página iremos te guiar em como dar seus primeiros passos rumo ao voluntariado."
+    },
+    {
+      "id": 4,
+      "page": "como-comecar.html",
+      "title": "sou voluntário",
+      "content": "1. Se voluntarie por meio do botão 'quero ajudar'. </br> 2. Preencha o formulário com seus dados de contato. </br> 3. Fique atento ao seu e-mail para atualizações."
+    },
+    {
+      "id": 5,
+      "page": "como-comecar.html",
+      "title": "sou ONG",
+      "content": "1. Cadastre sua ONG. </br> 2. Crie demandas e compartilhe com voluntários interessados. <br> 3. Avalie as candidaturas para demandas abertas. <br> 4. Solicite depoimentos dos participantes ao final da demanda."
     }
   ],
   "organizations": [],

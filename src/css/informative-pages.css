@@ -1,12 +1,16 @@
 .title-content {
     display: flex;
+    justify-content: space-around;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
+
 .admin-edit-button {
     background-color: transparent;
-    margin-top: 5%;
     cursor: pointer;
     border: none;
 }
+
 .admin-edit-icon {
     width: 30px;
 }
