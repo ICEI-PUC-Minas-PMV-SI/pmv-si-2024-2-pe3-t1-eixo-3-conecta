@@ -86,6 +86,7 @@ async function addContent(content, local) {
             <p class="paragrafo" id="page-content">${element.content}</p>
         `;
         local.insertAdjacentHTML('beforeend', contentHtml);
+
     });
 }
 
