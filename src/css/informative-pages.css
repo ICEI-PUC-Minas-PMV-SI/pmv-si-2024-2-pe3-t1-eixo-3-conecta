@@ -7,8 +7,10 @@
 
 .admin-edit-button {
     background-color: transparent;
+    color: #FFF;
     cursor: pointer;
     border: none;
+    margin-bottom: 5%;
 }
 
 .admin-edit-icon {
@@ -99,6 +101,11 @@
 .save-button {
     color: #FFF;
     background-color: #274C77;
+}
+
+.content-text {
+    display: flex;
+    align-items: flex-end;
 }
 
 @media screen and (max-width: 720px) {

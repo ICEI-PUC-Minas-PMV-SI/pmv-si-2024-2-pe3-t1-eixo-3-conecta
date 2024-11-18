@@ -85,12 +85,14 @@ async function addContent(content, local) {
             <div class="dinamic">
                 <div class="title-content">
                     <h2 class="title">${element.title}</h2>
-                    <button class="admin-edit-button" data-id="${element.id}" hidden>
-                        <p>editar </p>
-                        <img class="admin-edit-icon" src="../../assets/icons/edit.png" alt="edit">
-                    </button>
-                </div>
-                <p class="paragrafo" id="page-content">${element.content}</p>
+                    </div>
+                    <div class="content-text">
+                        <p class="paragrafo" id="page-content">${element.content}</p>
+                        <button class="admin-edit-button" data-id="${element.id}" hidden>
+                            <img class="admin-edit-icon" src="../../assets/icons/edit-page.png" alt="edit">
+                            <p>editar</p>
+                        </button>
+                    </div>
             </div>
         `;
         if (element.subtitle !== "") {
@@ -98,12 +100,15 @@ async function addContent(content, local) {
                 <div class="dinamic">
                     <div class="title-content">
                         <h2 class="subtitle">${element.subtitle}</h2>
+                    </div>
+                    <div class="content-text">
+                        <p class="paragrafo" id="page-content">${element.content}</p>
                         <button class="admin-edit-button" data-id="${element.id}" hidden>
-                            <p>editar </p>
-                            <img class="admin-edit-icon" src="../../assets/icons/edit.png" alt="edit">
+                            <img class="admin-edit-icon" src="../../assets/icons/edit-page.png" alt="edit">
+                            <p>editar</p>
                         </button>
                     </div>
-                    <p class="paragrafo" id="page-content">${element.content}</p>
+
                 </div>
             `;
         }
@@ -114,14 +119,16 @@ async function addContent(content, local) {
                         <div class="title-text">
                             <div class="title-content">
                                 <h2 class="subtitle">${element.subtitle}</h2>
+                            </div>
+                            <div class="content-text">
+                                <p class="paragrafo" id="page-content">${element.content}</p>
                                 <button class="admin-edit-button" data-id="${element.id}" hidden>
-                                    <p>editar </p>
-                                    <img class="admin-edit-icon" src="../../assets/icons/edit.png" alt="edit">
+                                    <img class="admin-edit-icon" src="../../assets/icons/edit-page.png" alt="edit">
+                                    <p>editar</p>
                                 </button>
                             </div>
-                            <p class="paragrafo" id="page-content">${element.content}</p>
                         </div>
-                            <img class="image" src="${element.image}" alt="imagem">
+                        <img class="image" src="${element.image}" alt="imagem">
                     </div>
                 </div>
             `;
