@@ -36,7 +36,7 @@ main {
  }
 
 .conteudo {
-    margin: 0% 10% 0% 5%;
+    margin: 0% 10% 0%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -69,21 +69,26 @@ main {
     font-size: 20px;
     line-height: 30px;
     margin-right: 10%;
-    margin-bottom: 10%;
 }
 .dinamic-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 20px;
-    margin-bottom: 5%;
 }
 
 .title-text {
     display: flex;
     flex-direction: column;
-    max-width: 50%;
+    margin: 5%;
+    max-width: 80%;
 }
+
+div.reverse {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
 @media screen and (max-width: 1580px) {
 
     .content {
@@ -94,7 +99,7 @@ main {
 
     .conteudo {
         position: relative;
-        margin: 0% 10% 0% 5%;
+        margin: 0% 10% 0%;
     }
 
     .main-content {
@@ -141,6 +146,13 @@ main {
     .dinamic-container {
         display: flex;
         flex-direction: column;
+    }
+
+    div.reverse {
+        flex-direction: column;
+    }
+    .title-text {
+        max-width: 60%;
     }
     
 }

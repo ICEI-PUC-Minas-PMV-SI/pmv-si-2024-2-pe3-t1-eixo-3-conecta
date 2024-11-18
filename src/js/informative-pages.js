@@ -82,6 +82,7 @@ async function addContent(content, local) {
     local.innerHTML = '';
     content.forEach(element => {
         let contentHtml = `
+            <div class="dinamic">
                 <div class="title-content">
                     <h2 class="title">${element.title}</h2>
                     <button class="admin-edit-button" data-id="${element.id}" hidden>
@@ -90,33 +91,38 @@ async function addContent(content, local) {
                     </button>
                 </div>
                 <p class="paragrafo" id="page-content">${element.content}</p>
-            `;
+            </div>
+        `;
         if (element.subtitle !== "") {
             contentHtml = `
-                <div class="title-content">
-                    <h2 class="subtitle">${element.subtitle}</h2>
-                    <button class="admin-edit-button" data-id="${element.id}" hidden>
-                        <p>editar </p>
-                        <img class="admin-edit-icon" src="../../assets/icons/edit.png" alt="edit">
-                    </button>
+                <div class="dinamic">
+                    <div class="title-content">
+                        <h2 class="subtitle">${element.subtitle}</h2>
+                        <button class="admin-edit-button" data-id="${element.id}" hidden>
+                            <p>editar </p>
+                            <img class="admin-edit-icon" src="../../assets/icons/edit.png" alt="edit">
+                        </button>
+                    </div>
+                    <p class="paragrafo" id="page-content">${element.content}</p>
                 </div>
-                <p class="paragrafo" id="page-content">${element.content}</p>
             `;
         }
         if (element.image !== "") {
             contentHtml = `
-                <div class="dinamic-container">
-                    <div class="title-text">
-                        <div class="title-content">
-                            <h2 class="subtitle">${element.subtitle}</h2>
-                            <button class="admin-edit-button" data-id="${element.id}" hidden>
-                                <p>editar </p>
-                                <img class="admin-edit-icon" src="../../assets/icons/edit.png" alt="edit">
-                            </button>
+                <div class="dinamic">
+                    <div class="dinamic-container">
+                        <div class="title-text">
+                            <div class="title-content">
+                                <h2 class="subtitle">${element.subtitle}</h2>
+                                <button class="admin-edit-button" data-id="${element.id}" hidden>
+                                    <p>editar </p>
+                                    <img class="admin-edit-icon" src="../../assets/icons/edit.png" alt="edit">
+                                </button>
+                            </div>
+                            <p class="paragrafo" id="page-content">${element.content}</p>
                         </div>
-                        <p class="paragrafo" id="page-content">${element.content}</p>
+                            <img class="image" src="${element.image}" alt="imagem">
                     </div>
-                        <img class="image" src="${element.image}" alt="imagem">
                 </div>
             `;
         }
