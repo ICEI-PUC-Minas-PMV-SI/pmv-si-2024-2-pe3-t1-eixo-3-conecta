@@ -27,13 +27,16 @@ document.addEventListener('DOMContentLoaded', async () => {
             button.addEventListener('click', async () => {
                 const id = button.getAttribute('data-id');
                 const conteudo = content.find(element => element.id == id);
+                const formattedContent = conteudo.content.replace(/<br>/g, '\n');
 
                 modal.showModal();
                 document.querySelector('#modal-title').innerHTML = conteudo.title;
                 document.querySelector('input[data-id]').value = conteudo.id;
                 document.querySelector('input[data-title]').value = conteudo.title;
+                document.querySelector('input[data-subtitle]').value = conteudo.subtitle;
+                document.querySelector('input[data-image]').value = conteudo.image;
                 document.querySelector('input[data-page]').value = window.location.pathname.split('/').pop();
-                document.querySelector('#content').value = conteudo.content;
+                document.querySelector('#content').value = formattedContent;
             });
         });
 
@@ -55,6 +58,10 @@ document.addEventListener('DOMContentLoaded', async () => {
                 e.preventDefault();
                 
                 const formData = new FormData(formModal);
+
+                const content = formData.get('content'); 
+                const formattedContent = content.replace(/\n/g, '<br>');
+                formData.set('content', formattedContent);
                 
                 try {
                     await pageContent.updateById(formData);
@@ -74,17 +81,46 @@ async function addContent(content, local) {
     
     local.innerHTML = '';
     content.forEach(element => {
-        const contentHtml = `
+        let contentHtml = `
+                <div class="title-content">
+                    <h2 class="title">${element.title}</h2>
+                    <button class="admin-edit-button" data-id="${element.id}" hidden>
+                        <p>editar </p>
+                        <img class="admin-edit-icon" src="../../assets/icons/edit.png" alt="edit">
+                    </button>
+                </div>
+                <p class="paragrafo" id="page-content">${element.content}</p>
+            `;
+        if (element.subtitle !== "") {
+            contentHtml = `
+                <div class="title-content">
+                    <h2 class="subtitle">${element.subtitle}</h2>
+                    <button class="admin-edit-button" data-id="${element.id}" hidden>
+                        <p>editar </p>
+                        <img class="admin-edit-icon" src="../../assets/icons/edit.png" alt="edit">
+                    </button>
+                </div>
+                <p class="paragrafo" id="page-content">${element.content}</p>
+            `;
+        }
+        if (element.image !== "") {
+            contentHtml = `
+                <div class="dinamic-container">
+                    <div class="title-text">
+                        <div class="title-content">
+                            <h2 class="subtitle">${element.subtitle}</h2>
+                            <button class="admin-edit-button" data-id="${element.id}" hidden>
+                                <p>editar </p>
+                                <img class="admin-edit-icon" src="../../assets/icons/edit.png" alt="edit">
+                            </button>
+                        </div>
+                        <p class="paragrafo" id="page-content">${element.content}</p>
+                    </div>
+                        <img class="image" src="${element.image}" alt="imagem">
+                </div>
+            `;
+        }
 
-            <div class="title-content">
-                <h2 class="title">${element.title}</h2>
-                <button class="admin-edit-button" data-id="${element.id}" hidden>
-                    <p>editar </p>
-                    <img class="admin-edit-icon" src="../../assets/icons/edit.png" alt="edit">
-                </button>
-            </div>
-            <p class="paragrafo" id="page-content">${element.content}</p>
-        `;
         local.insertAdjacentHTML('beforeend', contentHtml);
 
     });
