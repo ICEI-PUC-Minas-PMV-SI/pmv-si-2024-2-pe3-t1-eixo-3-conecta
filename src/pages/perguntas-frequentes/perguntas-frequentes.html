@@ -7,9 +7,12 @@
     <title>Perguntas Frequentes</title>
     <link rel="stylesheet" href="../../css/index.css">
     <link rel="stylesheet" href="perguntas-frequentes.css">
+    <link rel="stylesheet" href="../../css/informative-pages.css">
     <link rel="shortcut icon" href="../../assets/icons/favicon.ico" type="image/x-icon">
     <script type="module" src="../../components/header/header.js" ></script>
     <script type="module" src="../../components/footer/footer.js"></script>
+    <script type="module" src="../../js/informative-pages.js"></script>
+    <script type="module" src="perguntas-frequentes.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
@@ -24,77 +27,41 @@
     </header>
 
     <div class="content">
-        <div class="collapsible-content">
-            <h1 class="title">
-                perguntas frequentes
-            </h1>
-            <div class="collapsible-wrapper">
-                <button class="collapsible">Como posso me inscrever como voluntário na plataforma?</button>
-                <div class="collapsible-content">
-                    <p>Para se inscrever como voluntário, você pode ir ao menu "Oportunidades". Lá irá encontrar diversas
-                        oportunidades de acordo com suas habilidades, interesses e disponibilidade. Depois disso, você poderá
-                        clicar em "Quero ajudar" e em seguida  preencher o formulário com seus dados e sendo ou não selecionado
-                        receberá uma notificação por e-mail.</p>
-                </div>
-            </div>
-            <div class="collapsible-wrapper">
-                <button class="collapsible">Como as ONGs são verificadas na plataforma?</button>
-                <div class="collapsible-content">
-                    <p>Para garantir a integridade e confiabilidade das ONGs listadas em nossa plataforma de conexão entre
-                        ONGs e voluntários, implementamos um processo de verificação rigoroso. Aqui estão algumas etapas
-                        comuns envolvidas na verificação de ONGs em uma plataforma desse tipo: documentação legal,
-                        avaliação da missão e causa, referências e histórico, transparência financeira.</p>
-                </div>
-            </div>
-            <div class="collapsible-wrapper">
-                <button class="collapsible">Posso escolher o tipo de trabalho voluntário que desejo fazer?</button>
-                <div class="collapsible-content">
-                    <p>Sim, você pode escolher o tipo de trabalho voluntário que deseja fazer. Você pode explorar as
-                        oportunidades na sua área de interesse e habilidade, e nossa plataforma mostrará oportunidades de
-                        voluntariado que correspondem a esses critérios. Você é livre para escolher as oportunidades
-                        que mais se adequarem a você.</p>
-                </div>
-            </div>
-            <div class="collapsible-wrapper">
-                <button class="collapsible">Como entro em contato com uma ONG após me candidatar para uma oportunidade?</button>
-                <div class="collapsible-content">
-                    <p>Após se candidatar para uma oportunidade de voluntariado, a ONG receberá sua candidatura e entrará em
-                        contato com você por meio dos dados fornecidos na candidatura.</p>
-                </div>
-            </div>
-            <div class="collapsible-wrapper">
-                <button class="collapsible">Quais são os requisitos para ser voluntário em uma ONG?</button>
-                <div class="collapsible-content">
-                    <p>Os requisitos para ser voluntário podem variar de acordo com a ONG e a oportunidade em si.
-                        Alguns projetos podem exigir habilidades específicas ou um compromisso de tempo mínimo,
-                        enquanto outros podem ser mais flexíveis. Você pode encontrar informações detalhadas sobre os
-                        requisitos em cada oportunidade de voluntariado listada na plataforma. Certifique-se de ler
-                        atentamente antes de se candidatar.</p>
-                </div>
-            </div>
-        </div>
+        <div class="conteudo"></div>
     </div>
+
+    <dialog id="edit-modal" class="modal">
+        <form class="form-modal" id="form-modal">
+            <div class="header-modal">
+                <div class="button-close-modal">
+                    <button class="close" id="close-modal">&times;</button>
+                </div>
+                <div class="title-modal">
+                    <h2 class="modal-title" id="modal-title"></h2>
+                </div>
+            </div>
+
+            <div class="modal-content">
+                <label for="content">Texto:</label>
+                <input type="text" data-id="" name="id" hidden readonly>
+                <input type="text" data-page="" name="page" hidden readonly>
+                <input type="text" data-title="" name="title" hidden readonly>
+                <input type="text" data-subtitle="" name="subtitle" hidden readonly>
+                <input type="text" data-image="" name="image" hidden readonly>
+                <textarea id="content" name="content" rows="10" cols="50"></textarea>    
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-button" id="cancel-button">Cancelar</button>
+                <button class="save-button">Salvar</button>
+            </div>
+        </form>
+    </dialog>
 
     <footer-component></footer-component>
 </div>
 
 <script src="../../js/index.js"></script>
-<script>
-    let coll = document.getElementsByClassName("collapsible");
-    let i;
 
-    for (i = 0; i < coll.length; i++) {
-        coll[i].addEventListener("click", function () {
-            this.classList.toggle("active");
-            let content = this.nextElementSibling;
-            if (content.style.maxHeight) {
-                content.style.maxHeight = null;
-            } else {
-                content.style.maxHeight = content.scrollHeight + "px";
-            }
-        });
-    }
-</script>
 </body>
 
 </html>
