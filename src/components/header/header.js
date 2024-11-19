@@ -241,15 +241,12 @@ const cssStyle = `
     header {
         display: flex;
         flex-shrink: 1;
-        align-items: center;
         justify-content: space-between;
-        
+        align-items: center;
         padding: 20px;
-        
         background-color: white;
         width: 100%;
-        
-        border-bottom: 2px solid var(--cor-texto);
+        border-bottom: 1px solid var(--cor-texto);
     }
     
     header .home-logo-wrapper {
@@ -544,7 +541,7 @@ async function logout() {
   };
 
   const session = await makeRequest(getURL(`sessions?token=${token}`), "GET");
-  if (session) {
+  if (session.length > 0) {
     await makeRequest(getURL(`sessions/${session[0].id}`), "DELETE");
   }
   window.localStorage.removeItem("token");
