@@ -138,10 +138,7 @@ const getTasks = async (filterTipo = "all", filterStatus = "all") => {
         `        </div>` +
         `        <div class="cards-button" onclick="fotoClick(event)">` +
         `            <div class="card-button-wrapper" onclick="fotoClick(event)">` +
-        `                <div class="manage-delete-button-wrapper" onclick="window.location.href = '../administrar-demanda/administrar-demanda.html?id=${task.id}'">` +
-        `                    <a href="#"><img class="manage-button" src="../../assets/icons/manage.png" alt="manage"></a>` +
-        `                </div>` +
-        `                <div class="manage-delete-button-wrapper" onclick="if (confirm('Tem certeza que deseja excluir essa demanda?')) deleteCandidateFromTask(${task.id})">` +
+        `                <div class="manage-delete-button-wrapper" onclick="if (confirm('Tem certeza que deseja cancelar sua candidatura?')) deleteCandidateFromTask(${task.id})">` +
         `                    <a href="#"><img class="delete-button" src="../../assets/icons/delete.png" alt="Delete"></a>` +
         `                </div>` +
         `            </div>` +
