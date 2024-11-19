@@ -186,11 +186,9 @@ const cssStyle = `
             padding: 15px;
         }
     
-        .horizontal-task-card {
-            display: flex;
-        }
     
         .horizontal-task-card {
+        display: flex;
             border-radius: 15px;
             background: #6096BA;
             padding: 16px 24px 16px 24px;
