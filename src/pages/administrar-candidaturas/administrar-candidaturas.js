@@ -89,17 +89,25 @@ const getTasks = async (filterTipo = "all", filterStatus = "all") => {
 
   const tasks = await task.findAllFilteredByType(filterTipo); // Busca tarefas por tipo
 
-  if (tasks.length === 0) {
-    tasksWrapper.innerHTML = "<p>Não tem nada ainda</p>"; // Exibe a mensagem na página
+  // Exibe no log todas as tarefas carregadas
+  console.log("Todas as tarefas carregadas:", tasks);
+
+  // Filtro: Exibe somente as tarefas que o usuário se inscreveu
+  const userTasks = tasks.filter((task) => task.candidates.includes(userId));
+
+  if (userTasks.length === 0) {
+    tasksWrapper.innerHTML = `<div style = "display: flex; flex-direction: column; gap: 8px;font-size: 16px; text-align:center; padding: 0 16px;">Você não se inscreveu em nenhuma demanda ainda! <br/> <a href="../pagina-de-demandas/pagina-de-demandas.html" style="color: var(--cor-titulo); text-decoration: none; font-weight: 700;">Comece Agora!</a> </div>`;
+    // Exibe a mensagem na página
     return; // Retorna sem continuar a execução
   }
 
-  for await (const task of tasks) {
-    // Verifica se o usuário logado está na lista de candidatos
-    if (
-      task.candidates.includes(userId) && // Usuário logado está nos candidatos
-      (filterStatus === "all" || filterStatus === task.status) // Verifica status se necessário
-    ) {
+  // Exibe no log as tarefas que o usuário se inscreveu
+  console.log("Tarefas que o usuário se inscreveu:", userTasks);
+
+  // Verifica se há tarefas que o usuário se inscreveu e exibe as que corresponderem ao status
+  for await (const task of userTasks) {
+    // Verifica o status da tarefa
+    if (filterStatus === "all" || filterStatus === task.status) {
       const organizationData = await getOrganizationData(task.organizationId);
 
       // Define o ícone de status baseado na condição da tarefa
@@ -151,7 +159,45 @@ const getTasks = async (filterTipo = "all", filterStatus = "all") => {
         `            </div>` +
         `        </div>` +
         `    </div>` +
+        `</div>` +
+        `<div class="horizontal-task-card" onclick="modal($(this), event);">` +
+        `    <div class="left-side">` +
+        `        <div class="task-info" onclick="fotoClick(event)">` +
+        `            <p class="task-name">${task.name}</p>` +
+        `            <p class="task-owner">${organizationData.name}</p>` +
+        `        </div>` +
+        `        <div class="task-description">` +
+        `            <p class="task-description-text">${task.description}</p>` +
+        `        </div>` +
+        `        <div class="bottom-info" onclick="fotoClick(event)">` +
+        `            <div class="location-button-wrapper">` +
+        `                <img class="image-location" src="../../assets/icons/location-black.png" alt="Location">` +
+        `                <div class="location-tag">${endereco}</div>` +
+        `            </div>` +
+        `            <div class="status-wrapper">` +
+        `                <div class="status-info">` +
+        `                    <img class="status-image" src="../../assets/icons/${statusTask}" alt="">` +
+        `                </div>` +
+        `                <div>` +
+        `                    <p class="status-name">${
+          task.status.charAt(0).toUpperCase() + task.status.slice(1)
+        }</p>` +
+        `                </div>` +
+        `            </div>` +
+        `        </div>` +
+        `    </div>` +
+        `    <div class="right-side">` +
+        `        <div class="cards-button" onclick="fotoClick(event)">` +
+        `                <div class="manage-delete-button-wrapper" onclick="if (confirm('Tem certeza que deseja cancelar sua candidatura?')) deleteCandidateFromTask(${task.id})">` +
+        `                <a href="#"><img class="delete-button" src="../../assets/icons/delete.png" alt="Delete"></a>` +
+        `            </div>` +
+        `        </div>` +
+        `    </div>` +
+        `    <div style="display:none">` +
+        `        <div class="address">${organizationData.street}, ${organizationData.number}</div>` +
+        `     </div>` +
         `</div>`;
+
       $(".tasks-wrapper").append(html);
     }
   }
