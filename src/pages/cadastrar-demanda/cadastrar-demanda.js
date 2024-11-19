@@ -13,7 +13,7 @@ window.addEventListener("load", async () => {
 
   if (taskId != null) {
     await findTaskById(taskId).then((task) => {
-      document.getElementById("cadastrar-demanda").innerText = "editar demanda";
+      document.getElementById("cadastrar-demanda").innerText = "Editar demanda";
 
       document.getElementById("nome").value = task.name;
       document.getElementById("descricao").value = task.description;

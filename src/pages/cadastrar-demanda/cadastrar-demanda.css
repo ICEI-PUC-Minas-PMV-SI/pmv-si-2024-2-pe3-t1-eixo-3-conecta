@@ -5,19 +5,26 @@
 .section-wrapper {
   display: flex;
   flex-direction: column;
+
   width: 30%;
   margin-bottom: 40px;
+
+  gap: 32px;
 }
 
 .title {
   margin-top: 20px;
+
   font-size: 40px;
   text-align: center;
   color: var(--cor-titulo);
 }
 
 .row {
-  margin: 24px 0;
+  gap: 24px;
+
+  display: flex;
+  flex-direction: column;
 }
 
 /* Estilo do input do tipo Texto */
@@ -39,9 +46,10 @@ input[type="text"]:focus {
 label[for="demand-info"] {
   font-size: 20px;
   font-weight: 500;
+
   display: inline-block;
+
   color: var(--cor-texto);
-  margin-bottom: 32px;
 }
 
 .options-div {
@@ -90,7 +98,7 @@ input[type="radio"]:checked {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  gap: 8px;
+  gap: 16px;
 }
 
 /* Botões de Cancelar e Voltar */

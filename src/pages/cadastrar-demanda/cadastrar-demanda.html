@@ -35,63 +35,61 @@
         <div class="section-wrapper">
           <h1 class="title" id="cadastrar-demanda">Cadastrar Demanda</h1>
 
-          <form id="form" method="post">
-            <div class="row">
-              <label for="demand-info">Nome da demanda</label>
+          <div class="row">
+            <label for="demand-info">Nome da demanda</label>
 
-              <input type="text" id="nome" name="nome-demanda" maxlength="30" />
-            </div>
-            <div class="row">
-              <label for="demand-info"> Tipo da demanda </label>
+            <input type="text" id="nome" name="nome-demanda" maxlength="30" />
+          </div>
+          <div class="row">
+            <label for="demand-info"> Tipo da demanda </label>
 
-              <div class="options-div">
+            <div class="options-div">
+              <div class="radio-container">
                 <div class="radio-container">
-                  <div class="radio-container">
-                    <input
-                      id="remoto"
-                      type="radio"
-                      name="tipo-demanda"
-                      value="remoto"
-                      checked
-                    />
-                    <label for="tipo-usuario">Presencial</label>
-                  </div>
-
                   <input
-                    id="presencial"
+                    id="remoto"
                     type="radio"
                     name="tipo-demanda"
-                    value="presencial"
+                    value="remoto"
+                    checked
                   />
-                  <label for="tipo-usuario">Remoto</label>
+                  <label for="tipo-usuario">Presencial</label>
                 </div>
+
+                <input
+                  id="presencial"
+                  type="radio"
+                  name="tipo-demanda"
+                  value="presencial"
+                />
+                <label for="tipo-usuario">Remoto</label>
               </div>
             </div>
-            <div class="row">
-              <label for="demand-info">Descreva sua necessidade</label>
-              <textarea
-                id="descricao"
-                name="descricao"
-                maxlength="600"
-                oninput="validateTextarea()"
-              ></textarea>
-            </div>
-            <div class="options-div">
-              <input
-                type="button"
-                name="cancelar"
-                value="Cancelar"
-                onclick="if(confirm('Deseja cancelar o cadastro?')) window.history.go(-1); return false;"
-              />
+          </div>
+          <div class="row">
+            <label for="demand-info">Descreva sua necessidade</label>
+            <textarea
+              id="descricao"
+              name="descricao"
+              maxlength="600"
+              oninput="validateTextarea()"
+            ></textarea>
+          </div>
+          <div class="options-div">
+            <input
+              type="button"
+              name="cancelar"
+              value="Cancelar"
+              onclick="if(confirm('Deseja cancelar o cadastro?')) window.history.go(-1); return false;"
+            />
 
-              <input
-                id="cadastrar"
-                type="button"
-                name="cadastrar"
-                value="Cadastrar"
-              />
-            </div>
-          </form>
+            <input
+              id="cadastrar"
+              type="button"
+              name="cadastrar"
+              value="Cadastrar"
+            />
+          </div>
         </div>
       </main>
       <footer-component></footer-component>
