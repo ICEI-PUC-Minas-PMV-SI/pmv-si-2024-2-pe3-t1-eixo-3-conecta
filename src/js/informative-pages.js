@@ -37,6 +37,11 @@ document.addEventListener('DOMContentLoaded', async () => {
                 document.querySelector('input[data-image]').value = conteudo.image;
                 document.querySelector('input[data-page]').value = window.location.pathname.split('/').pop();
                 document.querySelector('#content').value = formattedContent;
+
+                if (conteudo.subtitle !== "") {
+                    document.querySelector('label').hidden = false;
+                    document.querySelector('input[data-subtitle]').hidden = false;
+                }
             });
         });
 
