@@ -67,20 +67,10 @@ function addFeedbackItem(name, date, text) {
 const populateCandidateData = async () => {
     const candidateData = await getCandidateData();
     const name = document.getElementById('candidate-name');
-    const facebookLink = document.getElementById('facebook-link');
-    const instagramLink = document.getElementById('instagram-link');
-    const twitterLink = document.getElementById('twitter-link');
     const about = document.getElementById('about-text');
     const tasksWrapper = document.getElementById('task-wrapper');
 
-    if(!candidateData.facebook) facebookLink.style.display = 'none';
-    if(!candidateData.instagram) instagramLink.style.display = 'none';
-    if(!candidateData.twitter) twitterLink.style.display = 'none';
-
     name.innerHTML = candidateData.name;
-    facebookLink.href = candidateData.facebook;
-    instagramLink.href = candidateData.instagram;
-    twitterLink.href = candidateData.twitter;
     about.innerHTML = candidateData.about;
 
     const candidate = new Candidate();
