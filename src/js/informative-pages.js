@@ -41,6 +41,9 @@ document.addEventListener('DOMContentLoaded', async () => {
                 if (conteudo.subtitle !== "") {
                     document.querySelector('label').hidden = false;
                     document.querySelector('input[data-subtitle]').hidden = false;
+                } else {
+                    document.querySelector('label').hidden = true;
+                    document.querySelector('input[data-subtitle]').hidden = true;
                 }
             });
         });
