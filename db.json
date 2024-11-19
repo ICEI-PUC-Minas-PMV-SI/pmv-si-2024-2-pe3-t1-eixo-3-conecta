@@ -1,7 +1,26 @@
 {
-    "organizations": [],
-    "tasks": [],
-    "sessions": [],
-    "candidates": [],
-    "reviews": []
+  "organizations": [],
+  "tasks": [],
+  "sessions": [
+    {
+      "userId": 1,
+      "token": "9c75d2e9-e74a-4687-915c-01bac1ea1ac6",
+      "expirationDate": "2024-11-19T13:26:59.321Z",
+      "active": true,
+      "userType": "candidate",
+      "id": 1
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Ajuda Deus",
+      "email": "teste@gmail.com",
+      "about": "asdasd",
+      "cpf": "11111111112",
+      "phone": "(31) 91212-1212",
+      "password": "932f3c1b56257ce8539ac269d7aab42550dacf8818d075f0bdf1990562aae3ef",
+      "id": 1
+    }
+  ],
+  "reviews": []
 }

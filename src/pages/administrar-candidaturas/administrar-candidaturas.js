@@ -34,8 +34,8 @@ window.deleteCandidateFromTask = async function (taskId) {
     const session = await getSession(token);
 
     if (!session || !session[0]?.userId) {
-      console.error("Usuário não autenticado.");
-      return;
+      alert("Você precisa estar logado para acessar esse recurso.");
+      window.location.href = "../login/login.html";
     }
 
     const userId = session[0].userId;
@@ -74,26 +74,33 @@ const getOrganizationData = async (organizationId) => {
 const getTasks = async (filterTipo = "all", filterStatus = "all") => {
   const tasksWrapper = document.querySelector(".tasks-wrapper");
   tasksWrapper.innerHTML = ""; // Limpa o conteúdo atual das tarefas
-  const urlParams = new URLSearchParams(window.location.search);
-  const taskIdDelete = urlParams.get("delete");
-
-  // Verifica se há uma tarefa para deletar via URL e a deleta
-  if (taskIdDelete) {
-    await deleteTask(taskIdDelete).catch((error) => console.log(error));
-  }
 
   const token = window.localStorage.getItem("token");
   const session = await getSession(token);
+
+  if (!session || !session[0]?.userId) {
+    alert("Você precisa estar logado para acessar esse recurso.");
+    window.location.href = "../login/login.html";
+  }
+
+  const userId = session[0].userId; // ID do usuário logado
+
+  console.log("ID do usuário logado", userId);
+
   const tasks = await task.findAllFilteredByType(filterTipo); // Busca tarefas por tipo
 
+  if (tasks.length === 0) {
+    tasksWrapper.innerHTML = "<p>Não tem nada ainda</p>"; // Exibe a mensagem na página
+    return; // Retorna sem continuar a execução
+  }
+
   for await (const task of tasks) {
-    // Filtra tarefas com base nos candidatos e no status
+    // Verifica se o usuário logado está na lista de candidatos
     if (
-      session[0].userId === task.organizationId && // Verifica organização
-      (filterStatus === "all" || filterStatus === task.status) && // Verifica status
-      task.candidates.includes(session[0].userId) // Verifica candidatos
+      task.candidates.includes(userId) && // Usuário logado está nos candidatos
+      (filterStatus === "all" || filterStatus === task.status) // Verifica status se necessário
     ) {
-      const organizationData = await getOrganizationData(session[0].userId);
+      const organizationData = await getOrganizationData(task.organizationId);
 
       // Define o ícone de status baseado na condição da tarefa
       let statusTask = "red-dot.png";
@@ -151,12 +158,6 @@ const getTasks = async (filterTipo = "all", filterStatus = "all") => {
       $(".tasks-wrapper").append(html);
     }
   }
-};
-
-// Função auxiliar para deletar uma tarefa por ID
-const deleteTask = async (id) => {
-  task.deleteById(id);
-  return;
 };
 
 // Chama a função principal para exibir as tarefas ao carregar a página
