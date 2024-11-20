@@ -245,17 +245,17 @@ const getCandidateId = async () => {
   return await session[0].userId;
 };
 
-document.addEventListener("DOMContentLoaded", async (event) => {
-  const id = await getCandidateId();
-  const candidate = new Candidate();
-  let candidato = await candidate.findById(id);
-  preencherFormulario(candidato);
+document.addEventListener('DOMContentLoaded', async (event) => {
+    const id = await getCandidateId();
+    const candidate = new Candidate();
+    let candidato =  await candidate.findById(id);
+    fillForm(candidato);
 });
 
-//função para preencher automaticamente o formulário
-function preencherFormulario(candidato) {
-  document.getElementById("cpf").value = candidato.cpf;
-  document.getElementById("nome").value = candidato.name;
-  document.getElementById("email").value = candidato.email;
-  document.getElementById("phone").value = candidato.phone;
+//função para preencher automaticamente o formulário 
+function fillForm(candidato) {
+  document.getElementById('cpf').value = candidato.cpf;
+  document.getElementById('nome').value = candidato.name;
+  document.getElementById('email').value = candidato.email;
+  document.getElementById('phone').value = candidato.phone;
 }
