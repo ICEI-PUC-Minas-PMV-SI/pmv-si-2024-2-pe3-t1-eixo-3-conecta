@@ -9,7 +9,7 @@
     border-radius: 0;
 }
 
-.collapsible-content > .title {
+.title {
     color: #FFFFFF;
     padding: 16px 24px;
     font-size: 40px;
@@ -17,10 +17,11 @@
 }
 
 .collapsible {
+    /* margin-bottom: 2%; */
     color: #716F6F;
     cursor: pointer;
     padding: 18px;
-    width: 80%;
+    width: 90%;
     border: none;
     text-align: left;
     outline: none;
@@ -53,7 +54,7 @@
 }
 
 .collapsible-wrapper {
-    padding: 0 24px 24px 24px;
+    margin-bottom: 2%;
     gap: 16px;
 }
 .collapsible-content {
@@ -61,6 +62,8 @@
 }
 
 .collapsible-wrapper > .collapsible-content {
+    width: 86.3%;
+    margin-bottom: 1%;
     padding: 0 18px;
     max-height: 0;
     overflow: hidden;
@@ -68,19 +71,40 @@
     background-color: #E8ECEF;
     color: #716F6F;
     font-size: 15px;
-    width: fit-content;
+    /* width: fit-content; */
     border-radius: 0 0 10px 10px;
 }
 
-@media screen and (max-width: 768px) {
+.conteudo {
+    margin-top: 2%;
+    margin-left: 6%;
+}
 
+h1.title {
+    margin-top: 2%;
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+    
     .content {
         align-items: center;
     }
 
-    .content > .title {
-        max-width: 298px;
-        align-self: start;
+    .collapsible-wrapper > .collapsible-content {
+        width: 84.3%;
+    }
+
+}
+
+@media screen and (max-width: 520px) {
+
+    .collapsible-wrapper > .collapsible-content {
+        width: 82%;
     }
 
 }
