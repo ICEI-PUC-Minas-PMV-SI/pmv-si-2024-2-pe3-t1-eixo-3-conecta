@@ -36,18 +36,17 @@ main {
  }
 
 .conteudo {
-    /* margin: 0% 10% 0%; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     text-align: left;
     align-content: space-between;
-    /* width: 85%; */
 }
 
 .container main  .headline {
     background-color: #274C77;
     width: 100%;
+    margin-bottom: 3%;
 }
 
 .container main .headline .title {
@@ -59,7 +58,6 @@ main {
 }
 
 .subtitle {
-    /* width: 82%; */
     font-size: 20px;
     color: #fff;
     text-align: center;
@@ -68,11 +66,9 @@ main {
 }
 
 .paragrafo {
-    /* padding-left: 5%; */
     color: #fff;
     font-size: 20px;
     line-height: 30px;
-    /* margin-right: 10%; */
 }
 .dinamic-container {
     display: flex;
@@ -83,16 +79,13 @@ main {
 }
 
 .title-text {
-    /* width: 100%; */
     display: flex;
     flex-direction: column;
     margin-right: 15%;
-    /* PADDING-right: 5%; */
     max-width: 80%;
 }
 
 div.reverse {
-    /* padding-left: 5%; */
     display: flex;
     flex-direction: row-reverse;
 }
@@ -101,7 +94,6 @@ div.reverse {
     margin-right: 0;
     margin-left: 18%;
     padding-right: 0;
-    /* padding-left: 10%; */
 }
 @media screen and (max-width: 1580px) {
 
