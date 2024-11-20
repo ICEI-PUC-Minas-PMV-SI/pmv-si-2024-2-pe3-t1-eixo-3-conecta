@@ -240,11 +240,11 @@ document.addEventListener('DOMContentLoaded', async (event) => {
     const id = await getCandidateId();
     const candidate = new Candidate();
     let candidato =  await candidate.findById(id);
-    preencherFormulario(candidato);
+    fillForm(candidato);
 });
 
 //função para preencher automaticamente o formulário 
-function preencherFormulario(candidato) {
+function fillForm(candidato) {
   document.getElementById('cpf').value = candidato.cpf;
   document.getElementById('nome').value = candidato.name;
   document.getElementById('email').value = candidato.email;
