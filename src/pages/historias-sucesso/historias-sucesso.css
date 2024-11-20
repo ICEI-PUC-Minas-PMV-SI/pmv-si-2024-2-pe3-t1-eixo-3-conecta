@@ -36,11 +36,13 @@ main {
  }
 
 .conteudo {
-    margin: 0% 10% 0%;
+    /* margin: 0% 10% 0%; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     text-align: left;
+    align-content: space-between;
+    /* width: 85%; */
 }
 
 .container main  .headline {
@@ -57,6 +59,7 @@ main {
 }
 
 .subtitle {
+    /* width: 82%; */
     font-size: 20px;
     color: #fff;
     text-align: center;
@@ -65,30 +68,41 @@ main {
 }
 
 .paragrafo {
+    /* padding-left: 5%; */
     color: #fff;
     font-size: 20px;
     line-height: 30px;
-    margin-right: 10%;
+    /* margin-right: 10%; */
 }
 .dinamic-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 20px;
+    margin-bottom: 8%;
 }
 
 .title-text {
+    /* width: 100%; */
     display: flex;
     flex-direction: column;
-    margin: 5%;
+    margin-right: 15%;
+    /* PADDING-right: 5%; */
     max-width: 80%;
 }
 
 div.reverse {
+    /* padding-left: 5%; */
     display: flex;
     flex-direction: row-reverse;
 }
 
+.reverse > .title-text {
+    margin-right: 0;
+    margin-left: 18%;
+    padding-right: 0;
+    /* padding-left: 10%; */
+}
 @media screen and (max-width: 1580px) {
 
     .content {
@@ -99,7 +113,7 @@ div.reverse {
 
     .conteudo {
         position: relative;
-        margin: 0% 10% 0%;
+        margin: 0% 8% 0%;
     }
 
     .main-content {
@@ -137,6 +151,7 @@ div.reverse {
 
     .conteudo {
         order: 1;
+        margin: 0;
     }
 
     .image {
@@ -145,14 +160,46 @@ div.reverse {
     }
     .dinamic-container {
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
 
     div.reverse {
-        flex-direction: column;
+        display: flex;
+        flex-direction: column-reverse;
     }
     .title-text {
-        max-width: 60%;
+       margin-right: 0;
+    }
+
+    .reverse > .title-text {
+        margin-left: 0%;
+    }
+
+    .subtitle {
+        width: auto;
+    }
+
+    .title-content {
+        justify-content: center;
+        margin-bottom: 2%;
+    }
+
+    .content-text {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+    }
+    
+    .paragrafo {
+        width: 85%;
+    }    
+
+    .image {
+        margin-bottom: 5%;
+    }
+
+    .headline {
+        margin-bottom: 4%;
     }
     
 }
@@ -186,5 +233,9 @@ div.reverse {
         display: flex;
         flex-direction: column;
         max-width: 100%;
+    }
+    
+    .dinamic {
+        padding: 10%;
     }
 }
