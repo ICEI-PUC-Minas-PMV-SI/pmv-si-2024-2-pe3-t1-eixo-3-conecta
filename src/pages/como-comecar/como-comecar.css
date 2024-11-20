@@ -28,45 +28,25 @@
     color: #fff;
     font-size: 20px;
     line-height: 30px;
-    margin-bottom: 5%;
+    margin-right: 5%;
 }
 .title {    
     color:#fff;
     font-size: 40px;
 }
 .conteudo {
-    display: grid;
-    justify-items: start;
-}
-
-.content > .instructions-wrapper {
     display: flex;
-    margin-bottom: 30px;
-}
-
-.content > .instructions-wrapper > .instructions-list {
-    padding: 16px;
+    width: 100%;
+    justify-content: center;
 }
 
 .subtitle {
     padding: 8px 24px 0 24px;
     color: #FFFFFF;
     font-size: 32px;
+    font-weight: initial;
 }
 
-.instructions-list > .list-content li {
-    color: #FFFFFF;
-    font-size: 20px;
-    line-height: 30px;
-    margin: 0;
-}
-
-.instructions-list > .list-content a {
-    color: #FFFFFF;
-    font-size: 20px;
-    margin: 0;
-    text-decoration: underline;
-}
 .dinamic {
     display: flex;
     flex-direction: column;
@@ -78,8 +58,23 @@
 }
 .instructions {
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
     flex-direction: row;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 80%;
+    justify-content: space-between;
+}
+
+.image-wrapper > .dinamic > .content-text > .paragrafo {
+    width: 60%;
+    text-align: center;
+    padding-top: 2%;
+}
+
+.image-wrapper > .dinamic > .content-text {
+    justify-content: center;
+    margin-bottom: 2%;
 }
 @media screen and (max-width: 768px) {
 
@@ -108,8 +103,33 @@
         max-width: 100%;
     }
 
-    .content > .instructions-wrapper {
+    .instructions {
         flex-direction: column;
+        padding-left: 2%;
+        padding-right: 2%;
     }
 
+    .image-wrapper > .dinamic > .content-text > .paragrafo {
+        width: 80%;
+        text-align: start;
+        padding-top: 2%;
+    }
+    
+    .image-wrapper > .dinamic > .content-text {
+        justify-content: start;
+    }
+
+    .image-wrapper > .dinamic {
+        margin-bottom: 0;
+    }
+
+    .conteudo {
+        justify-content: flex-start;
+    }
+
+    .dinamic {
+        align-items: flex-start;
+        padding: 2%;
+        margin-bottom: 5%;
+    }
 }
