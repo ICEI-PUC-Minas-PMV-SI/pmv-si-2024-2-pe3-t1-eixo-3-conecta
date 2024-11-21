@@ -190,7 +190,7 @@
 
 @media screen and (max-width: 768px) {
   .tasks-wrapper {
-    padding: 15px;
+    padding: 16px;
   }
 
   vertical-task-card-component {
@@ -198,11 +198,10 @@
   }
 
   .text {
-    margin: 24px;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.25rem;
 
-    color: black;
+    color: var(--cor-texto);
     text-align: left;
     overflow-wrap: break-word;
   }
@@ -211,20 +210,29 @@
 @media screen and (max-width: 425px) {
   .modal-header {
     display: flex;
-    -webkit-box-pack: justify;
     justify-content: space-between;
+
+    -webkit-box-pack: justify;
     -webkit-box-align: center;
+
     align-items: center;
+
     position: relative;
+
     border-bottom: 1px solid rgb(230, 234, 246);
+
     padding: 0px;
   }
 
+  .section-wrapper {
+    width: 100%;
+    padding: 24px;
+  }
+
   .text {
-    margin: 24px;
     font-size: 15px;
     line-height: 1.25rem;
-    color: black;
+    color: var(--cor-texto);
     text-align: left;
     overflow-wrap: break-word;
   }
@@ -236,10 +244,9 @@
   }
 
   .text {
-    margin: 24px;
     font-size: 15px;
     line-height: 1.25rem;
-    color: black;
+    color: var(--cor-texto);
     text-align: left;
     overflow-wrap: break-word;
   }

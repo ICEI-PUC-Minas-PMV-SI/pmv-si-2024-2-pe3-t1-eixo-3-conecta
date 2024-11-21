@@ -299,7 +299,7 @@ header {
 
   .home-content {
     background: var(--cor-fundo) fff;
-    border-radius: 0 0 0 0;
+    border-radius: 0;
   }
 
   .home-content {
