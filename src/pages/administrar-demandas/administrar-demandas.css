@@ -95,17 +95,13 @@
 }
 
 .task-description-text {
-  display: block;
+  display: -webkit-box;
 
-  font-size: 16px;
-  font-weight: 400;
+  -webkit-line-clamp: 10;
+  -webkit-box-orient: vertical;
 
   overflow: hidden;
-  line-height: 24px;
   text-overflow: ellipsis;
-
-  cursor: pointer;
-  max-height: 200px;
   word-break: break-word;
 }
 

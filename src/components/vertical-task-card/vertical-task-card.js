@@ -96,18 +96,15 @@ const cssStyle = `
     }
 
     .task-description-text {
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 24px;
-        word-break: break-word;
-        text-overflow: ellipsis;
-        
-        overflow: hidden;
+      display: -webkit-box;
 
-        max-height: 80%;
+      -webkit-line-clamp: 10;
+      -webkit-box-orient: vertical;
 
-        cursor: pointer;
-}
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-break: break-word;
+    }
     
     .task-info {
         width: 60%;
