@@ -154,7 +154,7 @@ const makeTemplate = (variant) => {
             }" class="authentication-area">
 
                 <a style="${
-                  (token == null) | (userType === "candidate")
+                  (token == null) || (userType === "candidate")
                     ? "display: none"
                     : ""
                 }"
@@ -164,11 +164,30 @@ const makeTemplate = (variant) => {
                     </div>
                 </a>
 
+                <a style="${
+                  (token == null) | (userType === "organization")
+                    ? "display: none"
+                    : ""
+                }" class="authentication-button" href=${getPagePath("pagina-do-voluntario")}>
+
+                ÁREA DO VOLUNTÁRIO
+                </a>
+
+                <a style="${
+                  (token == null) | (userType === "candidate")
+                    ? "display: none"
+                    : ""
+                }" class="authentication-button" href=${getPagePath("pagina-da-ong")}>
+
+                ÁREA DA ONG
+                </a>
+
+                
                 <a class="authentication-button" href="${
                   userType === "candidate"
                     ? getPagePath("cadastrar-voluntario")
-                    : getPagePath("cadastrar-ong")
-                }">
+                    : getPagePath("cadastrar-ong")}">
+
                     <img class="edit" src="${rootPath}/assets/icons/edit.png"> EDITAR PERFIL 
                 </a>
 
@@ -176,9 +195,8 @@ const makeTemplate = (variant) => {
                   (token == null) | (userType === "candidate")
                     ? "display: none"
                     : ""
-                }" class="authentication-button" href=${getPagePath(
-    "administrar-demandas"
-  )}>
+                }" class="authentication-button" href=${getPagePath("administrar-demandas")}>
+
                 <img class="setting" src="${rootPath}/assets/icons/setting.png">DEMANDAS
                 </a>
 
@@ -186,9 +204,7 @@ const makeTemplate = (variant) => {
                   (token == null) | (userType === "organization")
                     ? "display: none"
                     : ""
-                }" class="authentication-button" href=${getPagePath(
-    "administrar-candidaturas"
-  )}>
+                }" class="authentication-button" href=${getPagePath("administrar-candidaturas")}>
                 <img class="setting" src="${rootPath}/assets/icons/setting.png">CANDIDATURAS
                 </a>
 
