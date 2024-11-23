@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-    <title>Administrar Demandas</title>
+    <title>Administrar Candidaturas</title>
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="../../css/index.css" />
-    <link rel="stylesheet" href="administrar-demandas.css" />
+    <link rel="stylesheet" href="administrar-candidaturas.css" />
 
     <link
       rel="shortcut icon"
@@ -21,7 +21,7 @@
     <script type="module" src="../../js/models/task.js"></script>
     <script type="module" src="../../js/models/organization.js"></script>
 
-    <script type="module" src="./administrar-demandas.js"></script>
+    <script type="module" src="./administrar-candidaturas.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
 
@@ -34,7 +34,7 @@
       </header>
 
       <div class="content">
-        <h1 class="title">Administrar Demandas</h1>
+        <h1 class="title">Administrar Candidaturas</h1>
 
         <div class="filter">
           <label id="filtroSelect">
@@ -71,15 +71,7 @@
 
         <div class="tasks-wrapper"></div>
 
-        <div class="button-cadastrar-demanda">
-          <div class="page-button-wrapper">
-            <a
-              href="../cadastrar-demanda/cadastrar-demanda.html"
-              class="page-button"
-              >CADASTRAR DEMANDA</a
-            >
-          </div>
-        </div>
+        <p id="empty" style="display: none">Nenhuma</p>
       </div>
 
       <div id="myModal" class="modal">
@@ -94,15 +86,18 @@
               <p class="modal-title">VAGA DE VOLUNTARIADO</p>
               <div class="close">&times;</div>
             </div>
+
             <div class="job-title"></div>
+
             <div class="NGO"></div>
+
             <div class="modal-content">
               <h1 class="text-title">Descrição</h1>
               <div class="text"></div>
 
               <h1 class="text-title">Localização</h1>
               <div class="city"></div>
-              <p class="address">Address</p>
+              <p class="address">Endereço</p>
             </div>
           </div>
         </div>
@@ -116,24 +111,26 @@
 
     <script>
       $("#filtroSelect").click(function () {
-        if ($(".filterButton").hasClass("visible")) {
-          $(".filterButton").addClass("invisible");
-          $(".filterButton").removeClass("visible");
-          $(".filterButton").css("display", "none");
-          $(".filterButton.status").addClass("invisible");
-          $(".filterButton.status").removeClass("visible");
-          $(".filterButton.status").css("display", "none");
-          $(".icon_black").css("display", "none");
-          $(".icon_white").css("display", "block");
+        const filterButtons = $(".filterButton, .filterButton.status");
+        const iconBlack = $(".icon_black");
+        const iconWhite = $(".icon_white");
+
+        if (filterButtons.hasClass("visible")) {
+          filterButtons
+            .removeClass("visible")
+            .addClass("invisible")
+            .css("display", "none");
+
+          iconBlack.css("display", "none");
+          iconWhite.css("display", "flex");
         } else {
-          $(".filterButton").addClass("visible");
-          $(".filterButton").removeClass("invisible");
-          $(".filterButton").css("display", "block");
-          $(".filterButton.status").addClass("visible");
-          $(".filterButton.status").removeClass("invisible");
-          $(".filterButton.status").css("display", "block");
-          $(".icon_black").css("display", "block");
-          $(".icon_white").css("display", "none");
+          filterButtons
+            .removeClass("invisible")
+            .addClass("visible")
+            .css("display", "flex");
+
+          iconBlack.css("display", "flex");
+          iconWhite.css("display", "none");
         }
       });
     </script>

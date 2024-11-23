@@ -12,7 +12,7 @@ window.addEventListener("load", async () => {
   const session = await getSession(token).then((session) => session[0]);
   if (session) {
     await findById(session.userId).then((ong) => {
-      document.getElementById("title").innerText = "perfil da ONG";
+      document.getElementById("title").innerText = "Perfil da ONG";
       document.getElementById("cnpj").value = ong.cnpj;
       document.getElementById("nome").value = ong.name;
       document.getElementById("email").value = ong.email;

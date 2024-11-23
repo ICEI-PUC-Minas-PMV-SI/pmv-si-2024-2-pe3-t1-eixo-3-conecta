@@ -10,6 +10,8 @@
   width: 30%;
 
   gap: 32px;
+
+  margin-bottom: 40px;
 }
 
 .subtitle {
@@ -118,6 +120,7 @@ label[for="canditate-info"] {
   .section-wrapper {
     display: flex;
     flex-direction: column;
+
     gap: 16px;
     width: 80%;
     padding: 20px;

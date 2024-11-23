@@ -109,8 +109,8 @@ async function handleSave(event) {
   await task
     .create()
     .then(() => {
-      window.location.href = LOCATION_REF_ADMINISTRAR_DEMANDAS;
       alert(SUCESSO_CADASTRO_DEMANDA);
+      window.location.href = LOCATION_REF_ADMINISTRAR_DEMANDAS;
     })
     .catch((err) => {
       console.error(err);

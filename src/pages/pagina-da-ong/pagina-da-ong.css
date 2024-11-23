@@ -72,18 +72,15 @@
   display: flex;
   flex-wrap: wrap;
 
+  align-items: center;
   justify-items: center;
   justify-content: center;
 
-  align-items: center;
-
   padding: 0 20px;
 
-  margin-bottom: 40px;
+  width: 100%;
 
   gap: 40px;
-
-  width: 100%;
 }
 
 .modal {
@@ -189,12 +186,12 @@
 }
 
 @media screen and (max-width: 768px) {
-  .tasks-wrapper {
-    padding: 16px;
-  }
-
   vertical-task-card-component {
     display: none;
+  }
+
+  .section-wrapper {
+    width: 80%;
   }
 
   .text {

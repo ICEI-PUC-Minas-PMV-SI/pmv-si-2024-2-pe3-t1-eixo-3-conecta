@@ -3,6 +3,7 @@ import {
   SUCESSO_ENVIAR_CANDIDATURA,
   CONFIRM_CANCELAR_CANDIDATURA,
   LOCATION_REF_PAGINA_DEMANDAS,
+  LOCATION_REF_PAGINA_DO_VOLUNTARIO,
 } from "../../js/constants.js";
 import { findById as findOngById } from "../../js/models/organization.js";
 import { findById as findTaskById, Task } from "../../js/models/task.js";
@@ -13,7 +14,6 @@ const dataAtual = new Date();
 
 window.addEventListener("load", async () => {
   const ongName = document.getElementById("ongName");
-  console.log(ongName.value);
   const organization = await getOngName();
   ongName.textContent = organization;
 });
@@ -63,7 +63,7 @@ async function handleSend(event) {
     como: document.getElementById("como").value,
   };
   //validar campos
-  if (!validaCPF(candidatura.cpf)) {
+  if (validaCPF(candidatura.cpf)) {
     alert("CPF inválido. Por favor, verifique o número e tente novamente.");
     return;
   }
@@ -121,7 +121,7 @@ async function handleSend(event) {
     await task.updateCandidatesById(taskID, candidates);
 
     alert(SUCESSO_ENVIAR_CANDIDATURA);
-    window.location.href = LOCATION_REF_PAGINA_DEMANDAS;
+    window.location.href = LOCATION_REF_PAGINA_DO_VOLUNTARIO;
   } catch (error) {
     alert("Erro ao enviar candidatura." + error.message);
   }
@@ -232,4 +232,30 @@ function countPendingActive(candidateTimestamp) {
   const numeroData = new Date().setDate(dataCadastrada.getDate() + 3);
   const dataLimite = new Date(numeroData);
   return dataLimite;
+}
+
+//Vincula demanda ao candidato
+const getCandidateId = async () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const ongId = urlParams.get("id");
+  if (ongId) return ongId;
+
+  const token = window.localStorage.getItem("token");
+  const session = await getSession(token);
+  return await session[0].userId;
+};
+
+document.addEventListener("DOMContentLoaded", async (event) => {
+  const id = await getCandidateId();
+  const candidate = new Candidate();
+  let candidato = await candidate.findById(id);
+  fillForm(candidato);
+});
+
+//função para preencher automaticamente o formulário
+function fillForm(candidato) {
+  document.getElementById("cpf").value = candidato.cpf;
+  document.getElementById("nome").value = candidato.name;
+  document.getElementById("email").value = candidato.email;
+  document.getElementById("phone").value = candidato.phone;
 }

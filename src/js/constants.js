@@ -10,6 +10,7 @@ export let CONFIRM_CANCELAR_CANDIDATURA = 'Deseja cancelar a candidatura?';
 
 export let LOCATION_REF_ADMINISTRAR_DEMANDAS = '../administrar-demandas/administrar-demandas.html';
 export let LOCATION_REF_PAGINA_DEMANDAS = '../pagina-de-demandas/pagina-de-demandas.html';
+export let LOCATION_REF_PAGINA_DO_VOLUNTARIO = '../pagina-do-voluntario/pagina-do-voluntario.html';
 
 export const LOCAL_JSON_SERVER_URL = 'http://localhost:3001';
 export const PRODUCTION_JSON_SERVER_URL = "https://json-server-vercel-eta-beige.vercel.app"

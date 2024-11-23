@@ -73,7 +73,11 @@ const cssStyle = `
     }
     
     .task-info {
-        max-width: 60%;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      max-width: 60%;
     }
     
     .task-info > .task-name {
@@ -90,7 +94,6 @@ const cssStyle = `
     .task-info > .task-owner {
         font-size: 16px;
         font-weight: 700;
-        padding-top: 5px;
     }
     
     .task-description {
@@ -199,10 +202,13 @@ const cssStyle = `
         }
     
         .horizontal-task-card > .left-side {
-            grid-column-start: 0;
+          
+            gap: 4px;
+
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
+
             width: 100%;
             height: inherit;
         }
@@ -227,7 +233,7 @@ const cssStyle = `
             display: flex;
             flex-direction: column;
             gap: 32px;
-            align-items: center;
+            align-items: stretch;
             width: fit-content;
             justify-self: end;
         }
@@ -268,7 +274,7 @@ const cssStyle = `
             max-width: 100%;
         }
         
-        .task-info > .task-name {
+        .task-info > .task-name, .task-owner {
             display: -webkit-box;
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 1;

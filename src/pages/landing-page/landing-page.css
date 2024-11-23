@@ -86,8 +86,6 @@
   display: flex;
   flex-direction: column;
 
-  margin-top: 40px;
-
   text-align: left;
 
   gap: 24px;
@@ -108,6 +106,7 @@
   display: flex;
   flex-wrap: wrap;
 
+  align-items: center;
   justify-items: center;
   justify-content: center;
 
@@ -116,13 +115,8 @@
   width: 100%;
 
   gap: 40px;
-  align-items: center;
 
   background: var(--cor-fundo);
-}
-
-vertical-task-card-component {
-  padding: 20px;
 }
 
 .see-more-button {
@@ -447,25 +441,11 @@ vertical-task-card-component {
   }
 
   .text {
-    margin: 24px;
-    font-size: 15px;
-    line-height: 24px;
-    color: var(--cor-texto);
-    text-align: left;
-    overflow-wrap: break-word;
+    margin: 0;
   }
 }
 
 @media screen and (max-width: 535px) {
-  .text {
-    margin: 24px;
-    font-size: 15px;
-    line-height: 24px;
-    color: var(--cor-texto);
-    text-align: left;
-    overflow-wrap: break-word;
-  }
-
   .subtitle,
   .bottomTitle {
     font-size: 24px;
@@ -479,29 +459,8 @@ vertical-task-card-component {
   }
 }
 
-@media screen and (max-width: 425px) {
-  .text {
-    margin: 24px;
-
-    font-size: 15px;
-    text-align: left;
-    line-height: 24px;
-    color: var(--cor-texto);
-    overflow-wrap: break-word;
-  }
-}
-
 @media screen and (max-width: 320px) {
   .modal-header {
     padding: 0px;
-  }
-
-  .text {
-    margin: 24px;
-    font-size: 15px;
-    line-height: 24px;
-    color: var(--cor-texto);
-    text-align: left;
-    overflow-wrap: break-word;
   }
 }

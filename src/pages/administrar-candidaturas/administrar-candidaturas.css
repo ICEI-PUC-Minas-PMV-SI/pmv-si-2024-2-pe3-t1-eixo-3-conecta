@@ -69,9 +69,11 @@
 
   padding: 0 20px;
 
-  width: 100%;
+  margin-bottom: 40px;
 
   gap: 40px;
+
+  width: 100%;
 }
 
 .vertical-task-card {
@@ -93,13 +95,17 @@
 }
 
 .task-description-text {
-  display: -webkit-box;
+  display: block;
 
-  -webkit-line-clamp: 10;
-  -webkit-box-orient: vertical;
+  font-size: 16px;
+  font-weight: 400;
 
   overflow: hidden;
+  line-height: 24px;
   text-overflow: ellipsis;
+
+  cursor: pointer;
+  max-height: 200px;
   word-break: break-word;
 }
 
@@ -198,17 +204,17 @@
 
   background: var(--cor-titulo);
 
+  color: var(--cor-fundo);
+  font-weight: 700;
   align-items: center;
   justify-content: center;
-
-  font-weight: 700;
-  color: var(--cor-fundo);
+  margin-bottom: 2%;
 }
 
 .page-button {
   font-size: 12px;
   font-weight: 700;
-  color: var(--cor-fundo);
+  color: #ffffff;
   text-decoration: none;
 
   padding: 8px;
@@ -221,8 +227,6 @@
   justify-content: center;
 
   width: 100%;
-
-  margin: 2% 0;
 }
 
 .modal {
@@ -243,9 +247,7 @@
   border: 2px solid var(--cor-borda);
 
   width: 80%;
-
-  min-height: 540px;
-  max-width: 460px;
+  max-width: 660px;
 
   margin: 6% auto;
   border-radius: 16px;

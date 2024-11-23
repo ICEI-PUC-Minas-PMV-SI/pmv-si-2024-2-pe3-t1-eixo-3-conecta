@@ -52,47 +52,94 @@ const makeTemplate = (variant) => {
         
         <header class="header-desktop">
             <div class="home-logo-wrapper">
-            <a href=${getPagePath(
-              "index"
-            )}><img src="${rootPath}/assets/images/logo-conecta.png" alt="Logo Conecta"></div></a>
+
+            <a href=${getPagePath("index")}>
+
+            <img src="${rootPath}/assets/images/logo-conecta.png" alt="Logo Conecta" />
+            </a>
+            </div>
+            
             <div class="buttons-header-wrapper">
-                <a href=${getPagePath(
-                  "pagina-de-demandas"
-                )} class="header-button oportunidades-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">OPORTUNIDADES</a>
+                <a id="oportunidades" 
+                style="${
+                  pathName.includes("pagina-de-demandas.html") ||
+                  userType === "organization" ||
+                  userType === undefined
+                    ? "display: none"
+                    : ""
+                }"
+                
+                href=${getPagePath("pagina-de-demandas")} class="header-button">
+
+                <img class="dot-black" src="${rootPath}/assets/icons/dot-black.png" />
+                
+                OPORTUNIDADES
+                </a>
+
                 <a id="area-da-ong" style="${
-                  pathName.includes("pagina-do-voluntario.html") ||
+                  pathName.includes("pagina-da-ong.html") ||
                   userType === "candidate" ||
                   userType === undefined
                     ? "display: none"
                     : ""
-                }" href="#"  class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">ÁREA DA ONG</a>
+                }" 
+                href="#"  class="header-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">
+
+                ÁREA DA ONG
+                </a>
+
                 <a id="area-da-voluntario" style="${
                   pathName.includes("pagina-do-voluntario.html") ||
                   userType === "organization"
                     ? "display: none"
                     : ""
-                }" href="#"  class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">ÁREA DO VOLUNTÁRIO</a>
+                }" 
+                href="#"  
+                class="header-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">
+
+                ÁREA DO VOLUNTÁRIO
+                </a>
+
                 <a id="adm-demandas" style="${
+                  pathName.includes("administrar-demandas.html") ||
                   (token == null) | (userType === "candidate")
                     ? "display: none"
                     : ""
-                }" id="logout-click" href=${getPagePath(
-    "administrar-demandas"
-  )}  class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">ADMINISTRAR DEMANDAS</a>
-                <a 
-                  id="editar-perfil" 
+                }" 
+                href=${getPagePath("administrar-demandas")}  
+                class="header-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">
+
+                ADMINISTRAR DEMANDAS
+                </a>
+
+                <a id="adm-candidaturas" style="${
+                  pathName.includes("administrar-candidaturas.html") ||
+                  (token == null) | (userType === "organization")
+                    ? "display: none"
+                    : ""
+                }" 
+                href="${getPagePath("administrar-candidaturas")}" 
+                class="header-button">
+
+                  <img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">Administrar candidaturas
+                </a>
+                
+                <a id="editar-perfil" 
                   style="${token ? "" : "display: none"}" 
                   href="${
                     userType === "candidate"
                       ? getPagePath("cadastrar-voluntario")
                       : getPagePath("cadastrar-ong")
                   }" 
-                  class="header-button area-da-ong-button">
+                  class="header-button">
+
                   <img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">EDITAR PERFIL
-                </a>            
+                </a>
+
                 <a id="logout-click" style="${
                   token == null ? "display: none" : ""
-                }" id="logout-click" href="#" class="header-button area-da-ong-button"><img class="log-out" src="${rootPath}/assets/icons/log-out.png">SAIR</a>
+                }" id="logout-click" href="#" class="header-button"><img class="log-out" src="${rootPath}/assets/icons/log-out.png">SAIR</a>
+
             </div>
     
         </header>
@@ -109,31 +156,93 @@ const makeTemplate = (variant) => {
             <div class="authentication-area" style="${
               token == null ? "" : "display: none"
             }">
-                <p class="text">entrar</p>
-                <a class="authentication-button" href=${getPagePath(
-                  "cadastrar-ong"
-                )} >CADASTRE-SE</a>
-                <a class="authentication-button" href=${getPagePath(
-                  "login"
-                )}>LOGIN</a>
+
+                <a class="authentication-button" href=${getPagePath("login")}> 
+
+                ENTRAR
+                </a>
+
             </div>
     
             <div id="authenticated-menu" style="${
               token == null ? "display: none" : ""
             }" class="authentication-area">
-                <p class="text">entrar</p>
-                <a class="image-org">
+
+                <a style="${
+                  token == null || userType === "candidate"
+                    ? "display: none"
+                    : ""
+                }"
+                  class="image-org">
                     <div class="profile-image-card-container">
                         <img src="" alt="Profile image">
                     </div>
                 </a>
-                <a class="authentication-button" href=${getPagePath(
-                  "cadastrar-ong"
-                )} ><img class="edit" src="${rootPath}/assets/icons/edit.png"> EDITAR PERFIL</a>
-                <a class="authentication-button" href=${getPagePath(
-                  "administrar-demandas"
-                )}><img class="setting" src="${rootPath}/assets/icons/setting.png">DEMANDAS</a>
-                <a id="logout-mobile-click" class="authentication-button" href="#"><img class="setting" src="${rootPath}/assets/icons/log-out.png">SAIR</a>
+
+                <a style="${
+                  (token == null) | (userType === "organization")
+                    ? "display: none"
+                    : ""
+                }" class="authentication-button" href=${getPagePath(
+    "pagina-do-voluntario"
+  )}>
+
+                ÁREA DO VOLUNTÁRIO
+                </a>
+
+                <a style="${
+                  (token == null) | (userType === "candidate")
+                    ? "display: none"
+                    : ""
+                }" class="authentication-button" href=${getPagePath(
+    "pagina-da-ong"
+  )}>
+
+                ÁREA DA ONG
+                </a>
+
+                
+                <a class="authentication-button" href="${
+                  userType === "candidate"
+                    ? getPagePath("cadastrar-voluntario")
+                    : getPagePath("cadastrar-ong")
+                }">
+
+                    <img class="edit" src="${rootPath}/assets/icons/edit.png"> 
+                    
+                    EDITAR PERFIL 
+                </a>
+
+                <a style="${
+                  (token == null) | (userType === "candidate")
+                    ? "display: none"
+                    : ""
+                }" 
+                class="authentication-button" 
+                href=${getPagePath("administrar-demandas")}>
+
+                <img class="setting" src="${rootPath}/assets/icons/setting.png">DEMANDAS
+                </a>
+
+                <a style="${
+                  (token == null) | (userType === "organization")
+                    ? "display: none"
+                    : ""
+                }" 
+                class="authentication-button" 
+                href=${getPagePath("administrar-candidaturas")}>
+
+                <img class="setting" src="${rootPath}/assets/icons/setting.png">CANDIDATURAS
+                </a>
+
+                <a id="logout-mobile-click" 
+                class="authentication-button" 
+                href="#">
+                
+                <img class="setting" src="${rootPath}/assets/icons/log-out.png">
+                SAIR
+                </a>
+                
             </div>
     
             <div class="divider-line"></div>
@@ -142,21 +251,44 @@ const makeTemplate = (variant) => {
               "pagina-de-demandas"
             )} >OPORTUNIDADES</a>
             <ul>
-                <li><a class="navigation-button" href=${getPagePath(
-                  "sobre-o-voluntariado"
-                )} >sobre o voluntariado</a></li>
-                <li><a class="navigation-button" href=${getPagePath(
-                  "como-comecar"
-                )} >como começar?</a></li>
-                <li><a class="navigation-button" href=${getPagePath(
-                  "por-que-ser-voluntario"
-                )} >por que ser voluntário?</a></li>
-                <li><a class="navigation-button" href=${getPagePath(
-                  "historias-sucesso"
-                )} >histórias de sucesso</a></li>
-                <li><a class="navigation-button" href=${getPagePath(
-                  "perguntas-frequentes"
-                )} >perguntas frequentes</a></li>
+                <li>
+                    <a class="navigation-button" href=${getPagePath(
+                      "sobre-o-voluntariado"
+                    )}> 
+                    Sobre o voluntariado
+                    </a>
+                </li>
+
+                <li>
+                    <a class="navigation-button" href=${getPagePath(
+                      "como-comecar"
+                    )}> 
+                    Como começar?
+                    </a>
+                </li>
+
+                <li>
+                    <a class="navigation-button" href=${getPagePath(
+                      "por-que-ser-voluntario"
+                    )}> 
+                    Por que ser voluntário?
+                    </a>
+                </li>
+
+                <li>
+                    <a class="navigation-button" href=${getPagePath(
+                      "historias-sucesso"
+                    )}> 
+                    Histórias de sucesso
+                    </a>
+                </li>
+
+                <li>
+                    <a class="navigation-button" href=${getPagePath(
+                      "perguntas-frequentes"
+                    )}> Perguntas frequentes
+                    </a>
+                </li>
             </ul>
         </div>
         </nav>
@@ -173,18 +305,22 @@ const makeDefaultHeaderDesktopTemplate = (variant) => {
   const defaultHeaderMobileTemplate = document.createElement("template");
   defaultHeaderMobileTemplate.innerHTML = `
     <header class="header-mobile">
-        <div class="menu-toggle open-menu" id="">
+        <div class="menu-toggle open-menu">
             <img src="${rootPath}/assets/components/menu-mobile-button.png" alt="Menu">
         </div>
 
         <div class="logo-button">
-            <img src="${rootPath}/assets/icons/icon-conecta.svg" alt="Menu">
+            <a href=${getPagePath("index")}> 
+            
+            <img src="${rootPath}/assets/icons/icon-conecta.svg" alt="Menu"> 
+            </a>
         </div>
 
         <div class="close-button">
-            <a href=${getPagePath(
-              "index"
-            )}><img src="${rootPath}/assets/components/close-button.png" alt="Menu"></a>
+            <a href=${getPagePath("index")}>
+
+            <img src="${rootPath}/assets/components/close-button.png" alt="Menu">
+            </a>
         </div>
     </header>
 `;
@@ -196,14 +332,15 @@ const makeVariantHeaderMobileTemplate = (variant) => {
   const variantHeaderMobileTemplate = document.createElement("template");
   variantHeaderMobileTemplate.innerHTML = `
     <header class="header-mobile">
-        <div class="menu-toggle open-menu" id="">
+        <div class="menu-toggle open-menu">
             <img src="${rootPath}/assets/components/menu-mobile-button.png" alt="Menu">
         </div>
 
         <div class="header-mobile-logo">
-            <a href=${getPagePath(
-              "index"
-            )}><img src="${rootPath}/assets/images/logo-conecta.png" alt="Logo Conecta"></a>
+            <a href=${getPagePath("index")}>
+
+            <img src="${rootPath}/assets/images/logo-conecta.png" alt="Logo Conecta">
+            </a>
         </div>
     </header>
 `;

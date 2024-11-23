@@ -298,7 +298,7 @@ header {
   }
 
   .home-content {
-    background: var(--cor-fundo) fff;
+    background: var(--cor-fundo);
     border-radius: 0;
   }
 

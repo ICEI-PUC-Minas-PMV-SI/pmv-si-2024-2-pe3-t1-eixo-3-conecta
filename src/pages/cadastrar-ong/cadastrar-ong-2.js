@@ -33,7 +33,7 @@ window.addEventListener("load", async () => {
 
     await findById(session.userId).then((ong) => {
       ongId = ong.id;
-      document.getElementById("title").innerText = "pPerfil da ONG";
+      document.getElementById("title").innerText = "Perfil da ONG";
       document.getElementById("sobre").value = ong.about;
       document.getElementById("facebook").value = ong.facebook;
       document.getElementById("instagram").value = ong.instagram;
@@ -111,13 +111,13 @@ async function handleCreateOrganizationSecondForm(event) {
   try {
     if (isLogged) {
       await organization.updateById(ongId);
+      alert("Perfil editado com sucesso!");
       window.location.href =
         "../administrar-demandas/administrar-demandas.html";
-      alert("Perfil editado com sucesso!");
     } else {
       await organization.create();
-      window.location.href = "../login/login.html";
       alert("Cadastro realizado com sucesso!");
+      window.location.href = "../login/login.html";
     }
   } catch (error) {
     alert(error.message);

@@ -101,18 +101,15 @@
               <p class="modal-title">VAGA DE VOLUNTARIADO</p>
               <div class="close">&times;</div>
             </div>
-
             <div class="job-title"></div>
-
             <div class="NGO"></div>
-
             <div class="modal-content">
               <h1 class="text-title">Descrição</h1>
               <div class="text"></div>
 
               <h1 class="text-title">Localização</h1>
               <div class="city"></div>
-              <p class="address">Address</p>
+              <p class="address"></p>
             </div>
           </div>
         </div>
@@ -125,27 +122,20 @@
     <script src="../../js/index.js"></script>
     <script>
       $("#filtroSelect").click(function () {
-        const filterButtons = $(".filterButton, .filterButton.status");
-        const iconBlack = $(".icon_black");
-        const iconWhite = $(".icon_white");
-
-        if (filterButtons.hasClass("visible")) {
-          filterButtons
-            .removeClass("visible")
-            .addClass("invisible")
-            .css("display", "none");
-          iconBlack.css("display", "none");
-          iconWhite.css("display", "flex");
+        if ($(".filterButton").hasClass("visible")) {
+          $(".filterButton").addClass("invisible");
+          $(".filterButton").removeClass("visible");
+          $(".filterButton").css("display", "none");
+          $(".icon_black").css("display", "none");
+          $(".icon_white").css("display", "block");
         } else {
-          filterButtons
-            .removeClass("invisible")
-            .addClass("visible")
-            .css("display", "flex");
-          iconBlack.css("display", "flex");
-          iconWhite.css("display", "none");
+          $(".filterButton").addClass("visible");
+          $(".filterButton").removeClass("invisible");
+          $(".filterButton").css("display", "block");
+          $(".icon_black").css("display", "block");
+          $(".icon_white").css("display", "none");
         }
       });
-
       function buscaCidade(element) {
         $(".cidades_selecionadas").remove();
         $.ajax({
