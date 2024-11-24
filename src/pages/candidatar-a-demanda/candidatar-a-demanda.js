@@ -205,14 +205,11 @@ function countPendingActive(candidateTimestamp) {
 
 //Vincula demanda ao candidato
 const getCandidateId = async () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const ongId =  urlParams.get('id');
-    if (ongId) return ongId;
+  const token = window.localStorage.getItem("token");
 
-    const token = window.localStorage.getItem("token");
-    const session = await getSession(token);
-    return await session[0].userId;
-}
+  const session = await getSession(token);
+  return await session[0].userId;
+};
 
 document.addEventListener('DOMContentLoaded', async (event) => {
     const id = await getCandidateId();
