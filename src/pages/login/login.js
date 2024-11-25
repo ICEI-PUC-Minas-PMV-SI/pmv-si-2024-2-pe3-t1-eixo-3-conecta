@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.querySelector("#email").addEventListener("input", function(event) {
         var email = event.target.value.trim();
-        if(email.length >= 5 && email === "admin") {
+        if(email.length >= 5 && email === "admin" || email === "admin@admin.com") {
             document.querySelectorAll(".hidden").forEach(element => element.classList.remove("hidden"));
         }
     });
