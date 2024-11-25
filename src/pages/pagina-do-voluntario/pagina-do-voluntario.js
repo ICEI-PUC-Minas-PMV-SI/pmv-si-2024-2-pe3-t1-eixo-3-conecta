@@ -1,9 +1,9 @@
-import { Task } from "../../js/models/task.js";
-import { Review } from "../../js/models/review.js";
-import { Candidate } from "../../js/models/candidate.js";
-import { VerticalTaskCard } from "../../components/vertical-task-card/vertical-task-card.js";
-import { HorizontalTaskCard } from "../../components/horizontal-task-card/horizontal-task-card.js";
-import { getSession } from "../../js/models/session.js";
+import {Task} from "../../js/models/task.js";
+import {Review} from "../../js/models/review.js";
+import {Candidate} from "../../js/models/candidate.js";
+import {VerticalTaskCard} from "../../components/vertical-task-card/vertical-task-card.js";
+import {HorizontalTaskCard} from "../../components/horizontal-task-card/horizontal-task-card.js";
+import {getSession} from "../../js/models/session.js";
 import { Organization } from "../../js/models/organization.js";
 
 const descriptions = document.querySelectorAll(".task-description > p");
@@ -88,54 +88,54 @@ const populateCandidateData = async () => {
     addFeedbackItem(candidateData.name, review.createdAt, review.comment);
   }
 
-  const taskEntity = new Task();
-  const organization = new Organization();
-  const tasks = await taskEntity.findByCandidateId(candidateData.id);
+    const taskEntity = new Task();
+    const organization = new Organization();
+    const tasks = await taskEntity.findByCandidateId(candidateData.id);
 
-  for (const task of tasks) {
-    const verticalTaskCard = new VerticalTaskCard();
-    const organizationData = await organization.findById(task.organizationId);
+    for (const task of tasks) {
+        const verticalTaskCard = new VerticalTaskCard();
+        const organizationData = await organization.findById(task.organizationId);
 
-    verticalTaskCard.name = task.name;
-    verticalTaskCard.description = task.description;
-    if (task.type.toLowerCase() === "presencial") {
-      verticalTaskCard.type = candidateData.city + ", " + candidateData.state;
-    } else {
-      verticalTaskCard.type = task.type;
-      let upperCaseType = verticalTaskCard.type;
-      verticalTaskCard.type =
-        upperCaseType.charAt(0).toUpperCase() + upperCaseType.slice(1);
+        verticalTaskCard.name = task.name;
+        verticalTaskCard.description = task.description;
+        if(task.type.toLowerCase() === 'presencial') {
+                verticalTaskCard.type = organizationData.city+', '+organizationData.state;
+        } else {
+                verticalTaskCard.type = task.type;
+                let upperCaseType = verticalTaskCard.type;
+                verticalTaskCard.type = upperCaseType.charAt(0).toUpperCase() + upperCaseType.slice(1)
+        }
+        verticalTaskCard.destination = `../candidatar-a-demanda/candidatar-a-demanda.html?id=${task.id}`;
+        verticalTaskCard.owner = organizationData.name
+        verticalTaskCard.image = organizationData.image;
+        verticalTaskCard.addres = task.street+', '+task.number
+
+        tasksWrapper.appendChild(verticalTaskCard);
     }
-    verticalTaskCard.destination = `../candidatar-a-demanda/candidatar-a-demanda.html?id=${task.id}`;
-    verticalTaskCard.owner = organizationData.name;
-    verticalTaskCard.image = organizationData.image;
-    verticalTaskCard.addres = task.street + ", " + task.number;
 
-    tasksWrapper.appendChild(verticalTaskCard);
-  }
+    for (const task of tasks) {
+        const horizontalTaskCard = new HorizontalTaskCard();
+        const organizationData = await organization.findById(task.organizationId);
 
-  for (const task of tasks) {
-    const horizontalTaskCard = new HorizontalTaskCard();
-    const organizationData = await organization.findById(task.organizationId);
+        horizontalTaskCard.name = task.name;
+        horizontalTaskCard.description = task.description;
+        if(task.type.toLowerCase() === 'presencial') {
+                horizontalTaskCard.type = organizationData.city+', '+organizationData.state;
+        } else {
+            horizontalTaskCard.type = task.type;
+            let upperCaseType = horizontalTaskCard.type;
+            horizontalTaskCard.type = upperCaseType.charAt(0).toUpperCase() + upperCaseType.slice(1)
+        }
+        horizontalTaskCard.destination = `../candidatar-a-demanda/candidatar-a-demanda.html?id=${task.id}`;
+        horizontalTaskCard.owner = organizationData.owner
+        horizontalTaskCard.image = organizationData.image;
+        horizontalTaskCard.addres = task.street+', '+task.number
 
-    horizontalTaskCard.name = task.name;
-    horizontalTaskCard.description = task.description;
-    if (task.type.toLowerCase() === "presencial") {
-      horizontalTaskCard.type = candidateData.city + ", " + candidateData.state;
-    } else {
-      horizontalTaskCard.type = task.type;
-      let upperCaseType = horizontalTaskCard.type;
-      horizontalTaskCard.type =
-        upperCaseType.charAt(0).toUpperCase() + upperCaseType.slice(1);
+
+        tasksWrapper.appendChild(horizontalTaskCard);
+
     }
-    horizontalTaskCard.destination = `../candidatar-a-demanda/candidatar-a-demanda.html?id=${task.id}`;
-    horizontalTaskCard.owner = organizationData.owner;
-    horizontalTaskCard.image = organizationData.image;
-    horizontalTaskCard.addres = task.street + ", " + task.number;
-
-    tasksWrapper.appendChild(horizontalTaskCard);
-  }
-};
+}
 
 populateCandidateData()
   .then()
