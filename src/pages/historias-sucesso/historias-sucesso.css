@@ -39,8 +39,9 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    text-align: left;
+    text-align: justify;
     align-content: space-between;
+    margin: 0% 5% 0% 5%;
 }
 
 .container main  .headline {
@@ -81,6 +82,7 @@ main {
 .title-text {
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin-right: 15%;
     max-width: 80%;
 }
@@ -95,6 +97,17 @@ div.reverse {
     margin-left: 18%;
     padding-right: 0;
 }
+
+.content-text {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.admin-edit-button {
+    margin-top: 2%;
+}
+
 @media screen and (max-width: 1580px) {
 
     .content {
@@ -106,6 +119,7 @@ div.reverse {
     .conteudo {
         position: relative;
         margin: 0% 8% 0%;
+        text-align: justify;
     }
 
     .main-content {
@@ -183,7 +197,7 @@ div.reverse {
     }
     
     .paragrafo {
-        width: 85%;
+        width: 100%;
     }    
 
     .image {
@@ -194,6 +208,11 @@ div.reverse {
         margin-bottom: 4%;
     }
     
+    .content-text {
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -228,6 +247,10 @@ div.reverse {
     }
     
     .dinamic {
-        padding: 10%;
+        padding: 5%;
+    }
+
+    .dinamic-container {
+        margin: 0;
     }
 }
