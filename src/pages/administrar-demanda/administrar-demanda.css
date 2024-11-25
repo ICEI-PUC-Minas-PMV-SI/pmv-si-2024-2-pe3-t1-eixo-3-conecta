@@ -126,7 +126,9 @@
 
 .cards-button {
     display: flex;
-}
+
+    gap: 16px;
+  }
 
 .accept-remove-button-wrapper {
     display: flex;
@@ -142,14 +144,11 @@
 .accept-button {
     height: 25px;
     width: 25px;
-    padding: 8px;
 }
 
 .remove-button {
     height: 25px;
     width: 25px;
-    padding: 8px;
-
 }
 
 .message-button-wrapper {
@@ -331,7 +330,7 @@
     overflow-wrap: break-word;
 }
 
-.text-tiltle {
+.text-title {
     margin: 24px;
     text-align: justify;
     font-size: 15px;
@@ -437,14 +436,11 @@
     .accept-button {
         height: 25px;
         width: 25px;
-        padding: 0px 0px 10px 0px;
     }
 
     .remove-button {
         height: 25px;
         width: 25px;
-        padding: 8px;
-        padding: 30px 0px 0px 0px;
     }
 
     .buttons-wrapper {
