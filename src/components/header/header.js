@@ -64,7 +64,6 @@ const makeTemplate = (variant) => {
             <div class="buttons-header-wrapper">
                 <a id="oportunidades" 
                 style="${
-                  pathName.includes("pagina-de-demandas.html") ||
                   userType === "organization" ||
                   userType === undefined
                     ? "display: none"
@@ -73,7 +72,7 @@ const makeTemplate = (variant) => {
                 
                 href=${getPagePath(
                   "pagina-de-demandas"
-                )} class="header-button oportunidades-button">
+                )} class="header-button">
 
                 <img class="dot-black" src="${rootPath}/assets/icons/dot-black.png" />
                 
@@ -81,31 +80,28 @@ const makeTemplate = (variant) => {
                 </a>
 
                 <a id="area-da-ong" style="${
-                  pathName.includes("pagina-da-ong.html") ||
                   userType === "candidate" ||
                   userType === undefined
                     ? "display: none"
                     : ""
                 }" 
-                href="#"  class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">
+                href="#"  class="header-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">
 
                 ÁREA DA ONG
                 </a>
 
                 <a id="area-da-voluntario" style="${
-                  pathName.includes("pagina-do-voluntario.html") ||
                   userType === "organization"
                     ? "display: none"
                     : ""
                 }" 
                 href="#"  
-                class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">
+                class="header-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">
 
                 ÁREA DO VOLUNTÁRIO
                 </a>
 
                 <a id="adm-demandas" style="${
-                  pathName.includes("administrar-demandas.html") ||
                   (token == null) | (userType === "candidate")
                     ? "display: none"
                     : ""

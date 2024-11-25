@@ -5,7 +5,7 @@
 }
 
 .content {
-  background-color: #e8ecef;
+  background-color: #E8ECEF;
   border-radius: 0;
 }
 
@@ -15,7 +15,7 @@
 }
 
 .content > .title {
-  color: #324b75;
+  color: #324B75;
   padding: 16px 24px 0 24px;
   font-size: 40px;
   align-self: center;
@@ -81,13 +81,13 @@
   justify-content: center;
   max-width: 100%;
   gap: 16px;
-  background: #e7ecef;
+  background: #E7ECEF;
   margin: 24px 0 16px 0;
 }
 
 .vertical-task-card {
   border-radius: 15px;
-  background: #6096ba;
+  background: #6096BA;
   padding: 16px 24px 16px 24px;
   width: 250px;
   height: 420px;
@@ -114,10 +114,7 @@
   align-self: end;
 }
 
-.vertical-task-card
-  > .card-section-wrapper
-  > .task-description
-  > .task-description-text {
+.vertical-task-card > .card-section-wrapper > .task-description > .task-description-text {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 13;
@@ -141,7 +138,7 @@
 }
 
 .task-description {
-  color: #1e1e1e;
+  color: #1E1E1E;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
@@ -151,7 +148,7 @@
 
 .task-description > .show-more {
   display: none;
-  color: #1e1e1e;
+  color: #1E1E1E;
   font-size: 10px;
   font-style: normal;
   font-weight: 400;
@@ -164,9 +161,9 @@
   height: 50px;
   flex-shrink: 0;
   border-radius: 5px;
-  background: #274c77;
+  background: #274C77;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.07);
-  color: #ffffff;
+  color: #FFFFFF;
   text-decoration: none;
   font-weight: 700;
   align-items: center;
@@ -174,7 +171,7 @@
 }
 
 .help-button {
-  color: #ffffff;
+  color: #FFFFFF;
   text-decoration: none;
   font-weight: 700;
   font-size: 12px;
@@ -199,13 +196,13 @@
 }
 
 .modal {
-  display: none;
+  display: none; 
   position: fixed;
   z-index: 9;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0,0,0,0.4);
 }
 
 .modal-wrapper {
@@ -252,7 +249,7 @@
 
 .modal-title {
   padding: 15px 25px 10px 25px;
-  color: #8b8c89;
+  color: #8B8C89;
   font-weight: bold;
 }
 
@@ -265,7 +262,7 @@
 
 .job-title {
   font-size: 1.5rem;
-  color: #274c77;
+  color: #274C77;
   font-weight: 400;
   line-height: 2rem;
   margin: 24px 24px 8px;
@@ -317,183 +314,180 @@
 
 @media screen and (max-width: 768px) {
   .content {
-    align-items: start;
-    display: flex;
+      align-items: start;
+      display: flex;
   }
 
   .content > .title {
-    padding: 16px 24px 0 32px;
+      padding: 16px 24px 0 32px;
   }
 
   .content > .section-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    width: 90%;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 90%;
   }
 
   .content > .section {
-    padding: 16px 24px 0 24px;
+      padding: 16px 24px 0 24px;
   }
 
   .vertical-task-card {
-    display: none;
+      display: none;
   }
 
   .horizontal-task-card {
-    display: flex;
+      display: flex;
   }
 
   .horizontal-task-card {
-    border-radius: 15px;
-    background: #6096ba;
-    padding: 16px 24px 16px 24px;
-    grid-template-columns: 3fr minmax(100px, 1fr);
-    max-height: 170px;
-    min-height: 170px;
-    column-gap: 24px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+      border-radius: 15px;
+      background: #6096BA;
+      padding: 16px 24px 16px 24px;
+      grid-template-columns: 3fr minmax(100px, 1fr);
+      max-height: 170px;
+      min-height: 170px;
+      column-gap: 24px;
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
 
   .horizontal-task-card > .left-side {
-    grid-column-start: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-    height: 100%;
+      grid-column-start: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
   }
 
   .horizontal-task-card > .left-side > .task-description {
-    margin-bottom: 24px;
+      margin-bottom: 24px;
   }
 
-  .horizontal-task-card
-    > .left-side
-    > .task-description
-    > .task-description-text {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 5;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  .horizontal-task-card > .left-side > .task-description > .task-description-text {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 5;
+      overflow: hidden;
+      text-overflow: ellipsis;
   }
 
   .horizontal-task-card > .right-side {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-    align-items: center;
-    width: fit-content;
-    justify-self: end;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      align-items: center;
+      width: fit-content;
+      justify-self: end;
   }
 
   .modal-wrapper {
-    background-color: #fefefe;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-height: 880px;
-    height: auto;
-    margin: 5% auto;
-    max-width: 660px;
-    border-radius: 15px;
+      background-color: #fefefe;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-height: 880px;
+      height: auto;
+      margin: 5% auto;
+      max-width: 660px;
+      border-radius: 15px;
   }
 
   .text {
-    margin: 24px;
-    font-size: 15px;
-    line-height: 1.25rem;
-    color: black;
-    text-align: justify;
-    overflow-wrap: break-word;
+      margin: 24px;
+      font-size: 15px;
+      line-height: 1.25rem;
+      color: black;
+      text-align: justify;
+      overflow-wrap: break-word;
   }
 }
 
 @media screen and (max-width: 535px) {
   .task-description > p {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
-    overflow: hidden;
-    text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4;
+      overflow: hidden;
+      text-overflow: ellipsis;
   }
 
   .modal-wrapper {
-    background-color: #fefefe;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-height: 880px;
-    height: auto;
-    margin: 5% auto;
-    max-width: 660px;
-    border-radius: 15px;
+      background-color: #fefefe;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-height: 880px;
+      height: auto;
+      margin: 5% auto;
+      max-width: 660px;
+      border-radius: 15px;
   }
 
   .text {
-    margin: 24px;
-    font-size: 15px;
-    line-height: 1.25rem;
-    color: black;
-    text-align: justify;
-    overflow-wrap: break-word;
+      margin: 24px;
+      font-size: 15px;
+      line-height: 1.25rem;
+      color: black;
+      text-align: justify;
+      overflow-wrap: break-word;
   }
 }
 
 @media screen and (max-width: 425px) {
   .task-description > p {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    overflow: hidden;
-    text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+      text-overflow: ellipsis;
   }
 
   .modal-wrapper {
-    background-color: #fefefe;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-height: 2000px;
-    height: auto;
-    margin: 5% auto;
-    max-width: 660px;
-    border-radius: 15px;
+      background-color: #fefefe;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-height: 2000px;
+      height: auto;
+      margin: 5% auto;
+      max-width: 660px;
+      border-radius: 15px;
   }
 
   .modal-header {
-    display: flex;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: center;
-    align-items: center;
-    position: relative;
-    padding: 0px;
-    border-bottom: 1px solid rgb(230, 234, 246);
+      display: flex;
+      -webkit-box-pack: justify;
+      justify-content: space-between;
+      -webkit-box-align: center;
+      align-items: center;
+      position: relative;
+      padding: 0px;
+      border-bottom: 1px solid rgb(230, 234, 246);
   }
 
   .text {
-    margin: 24px;
-    font-size: 15px;
-    line-height: 1.25rem;
-    color: black;
-    text-align: justify;
-    overflow-wrap: break-word;
+      margin: 24px;
+      font-size: 15px;
+      line-height: 1.25rem;
+      color: black;
+      text-align: justify;
+      overflow-wrap: break-word;
   }
 }
 
 @media screen and (max-width: 320px) {
   .modal-header {
-    padding: 0px;
+      padding: 0px;
   }
 
   .text {
-    margin: 24px;
-    font-size: 15px;
-    line-height: 1.25rem;
-    color: black;
-    text-align: justify;
-    overflow-wrap: break-word;
+      margin: 24px;
+      font-size: 15px;
+      line-height: 1.25rem;
+      color: black;
+      text-align: justify;
+      overflow-wrap: break-word;
   }
 }
