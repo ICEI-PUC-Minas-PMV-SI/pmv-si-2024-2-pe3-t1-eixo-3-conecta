@@ -63,7 +63,7 @@ const makeTemplate = (variant) => {
                 </a>       
                 ` : ''}
                 ${userType === 'admin' ? `
-                    <a id="pagina-do-admin" href=${getPagePath("pagina-do-admin")} class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">PÁGINA DO ADMININISTRADOR</a>
+                    <a id="pagina-do-admin" href=${getPagePath("pagina-do-admin")} class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">PÁGINA DO ADMINISTRADOR</a>
                 ` : ''}
                 <a id="logout-click" style="${token == null ? "display: none" : ""}" id="logout-click" href="#" class="header-button area-da-ong-button"><img class="log-out" src="${rootPath}/assets/icons/log-out.png">SAIR</a>
             </div>
