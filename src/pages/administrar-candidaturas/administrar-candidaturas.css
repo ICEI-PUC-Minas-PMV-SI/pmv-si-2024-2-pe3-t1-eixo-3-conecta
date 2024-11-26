@@ -67,13 +67,13 @@
   justify-items: center;
   justify-content: center;
 
-  padding: 0 20px;
-
   margin-bottom: 40px;
 
-  gap: 40px;
+  padding: 0 20px;
 
   width: 100%;
+
+  gap: 40px;
 }
 
 .vertical-task-card {
@@ -81,9 +81,11 @@
   height: 420px;
 
   border-radius: 16px;
+  border: 1px solid #8b8c89;
+  
   padding: 16px 24px;
 
-  background: var(--cor-card);
+  background: var(--cor-fundo);
 }
 
 .card-section-wrapper {
@@ -95,16 +97,14 @@
 }
 
 .task-description-text {
-  display: block;
+  display: -webkit-box;
 
-  font-size: 16px;
-  font-weight: 400;
+  -webkit-line-clamp: 10;
+  -webkit-box-orient: vertical;
 
   overflow: hidden;
-  line-height: 24px;
   text-overflow: ellipsis;
 
-  cursor: pointer;
   max-height: 200px;
   word-break: break-word;
 }
@@ -133,6 +133,10 @@
 .task-owner {
   font-size: 16px;
   font-weight: 700;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .status-wrapper {
@@ -160,16 +164,6 @@
   display: flex;
 }
 
-.manage-button {
-  height: 20px;
-  width: 20px;
-}
-
-.delete-button {
-  height: 20px;
-  width: 20px;
-}
-
 .card-button-wrapper {
   display: flex;
 
@@ -194,40 +188,47 @@
   height: 20px;
 }
 
+.button-cadastrar-demanda {
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 40px;
+
+  width: 100%;
+}
+
 .page-button-wrapper {
   display: flex;
 
-  width: 15%;
+  width: 15vw;
   height: 50px;
 
   border-radius: 8px;
 
   background: var(--cor-titulo);
 
-  color: var(--cor-fundo);
-  font-weight: 700;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2%;
+
+  font-weight: 700;
+  color: var(--cor-fundo);
 }
 
 .page-button {
   font-size: 12px;
   font-weight: 700;
-  color: #ffffff;
+  text-align: center;
   text-decoration: none;
+  color: var(--cor-fundo);
 
   padding: 8px;
-  text-align: center;
 }
 
-.button-cadastrar-demanda {
-  gap: 20px;
-  display: flex;
-  justify-content: center;
-
-  width: 100%;
+.delete-button {
+  height: 25px;
+  width: 25px;
 }
+
 
 .modal {
   width: 100%;
@@ -247,7 +248,9 @@
   border: 2px solid var(--cor-borda);
 
   width: 80%;
-  max-width: 660px;
+
+  min-height: 540px;
+  max-width: 460px;
 
   margin: 6% auto;
   border-radius: 16px;
@@ -337,13 +340,6 @@
     padding: 16px;
   }
 
-  .task-name {
-    font-size: 32px;
-  }
-
-  .task-owner {
-    font-size: 24px;
-  }
 
   .horizontal-task-card {
     display: flex;
@@ -369,24 +365,13 @@
 
   .right-side {
     display: flex;
-    gap: 32px;
     align-items: center;
-    width: fit-content;
   }
 
   .cards-button {
-    display: block;
-    justify-content: space-between;
-  }
 
-  .manage-button {
-    height: 20px;
-    width: 20px;
-  }
-
-  .delete-button {
-    height: 20px;
-    width: 20px;
+    flex-direction: column;
+    gap: 16px;
   }
 
   .modal-wrapper {
@@ -395,12 +380,8 @@
 }
 
 @media screen and (max-width: 535px) {
-  .task-description > p {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
+  .task-description-text {
     -webkit-line-clamp: 4;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   .status-wrapper {
@@ -413,12 +394,15 @@
 }
 
 @media screen and (max-width: 425px) {
-  .task-description > p {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
+  .task-description-text {
     -webkit-line-clamp: 3;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  }
+
+  .page-button-wrapper {
+    display: flex;
+  
+    width: 30vw;
+    height: 50px;
   }
 
   .modal-title {

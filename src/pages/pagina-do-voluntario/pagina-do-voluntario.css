@@ -189,9 +189,6 @@
 }
 
 @media screen and (max-width: 768px) {
-  .tasks-wrapper {
-    padding: 16px;
-  }
 
   vertical-task-card-component {
     display: none;
@@ -240,7 +237,7 @@
 
 @media screen and (max-width: 320px) {
   .modal-header {
-    padding: 0px;
+      padding: 0px;
   }
 
   .text {

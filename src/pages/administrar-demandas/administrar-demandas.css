@@ -67,6 +67,8 @@
   justify-items: center;
   justify-content: center;
 
+  margin-bottom: 40px;
+
   padding: 0 20px;
 
   width: 100%;
@@ -79,9 +81,11 @@
   height: 420px;
 
   border-radius: 16px;
+  border: 1px solid #8b8c89;
+  
   padding: 16px 24px;
 
-  background: var(--cor-card);
+  background: var(--cor-fundo);
 }
 
 .card-section-wrapper {
@@ -100,6 +104,8 @@
 
   overflow: hidden;
   text-overflow: ellipsis;
+
+  max-height: 200px;
   word-break: break-word;
 }
 
@@ -127,6 +133,10 @@
 .task-owner {
   font-size: 16px;
   font-weight: 700;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .status-wrapper {
@@ -154,16 +164,6 @@
   display: flex;
 }
 
-.manage-button {
-  height: 20px;
-  width: 20px;
-}
-
-.delete-button {
-  height: 20px;
-  width: 20px;
-}
-
 .card-button-wrapper {
   display: flex;
 
@@ -188,10 +188,19 @@
   height: 20px;
 }
 
+.button-cadastrar-demanda {
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 40px;
+
+  width: 100%;
+}
+
 .page-button-wrapper {
   display: flex;
 
-  width: 15%;
+  width: 15vw;
   height: 50px;
 
   border-radius: 8px;
@@ -208,22 +217,23 @@
 .page-button {
   font-size: 12px;
   font-weight: 700;
-  color: var(--cor-fundo);
+  text-align: center;
   text-decoration: none;
+  color: var(--cor-fundo);
 
   padding: 8px;
-  text-align: center;
 }
 
-.button-cadastrar-demanda {
-  gap: 20px;
-  display: flex;
-  justify-content: center;
-
-  width: 100%;
-
-  margin: 2% 0;
+.manage-button {
+  height: 25px;
+  width: 25px;
 }
+
+.delete-button {
+  height: 25px;
+  width: 25px;
+}
+
 
 .modal {
   width: 100%;
@@ -332,22 +342,16 @@
   }
 
   .tasks-wrapper {
-    padding: 16px;
-  }
+    padding: 0;
 
-  .task-name {
-    font-size: 32px;
-  }
-
-  .task-owner {
-    font-size: 24px;
+    gap: 0;
   }
 
   .horizontal-task-card {
     display: flex;
 
-    column-gap: 24px;
-    padding: 16px 24px;
+    gap: 24px;
+    padding: 16px;
     border-bottom: 2px solid var(--cor-borda);
   }
 
@@ -367,24 +371,13 @@
 
   .right-side {
     display: flex;
-    gap: 32px;
     align-items: center;
-    width: fit-content;
   }
 
   .cards-button {
-    display: block;
-    justify-content: space-between;
-  }
 
-  .manage-button {
-    height: 20px;
-    width: 20px;
-  }
-
-  .delete-button {
-    height: 20px;
-    width: 20px;
+    flex-direction: column;
+    gap: 16px;
   }
 
   .modal-wrapper {
@@ -393,17 +386,10 @@
 }
 
 @media screen and (max-width: 535px) {
-  .task-description > p {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
+  .task-description-text {
     -webkit-line-clamp: 4;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 
-  .status-wrapper {
-    margin-top: 0px;
-  }
 
   .modal-wrapper {
     margin: 12% auto;
@@ -411,12 +397,15 @@
 }
 
 @media screen and (max-width: 425px) {
-  .task-description > p {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
+  .task-description-text {
     -webkit-line-clamp: 3;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  }
+
+  .page-button-wrapper {
+    display: flex;
+  
+    width: 30vw;
+    height: 50px;
   }
 
   .modal-title {
@@ -432,10 +421,6 @@
     font-size: 32px;
   }
 
-  .status-wrapper {
-    margin-top: 0px;
-  }
-
   .modal-wrapper {
     margin: 4% auto;
 
@@ -447,7 +432,6 @@
   }
 
   .filter-wrapper {
-    flex-direction: column;
     gap: 16px;
   }
 }

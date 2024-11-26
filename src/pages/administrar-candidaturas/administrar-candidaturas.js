@@ -83,14 +83,9 @@ const getTasks = async (filterTipo = "all", filterStatus = "all") => {
     window.location.href = "../login/login.html";
   }
 
-  const userId = session[0].userId; // ID do usuário logado
+  const userId = session[0].userId;
 
-  console.log("ID do usuário logado", userId);
-
-  const tasks = await task.findAllFilteredByType(filterTipo); // Busca tarefas por tipo
-
-  // Exibe no log todas as tarefas carregadas
-  console.log("Todas as tarefas carregadas:", tasks);
+  const tasks = await task.findAllFilteredByType(filterTipo);
 
   // Filtro: Exibe somente as tarefas que o usuário se inscreveu
   const userTasks = tasks.filter((task) => task.candidates.includes(userId));
@@ -100,9 +95,6 @@ const getTasks = async (filterTipo = "all", filterStatus = "all") => {
     // Exibe a mensagem na página
     return; // Retorna sem continuar a execução
   }
-
-  // Exibe no log as tarefas que o usuário se inscreveu
-  console.log("Tarefas que o usuário se inscreveu:", userTasks);
 
   // Verifica se há tarefas que o usuário se inscreveu e exibe as que corresponderem ao status
   for await (const task of userTasks) {
@@ -120,6 +112,9 @@ const getTasks = async (filterTipo = "all", filterStatus = "all") => {
       if (task.type.toLowerCase() === "remoto") {
         endereco = "Remoto";
       }
+
+      // Verifica se a tarefa está aberta ou fechada para mostrar ou esconder o botão de delete
+      const deleteButtonStyle = task.status.toLowerCase() === "aberta" ? '' : 'display:none;';
 
       // Template HTML para exibir as tarefas
       let html =
@@ -146,7 +141,7 @@ const getTasks = async (filterTipo = "all", filterStatus = "all") => {
         `        </div>` +
         `        <div class="cards-button" onclick="fotoClick(event)">` +
         `            <div class="card-button-wrapper" onclick="fotoClick(event)">` +
-        `                <div class="manage-delete-button-wrapper" onclick="if (confirm('Tem certeza que deseja cancelar sua candidatura?')) deleteCandidateFromTask(${task.id})">` +
+        `                <div class="manage-delete-button-wrapper" style="${deleteButtonStyle}" onclick="if (confirm('Tem certeza que deseja cancelar sua candidatura?')) deleteCandidateFromTask(${task.id})">` +
         `                    <a href="#"><img class="delete-button" src="../../assets/icons/delete.png" alt="Delete"></a>` +
         `                </div>` +
         `            </div>` +
@@ -188,7 +183,7 @@ const getTasks = async (filterTipo = "all", filterStatus = "all") => {
         `    </div>` +
         `    <div class="right-side">` +
         `        <div class="cards-button" onclick="fotoClick(event)">` +
-        `                <div class="manage-delete-button-wrapper" onclick="if (confirm('Tem certeza que deseja cancelar sua candidatura?')) deleteCandidateFromTask(${task.id})">` +
+        `                <div class="manage-delete-button-wrapper" style="${deleteButtonStyle}" onclick="if (confirm('Tem certeza que deseja cancelar sua candidatura?')) deleteCandidateFromTask(${task.id})">` +
         `                <a href="#"><img class="delete-button" src="../../assets/icons/delete.png" alt="Delete"></a>` +
         `            </div>` +
         `        </div>` +

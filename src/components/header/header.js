@@ -62,14 +62,15 @@ const makeTemplate = (variant) => {
             <div class="buttons-header-wrapper">
                 <a id="oportunidades" 
                 style="${
-                  pathName.includes("pagina-de-demandas.html") ||
                   userType === "organization" ||
                   userType === undefined
                     ? "display: none"
                     : ""
                 }"
                 
-                href=${getPagePath("pagina-de-demandas")} class="header-button">
+                href=${getPagePath(
+                  "pagina-de-demandas"
+                )} class="header-button">
 
                 <img class="dot-black" src="${rootPath}/assets/icons/dot-black.png" />
                 
@@ -77,7 +78,6 @@ const makeTemplate = (variant) => {
                 </a>
 
                 <a id="area-da-ong" style="${
-                  pathName.includes("pagina-da-ong.html") ||
                   userType === "candidate" ||
                   userType === undefined
                     ? "display: none"
@@ -89,7 +89,6 @@ const makeTemplate = (variant) => {
                 </a>
 
                 <a id="area-da-voluntario" style="${
-                  pathName.includes("pagina-do-voluntario.html") ||
                   userType === "organization"
                     ? "display: none"
                     : ""
@@ -101,7 +100,6 @@ const makeTemplate = (variant) => {
                 </a>
 
                 <a id="adm-demandas" style="${
-                  pathName.includes("administrar-demandas.html") ||
                   (token == null) | (userType === "candidate")
                     ? "display: none"
                     : ""

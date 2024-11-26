@@ -2,12 +2,12 @@
   background-color: var(--cor-fundo-conteudo);
 }
 
-/* Wrapper da Seção */
+
 .section-wrapper {
   display: flex;
   flex-direction: column;
 
-  width: 30%;
+  width: 40%;
 
   gap: 32px;
 
@@ -54,6 +54,9 @@ input[type="button"][name="cancelar"] {
   color: var(--cor-titulo);
   background-color: var(--cor-fundo);
 
+  border: solid 2px var(--cor-borda);
+
+  font-size: 20px;
   font-weight: 600;
 }
 
@@ -61,6 +64,7 @@ input[type="button"][name="enviar"] {
   color: var(--cor-fundo);
   background-color: var(--cor-titulo);
 
+  font-size: 20px;
   font-weight: 600;
 }
 
@@ -69,12 +73,11 @@ input[type="button"] {
   height: 54px;
 
   padding: 12px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  float: right;
 
-  font-size: 1.2em;
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
 }
 
 /* Estilo do Textarea */
@@ -112,39 +115,27 @@ label[for="canditate-info"] {
   gap: 32px;
 }
 
-@media screen and (max-width: 600px) {
-  .content > .headline > .title {
-    margin-bottom: 20px;
-    text-align: center;
-  }
+@media screen and (max-width: 768px) {
   .section-wrapper {
-    display: flex;
-    flex-direction: column;
-
-    gap: 16px;
-    width: 80%;
+    width: 60%;
     padding: 20px;
-    max-width: 400px;
   }
 
-  .col-20,
-  .col-80 {
+  .options-div {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+
+  .subtitle {
+    font-size: 32px;
+    margin: 0;
+  }
+
+  .section-wrapper {
     width: 100%;
-    margin-top: 0;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .row-button > div {
-    margin-left: 10px;
-    margin-right: 10px;
-    padding-top: 40px;
-  }
-}
-
-@media screen and (max-width: 1170px) {
-  .col-80 {
-    float: left;
-    margin-top: 6px;
   }
 }
