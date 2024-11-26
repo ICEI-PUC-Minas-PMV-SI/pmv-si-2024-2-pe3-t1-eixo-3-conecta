@@ -1,4 +1,125 @@
 {
+  "admin": [
+    {
+      "id": 1,
+      "username": "admin@admin.com",
+      "password": "15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225"
+    }
+  ],
+  "pageContent": [
+    {
+      "id": 1,
+      "page": "sobre-o-voluntariado.html",
+      "title": "sobre o voluntariado",
+      "subtitle": "",
+      "image": "",
+      "content": "O voluntariado é uma expressão poderosa de solidariedade e empatia que desempenha um papel fundamental em muitas comunidades ao redor do mundo. É a prática de oferecer tempo, habilidades e recursos de forma voluntária e não remunerada para causas e organizações que buscam melhorar a vida das pessoas e o bem-estar do planeta. O voluntariado é um ato de altruísmo que tem o potencial de transformar não apenas as vidas daqueles que são ajudados, mas também a daqueles que escolhem se envolver.<br><br>Ser um voluntário no Conecta proporciona aos profissionais de tecnologia uma valiosa oportunidade de aplicar os seus conhecimentos num contexto de impacto social, contribuir para causas importantes e potencializar o seu desenvolvimento pessoal e profissional. Você pode escolher a área que tem mais habilidade e interesse para ajudar, a forma de atuação, seja remota ou presencial, enquanto contribui para que diversas organizações possam ajudar um âmbito muito maior de pessoas!"
+    },
+    {
+      "id": 2,
+      "page": "por-que-ser-voluntario.html",
+      "title": "por que ser voluntário?",
+      "subtitle": "",
+      "image": "",
+      "content": "No mundo digital atual, suas habilidades em tecnologia têm o poder de gerar mudanças significativas. Ao se voluntariar, você não apenas aprimora seus conhecimentos, mas também contribui para soluções que beneficiam ONGs e comunidades. A questão é: você está pronto para usar suas habilidades e fazer a diferença?<br><br>Colocando o que já sabe em prática para ajudar outra pessoa, você também cresce usando a linguagem que os profissionais de TI conhecem melhor: a tecnologia."
+    },
+    {
+      "id": 3,
+      "page": "como-comecar.html",
+      "title": "como começar?",
+      "subtitle": "",
+      "image": "",
+      "content": "Nessa página iremos te guiar em como dar seus primeiros passos rumo ao voluntariado."
+    },
+    {
+      "id": 4,
+      "page": "como-comecar.html",
+      "title": "como começar?",
+      "subtitle": "sou voluntário",
+      "image": "",
+      "content": "1. Se voluntarie por meio do botão 'quero ajudar'. <br>2. Preencha o formulário com seus dados de contato.<br>3. Fique atento ao seu e-mail para atualizações."
+    },
+    {
+      "id": 5,
+      "page": "como-comecar.html",
+      "title": "como começar?",
+      "subtitle": "sou ONG",
+      "image": "",
+      "content": "1. Cadastre sua ONG.<br>2. Crie demandas e compartilhe com voluntários interessados. <br>3. Avalie as candidaturas para demandas abertas. <br>4. Solicite depoimentos dos participantes ao final da demanda."
+    },
+    {
+      "id": 6,
+      "page": "historias-sucesso.html",
+      "title": "histórias de sucesso",
+      "subtitle": "Compartilhar minha paixão pela tecnologia é gratificante.",
+      "image": "../../assets/images/man-smiling.jpg",
+      "content": "Marcelo de 28 anos, se dedica a ajudar pessoas e organizações a navegar no mundo digital. Com o horário de trabalho flexível ele consegue ministrar cursos para jovens e adultos, e acompanhá-los durante o processo de aprendizagem. Ele acredita que a tecnologia é uma ferramenta poderosa para a inclusão. Compartilhar sua experiência como programador com ONGs da sua cidade, que se dedicam a diversas causas, se tornou parte da sua rotina."
+    },
+    {
+      "id": 7,
+      "page": "historias-sucesso.html",
+      "title": "histórias de sucesso",
+      "subtitle": "Adoro ver os olhos das crianças brilharem quando elas descobrem o mundo da tecnologia.",
+      "image": "../../assets/images/woman-with-kids.jpg",
+      "content": "Elisa de 35 anos tem sua primeira formação como pedagoga, está na área da tecnologia há mais ou menos cinco anos. Ela conseguiu unir suas duas paixões: crianças e computação. Elisa ajuda ONGs que apoiam crianças e adolescentes carentes, levando seu conhecimento e possibilitando que eles possam ter uma formação e um futuro diferente, já que a tecnologia abre tantas portas."
+    },
+    {
+      "id": 8,
+      "page": "historias-sucesso.html",
+      "subtitle": "Estou orgulhoso de contribuir com meu conhecimento e experiência.",
+      "title": "histórias de sucesso",
+      "image": "../../assets/images/older-man.jpg",
+      "content": "Com anos de experiência em tecnologia da informação, Renato de 57 anos agora se dedica a ajudar aqueles que mais precisam de conhecimento. Mesmo à distância, Renato contribui com diversas ONGs espalhadas pelo país, inclusive pessoas de sua própria faixa etária que estão iniciando agora no mundo da tecnologia, causando um grande impacto positivo na vida dessas pessoas."
+    },
+    {
+      "id": 9,
+      "page": "historias-sucesso.html",
+      "title": "histórias de sucesso",
+      "subtitle": "Ser voluntária me oferece a oportunidade de aplicar o que aprendo na aula para resolver problemas reais.",
+      "image": "../../assets/images/woman-with-computer.jpg",
+      "content": "Estudante do segundo ano de Sistemas de Informação, Patrícia de 22 anos ajuda como pode compartilhando o que aprende na sala de aula com ONGs de diversos lugares do país, adaptar a rotina de estudante e voluntária é um desafio que ela se propôs a fazer pensando no impacto social que esse ato causa. Segundo ela não há barreiras quando se pensa numa causa maior, além disso, ela mobiliza colegas e professores que estão dispostos a ajudar."
+    },
+    {
+      "id": 10,
+      "page": "perguntas-frequentes.html",
+      "title": "perguntas frequentes",
+      "subtitle": "Como posso me inscrever como voluntário na plataforma?",
+      "image": "",
+      "content": "Para se inscrever como voluntário, você pode ir ao menu 'Oportunidades'. Lá irá encontrar diversas oportunidades de acordo com suas habilidades, interesses e disponibilidade. Depois disso, você poderá clicar em 'Quero ajudar' e em seguida  preencher o formulário com seus dados e sendo ou não selecionado receberá uma notificação por e-mail."
+    },
+    {
+      "id": 11,
+      "page": "perguntas-frequentes.html",
+      "title": "perguntas frequentes",
+      "subtitle": "Como as ONGs são verificadas na plataforma?",
+      "image": "",
+      "content": "Para garantir a integridade e confiabilidade das ONGs listadas em nossa plataforma de conexão entre ONGs e voluntários, implementamos um processo de verificação rigoroso. Aqui estão algumas etapas comuns envolvidas na verificação de ONGs em uma plataforma desse tipo: documentação legal, avaliação da missão e causa, referências e histórico, transparência financeira."
+    },
+    {
+      "id": 12,
+      "page": "perguntas-frequentes.html",
+      "title": "perguntas frequentes",
+      "subtitle": "Posso escolher o tipo de trabalho voluntário que desejo fazer?",
+      "image": "",
+      "content": "Sim, você pode escolher o tipo de trabalho voluntário que deseja fazer. Você pode explorar as oportunidades na sua área de interesse e habilidade, e nossa plataforma mostrará oportunidades de voluntariado que correspondem a esses critérios. Você é livre para escolher as oportunidades que mais se adequarem a você."
+    },
+    {
+      "id": 13,
+      "page": "perguntas-frequentes.html",
+      "title": "perguntas frequentes",
+      "subtitle": "Como entro em contato com uma ONG após me candidatar para uma oportunidade?",
+      "image": "",
+      "content": "Após se candidatar para uma oportunidade de voluntariado, a ONG receberá sua candidatura e entrará em contato com você por meio dos dados fornecidos na candidatura."
+    },
+    {
+      "id": 14,
+      "page": "perguntas-frequentes.html",
+      "title": "perguntas frequentes",
+      "subtitle": "Quais são os requisitos para ser voluntário em uma ONG?",
+      "image": "",
+      "content": "Os requisitos para ser voluntário podem variar de acordo com a ONG e a oportunidade em si. Alguns projetos podem exigir habilidades específicas ou um compromisso de tempo mínimo, enquanto outros podem ser mais flexíveis. Você pode encontrar informações detalhadas sobre os requisitos em cada oportunidade de voluntariado listada na plataforma. Certifique-se de ler atentamente antes de se candidatar."
+    }
+  ],
   "organizations": [],
   "tasks": [],
   "sessions": [],
