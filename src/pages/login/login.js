@@ -4,9 +4,20 @@ import { sendEmail } from "../../js/envio-email.js";
 import { Candidate } from "../../js/models/candidate.js";
 import {hashPassword} from "../../js/utils.js";
 import {Session} from "../../js/models/session.js";
+import {Admin} from "../../js/models/admin.js";
 
 document.getElementById("entrar").addEventListener("click", handleGetIn);
 document.getElementById("esqueceu-senha").addEventListener("click", handleForgotPassword);
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    document.querySelector("#email").addEventListener("input", function(event) {
+        var email = event.target.value.trim();
+        if(email.length >= 5 && email === "admin" || email === "admin@admin.com") {
+            document.querySelectorAll(".hidden").forEach(element => element.classList.remove("hidden"));
+        }
+    });
+});
 
 async function encode(str) {
     const encoder = new TextEncoder();
@@ -77,16 +88,21 @@ async function handleGetIn(event) {
     }
 
     const userType = document.querySelector('input[name="user_type"]:checked')?.value
-    if(!userType) {
-        alert("Selecione o tipo de usuário.");
-        return;
-    }
 
     let userEntity;
-    if(userType === "organization") {
-        userEntity = new Organization();
-    } else if(userType === "candidate") {
-        userEntity = new Candidate();
+    switch(userType) {
+        case "organization":
+            userEntity = new Organization();
+            break;
+        case "candidate":
+            userEntity = new Candidate();
+            break;
+        case "admin":
+            userEntity = new Admin();
+            break
+        default:
+            alert("Selecione o tipo de usuário.");
+            return;
     }
 
     const isAuthenticated = await authenticate(userEntity, email, password)
@@ -105,6 +121,11 @@ async function handleGetIn(event) {
         if(userType === "candidate") {
             window.location.href = "../pagina-do-voluntario/pagina-do-voluntario.html";
         }
+
+        if(userType === "admin") {
+            window.location.href = "../pagina-do-admin/pagina-do-admin.html";
+        }
+
         alert("Login realizado com sucesso.")
     } else {
         alert("Email ou senha incorretos.");

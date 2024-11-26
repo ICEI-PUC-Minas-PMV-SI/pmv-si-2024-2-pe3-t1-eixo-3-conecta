@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página do voluntário</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="pagina-do-admin.css">
+    <link rel="shortcut icon" href="../../assets/icons/favicon.ico" type="image/x-icon">
+    <script type="module" src="../../components/header/header.js"></script>
+    <script type="module" src="../../components/footer/footer.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="module" src="pagina-do-admin.js" defer></script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div id="page-overlay"></div>
+
+    <header>
+        <header-component action="toggleOverlay"></header-component>
+    </header>
+
+    <div class="content">
+        <h1 class="title" >Administrador</h1>
+
+        <div class="section-wrapper">
+
+            <div class="about section">
+                <div class="wrapper-about">
+                    <h2 class="subtitle">Sobre</h2>
+                </div>
+
+                <p id="about-text" class="text">
+                    Acesse as páginas informativas e clique no ícone de editar para editar as informações.
+                </p>
+                <h2 class="subtitle">Páginas informativas:</h2>
+                <div class="pages">
+                    <span class="button-pages">
+                        <a href="../como-comecar/como-comecar.html">Como começar?</a>
+                    </span>
+                    <span class="button-pages">
+                        <a href="../sobre-o-voluntariado/sobre-o-voluntariado.html">Sobre o voluntariado</a>
+                    </span> 
+                    <span class="button-pages">
+                        <a href="../por-que-ser-voluntario/por-que-ser-voluntario.html">Por que ser voluntário?</a>
+                    </span> 
+                    <span class="button-pages">
+                        <a href="../perguntas-frequentes/perguntas-frequentes.html">Perguntas frequentes</a>
+                    </span>
+                    <span class="button-pages">
+                        <a href="../historias-sucesso/historias-sucesso.html">Histórias de sucesso</a>
+                    </span>
+                </div>           
+                
+            </div>
+
+        </div>
+    </div>   
+
+    <footer-component></footer-component>
+</div>
+</body>
+
+</html>
