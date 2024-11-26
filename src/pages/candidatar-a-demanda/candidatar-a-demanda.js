@@ -1,8 +1,8 @@
 import {
     Required,
-    SUCESSO_ENVIAR_CANDIDATURA,
     CONFIRM_CANCELAR_CANDIDATURA,
-    LOCATION_REF_PAGINA_DEMANDAS
+    LOCATION_REF_PAGINA_DEMANDAS,
+    LOCATION_REF_PAGINA_DO_VOLUNTARIO
 } from "../../js/constants.js";
 import { findById as findOngById } from "../../js/models/organization.js";
 import { findById as findTaskById, Task } from "../../js/models/task.js";
@@ -15,25 +15,6 @@ window.addEventListener("load", async () => {
     const ongName = document.getElementById("ongName");
     const organization = await getOngName();
     ongName.textContent = organization;
-});
-
-document.getElementById("cpf").addEventListener("input", async () => {
-    const cpf = document.getElementById("cpf").value;
-
-    // Validar se o CPF possui 11 dígitos
-    if (cpf.length === 14) {
-        if (!validaCPF(cpf)) {
-            alert("CPF inválido. Por favor, verifique o número e tente novamente.");
-            return;
-        }
-        // Verificar se o CPF já está cadastrado
-        const numberOfRegistrations = await countRegistrationsByCpf(cpf);
-
-        if (numberOfRegistrations >= 2) {
-            alert("Limite de dois cadastros ativos atingido para o mesmo CPF, Por Favor aguarde.");
-            document.getElementById("cpf").value = "";
-        }
-    }
 });
 
 addInputFormatListener("cpf", "###.###.###-##");
@@ -60,10 +41,11 @@ async function handleSend(event) {
         como: document.getElementById("como").value,
     }
     //validar campos
-        if (!validaCPF(candidatura.cpf)) {
-            alert("CPF inválido. Por favor, verifique o número e tente novamente.");
-            return;
-        }
+    if (!validaCPF(candidatura.cpf)) {
+        alert("CPF inválido. Por favor, verifique o número e tente novamente.");
+        return;
+    }
+
     if (candidatura.nome.length <= 0) {
         alert(Required("Nome"));
         return;
@@ -116,8 +98,8 @@ async function handleSend(event) {
         candidates.push(candidate.id)
         await task.updateCandidatesById(taskID, candidates);
 
-        alert(SUCESSO_ENVIAR_CANDIDATURA);
-        window.location.href = LOCATION_REF_PAGINA_DEMANDAS;
+        //alert(SUCESSO_ENVIAR_CANDIDATURA);
+        window.location.href = LOCATION_REF_PAGINA_DO_VOLUNTARIO;
     } catch (error) {
         alert("Erro ao enviar candidatura." + error.message);
     }
@@ -125,22 +107,19 @@ async function handleSend(event) {
 
 /* Funções auxiliares */
 //valida cpf
-function validaCPF(cpf) {
-    cpf = cpf.replace(/\D/g, '');
-    if (cpf.toString().length != 11 || /^(\d)\1{10}$/.test(cpf)) return false;
-    let soma = 0, resto;
-    for (let i = 1; i <= 9; i++)
-        soma = soma + parseInt(cpf.substring(i - 1, i)) * (11 - i);
-    resto = (soma * 10) % 11;
-    if ((resto == 10) || (resto == 11)) resto = 0;
-    if (resto != parseInt(cpf.substring(9, 10))) return false;
-    soma = 0;
-    for (let i = 1; i <= 10; i++)
-        soma = soma + parseInt(cpf.substring(i - 1, i)) * (12 - i);
-    resto = (soma * 10) % 11;
-    if ((resto == 10) || (resto == 11)) resto = 0;
-    if (resto != parseInt(cpf.substring(10, 11))) return false;
-    return true;
+function validaCPF(input) {
+    if(input.length <= 0) {
+        alert("CPF não pode ser vazio");
+        return;
+    }
+
+    const cpf = input.replace(/\D/g, "");
+    if(cpf.length !== 11) {
+        alert("CPF inválido");
+        return;
+    }
+
+    return cpf;
 }
 // adicionar máscara nos campos
 function formatInput(input, format) {
@@ -222,4 +201,29 @@ function countPendingActive(candidateTimestamp) {
     const dataLimite = new Date(numeroData);
     return dataLimite;
 
+}
+
+//Vincula demanda ao candidato
+const getCandidateId = async () => {
+  const token = window.localStorage.getItem("token");
+
+  const session = await getSession(token);
+  return await session[0].userId;
+};
+
+document.addEventListener('DOMContentLoaded', async (event) => {
+    const id = await getCandidateId();
+    const candidate = new Candidate();
+    let candidato =  await candidate.findById(id);
+    fillForm(candidato);
+});
+
+//função para preencher automaticamente o formulário 
+function fillForm(candidato) {
+  document.getElementById('cpf').value = candidato.cpf;
+  document.getElementById('nome').value = candidato.name;
+  document.getElementById('email').value = candidato.email;
+  document.getElementById('phone').value = candidato.phone;
+  const input = document.getElementById("cpf");
+  formatInput(input,"###.###.###-##")
 }

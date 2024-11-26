@@ -4,6 +4,7 @@ import {Candidate} from "../../js/models/candidate.js";
 import {VerticalTaskCard} from "../../components/vertical-task-card/vertical-task-card.js";
 import {HorizontalTaskCard} from "../../components/horizontal-task-card/horizontal-task-card.js";
 import {getSession} from "../../js/models/session.js";
+import { Organization } from "../../js/models/organization.js";
 
 const descriptions = document.querySelectorAll('.task-description > p');
 
@@ -67,20 +68,10 @@ function addFeedbackItem(name, date, text) {
 const populateCandidateData = async () => {
     const candidateData = await getCandidateData();
     const name = document.getElementById('candidate-name');
-    const facebookLink = document.getElementById('facebook-link');
-    const instagramLink = document.getElementById('instagram-link');
-    const twitterLink = document.getElementById('twitter-link');
     const about = document.getElementById('about-text');
     const tasksWrapper = document.getElementById('task-wrapper');
 
-    if(!candidateData.facebook) facebookLink.style.display = 'none';
-    if(!candidateData.instagram) instagramLink.style.display = 'none';
-    if(!candidateData.twitter) twitterLink.style.display = 'none';
-
     name.innerHTML = candidateData.name;
-    facebookLink.href = candidateData.facebook;
-    instagramLink.href = candidateData.instagram;
-    twitterLink.href = candidateData.twitter;
     about.innerHTML = candidateData.about;
 
     const candidate = new Candidate();
@@ -93,50 +84,53 @@ const populateCandidateData = async () => {
         addFeedbackItem(candidateData.name, review.createdAt, review.comment);
     }
 
-    const task = new Task();
-    const tasks = await task.findByCandidateId(candidateData.id);
+    const taskEntity = new Task();
+    const organization = new Organization();
+    const tasks = await taskEntity.findByCandidateId(candidateData.id);
 
-    tasks.forEach(task => {
+    for (const task of tasks) {
         const verticalTaskCard = new VerticalTaskCard();
+        const organizationData = await organization.findById(task.organizationId);
 
         verticalTaskCard.name = task.name;
         verticalTaskCard.description = task.description;
         if(task.type.toLowerCase() === 'presencial') {
-                verticalTaskCard.type = candidateData.city+', '+candidateData.state;
+                verticalTaskCard.type = organizationData.city+', '+organizationData.state;
         } else {
                 verticalTaskCard.type = task.type;
                 let upperCaseType = verticalTaskCard.type;
                 verticalTaskCard.type = upperCaseType.charAt(0).toUpperCase() + upperCaseType.slice(1)
         }
         verticalTaskCard.destination = `../candidatar-a-demanda/candidatar-a-demanda.html?id=${task.id}`;
-        verticalTaskCard.owner = candidateData.name
-        verticalTaskCard.image = candidateData.image;
-        verticalTaskCard.addres = candidateData.street+', '+candidateData.number
+        verticalTaskCard.owner = organizationData.name
+        verticalTaskCard.image = organizationData.image;
+        verticalTaskCard.addres = task.street+', '+task.number
 
         tasksWrapper.appendChild(verticalTaskCard);
-    });
+    }
 
-    tasks.forEach(task => {
+    for (const task of tasks) {
         const horizontalTaskCard = new HorizontalTaskCard();
+        const organizationData = await organization.findById(task.organizationId);
 
         horizontalTaskCard.name = task.name;
         horizontalTaskCard.description = task.description;
         if(task.type.toLowerCase() === 'presencial') {
-                horizontalTaskCard.type = candidateData.city+', '+candidateData.state;
+                horizontalTaskCard.type = organizationData.city+', '+organizationData.state;
         } else {
             horizontalTaskCard.type = task.type;
             let upperCaseType = horizontalTaskCard.type;
             horizontalTaskCard.type = upperCaseType.charAt(0).toUpperCase() + upperCaseType.slice(1)
         }
         horizontalTaskCard.destination = `../candidatar-a-demanda/candidatar-a-demanda.html?id=${task.id}`;
-        horizontalTaskCard.owner = candidateData.name
-        horizontalTaskCard.image = candidateData.image;
-        horizontalTaskCard.addres = candidateData.street+', '+candidateData.number
+        horizontalTaskCard.owner = organizationData.owner
+        horizontalTaskCard.image = organizationData.image;
+        horizontalTaskCard.addres = task.street+', '+task.number
 
 
         tasksWrapper.appendChild(horizontalTaskCard);
 
-    });
+    }
 }
 
 populateCandidateData().then().catch(err => console.log(err));
