@@ -7,18 +7,32 @@ import {Session} from "../../js/models/session.js";
 import {Admin} from "../../js/models/admin.js";
 
 document.getElementById("entrar").addEventListener("click", handleGetIn);
-document.getElementById("esqueceu-senha").addEventListener("click", handleForgotPassword);
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector("#email").addEventListener("input", function (event) {
+      var email = event.target.value.trim();
+      var adminInput = document.querySelector("#admin-input");
+      var adminState = document.querySelector("#admin");
+      var adminShown = document.querySelector(".options-div");
+  
+      if (email === "admin" || email === "admin@admin.com") {
+        adminInput.style.display = "flex";
 
-    document.querySelector("#email").addEventListener("input", function(event) {
-        var email = event.target.value.trim();
-        if(email.length >= 5 && email === "admin" || email === "admin@admin.com") {
-            document.querySelectorAll(".hidden").forEach(element => element.classList.remove("hidden"));
-        }
+        adminState.checked = true;
+
+        adminShown.style.flexDirection = "column"
+        adminShown.style.justifyContent = "center"
+      } else {
+        adminInput.style.display = "none";
+
+        adminState.checked = false;
+
+        adminShown.style.flexDirection = "row"
+        adminShown.style.justifyContent = "space-around"
+      }
     });
-});
-
+  });
+  
 async function encode(str) {
     const encoder = new TextEncoder();
     const data = encoder.encode(str);

@@ -1,136 +1,131 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
     <title>Cadastrar ONG</title>
-    <link rel="stylesheet" href="../../css/index.css">
-    <link rel="stylesheet" href="cadastrar-ong.css">
-    <link rel="shortcut icon" href="../../assets/icons/favicon.ico" type="image/x-icon">
-    <script type="module" src="../../components/header/header.js" ></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="cadastrar-ong.css" />
+    <link rel="stylesheet" href="../../css/index.css" />
+
+    <link
+      rel="shortcut icon"
+      href="../../assets/icons/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <script type="module" src="../../components/header/header.js"></script>
     <script type="module" src="../../components/footer/footer.js"></script>
+
     <script type="module" src="cadastrar-ong-1.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
+    <div class="container">
+      <div id="page-overlay"></div>
 
-<div class="container">
-
-    <div id="page-overlay"></div>
-
-    <header>
+      <header>
         <header-component action="toggleOverlay"></header-component>
-    </header>
+      </header>
 
-    <div class="content">
-
-        <div class="headline">
-            <h1 id="title" class="title">cadastrar ONG</h1>
-        </div>
-
+      <div class="content">
         <div class="section-wrapper">
+          <h1 class="title" id="title">Cadastrar ONG</h1>
 
-            <div class="row">
-                <div class="col-15">
-                    <label for="cnpj">CNPJ</label>
-                </div>
-                <div class="col-85">
-                    <input type="text" id="cnpj" name="CNPJ">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-15">
-                    <label for="nome">Nome da ONG</label>
-                </div>
-                <div class="col-85">
-                    <input type="text" id="nome" name="nome">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-15">
-                    <label for="email">E-mail</label>
-                </div>
-                <div class="col-85">
-                    <input type="email" id="email" name="email">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-15">
-                    <label for="phone">Telefone</label>
-                </div>
-                <div class="col-85">
-                    <input type="tel" id="phone" name="phone">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-15">
-                    <label for="senha">Senha</label>
-                </div>
-                <div class="col-85">
-                    <input type="password" id="senha" name="senha">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-15">
-                    <label for="confirmar-senha">Confirmar senha</label>
-                </div>
-                <div class="col-85">
-                    <input type="password" id="confirmar-senha" name="confirmar-senha">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-15">
-                    <label for="cep">CEP</label>
-                </div>
-                <div class="col-85">
-                    <input type="text" id="cep" name="cep">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-15">
-                    <label for="logradouro">Logradouro</label>
-                </div>
-                <div class="col-85">
-                    <input readonly type="text" id="logradouro" name="logradouro">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-15">
-                    <label for="numero">Número</label>
-                </div>
-                <div class="col-85">
-                    <input type="text" id="numero" name="numero">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-15">
-                    <label for="estado">Estado</label>
-                </div>
-                <div class="col-85">
-                    <input readonly type="text" id="estado" name="estado">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-15">
-                    <label for="cidade">Cidade</label>
-                </div>
-                <div class="col-85">
-                    <input readonly type="text" id="cidade" name="cidade">
-                </div>
-            </div>
-            <div class="row-button">
-                <div><a href="cadastrar-ong-2.html"><input id="next-page-signup-button" type="submit" name="proximo" value="Próximo"></a></div>
-                <div><a href="../../index.html"><input type="submit" name="cancelar" value="Cancelar"></a></div>
-            </div>
+          <div class="row">
+            <label for="login-info">CNPJ</label>
+
+            <input type="text" id="cnpj" name="CNPJ" required />
+          </div>
+
+          <div class="row">
+            <label for="login-info">Nome da ONG</label>
+
+            <input type="text" id="nome" name="nome" />
+          </div>
+
+          <div class="row">
+            <label for="login-info">Telefone</label>
+
+            <input type="tel" id="phone" name="phone" />
+          </div>
+
+          <div class="row">
+            <label for="login-info">E-mail</label>
+
+            <input type="email" id="email" name="email" />
+          </div>
+
+          <div class="row">
+            <label for="login-info">Senha</label>
+
+            <input type="password" id="senha" name="senha" />
+          </div>
+
+          <div class="row">
+            <label for="login-info">Confirmar senha</label>
+
+            <input
+              type="password"
+              id="confirmar-senha"
+              name="confirmar-senha"
+            />
+          </div>
+
+          <div class="row">
+            <label for="login-info">CEP</label>
+
+            <input type="text" id="cep" name="cep" />
+          </div>
+
+          <div class="row">
+            <label for="login-info">Número</label>
+
+            <input type="text" id="numero" name="numero" />
+          </div>
+
+          <div class="row">
+            <label for="login-info">Logradouro</label>
+
+            <input readonly type="text" id="logradouro" name="logradouro" />
+          </div>
+
+          <div class="row">
+            <label for="login-info">Estado</label>
+
+            <input readonly type="text" id="estado" name="estado" />
+          </div>
+
+          <div class="row">
+            <label for="login-info">Cidade</label>
+
+            <input readonly type="text" id="cidade" name="cidade" />
+          </div>
+
+          <div class="options-div">
+            <input
+              type="button"
+              name="cancelar"
+              value="Cancelar"
+              onclick="window.location.href='../../index.html';"
+            />
+
+            <input
+              id="next-page-signup-button"
+              type="button"
+              name="proximo"
+              value="Próximo"
+            />
+          </div>
         </div>
+      </div>
+
+      <footer-component></footer-component>
     </div>
 
-    <footer-component></footer-component>
-</div>
-
-<script src="../../js/index.js"></script>
-</body>
-
+    <script src="../../js/index.js"></script>
+  </body>
 </html>

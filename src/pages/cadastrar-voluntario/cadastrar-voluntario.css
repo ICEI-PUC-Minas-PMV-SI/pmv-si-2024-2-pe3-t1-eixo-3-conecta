@@ -1,183 +1,172 @@
-*{
-    box-sizing: border-box;
-}
-.container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
 .content {
-    background-color: #E8ECEF;
-    border-radius: 0;
-}
-
-.content > * {
-    padding: 16px 24px 0 24px;
-    max-width: 940px;
-}
-
-.content > .headline > .title {
-    color: #274C77;
-    padding: 16px 24px 0 24px;
-    font-size: 40px;
-    text-align: left;
-    justify-items: center;
-    max-width: 1300px;
-    margin: 0 auto;
+  background-color: var(--cor-fundo-conteudo);
 }
 
 .section-wrapper {
-    max-width: 400px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    width: 80%;
-    padding: 20px;
-}
-input[type=text], input[type=password], input[type=tel], input[type=email], input[type="text"]:focus {
-    width: 100%;
-    padding: 12px;
-    resize: vertical;
-    border-bottom: 2px solid #716F6F;
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
-    background-color: #E8ECEF;
-    font-size: large;
-    color: #716F6F;
+  display: flex;
+  flex-direction: column;
+
+  width: 30vw;
+
+  gap: 32px;
+
+  margin-bottom: 40px;
 }
 
-input[name="logradouro"], input[name="cidade"], input[name="estado"] {
-    cursor: default;
+.row {
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
 }
 
-input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, input[type="password"]:focus {
-    outline: none;
+.title {
+  margin-top: 20px;
+
+  font-size: 40px;
+  text-align: center;
+  color: var(--cor-titulo);
 }
 
-input[type=submit][name=cancelar], input[type=submit][name=voltar] {
-    background-color: #FFFFFF;
-    color: #274C77;
-    margin-bottom: 30px;
-    width: 150px;
-    height: 50px;
+/* Estilo dos Inputs de Texto */
+input[type="text"],
+input[type="text"]:focus,
+input[type="password"],
+input[type="password"]:focus,
+input[type="tel"],
+input[type="tel"]:focus,
+input[type="email"],
+input[type="email"]:focus {
+  width: 100%;
+
+  border: 0;
+  border-bottom: 2px solid var(--cor-borda);
+
+  font-size: 20px;
+  color: var(--cor-borda);
+
+  background-color: transparent;
+
+  outline: none;
 }
 
-input[type=submit][name=proximo], input[type=submit][name=cadastrar] {
-    background-color: #274C77;
-    color: #FFFFFF;
-    width: 150px;
-    height: 50px;
+/* Estilo dos Inputs de Leitura Apenas */
+input[name="logradouro"],
+input[name="cidade"],
+input[name="estado"] {
+  width: 100%;
+
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid var(--cor-link1);
+
+  font-size: 20px;
+  color: var(--cor-texto);
+
+  background-color: var(--cor-link2);
+  cursor: default;
 }
 
-input[type=file] {
-    padding-top: 8px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    float: left;
-    color: #716F6F;
-    height: 50px;
-    font-size: large;
+/* Botões de Cancelar e Voltar */
+input[type="button"][name="cancelar"],
+input[type="button"][name="voltar"] {
+  color: var(--cor-titulo);
+  background-color: var(--cor-fundo);
+
+  border: 2px solid var(--cor-borda);
 }
 
-input[type=submit] {
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    float: right;
-    width: 150px;
-    height: 50px;
-    font-size: 1.2em;
+/* Botões de Próximo e Cadastrar */
+input[type="button"][name="proximo"],
+input[type="button"][name="cadastrar"] {
+  color: var(--cor-fundo);
+  background-color: var(--cor-titulo);
 }
 
+/* Estilo dos Botões de Submit */
+input[type="button"] {
+  width: 100%;
+  height: 56px;
+
+  padding: 12px 20px;
+
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Estilo do Textarea */
 textarea {
-    width: 100%;
-    height: 200px;
-    padding: 12px;
-    resize: vertical;
-    outline: none;
-    background-color: white;
-    border-radius: 15px;
-    font-size: large;
-    color: #716F6F;
-    border: 2px solid #716F6F;
+  width: 100%;
+  height: 200px;
+
+  padding: 12px;
+
+  outline: none;
+  resize: vertical;
+
+  font-size: 20px;
+  color: var(--cor-borda);
+
+  border-radius: 16px;
+  border: 2px solid var(--cor-borda);
+  background-color: var(--cor-fundo);
 }
 
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
+/* Estilo do Input de Arquivo */
+input[type="file"] {
+  border: none;
+  cursor: pointer;
+
+  color: var(--cor-borda);
+  font-size: large;
 }
 
-.row-button {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
+/* Estilo do Label */
+label[for="login-info"] {
+  font-size: 20px;
+  font-weight: 500;
+
+  display: inline-block;
+
+  color: var(--cor-texto);
 }
 
-.row-button > div {
-    margin-left: 24px;
-    margin-right: 24px;
-    padding-top: 40px;
+.options-div {
+  display: flex;
+  justify-content: space-around;
+
+  gap: 32px;
 }
 
-.col-15 {
-    float: left;
-    width: 140px;
-    margin-top: 6px;
-    min-width: 60px;
+@media screen and (max-width: 768px) {
+  .section-wrapper {
+    gap: 32px;
+    width: 60vw;
+    padding: 20px;
+  }
+
+  .title {
+    margin: 0;
+  }
+
+  .options-div {
+    flex-direction: column;
+
+    gap: 32px;
+  }
 }
 
-.col-85 {
-    float: left;
-    width: 100%;
-    margin-top: 6px;
-}
+@media screen and (max-width: 425px) {
+  .section-wrapper {
+    width: 100vw;
+  }
 
-label {
-    color: #716F6F;
-    margin-bottom: 0px;
-    padding: 12px 12px 12px 0;
-    display: inline-block;
-    color: #716F6F;
-    font-size: 20px;
-    white-space: nowrap;
-}
-
-@media screen and (max-width: 600px) {
-    .content > .headline > .title {
-        color: #274C77;
-        padding: 16px 24px 0 24px;
-        font-size: 40px;
-        text-align: center;
-        justify-items: center;
-        max-width: 1300px;
-        margin: 0 auto;
-    }
-    
-    .section-wrapper{
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        width: 80%;
-        padding: 20px;
-        max-width: 400px;
-    }
-
-    .col-15, .col-85{
-        width: 100%;
-        margin-top: 6px;
-    }
-}
-
-@media screen and (max-width: 400px) {
-
-    .row-button > div {
-    margin-left: 10px;
-    margin-right: 10px;
-    padding-top: 40px;
-    }
+  .title {
+    font-size: 32px;
+    margin: 0;
+  }
 }

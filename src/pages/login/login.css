@@ -1,143 +1,157 @@
-*{
-    box-sizing: border-box;
-}
 .content {
-    background-color: #E8ECEF;
-    border-radius: 0;
-}
-
-.content > * {
-    padding: 16px 24px 0 24px;
-    max-width: 940px;
-}
-
-.content > .headline > .title {
-    color: #274C77;
-    padding: 16px 24px 0 24px;
-    font-size: 40px;
-    text-align: left;
-    justify-items: center;
-    max-width: 1300px;
-    margin: 0 auto;
+  background-color: var(--cor-fundo-conteudo);
 }
 
 .section-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    max-width: 400px;
-    padding: 20px;
-    margin-bottom: 40px;
-}
-form{
-    width: 100%;
-}
-.hidden {
-    display: none;
-}
-input[type=password], input[type=text] {
-    width: 100%;
-    padding: 8px 12px 0 12px;
-    resize: vertical;
-    border-bottom: 2px solid #716F6F;
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
-    background-color: #E8ECEF;
-    font-size: large;
-    color: #716F6F;
-}
+  display: flex;
+  flex-direction: column;
 
-input[type="password"]:focus, input[type="text"]:focus {
-    outline: none;
-}
+  width: 30%;
 
-input[type=submit][name=entrar] {
-    background-color: #274C77;
-    color: #FFFFFF;
-}
-input[type=checkbox] {
-    margin-right: 5px;
-}
+  gap: 32px;
 
-input[type=submit] {
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    float: right;
-    width: 100%;
-    height: 50px;
-    font-size: 1.2em;
+  margin-bottom: 40px;
 }
 
 .row {
-    margin-top: 12px;
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
 }
 
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
+.title {
+  margin-top: 20px;
+
+  font-size: 40px;
+  text-align: center;
+  color: var(--cor-titulo);
 }
 
-.row-button {
-    padding-top: 70px;
+input[type="text"],
+input[type="text"]:focus,
+input[type="password"],
+input[type="password"]:focus {
+  width: 100%;
+
+  border: 0;
+  border-bottom: 2px solid var(--cor-texto);
+
+  font-size: 20px;
+  color: var(--cor-borda);
+
+  background-color: transparent;
+
+  outline: none;
 }
 
-.col {
-    float: left;
-    padding-top: 10px;
+input[type="submit"] {
+  width: 100%;
+  height: 56px;
+
+  cursor: pointer;
+
+  border-radius: 8px;
+
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--cor-fundo-conteudo);
+  background-color: var(--cor-titulo);
 }
 
-.col-15 {
-    float: left;
-    width: 140px;
-    margin-top: 6px;
-    min-width: 60px;
+.options-div {
+    display: flex;
+    justify-content: space-around;
+    gap: 8px;
 }
 
-.col-85 {
-    float: left;
+.options-div a {
+  text-decoration: none;
+
+  color: var(--cor-link1);
+
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.remember-div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 8px;
+}
+
+.checkbox-container,
+.radio-container {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+}
+
+label[for="login-info"],
+label[for="tipo-usuario"] {
+  font-size: 20px;
+  font-weight: 500;
+
+  display: inline-block;
+
+  color: var(--cor-texto);
+}
+
+#admin-input {
+    display: none;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+
+  border: none;
+  border-radius: 4px;
+
+  appearance: none;
+
+  background-color: var(--cor-fundo);
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+  background-color: var(--cor-titulo);
+}
+
+@media screen and (max-width: 768px) {
+  .section-wrapper {
+    gap: 32px;
+    width: 60vw;
+  }
+
+  .checkbox-container {
     width: 100%;
-    margin-top: 6px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
 }
 
-label {
-    margin-bottom: 0px;
-    padding: 12px 12px 12px 0;
-    font-size: 20px;
-    display: inline-block;
-    color: #716F6F;
-}
+@media screen and (max-width: 425px) {
+  .section-wrapper {
+    width: 100vw;
+    padding: 20px;
+  }
 
-div > label {
-    padding: 20px 30px 0 0px;
-}
-div.col > label {
-    padding-top: 0px;
-}
-@media screen and (max-width: 600px ){
-    .section-wrapper{
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        max-width: 400px;
-        padding: 20px;
-        margin-bottom: 40px;
-    }
-    .col-85 {
-        width: 100%;
-    }
-}
+  .options-div {
+    flex-direction: column;
+    align-items: flex-start;
 
-@media screen and (max-width: 400px) {
+    gap: 16px;
+  }
 
-    element.style {
-        text-align: center;
-    }
-
-    input[type=submit][name=entrar] {
-        margin-top: 15px;
-    }
+  .title {
+    font-size: 32px;
+    margin: 0;
+  }
 }
