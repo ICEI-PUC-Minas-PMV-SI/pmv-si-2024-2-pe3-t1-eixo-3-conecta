@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
+    <title>Página do voluntário</title>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Página do voluntário</title>
+
     <link rel="stylesheet" href="../../css/index.css" />
     <link rel="stylesheet" href="pagina-do-voluntario.css" />
+
     <link
       rel="shortcut icon"
       href="../../assets/icons/favicon.ico"
       type="image/x-icon"
     />
+
     <script type="module" src="../../components/header/header.js"></script>
     <script type="module" src="../../components/footer/footer.js"></script>
+
     <script
       type="module"
       src="../../components/vertical-task-card/vertical-task-card.js"
     ></script>
+
     <script
       type="module"
       src="../../components/horizontal-task-card/horizontal-task-card.js"
     ></script>
+
     <script type="module" src="../../js/models/organization.js"></script>
     <script type="module" src="pagina-do-voluntario.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -38,20 +45,19 @@
         <h1 class="title" id="candidate-name"></h1>
 
         <div class="section-wrapper">
-          <div class="about section">
-            <div class="wrapper-about">
-              <h2 class="subtitle">Sobre</h2>
-            </div>
+          <div class="wrapper-about">
+            <h2 class="subtitle">Sobre</h2>
+
             <p id="about-text" class="text">Carregando ...</p>
           </div>
 
-          <div class="feedbacks section">
+          <div class="feedbacks-section">
             <h2 class="subtitle">Depoimentos</h2>
             <div class="feedback-wrapper"></div>
           </div>
 
-          <div class="tasks section">
-            <h2 class="subtitle">Candidaturas</h2>
+          <div class="tasks-section">
+            <h2 class="subtitle">Contribuições</h2>
             <div class="tasks-wrapper" id="task-wrapper"></div>
           </div>
         </div>
@@ -66,21 +72,19 @@
                 src="../../assets/icons/NGO.png"
                 alt="Ajuda"
               />
+
               <p class="modal-title">VAGA DE VOLUNTARIADO</p>
               <div class="close">&times;</div>
             </div>
             <div class="job-title"></div>
             <div class="NGO"></div>
             <div class="modal-content">
-              <div>
-                <h1 class="text-tiltle">Descrição</h1>
-                <div class="text"></div>
-              </div>
-              <div>
-                <h1 class="text-tiltle">Localização</h1>
-                <div class="city"></div>
-                <p class="addres"></p>
-              </div>
+              <h1 class="text-title">Descrição</h1>
+              <div class="text"></div>
+
+              <h1 class="text-title">Localização</h1>
+              <div class="city"></div>
+              <p class="addres"></p>
             </div>
           </div>
         </div>

@@ -1,152 +1,113 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
 .content {
-    background-color: #E8ECEF;
-    border-radius: 0;
+  background-color: var(--cor-fundo-conteudo);
 }
 
-.content > * {
-    padding: 16px 24px 0 24px;
-    max-width: 940px;
+.section-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  width: 60%;
+
+  gap: 32px;
+
+  margin-bottom: 40px;
 }
 
-.content > .title {
-    color: #324B75;
-    padding: 16px 24px 0 24px;
-    font-size: 40px;
-    align-self: center;
-    font-weight: 700;
-}
+.title {
+  margin-top: 16px;
+  padding: 0 16px;
+  width: 100%;
 
-.content > .section-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
+  font-size: 40px;
+  text-align: center;
 
-.subtitle {
-    text-align: start;
-    align-self: start;
-    color: #000000;
-    font-size: 32px;
-    max-width: 500px;
-    font-weight: 400;
-}
-
-.about > .wrapper-about {
-    display: flex;
-    justify-content: space-between;
-}
-
-.about > .text {
-    padding: 8px 0 0 0;
-    font-size: 20px;
-    font-weight: 400;
+  color: var(--cor-titulo);
 }
 
 .text {
-    margin: 24px;
-    text-align: justify;
-    font-size: 15px;
-    line-height: 1.8rem;
-    color: black;
-    text-align: justify;
-    overflow-wrap: break-word;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: justify;
+  color: var(--cor-texto);
+  overflow-wrap: break-word;
+}
+
+.subtitle {
+  font-size: 32px;
+}
+
+.wrapper-about,
+.wrapper-pages {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  gap: 16px;
+}
+
+.text {
+  font-size: 16px;
+  line-height: 24px;
+  text-align: justify;
+  color: var(--cor-texto);
+  overflow-wrap: break-word;
 }
 
 .pages {
-    display: flex;
-    gap: 16px;
-    margin: 20px 0;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    cursor: pointer;
+  gap: 16px;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  cursor: pointer;
 }
 
 .button-pages {
-    background-color: #324B75;
-    border-radius: 5px;
-    padding: 8px 16px;
-    font-size: 16px;
-    font-weight: 700;
+  cursor: pointer;
+
+  border-radius: 8px;
+
+  padding: 8px 16px;
+
+  text-decoration: none;
+
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--cor-fundo-conteudo);
+
+  background-color: var(--cor-titulo);
 }
-.button-pages > a {
-    color: white;
-    text-decoration: none;
-}
+
 @media screen and (max-width: 768px) {
+  .section-wrapper {
+    width: 80%;
 
-    .content {
-        align-items: start;
-        display: flex;
-    }
+    gap: 16px;
+  }
 
-    .content > .title {
-        padding: 16px 24px 0 32px;
-    }
+  .button-pages {
+    width: 60%;
+  }
 
-    .content > .section-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-    }
-
-    .content > .section {
-        padding: 16px 24px 0 24px;
-    }
-
-    .text {
-        margin: 24px;
-        font-size: 15px;
-        line-height: 1.25rem;
-        color: black;
-        text-align: left;
-        overflow-wrap: break-word;
-    }
-}
-
-@media screen and (max-width: 535px) {
-
-    .text {
-        margin: 24px;
-        font-size: 15px;
-        line-height: 1.25rem;
-        color: black;
-        text-align: left;
-        overflow-wrap: break-word;
-    }
-
-    .pages {
-        flex-direction: column;
-        align-content: flex-start;
-    }
+  .pages {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 425px) {
+  .section-wrapper {
+    width: 100%;
+    padding: 24px;
+  }
 
-    .text {
-        margin: 24px;
-        font-size: 15px;
-        line-height: 1.25rem;
-        color: black;
-        text-align: left;
-        overflow-wrap: break-word;
-    }
+  .subtitle {
+    font-size: 24px;
+  }
 }
 
 @media screen and (max-width: 320px) {
-
-    .text {
-        margin: 24px;
-        font-size: 15px;
-        line-height: 1.25rem;
-        color: black;
-        text-align: left;
-        overflow-wrap: break-word;
-    }
-
 }
