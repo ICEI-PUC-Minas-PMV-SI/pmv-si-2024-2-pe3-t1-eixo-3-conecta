@@ -7,15 +7,18 @@
     <title>Como começar?</title>
     <link rel="stylesheet" href="../../css/index.css">
     <link rel="stylesheet" href="como-comecar.css">
+    <link rel="stylesheet" href="../../css/informative-pages.css">
     <link rel="shortcut icon" href="../../assets/icons/favicon.ico" type="image/x-icon">
     <script type="module" src="../../components/header/header.js" ></script>
     <script type="module" src="../../components/footer/footer.js"></script>
+    <script type="module" src="../../js/informative-pages.js" defer></script>
+    <script type="module" src="como-comecar.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
 
-<div class="container">
+<div class="content">
 
     <div id="page-overlay"></div>
 
@@ -23,44 +26,39 @@
         <header-component action="toggleOverlay"></header-component>
     </header>
 
-    <div class="content">
-        <h1 class="title">
-            como começar?
-        </h1>
-        <div class="subtitle">
-            Nessa página iremos te guiar em como dar seus primeiros passos rumo ao voluntariado.
-        </div>
-        <div class="image-wrapper">
-            <img class="image" src="../../assets/images/hands.jpeg" alt="mãos e céu em preto em branco">
-        </div>
-        <div class="instructions-wrapper">
-            <div class="instructions-list">
-                <div class="list-title">sou voluntário</div>
-                <div class="list-content">
-                    <ol>
-                        <li><a href="../pagina-de-demandas/pagina-de-demandas.html">Escolha</a> uma das demandas criadas pelas ONGs.
-                        </li>
-                        <li>Se voluntarie por meio do botão "quero ajudar".</li>
-                        <li>Preencha o formulário com seus dados de contato.</li>
-                        <li>Fique atento ao seu e-mail para atualizações.</li>
-                    </ol>
-                </div>
-            </div>
-
-            <div class="instructions-list">
-                <div class="list-title">sou ONG</div>
-                <div class="list-content">
-                    <ol>
-                        <li><a href="..\cadastrar-ong\cadastrar-ong-1.html">Cadastre sua ONG.</a></li>
-                        <li>Crie demandas e compartilhe com voluntários interessados.</li>
-                        <li>Avalie as candidaturas para demandas abertas.</li>
-                        <li>Solicite depoimentos dos participantes ao final da demanda.</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
+    <div class="image-wrapper">
+        <img class="image" src="../../assets/images/hands.jpeg" alt="mãos e céu em preto em branco">
     </div>
+    
+    <div class="conteudo"></div>
 
+    <dialog id="edit-modal" class="modal">
+        <form class="form-modal" id="form-modal">
+            <div class="header-modal">
+                <div class="button-close-modal">
+                    <button class="close" id="close-modal">&times;</button>
+                </div>
+                <div class="title-modal">
+                    <h2 class="modal-title" id="modal-title"></h2>
+                </div>
+            </div>
+            <div class="modal-content">
+                <input type="text" data-id="" name="id" hidden readonly>
+                <input type="text" data-page="" name="page" hidden readonly>
+                <input type="text" data-title="" name="title" hidden readonly>
+                <label for="subtitle" hidden>Título:</label>
+                <input type="text" id="subtitle" data-subtitle="" name="subtitle" hidden>
+                <label for="content">Texto:</label>
+                <input type="text" data-image="" name="image" hidden readonly>
+                <textarea id="content" name="content" rows="10" cols="50"></textarea>     
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-button" id="cancel-button">Cancelar</button>
+                <button class="save-button">Salvar</button>
+            </div>
+        </form>
+    </dialog>
+    
     <footer-component></footer-component>
 </div>
 

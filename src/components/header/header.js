@@ -62,83 +62,27 @@ const makeTemplate = (variant) => {
             </div>
             
             <div class="buttons-header-wrapper">
-                <a id="oportunidades" 
-                style="${
-                  userType === "organization" ||
-                  userType === undefined
-                    ? "display: none"
-                    : ""
-                }"
+                <a href=${getPagePath("pagina-de-demandas")} style="${userType ==="admin" ? "display: none" : ""}" class="header-button oportunidades-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">OPORTUNIDADES</a>
+
+                <a id="area-da-ong" style="${pathName.includes('pagina-do-voluntario.html') || userType === "candidate" || userType === "admin" || userType === undefined ? "display: none": ""}" href="#"  class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">ÁREA DA ONG</a>
+
+                <a id="area-da-voluntario" style="${pathName.includes('pagina-do-voluntario.html') || userType === "organization" ||  userType === "admin" ? "display: none": ""}" href="#"  class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">ÁREA DO VOLUNTÁRIO</a>
+
+                <a id="adm-demandas" style="${token == null | userType === "admin" || userType === 'candidate' ? "display: none" : ""}" id="logout-click" href=${getPagePath("administrar-demandas")}  class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">ADMINISTRAR DEMANDAS</a>
                 
-                href=${getPagePath(
-                  "pagina-de-demandas"
-                )} class="header-button">
-
-                <img class="dot-black" src="${rootPath}/assets/icons/dot-black.png" />
-                
-                OPORTUNIDADES
-                </a>
-
-                <a id="area-da-ong" style="${
-                  userType === "candidate" ||
-                  userType === undefined
-                    ? "display: none"
-                    : ""
-                }" 
-                href="#"  class="header-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">
-
-                ÁREA DA ONG
-                </a>
-
-                <a id="area-da-voluntario" style="${
-                  userType === "organization"
-                    ? "display: none"
-                    : ""
-                }" 
-                href="#"  
-                class="header-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">
-
-                ÁREA DO VOLUNTÁRIO
-                </a>
-
-                <a id="adm-demandas" style="${
-                  (token == null) | (userType === "candidate")
-                    ? "display: none"
-                    : ""
-                }" 
-                href=${getPagePath("administrar-demandas")}  
-                class="header-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">
-
-                ADMINISTRAR DEMANDAS
-                </a>
-
-                <a id="adm-candidaturas" style="${
-                  (token == null) | (userType === "organization")
-                    ? "display: none"
-                    : ""
-                }" 
-                href="${getPagePath("administrar-candidaturas")}" 
-                class="header-button">
-
-                  <img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">Administrar candidaturas
-                </a>
-                
-                <a id="editar-perfil" 
+                ${userType !== 'admin' ? `
+                <a 
+                  id="editar-perfil" 
                   style="${token ? "" : "display: none"}" 
-                  href="${
-                    userType === "candidate"
-                      ? getPagePath("cadastrar-voluntario")
-                      : getPagePath("cadastrar-ong")
-                  }" 
-                  class="header-button">
-
+                  href="${userType === 'candidate' ? getPagePath('cadastrar-voluntario') : getPagePath('cadastrar-ong')}" 
+                  class="header-button area-da-ong-button">
                   <img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">EDITAR PERFIL
-                </a>
-
-                <a id="logout-click" style="${
-                  token == null ? "display: none" : ""
-                }" id="logout-click" href="#" class="header-button"><img class="log-out" src="${rootPath}/assets/icons/log-out.png">SAIR</a>
-
+                </a>       
+                ` : ''}
+                ${userType === 'admin' ? `
+                    <a id="pagina-do-admin" href=${getPagePath("pagina-do-admin")} class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">PÁGINA DO ADMINISTRADOR</a>
+                ` : ''}
+                <a id="logout-click" style="${token == null ? "display: none" : ""}" id="logout-click" href="#" class="header-button area-da-ong-button"><img class="log-out" src="${rootPath}/assets/icons/log-out.png">SAIR</a>
             </div>
     
         </header>
@@ -192,10 +136,9 @@ const makeTemplate = (variant) => {
                     : ""
                 }" class="authentication-button" href=${getPagePath("pagina-da-ong")}>
 
-                ÁREA DA ONG
+                  ÁREA DA ONG
                 </a>
 
-                
                 <a class="authentication-button" href="${
                   userType === "candidate"
                     ? getPagePath("cadastrar-voluntario")
@@ -214,7 +157,7 @@ const makeTemplate = (variant) => {
                 class="authentication-button" 
                 href=${getPagePath("administrar-demandas")}>
 
-                <img class="setting" src="${rootPath}/assets/icons/setting.png">DEMANDAS
+                  <img class="setting" src="${rootPath}/assets/icons/setting.png">DEMANDAS
                 </a>
 
                 <a style="${
