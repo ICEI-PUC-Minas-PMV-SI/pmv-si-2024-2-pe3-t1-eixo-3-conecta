@@ -81,9 +81,10 @@
   height: 420px;
 
   border-radius: 16px;
-  border: 1px solid var(--cor-borda);
-
+  border: 1px solid #8b8c89;
+  
   padding: 16px 24px;
+
   background: var(--cor-fundo);
 }
 
@@ -105,7 +106,6 @@
   line-height: 24px;
   text-overflow: ellipsis;
 
-  cursor: pointer;
   max-height: 200px;
   word-break: break-word;
 }
@@ -134,6 +134,10 @@
 .task-owner {
   font-size: 16px;
   font-weight: 700;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .status-wrapper {
@@ -161,14 +165,10 @@
   display: flex;
 }
 
-.manage-button {
-  height: 20px;
-  width: 20px;
-}
+.card-button-wrapper {
+  display: flex;
 
-.delete-button {
-  height: 20px;
-  width: 20px;
+  gap: 8px;
 }
 
 .location-button-wrapper {
@@ -222,6 +222,11 @@
   justify-content: center;
 
   width: 100%;
+}
+
+.delete-button {
+  height: 25px;
+  width: 25px;
 }
 
 .modal {
@@ -332,13 +337,6 @@
     padding: 16px;
   }
 
-  .task-name {
-    font-size: 32px;
-  }
-
-  .task-owner {
-    font-size: 24px;
-  }
 
   .horizontal-task-card {
     display: flex;
@@ -364,24 +362,13 @@
 
   .right-side {
     display: flex;
-    gap: 32px;
     align-items: center;
-    width: fit-content;
   }
 
   .cards-button {
-    display: block;
-    justify-content: space-between;
-  }
 
-  .manage-button {
-    height: 20px;
-    width: 20px;
-  }
-
-  .delete-button {
-    height: 20px;
-    width: 20px;
+    flex-direction: column;
+    gap: 16px;
   }
 
   .modal-wrapper {
