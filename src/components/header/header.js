@@ -62,27 +62,36 @@ const makeTemplate = (variant) => {
             </div>
             
             <div class="buttons-header-wrapper">
-                <a href=${getPagePath("pagina-de-demandas")} style="${userType ==="admin" ? "display: none" : ""}" class="header-button oportunidades-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">OPORTUNIDADES</a>
+                <a href=${getPagePath("pagina-de-demandas")} style="${userType ==="admin" ? "display: none" : ""}" class="header-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">OPORTUNIDADES</a>
 
-                <a id="area-da-ong" style="${pathName.includes('pagina-do-voluntario.html') || userType === "candidate" || userType === "admin" || userType === undefined ? "display: none": ""}" href="#"  class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">ÁREA DA ONG</a>
+                <a id="area-da-ong" style="${userType === "candidate" || userType === "admin" || userType === undefined ? "display: none": ""}" href="#"  class="header-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">ÁREA DA ONG</a>
 
-                <a id="area-da-voluntario" style="${pathName.includes('pagina-do-voluntario.html') || userType === "organization" ||  userType === "admin" ? "display: none": ""}" href="#"  class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">ÁREA DO VOLUNTÁRIO</a>
+                <a id="area-da-voluntario" style="${userType === "organization" ||  userType === "admin" ? "display: none": ""}" href="#"  class="header-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">ÁREA DO VOLUNTÁRIO</a>
 
-                <a id="adm-demandas" style="${token == null | userType === "admin" || userType === 'candidate' ? "display: none" : ""}" id="logout-click" href=${getPagePath("administrar-demandas")}  class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">ADMINISTRAR DEMANDAS</a>
-                
+                <a id="adm-demandas" style="${token == null || userType === "admin" || userType === 'candidate' ? "display: none" : ""}" id="logout-click" href=${getPagePath("administrar-demandas")}  class="header-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">ADMINISTRAR DEMANDAS</a>
+
+                <a id="adm-candidaturas" style="${(token == null) || (userType === "organization") || userType === "admin" ? "display: none" : ""}" 
+                  href="${getPagePath("administrar-candidaturas")}" 
+                  class="header-button">
+
+                  <img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">Administrar candidaturas
+                </a>
+
                 ${userType !== 'admin' ? `
+                
                 <a 
                   id="editar-perfil" 
                   style="${token ? "" : "display: none"}" 
                   href="${userType === 'candidate' ? getPagePath('cadastrar-voluntario') : getPagePath('cadastrar-ong')}" 
-                  class="header-button area-da-ong-button">
+                  class="header-button">
                   <img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">EDITAR PERFIL
-                </a>       
+                </a>
+
                 ` : ''}
                 ${userType === 'admin' ? `
-                    <a id="pagina-do-admin" href=${getPagePath("pagina-do-admin")} class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">PÁGINA DO ADMINISTRADOR</a>
+                    <a id="pagina-do-admin" href=${getPagePath("pagina-do-admin")} class="header-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">PÁGINA DO ADMINISTRADOR</a>
                 ` : ''}
-                <a id="logout-click" style="${token == null ? "display: none" : ""}" id="logout-click" href="#" class="header-button area-da-ong-button"><img class="log-out" src="${rootPath}/assets/icons/log-out.png">SAIR</a>
+                <a id="logout-click" style="${token == null ? "display: none" : ""}" id="logout-click" href="#" class="header-button"><img class="log-out" src="${rootPath}/assets/icons/log-out.png">SAIR</a>
             </div>
     
         </header>
@@ -364,15 +373,7 @@ const cssStyle = `
         font-weight: bold;
         text-transform: uppercase;
     }
-    
-    header .buttons-header-wrapper .area-da-ong-button {
-        font-size: 13px;
-    }
-    
-    header .buttons-header-wrapper .oportunidades-button {
-        margin-right: 20px;
-        font-size: 13px;
-    }
+
     
     .header-mobile {
         display: none;
