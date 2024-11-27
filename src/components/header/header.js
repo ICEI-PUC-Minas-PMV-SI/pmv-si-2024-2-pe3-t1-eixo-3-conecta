@@ -52,7 +52,7 @@ const makeTemplate = (variant) => {
                 <a href=${getPagePath("pagina-de-demandas")} style="${userType ==="admin" ? "display: none" : ""}" class="header-button oportunidades-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">OPORTUNIDADES</a>
                 <a id="area-da-ong" style="${pathName.includes('pagina-do-voluntario.html') || userType === "candidate" || userType === "admin" || userType === undefined ? "display: none": ""}" href="#"  class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">ÁREA DA ONG</a>
                 <a id="area-da-voluntario" style="${pathName.includes('pagina-do-voluntario.html') || userType === "organization" ||  userType === "admin" ? "display: none": ""}" href="#"  class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">ÁREA DO VOLUNTÁRIO</a>
-                <a id="adm-demandas" style="${token == null | userType === "admin" || userType === 'candidate' ? "display: none" : ""}" id="logout-click" href=${getPagePath("administrar-demandas")}  class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">ADMINISTRAR DEMANDAS</a>
+                <a id="adm-demandas" style="${token == null | userType === "admin" ? "display: none" : ""}" id="logout-click" href=${getPagePath("administrar-demandas")}  class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">ADMINISTRAR DEMANDAS</a>
                 ${userType !== 'admin' ? `
                 <a 
                   id="editar-perfil" 
