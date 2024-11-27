@@ -96,13 +96,13 @@
 }
 
 .subtitle{
-    font-size: 40px;
+    font-size: 2rem;
     color: #274C77
 }
 
 .description {
     width: 100%;
-    font-size: 20px;
+    font-size: 1.15rem;
     margin-top: 10px;
 }
 
@@ -143,7 +143,16 @@ vertical-task-card-component {
     align-items: center;
     justify-content: center;
     border: 1px solid black;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
+
+.more-button-wrapper:hover{ 
+    background-color: #F6F7F8;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    border: solid #F6F7F8;
+ }
 
 .more-button {
     color: rgb(0, 0, 0);
@@ -177,7 +186,7 @@ vertical-task-card-component {
     align-items: center;
     margin-top: 40px;
     margin-bottom: 5%;
-    padding: 35px 35px 35px 70px;
+    padding: 35px 35px 35px 35px;
 }
 
 .bottom-wrapper {
@@ -185,18 +194,21 @@ vertical-task-card-component {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
+    margin-left: 10%;
 }
 
 .bottomTitle{
-    font-size: 40px;
+    font-size: 2rem;
     color: #274C77;
+    margin-bottom: 20px;
 }
 
 .bottomText {
     width: 90%;
-    font-size: 20px;
+    font-size: 1.12rem;
     text-align: justify;
+    margin-bottom: 20px;
 }
 
 .imageBottom {
@@ -217,6 +229,13 @@ vertical-task-card-component {
     font-weight: 700;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.buttonBottom:hover{
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .start-button {
@@ -361,7 +380,7 @@ vertical-task-card-component {
     }
 
     .prev, .next {
-        font-size: 30px;
+        font-size: 2rem;
     }
 
     .dot {
@@ -369,14 +388,14 @@ vertical-task-card-component {
         width: 10px;
     }
 
-    .subtitle{
-        font-size: 35px;
+    .subtitle {
+        font-size: 1.5rem;
         color: #274C77
     }
 
     .description {
         width: 100%;
-        font-size: 20px;
+        font-size: 1rem;
         margin-top: 10px;
     }
     
@@ -410,13 +429,13 @@ vertical-task-card-component {
     }
 
     .bottomTitle {
-        font-size: 35px;
-        margin-bottom: 20px;
+        font-size: 1.5rem;
+        margin-bottom: 1.15rem;
     }
 
     .bottomText {
         width: 90%;
-        font-size: 15px;
+        font-size: 1rem;
         text-align: justify;
         margin-bottom: 20px;
     }
@@ -481,7 +500,7 @@ vertical-task-card-component {
 
     .text {
         margin: 24px;
-        font-size: 15px;
+        font-size: 1rem;
         line-height: 1.25rem;
         color: black;
         text-align: left;
