@@ -22,7 +22,7 @@
 
 .image { 
     border-radius: 40px;
-    max-width: 100%;
+    max-width: 90%;
     margin: 10% 10% 10% 20%;
 }
 
@@ -38,6 +38,7 @@
 }
 
 .paragrafo {
+    text-align: justify;
     color: #fff;
     font-size: 20px;
     line-height: 30px;
@@ -48,6 +49,7 @@
 .title-content {
     margin-bottom: 5%;
 }
+
 .dinamic {
     padding: 10%;
     width: 90%;
@@ -81,7 +83,7 @@
 
     .image { 
         border-radius: 40px;
-        max-width: 100%;
+        max-width: 90%;
         margin: 10% 0% 10% 10%;
     }
 }
