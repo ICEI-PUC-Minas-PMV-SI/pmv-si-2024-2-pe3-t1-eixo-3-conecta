@@ -8,6 +8,7 @@ import { findById as findOngById } from "../../js/models/organization.js";
 import { findById as findTaskById, Task } from "../../js/models/task.js";
 import { Candidate } from "../../js/models/candidate.js";
 import { getSession, Session } from "../../js/models/session.js";
+import { Candidacy } from "../../js/models/candidacy.js";
 
 const dataAtual = new Date();
 
@@ -88,20 +89,17 @@ async function handleSend(event) {
 
         const session = await getSession(token);
         const candidateId = session[0].userId;
-
-        let candidateEntity = new Candidate();
-        const candidate = await candidateEntity.findById(candidateId);
-
-        const task = new Task();
-        const taskData = await task.findById(taskID);
-        const candidates = taskData.candidates;
-        candidates.push(candidate.id)
-        await task.updateCandidatesById(taskID, candidates);
+        const candidacy = new Candidacy();
+        candidacy.taskId = taskID;
+        candidacy.candidateId = candidateId;
+        candidacy.text = candidatura.como;
+        await candidacy.create();
 
         //alert(SUCESSO_ENVIAR_CANDIDATURA);
         window.location.href = LOCATION_REF_PAGINA_DO_VOLUNTARIO;
     } catch (error) {
         alert("Erro ao enviar candidatura." + error.message);
+        console.log(error)
     }
 }
 
@@ -218,7 +216,7 @@ document.addEventListener('DOMContentLoaded', async (event) => {
     fillForm(candidato);
 });
 
-//função para preencher automaticamente o formulário 
+//função para preencher automaticamente o formulário
 function fillForm(candidato) {
   document.getElementById('cpf').value = candidato.cpf;
   document.getElementById('nome').value = candidato.name;

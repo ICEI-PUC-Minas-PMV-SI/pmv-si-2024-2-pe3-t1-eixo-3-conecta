@@ -5,6 +5,7 @@ import { Candidate } from "../../js/models/candidate.js";
 import { sendEmail } from "../../js/envio-email.js";
 import { PROJECT_URL } from "../../js/constants.js";
 import { Review } from "../../js/models/review.js";
+import { Candidacy } from "../../js/models/candidacy.js";
 
 
 const getTaskId = async () => {
@@ -41,10 +42,14 @@ const populateCandidates = async (taskStatus) => {
 
     const candidateManager = new Candidate();
 
-    for await (const candidate of filteredCandidates) {
-        if(isTaskFinished && candidate.status === 'Pendente') return;
+    const candidacyManager = new Candidacy();
+    const candidacies = await candidacyManager.findAllByTaskId(taskData.id);
 
-        const isCandidateApproved = candidate.status === 'Aprovado';
+    for await (const candidate of filteredCandidates) {
+        const candidacy = candidacies.find(candidacy => candidacy.candidateId === candidate.id);
+        if(isTaskFinished && candidacy.status === 'Pendente') return;
+
+        const isCandidateApproved = candidacy.status === 'Aprovado';
 
         const card = document.createElement('div');
         const sectionWrapper = document.createElement('div');
@@ -80,7 +85,7 @@ const populateCandidates = async (taskStatus) => {
         messageImg.className = 'message-button';
 
         personName.innerText = candidate.name;
-        descriptionText.innerText = candidate.profile;
+        descriptionText.innerText = candidacy.text;
         acceptImg.src = '../../assets/icons/accept.png';
         rejectImg.src = '../../assets/icons/remove.png';
         messageImg.src = '../../assets/icons/message.png';
@@ -94,7 +99,7 @@ const populateCandidates = async (taskStatus) => {
                 alert('Candidato aceito.');
                 this.style.display = 'none';
                 rejectWrapper.style.display = 'none';
-                await candidateManager.updateStatusById(candidate.id, 'Aprovado');
+                await candidacyManager.updateStatusById(candidacy.id, 'Aprovado');
                 await sendEmail(
                     candidate.email,
                     `${taskData.name}: candidatura aceita!`,
@@ -107,7 +112,7 @@ const populateCandidates = async (taskStatus) => {
                 alert('Candidato recusado.')
                 acceptWrapper.style.display = 'none';
                 this.style.display = 'none';
-                await candidateManager.updateStatusById(candidate.id, 'Reprovado');
+                await candidacyManager.updateStatusById(candidacy.id, 'Reprovado');
             }
         };
         messageWrapper.onclick = async function () {
@@ -169,8 +174,10 @@ const populateCandidates = async (taskStatus) => {
     }
 
     for await (const candidate of filteredCandidates) {
-        if(isTaskFinished && candidate.status === 'Pendente') return;
-        const isCandidateApproved = candidate.status === 'Aprovado';
+        const candidacy = candidacies.find(candidacy => candidacy.candidateId === candidate.id);
+        if(isTaskFinished && candidacy.status === 'Pendente') return;
+
+        const isCandidateApproved = candidacy.status === 'Aprovado';
 
         const card = document.createElement('div');
         const leftSide = document.createElement('div');
@@ -206,7 +213,7 @@ const populateCandidates = async (taskStatus) => {
         messageImg.className = 'message-button';
 
         personName.innerText = candidate.name;
-        descriptionText.innerText = candidate.profile;
+        descriptionText.innerText = candidacy.text;
         acceptImg.src = '../../assets/icons/accept.png';
         rejectImg.src = '../../assets/icons/remove.png';
         messageImg.src = '../../assets/icons/message.png';
@@ -220,7 +227,8 @@ const populateCandidates = async (taskStatus) => {
                 alert('Candidato aceito.');
                 this.style.display = 'none';
                 rejectWrapper.style.display = 'none';
-                await candidateManager.updateStatusById(candidate.id, 'Aprovado');
+                await candidacyManager.updateStatusById(candidacy.id, 'Aprovado');
+                // await candidateManager.updateStatusById(candidate.id, 'Aprovado');
                 await sendEmail(
                     candidate.email,
                     `${taskData.name}: candidatura aceita!`,
@@ -233,7 +241,7 @@ const populateCandidates = async (taskStatus) => {
                 alert('Candidato recusado.')
                 acceptWrapper.style.display = 'none';
                 this.style.display = 'none';
-                await candidateManager.updateStatusById(candidate.id, 'Reprovado');
+                await candidacyManager.updateStatusById(candidacy.id, 'Reprovado');
             }
         };
         messageWrapper.onclick = async function () {
