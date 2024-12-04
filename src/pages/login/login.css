@@ -71,7 +71,7 @@ input[type=submit] {
 }
 
 .row {
-    margin-top: 12px;
+    margin-top: 25px;
 }
 
 .row:after {
@@ -116,6 +116,18 @@ div > label {
 div.col > label {
     padding-top: 0px;
 }
+
+a:-webkit-any-link {
+    color: #A3CEF1;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:-webkit-any-link:hover {
+    color:#6096BA;
+}
+
 @media screen and (max-width: 600px ){
     .section-wrapper{
         display: flex;
