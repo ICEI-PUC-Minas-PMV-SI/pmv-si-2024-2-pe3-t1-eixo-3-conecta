@@ -17,7 +17,6 @@
 }
 
 .collapsible {
-    /* margin-bottom: 2%; */
     color: #716F6F;
     cursor: pointer;
     padding: 18px;
@@ -32,6 +31,7 @@
 
 .collapsible-content p {
     padding: 8px;
+    text-align: justify;
 }
 
 .active {
@@ -97,14 +97,31 @@ h1.title {
 
     .collapsible-wrapper > .collapsible-content {
         width: 84.3%;
+        margin-bottom: 5%;
     }
 
+    .collapsible-content p {
+        padding: 8px;
+        text-align: justify;
+    }
+    h1.title {
+        margin: 5%;
+    }
 }
 
 @media screen and (max-width: 520px) {
 
     .collapsible-wrapper > .collapsible-content {
         width: 82%;
+        margin-bottom: 5%;
     }
 
+    .collapsible-content p {
+        padding: 8px;
+        text-align: justify;
+    }
+    
+    h1.title {
+        margin: 5%;
+    }
 }

@@ -1,6 +1,7 @@
 .paragrafo {
     margin-bottom: 40px;
     line-height: 30px;
+    text-align: justify;
 }
 
 .content{
@@ -102,7 +103,8 @@
     }
 
     .conteudo h2 {
-        margin: 10% 0% 0% 10%;
+        margin: 10% 10% 0% 10%;
         padding: 0px 10px 10px 0px;
+        text-align: center;
     }
 }
