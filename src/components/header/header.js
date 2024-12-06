@@ -50,8 +50,9 @@ const makeTemplate = (variant) => {
             <a href=${getPagePath("index")}><img src="${rootPath}/assets/images/logo-conecta.png" alt="Logo Conecta"></div></a>
             <div class="buttons-header-wrapper">
                 <a href=${getPagePath("pagina-de-demandas")} style="${userType ==="admin" ? "display: none" : ""}" class="header-button oportunidades-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">OPORTUNIDADES</a>
-                <a id="area-da-ong" style="${pathName.includes('pagina-do-voluntario.html') || userType === "candidate" || userType === "admin" || userType === undefined ? "display: none": ""}" href="#"  class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">ÁREA DA ONG</a>
-                <a id="area-da-voluntario" style="${pathName.includes('pagina-do-voluntario.html') || userType === "organization" ||  userType === "admin" ? "display: none": ""}" href="#"  class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">ÁREA DO VOLUNTÁRIO</a>
+                <a id="area-da-ong" style="${pathName.includes('pagina-do-voluntario.html') || token == null || userType === "candidate" || userType === "admin" || userType === undefined ? "display: none": ""}" href="#"  class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">ÁREA DA ONG</a>
+                <a id="bt_login" style="${ token != null  ? "display: none": ""}" href="#"  class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">Login</a>
+                <a id="area-da-voluntario" style="${pathName.includes('pagina-do-voluntario.html') || token == null || userType === "organization" ||  userType === "admin" ? "display: none": ""}" href="#"  class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">ÁREA DO VOLUNTÁRIO</a>
                 <a id="adm-demandas" style="${token == null | userType === "admin" ? "display: none" : ""}" id="logout-click" href=${getPagePath("administrar-demandas")}  class="header-button area-da-ong-button"><img class="dot-black" src="${rootPath}/assets/icons/dot-black.png">ADMINISTRAR DEMANDAS</a>
                 ${userType !== 'admin' ? `
                 <a 
@@ -206,7 +207,7 @@ const cssStyle = `
     header .home-logo-wrapper img {
         min-width: 300px;
         min-height: 70px;
-        max-width: 50%;
+        max-width: 412px;
         margin-left: 15px;
     }
     
@@ -263,6 +264,159 @@ const cssStyle = `
     }
     
     @media screen and (max-width: 768px) {
+        .header-desktop {
+            display: none;
+        }
+    
+        header.header-mobile {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-items: start;
+            align-items: center;
+            padding: 20px;
+            background-color: white;
+            border-bottom: none;
+            z-index: 1;
+            width: 100%;
+        }
+    
+        .header-mobile > .menu-toggle {
+            justify-self: start;
+        }
+    
+        .header-mobile > .logo-button {
+            justify-self: center;
+        }
+    
+        .header-mobile > .close-button {
+            justify-self: end;
+        }
+    
+        .header-mobile-logo img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+        }
+    
+        .mobile-menu {
+            display: block;
+            position: fixed;
+            left: -768px;
+            top: 0;
+            bottom: 0;
+            width: 60vw;
+            background: white;
+            z-index: 1000;
+            transition: left 0.3s;
+            border-right: solid 1px var(--cor-texto);
+            padding: 25px;
+            overflow-y: auto;
+        }
+    
+        .mobile-menu > .header-menu {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            padding: 8px 0 8px 0;
+            margin: 0;
+        }
+    
+        .mobile-menu-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: start;
+            padding: 32px 0 8px 0;
+            margin: 0;
+        }
+    
+        .authentication-area {
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .authentication-area > .text {
+            margin: 0;
+            color: rgba(0, 0, 0, 0.80);
+            font-family: Open Sans, sans-serif;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+            letter-spacing: -0.154px;
+            padding-bottom: 24px;
+        }
+    
+        .authentication-area > .authentication-button {
+            color: rgba(0, 0, 0, 0.80);
+            font-family: Open Sans, sans-serif;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 150%;
+            letter-spacing: -0.22px;
+            text-decoration: none;
+            padding-bottom: 24px;
+        }
+    
+        .edit {
+            height: 18px;
+            width: 18px;
+        }
+        
+        .setting {
+            height: 20px;
+            width: 20px;
+            top: 3px;
+            position: relative;
+            margin-right: 5px;
+        }
+
+        .divider-line {
+            border-top: solid 1px #716F6F;
+            width: 100%;
+            height: 1px;
+            padding-bottom: 24px;
+        }
+    
+        .navigation-button {
+            color: rgba(0, 0, 0, 0.80);
+            font-family: Open Sans, sans-serif;
+            font-size: 20px;
+            font-style: normal;
+            text-decoration: none;
+            padding: 16px 0 8px 0;
+        }
+    
+        .mobile-menu-content > ul {
+            padding: 24px 0 24px 0;
+        }
+    
+        .mobile-menu-content > ul > li {
+            padding: 0 0 24px 0;
+            list-style: none;
+        }
+
+        .profile-image-card-container {
+            max-width: 80px;
+            height: 80px;
+            overflow: hidden;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 0.5px solid #E7ECEF;
+        }
+        
+        .profile-image-card-container > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
+    @media screen and (max-width: 1250px) {
         .header-desktop {
             display: none;
         }
@@ -475,6 +629,25 @@ const homeVariantCssStyle = `
         height: auto;
     }
 }
+
+@media screen and (max-width: 1250px) {
+    header.header-mobile {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        justify-items: start;
+        align-items: center;
+        padding: 20px;
+        background-color: white;
+        border-bottom: none;
+        gap: 40px;
+    }
+
+    .header-mobile-logo img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+}
 `
 
 async function logout() {
@@ -539,6 +712,10 @@ class HeaderComponent extends HTMLElement {
                 alert("Você precisa estar logado para acessar esse recurso.")
                 window.location.href = getPagePath("login");
             }
+        });
+
+        this.root.querySelector('#bt_login').addEventListener('click', async () => {
+            window.location.href = getPagePath("login");
         });
 
         this.root.querySelector('#area-da-voluntario').addEventListener('click', async () => {
