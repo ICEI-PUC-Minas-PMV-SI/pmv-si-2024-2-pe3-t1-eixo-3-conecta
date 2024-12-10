@@ -1,0 +1,26 @@
+cff-version: 1.0.1
+message: Please cite this software using these metadata.
+title: Conecta
+authors:
+  - family-names: Abreu dos Reis
+    given-names: Alice
+  - family-names: Gonçalves Duque
+    given-names: Davih
+  - family-names: dos Reis Nascimento
+    given-names: Gabriel
+  - family-names: Guedes Gomes Junior
+    given-names: Leonardo
+  - family-names: Petronílio Martins de Abreu
+    given-names: Omar
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Martins de Oliveira
+    given-names: Fábio
+keywords:
+  - ONG
+  - Tecnologia
+  - Voluntariado
+repository-code: https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe3-t1-eixo-3-conecta
+license: CC-BY-4.0
+version: 1.0.0
+date-released: 2024-12-09
